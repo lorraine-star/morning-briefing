@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morning Briefing — Meagan Babanao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #faf9f7; color: #494b51; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
+
+    /* MEAGAN'S THEME — warm neutrals + furniture/home aesthetic */
+    .banner { background: #8B7355; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; }
+    .banner a { color: #DDD0C0; text-decoration: none; }
+
+    .header { background: #fff; padding: 40px 48px 32px; border-bottom: 1px solid #e8e4de; position: relative; overflow: hidden; }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 400px; height: 100%;
+      background: linear-gradient(135deg, transparent 40%, #f5f0ea 60%, #ede6db 80%, #e8dfd3 100%);
+      opacity: 0.5;
+    }
+    .header-meta { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .badge { background: #f5f0ea; border: 1px solid #e8e4de; border-radius: 20px; padding: 4px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8B7355; }
+    .badge.live { background: #8B7355; border-color: #8B7355; color: #fff; }
+    .header h1 { font-size: 44px; font-weight: 800; color: #6B5B45; line-height: 1.1; margin-bottom: 10px; letter-spacing: -1px; position: relative; z-index: 1; }
+    .header h1 span { display: block; font-size: 18px; font-weight: 500; color: #a89880; letter-spacing: 0; margin-top: 4px; }
+    .header p { color: #a89880; font-size: 14px; max-width: 560px; position: relative; z-index: 1; }
+
+    /* decorative furniture icons */
+    .decor { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: 0.15; z-index: 0; letter-spacing: 12px; }
+
+    .hero-box { margin: 32px 48px; background: linear-gradient(135deg, #8B7355 0%, #A68B6B 100%); border-radius: 16px; padding: 28px 32px; color: #fff; }
+    .hero-box h2 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+    .hero-box p { font-size: 14px; opacity: 0.85; max-width: 660px; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 48px 32px; }
+    .stat { background: #fff; border: 1px solid #e8e4de; border-radius: 12px; padding: 20px; text-align: center; }
+    .stat-value { font-size: 28px; font-weight: 800; color: #8B7355; display: block; line-height: 1; margin-bottom: 6px; }
+    .stat-value.red { color: #c0392b; }
+    .stat-value.green { color: #27ae60; }
+    .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #bbb; }
+
+    .what-first { margin: 0 48px 40px; background: #fff; border-radius: 12px; border: 1px solid #e8e4de; border-left: 4px solid #D4A853; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; }
+    .what-first-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .what-first h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8B7355; margin-bottom: 6px; }
+    .what-first p { color: #494b51; font-size: 14px; }
+
+    .section { padding: 0 48px 44px; }
+    .section-header { margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; }
+    .section-header h2 { font-size: 18px; font-weight: 800; color: #6B5B45; }
+    .section-header p { font-size: 13px; color: #bbb; }
+    .divider { height: 1px; background: #e8e4de; margin: 0 48px 44px; }
+
+    .asana-list { display: flex; flex-direction: column; gap: 8px; }
+    .asana-item { background: #fff; border: 1px solid #e8e4de; border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+    .asana-task { font-size: 14px; color: #494b51; font-weight: 500; }
+    .asana-task a { color: #494b51; text-decoration: none; border-bottom: 1px dashed #ccc; }
+    .asana-project { font-size: 12px; color: #bbb; margin-top: 2px; }
+    .asana-project a { color: #8B7355; text-decoration: none; }
+    .asana-due { font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+    .due-overdue { background: #fde8e8; color: #c0392b; }
+    .due-today { background: #f5f0ea; color: #8B7355; }
+    .due-upcoming { background: #f9f9f9; color: #888; }
+
+    .goal-card { background: #fff; border: 1px solid #e8e4de; border-radius: 14px; padding: 22px; margin-bottom: 16px; }
+    .goal-card h3 { font-size: 15px; font-weight: 700; color: #6B5B45; margin-bottom: 4px; }
+    .goal-card .card-meta { font-size: 12px; color: #a89880; margin-bottom: 10px; }
+    .goal-card p { font-size: 13px; color: #777; }
+    .goal-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; margin-bottom: 12px; background: #f5f0ea; color: #8B7355; }
+
+    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .quick-hits { background: #fff; border: 1px solid #e8e4de; border-radius: 12px; overflow: hidden; }
+    .quick-hit { padding: 14px 20px; display: flex; align-items: flex-start; gap: 14px; border-bottom: 1px solid #f5f2ed; }
+    .quick-hit:last-child { border-bottom: none; }
+    .quick-hit p { font-size: 13px; color: #666; }
+    .qh-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; background: #f5f0ea; color: #8B7355; }
+
+    footer { text-align: center; padding: 36px 48px; color: #ccc; font-size: 12px; border-top: 1px solid #e8e4de; background: #fff; }
+    footer strong { color: #8B7355; }
+  </style>
+</head>
+<body>
+
+<div class="banner">
+  <span>RISE Learning Solutions &middot; Meagan's Morning Briefing</span>
+  <span>Ops Lead</span>
+</div>
+
+<div class="header">
+  <div class="decor">&#128722; &#127968; &#128715;</div>
+  <div class="header-meta">
+    <span class="badge live">Morning Briefing</span>
+    <span class="badge">Ops &amp; Growth</span>
+  </div>
+  <h1>Good morning, Meagan!<span>Wednesday, April 2 &middot; Let's build something beautiful today.</span></h1>
+  <p>Your tasks, priorities, and what Lorraine needs from you — all tied to the revenue goals that matter most.</p>
+</div>
+
+<div class="hero-box">
+  <h2>Your role powers the whole machine.</h2>
+  <p>Proposals, lead follow-ups, Forbes drafts, course marketing, qualifying leads and podcast opps. Everything you do feeds directly into RISE's $1M goal. Here's what needs your attention today.</p>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <span class="stat-value">1</span>
+    <span class="stat-label">Due Today</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value red">1</span>
+    <span class="stat-label">Overdue</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value">$500K</span>
+    <span class="stat-label">2026 Revenue Target</span>
+  </div>
+  <div class="stat">
+    <span class="stat-value green">$1M</span>
+    <span class="stat-label">Stretch Goal</span>
+  </div>
+</div>
+
+<div class="what-first">
+  <div class="what-first-icon">&#9889;</div>
+  <div>
+    <h3>What to Do First</h3>
+    <p>Review the 5-day email course performance — Lorraine wants to know if open rates are consistent and if copy needs freshening. This is directly tied to the course funnel, which is the #1 growth priority. After that, check Speaking pipeline tasks.</p>
+  </div>
+</div>
+
+<!-- YOUR TASKS -->
+<div class="section">
+  <div class="section-header">
+    <h2>&#9989; Your Tasks</h2>
+    <p>Revenue-generating and client-facing work first.</p>
+  </div>
+  <div class="asana-list">
+    <div class="asana-item" style="border-left: 4px solid #D4A853;">
+      <div>
+        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213835090437972">Review 5-day email course performance</a></div>
+        <div class="asana-project"><a href="https://lorraineklee.com/from-invisible-to-influential/">View email course</a> &middot; Course Funnel &middot; <strong style="color:#8B7355;">#1 Growth Priority</strong></div>
+      </div>
+      <span class="asana-due due-today">Due today</span>
+    </div>
+    <div class="asana-item">
+      <div>
+        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210975840784813/task/1213903061873104">Review LI repost for 4/3</a></div>
+        <div class="asana-project"><a href="https://docs.google.com/document/d/1uw1h6x5Ie_TZIUvicj0NTCSO-ugy5hjE90kuI16BeN8/edit">Open draft</a> &middot; Social Media &middot; Content</div>
+      </div>
+      <span class="asana-due" style="background:#e8f5e9;color:#27ae60;">Completed 4/2</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LORRAINE'S PRIORITIES YOU SUPPORT -->
+<div class="section">
+  <div class="section-header">
+    <h2>&#127919; Lorraine's Priorities You Support</h2>
+    <p>What she's working on today and where she needs you.</p>
+  </div>
+  <div class="cards-grid">
+    <div class="goal-card">
+      <span class="goal-tag">Due Today</span>
+      <h3>Enterprise One-Pager + Email (Marisa Edits)</h3>
+      <p class="card-meta">Enterprise B2B Sales &middot; Revenue</p>
+      <p>Lorraine is finalizing the enterprise one-pager and email today. Be ready to send it out once she approves. This is the key document for pitching multi-session enterprise programs.</p>
+    </div>
+    <div class="goal-card">
+      <span class="goal-tag">Biz Dev</span>
+      <h3>New Lead Pipeline: VP L&D Hires</h3>
+      <p class="card-meta">Business Development &middot; Speaking Pipeline</p>
+      <p>There are 415 open VP of L&D roles on LinkedIn right now. As new hires are announced, Lorraine wants you to send welcome/congrats notes within 30 days of their start. Start building this outreach list.</p>
+    </div>
+    <div class="goal-card">
+      <span class="goal-tag">Speaking</span>
+      <h3>From Day One — Speaker Submission</h3>
+      <p class="card-meta">Speaking Pipeline</p>
+      <p>Lorraine wants to submit her speaker profile to <a href="https://www.fromdayone.com/speakerintro" style="color:#8B7355;">From Day One</a>. They run virtual conferences on workplace culture and L&D. Draft her submission this week using her standard bio + AI talk description.</p>
+    </div>
+    <div class="goal-card">
+      <span class="goal-tag">Speaking</span>
+      <h3>ACMP Global 2026 — Proposal</h3>
+      <p class="card-meta">Speaking Pipeline</p>
+      <p>Submit a proposal to <a href="https://www.acmpglobal.org/page/2026-call-for-speakers" style="color:#8B7355;">ACMP's 2026 call for speakers</a>. Pitch angle: "The Identity Gap in Change Management — Why Reskilling Fails Without Presence."</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- REVENUE GOALS -->
+<div class="section">
+  <div class="section-header">
+    <h2>&#128200; Revenue Goals — How Your Work Connects</h2>
+    <p>Every task you do feeds one of these.</p>
+  </div>
+  <div class="quick-hits">
+    <div class="quick-hit">
+      <span class="qh-tag">Courses</span>
+      <p><strong>$250K goal</strong> — Your email course review today directly impacts the funnel that feeds Maven signups. 7 cohorts planned in 2026, scaling to $1K-$2K/seat.</p>
+    </div>
+    <div class="quick-hit">
+      <span class="qh-tag">Speaking</span>
+      <p><strong>$200K goal</strong> — Conference submissions (From Day One, ACMP, PMI) and the VP L&D outreach list grow the speaking pipeline. ~20 gigs at $5K-$10K each.</p>
+    </div>
+    <div class="quick-hit">
+      <span class="qh-tag">Enterprise</span>
+      <p><strong>New revenue stream</strong> — The enterprise one-pager Lorraine is finishing today is the key sales doc. Multi-session programs at $20K-$40K per client.</p>
+    </div>
+    <div class="quick-hit">
+      <span class="qh-tag">Brand</span>
+      <p><strong>$170K goal</strong> — Brand deals managed by Aneesh. Your role: qualify inbound, coordinate deliverables, ensure timelines are met.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Built with care by your AI Chief of Staff &middot; <strong>RISE Learning Solutions</strong> &middot; April 2, 2026<br/>
+  <span style="margin-top: 6px; display: block;">&#127968; New house energy — build something great today, Meagan.</span>
+</footer>
+
+</body>
+</html>
