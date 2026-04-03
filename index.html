@@ -3,477 +3,467 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Morning Briefing — Lorraine K. Lee</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Lorraine's Morning Briefing — April 3, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #f9f9f9; color: #494b51; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
-    .banner { background: #084af3; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; }
-    .banner a { color: #c3e2ff; text-decoration: none; }
-    .header { background: #fff; padding: 40px 48px 32px; border-bottom: 1px solid #ebebeb; }
-    .header-meta { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-    .badge { background: #f9f9f9; border: 1px solid #ebebeb; border-radius: 20px; padding: 4px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #494b51; }
-    .badge.live { background: #084af3; border-color: #084af3; color: #fff; }
-    .header h1 { font-size: 48px; font-weight: 800; color: #084af3; line-height: 1; margin-bottom: 10px; letter-spacing: -1px; }
-    .header p { color: #888; font-size: 14px; max-width: 620px; }
-    .hero-box { margin: 32px 48px; background: linear-gradient(135deg, #084af3 0%, #4179fc 100%); border-radius: 16px; padding: 28px 32px; color: #fff; }
-    .hero-box h2 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
-    .hero-box p { font-size: 14px; opacity: 0.85; max-width: 660px; }
-    .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 0 48px 32px; }
-    .stat { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 20px; text-align: center; }
-    .stat-value { font-size: 28px; font-weight: 800; color: #084af3; display: block; line-height: 1; margin-bottom: 6px; }
-    .stat-value.yellow { color: #b8860b; }
-    .stat-value.green { color: #27ae60; }
-    .stat-value.red { color: #c0392b; }
-    .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #aaa; }
-    .what-first { margin: 0 48px 40px; background: #fff; border-radius: 12px; border: 1px solid #ebebeb; border-left: 4px solid #FCE036; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; }
-    .what-first-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-    .what-first h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #084af3; margin-bottom: 6px; }
-    .what-first p { color: #494b51; font-size: 14px; }
-    .section { padding: 0 48px 44px; }
-    .section-header { margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; }
-    .section-header h2 { font-size: 18px; font-weight: 800; color: #084af3; }
-    .section-header p { font-size: 13px; color: #aaa; }
-    .divider { height: 1px; background: #ebebeb; margin: 0 48px 44px; }
-    .today-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .today-card { background: #fff; border: 1px solid #ebebeb; border-radius: 10px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
-    .today-time { font-size: 12px; font-weight: 700; color: #4179fc; white-space: nowrap; padding-top: 2px; min-width: 64px; }
-    .today-title { font-size: 14px; font-weight: 600; color: #494b51; margin-bottom: 3px; }
-    .today-sub { font-size: 12px; color: #aaa; }
-    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .cards-grid.three-col { grid-template-columns: 1fr 1fr 1fr; }
-    .card { background: #fff; border: 1px solid #ebebeb; border-radius: 14px; padding: 22px; position: relative; }
-    .card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; margin-bottom: 12px; }
-    .tag-strong { background: #e8f0fe; color: #084af3; }
-    .tag-good { background: #e8f4fd; color: #4179fc; }
-    .tag-act-today { background: #fff3cd; color: #b8860b; border: 1px solid #FCE036; }
-    .tag-act-week { background: #fef0e8; color: #c0621a; }
-    .tag-enterprise { background: #f0e8fe; color: #6c3fc0; }
-    .tag-passive { background: #e8fef0; color: #1a8a4a; }
-    .tag-hiring { background: #e8f0fe; color: #084af3; }
-    .tag-new-biz { background: #fef6e8; color: #9a6700; }
-    .card-score { position: absolute; top: 22px; right: 22px; font-size: 11px; font-weight: 700; color: #ccc; }
-    .card h3 { font-size: 15px; font-weight: 700; color: #494b51; margin-bottom: 4px; }
-    .card .card-meta { font-size: 12px; color: #aaa; margin-bottom: 10px; }
-    .card p { font-size: 13px; color: #777; }
-    .card-sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
-    .card-sub { background: #f9f9f9; border-radius: 8px; padding: 12px; }
-    .card-sub-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #bbb; margin-bottom: 5px; }
-    .card-sub p { font-size: 12px; color: #666; margin: 0; }
-    .card-sub .hook { font-style: italic; color: #4179fc; }
-    .email-draft { background: #f9f9f9; border-radius: 10px; padding: 16px 18px; margin-top: 14px; border: 1px dashed #ddd; }
-    .email-draft-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #084af3; margin-bottom: 6px; }
-    .email-draft-to { font-size: 12px; color: #999; margin-bottom: 4px; }
-    .email-draft-subject { font-size: 13px; font-weight: 600; color: #494b51; margin-bottom: 8px; }
-    .email-draft-body { font-size: 12.5px; color: #666; line-height: 1.7; white-space: pre-line; }
-    .quick-hits { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: hidden; }
-    .quick-hit { padding: 14px 20px; display: flex; align-items: flex-start; gap: 14px; border-bottom: 1px solid #f5f5f5; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #084af3;
+      --bright-blue: #4179fc;
+      --light-blue: #c3e2ff;
+      --yellow: #FCE036;
+      --light-gray: #ebebeb;
+      --charcoal: #494b51;
+      --off-white: #f9f9f9;
+      --white: #ffffff;
+      --red: #e53e3e;
+      --green: #2f855a;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--charcoal);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: linear-gradient(135deg, #084af3 0%, #4179fc 100%);
+      color: white;
+      padding: 52px 40px 44px;
+    }
+    .site-header h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .site-header .date {
+      font-size: 1.05rem;
+      opacity: 0.88;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+    .badge-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 38px 24px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 30px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .card-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: var(--bright-blue);
+      margin-bottom: 16px;
+    }
+
+    /* DO FIRST */
+    .do-first {
+      border-left: 5px solid var(--yellow);
+      background: #fffef0;
+      border-radius: 0 14px 14px 0;
+      padding: 22px 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .do-first .card-title { color: #8a6e00; }
+    .do-first p { font-size: 1.01rem; font-weight: 500; color: var(--charcoal); line-height: 1.65; }
+
+    /* TASK LIST */
+    .priority-group-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 20px 0 8px;
+    }
+    .priority-group-label:first-child { margin-top: 0; }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-item.dimmed { opacity: 0.5; }
+
+    .task-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bright-blue);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .task-dot.urgent { background: #e53e3e; }
+    .task-dot.low { background: #ccc; }
+
+    .task-body { flex: 1; min-width: 0; }
+    .task-name { font-size: 0.97rem; font-weight: 600; color: var(--charcoal); margin-bottom: 5px; }
+    .task-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+
+    .due-tag {
+      font-size: 0.71rem; font-weight: 600;
+      padding: 2px 9px; border-radius: 10px;
+      background: var(--light-blue); color: var(--blue);
+    }
+    .due-tag.today { background: #fff0f0; color: #c53030; }
+    .due-tag.overdue { background: #fff0f0; color: #c53030; }
+
+    .priority-flag {
+      font-size: 0.7rem; font-weight: 700;
+      color: #c53030; letter-spacing: 0.3px;
+    }
+
+    .task-links { display: flex; gap: 7px; flex-wrap: wrap; }
+    .task-link {
+      font-size: 0.75rem; color: var(--bright-blue);
+      text-decoration: none; font-weight: 500;
+      padding: 2px 9px;
+      border: 1px solid var(--light-blue);
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .task-link:hover { background: var(--light-blue); }
+
+    /* BIZ DEV */
+    .biz-dev-note {
+      font-size: 0.82rem; color: #888;
+      font-style: italic;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      line-height: 1.55;
+    }
+    .lead-card {
+      border: 1px solid var(--light-gray);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .lead-card:last-child { margin-bottom: 0; }
+    .lead-name { font-size: 1.02rem; font-weight: 700; color: var(--blue); margin-bottom: 2px; }
+    .lead-title { font-size: 0.83rem; color: #777; margin-bottom: 12px; }
+    .lead-li-link { color: var(--bright-blue); text-decoration: none; font-weight: 500; }
+
+    .email-draft {
+      margin-top: 12px;
+      background: #f8fbff;
+      border: 1px solid var(--light-blue);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .email-label {
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.9px; text-transform: uppercase;
+      color: var(--bright-blue); margin-bottom: 8px;
+    }
+    .email-line { font-size: 0.84rem; color: var(--charcoal); margin-bottom: 3px; }
+    .email-body {
+      font-size: 0.84rem; color: var(--charcoal);
+      line-height: 1.65; margin-top: 10px;
+      white-space: pre-wrap;
+    }
+
+    /* PASSIVE REVENUE */
+    .roadmap-item {
+      display: flex; align-items: flex-start;
+      gap: 16px; padding: 15px 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .roadmap-item:last-child { border-bottom: none; }
+    .roadmap-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--bright-blue));
+      color: white; font-size: 0.88rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .roadmap-body { flex: 1; }
+    .roadmap-name { font-size: 0.97rem; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+    .roadmap-stage {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.6px; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 8px; margin-bottom: 4px;
+    }
+    .stage-now { background: #e8f5e9; color: #2e7d32; }
+    .stage-next { background: #e3f2fd; color: #1565c0; }
+    .stage-later { background: #fff3e0; color: #e65100; }
+    .stage-big { background: #fce4ec; color: #880e4f; }
+    .roadmap-meta { font-size: 0.81rem; color: #888; }
+
+    /* QUICK HITS */
+    .quick-hit { padding: 14px 0; border-bottom: 1px solid var(--light-gray); }
     .quick-hit:last-child { border-bottom: none; }
-    .quick-hit:hover { background: #fafcff; }
-    .qh-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
-    .qh-speaking { background: #e8f0fe; color: #084af3; }
-    .qh-ld { background: #e8f5e9; color: #2e7d32; }
-    .qh-brand { background: #f3e8fd; color: #7b1fa2; }
-    .qh-ai { background: #fff8e1; color: #f57f17; border: 1px solid #FCE036; }
-    .qh-course { background: #fce4ec; color: #c2185b; }
-    .qh-revenue { background: #e8f0fe; color: #084af3; }
-    .qh-hiring { background: #e8fef0; color: #1a8a4a; }
-    .qh-market { background: #f0e8fe; color: #6c3fc0; }
-    .quick-hit p { font-size: 13px; color: #666; }
-    .asana-list { display: flex; flex-direction: column; gap: 8px; }
-    .asana-item { background: #fff; border: 1px solid #ebebeb; border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
-    .asana-task { font-size: 14px; color: #494b51; font-weight: 500; }
-    .asana-project { font-size: 12px; color: #bbb; margin-top: 2px; }
-    .asana-due { font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
-    .due-overdue { background: #fde8e8; color: #c0392b; }
-    .due-today { background: #e8f0fe; color: #084af3; }
-    .due-upcoming { background: #f9f9f9; color: #888; }
-    .note-box { margin: 0 48px 40px; background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 20px 24px; }
-    .note-box h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #c0392b; margin-bottom: 8px; }
-    .note-box p { font-size: 13px; color: #666; }
-    footer { text-align: center; padding: 36px 48px; color: #ccc; font-size: 12px; border-top: 1px solid #ebebeb; background: #fff; }
-    footer strong { color: #084af3; }
+    .qh-headline { font-size: 0.97rem; font-weight: 600; color: var(--charcoal); margin-bottom: 5px; }
+    .qh-action { font-size: 0.84rem; color: var(--blue); font-weight: 500; line-height: 1.5; }
+    .qh-action::before { content: "→ "; font-weight: 700; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 24px;
+      font-size: 0.78rem; color: #bbb;
+      border-top: 1px solid var(--light-gray);
+      background: white;
+    }
   </style>
 </head>
 <body>
 
-<div class="banner">
-  <span>RISE Learning Solutions &middot; Morning Briefing</span>
-  <a href="mailto:lorraine@lorraineklee.com">lorraine@lorraineklee.com</a>
-</div>
+<header class="site-header">
+  <h1>Good morning, Lorraine.</h1>
+  <p class="date">Thursday, April 3, 2026</p>
+  <div class="badge-row">
+    <span class="badge">Morning Briefing</span>
+    <span class="badge">Sources scanned</span>
+  </div>
+</header>
 
-<div class="header">
-  <div class="header-meta">
-    <span class="badge live">Morning Briefing</span>
-    <span class="badge">6 Sources Scanned</span>
-    <span class="badge">7 Top Findings</span>
-  </div>
-  <h1>Wednesday, April 2</h1>
-  <p>Your priorities, business development leads, hiring signals, and industry intelligence — everything you need to move toward $1M.</p>
-</div>
+<div class="container">
 
-<div class="hero-box">
-  <h2>Good morning, Lorraine. Here's your day.</h2>
-  <p>Pulled from Asana and web intelligence. Gmail and Calendar will be added once you reconnect them at claude.ai/settings/connectors with full permissions.</p>
-</div>
+  <!-- WHAT TO DO FIRST -->
+  <div class="do-first">
+    <div class="card-title">What to do first</div>
+    <p>The <strong>Enterprise One-Pager + Email (Marisa Edits)</strong> is due today — this is the key sales document for pitching multi-session enterprise programs. Get this out the door first, then update the revenue dashboard.</p>
+  </div>
 
-<div class="stats">
-  <div class="stat">
-    <span class="stat-value">2</span>
-    <span class="stat-label">Due Today</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value red">1</span>
-    <span class="stat-label">Overdue</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">415</span>
-    <span class="stat-label">VP L&D Jobs Open</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value green">$99B</span>
-    <span class="stat-label">L&D Market 2026</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">56%</span>
-    <span class="stat-label">AI Skills Wage Premium</span>
-  </div>
-</div>
+  <!-- ASANA PRIORITIES -->
+  <div class="card">
+    <div class="card-title">Asana Priorities</div>
+    <div class="priority-group-label">Top Priority</div>
 
-<div class="what-first">
-  <div class="what-first-icon">&#9889;</div>
-  <div>
-    <h3>What to Do First</h3>
-    <p>Finish the Enterprise One-Pager + Email (Marisa Edits) — it's due today and directly supports your enterprise B2B sales push. Then review the business development leads below — BCG just published a major piece on AI workforce transformation that's a perfect outreach hook. Kondo and newsletter reviews are low priority — get to them only after revenue-generating work is done.</p>
-  </div>
-</div>
-
-
-<!-- ASANA PRIORITIES -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#9989; Asana: Your Priorities</h2>
-    <p>Due today or overdue.</p>
-  </div>
-  <div class="asana-list">
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213902253578260" style="color:#494b51;text-decoration:none;border-bottom:1px dashed #ccc;">Enterprise One-Pager + Email (Marisa Edits)</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1mCQNMXzEvJECVZf_dIlJkpyr3nly693TI4AfKLtkAZw/edit" style="color:#4179fc;text-decoration:none;">One-Pager</a> &middot; <a href="https://docs.google.com/document/d/1N0FtOmxN9IK408O89BD79JOH0Z8Iwq72GalVHeqpSqs/edit" style="color:#4179fc;text-decoration:none;">Email Draft</a> &middot; Client-facing &middot; Revenue</div>
-      </div>
-      <span class="asana-due due-today">Due today &middot; TOP PRIORITY</span>
-    </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1212801701499008" style="color:#494b51;text-decoration:none;border-bottom:1px dashed #ccc;">review (creatorengines.com)</a></div>
-        <div class="asana-project"><a href="https://www.creatorengines.com/" style="color:#4179fc;text-decoration:none;">creatorengines.com</a> &middot; Business development</div>
-      </div>
-      <span class="asana-due due-overdue">49 days overdue</span>
-    </div>
-    <div class="asana-item" style="opacity:0.6;">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213864945350051" style="color:#494b51;text-decoration:none;border-bottom:1px dashed #ccc;">Check Kondo: Lorraine Tab</a></div>
-        <div class="asana-project"><a href="https://app.trykondo.com/inboxes/action-needed-from-lorraine" style="color:#4179fc;text-decoration:none;">Open Kondo</a> &middot; Admin</div>
-      </div>
-      <span class="asana-due due-today">Due today &middot; Low priority</span>
-    </div>
-    <div class="asana-item" style="opacity:0.6;">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213862433368868" style="color:#494b51;text-decoration:none;border-bottom:1px dashed #ccc;">Review newsletter folder for replies</a></div>
-        <div class="asana-project">Newsletter &middot; Admin</div>
-      </div>
-      <span class="asana-due due-upcoming">Due Apr 10 &middot; Low priority</span>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- BUSINESS DEVELOPMENT -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#128640; Business Development</h2>
-    <p>Outreach targets with draft emails ready to send.</p>
-  </div>
-  <div class="cards-grid">
-
-    <div class="card">
-      <span class="card-score">19/20</span>
-      <span class="card-tag tag-enterprise">Enterprise Program</span>
-      <h3>BCG: "AI Transformation Is a Workforce Transformation"</h3>
-      <p class="card-meta">Published 2026 &middot; BCG.com &middot; Major consulting firm signal</p>
-      <p>BCG just published that AI transformation requires workforce identity shifts, not just technical reskilling. This is literally your pitch. Use this as an outreach hook to BCG's own L&D team and to companies BCG advises.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Why It Matters</div>
-          <p>A Big 4 consulting firm validating that "AI transformation = identity work" gives your pitch instant credibility. Reference this in every enterprise outreach.</p>
+    <div class="task-item">
+      <div class="task-dot urgent"></div>
+      <div class="task-body">
+        <div class="task-name">Enterprise One-Pager + Email (Marisa Edits)</div>
+        <div class="task-meta">
+          <span class="due-tag today">Due Today</span>
+          <span class="priority-flag">HIGH PRIORITY</span>
         </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p>Share this BCG article on LinkedIn with your take. Use it in outreach emails as a credibility anchor. Pitch BCG directly for their internal L&D.</p>
+        <div class="task-links">
+          <a href="https://docs.google.com/document/d/1mCQNMXzEvJECVZf_dIlJkpyr3nly693TI4AfKLtkAZw/edit" class="task-link" target="_blank">One-Pager Doc</a>
+          <a href="https://docs.google.com/document/d/1N0FtOmxN9IK408O89BD79JOH0Z8Iwq72GalVHeqpSqs/edit" class="task-link" target="_blank">Email Doc</a>
+          <a href="https://app.asana.com/1/1210774242380505/task/1213902253578260" class="task-link" target="_blank">Asana</a>
         </div>
       </div>
+    </div>
+
+    <div class="task-item">
+      <div class="task-dot urgent"></div>
+      <div class="task-body">
+        <div class="task-name">Update revenue dashboard</div>
+        <div class="task-meta">
+          <span class="due-tag today">Due Today</span>
+          <span class="priority-flag">HIGH PRIORITY</span>
+        </div>
+        <div class="task-links">
+          <a href="https://app.asana.com/1/1210774242380505/task/1213915874367982" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-item">
+      <div class="task-dot"></div>
+      <div class="task-body">
+        <div class="task-name">For Review: Abbvie Presentation</div>
+        <div class="task-meta">
+          <span class="due-tag">Due Apr 6</span>
+        </div>
+        <div class="task-links">
+          <a href="https://docs.google.com/spreadsheets/d/166ljxMnZQh2RT2JnFtDALobYBODFUWrs/edit" class="task-link" target="_blank">Runsheet</a>
+          <a href="https://app.asana.com/1/1210774242380505/task/1213918608454458" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-item">
+      <div class="task-dot"></div>
+      <div class="task-body">
+        <div class="task-name">Review 5-day email course</div>
+        <div class="task-meta">
+          <span class="due-tag">Due Apr 6</span>
+        </div>
+        <div class="task-links">
+          <a href="https://lorraineklee.com/from-invisible-to-influential/" class="task-link" target="_blank">Course Link</a>
+          <a href="https://app.asana.com/1/1210774242380505/task/1213835090437972" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-item dimmed">
+      <div class="task-dot low"></div>
+      <div class="task-body">
+        <div class="task-name">Review newsletter folder for replies</div>
+        <div class="task-meta">
+          <span class="due-tag">Due Apr 10</span>
+        </div>
+        <div class="task-links">
+          <a href="https://app.asana.com/1/1210774242380505/task/1213862433368868" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-item dimmed">
+      <div class="task-dot low"></div>
+      <div class="task-body">
+        <div class="task-name">Check Kondo: Lorraine Tab</div>
+        <div class="task-meta">
+          <span class="due-tag today">Due Today</span>
+        </div>
+        <div class="task-links">
+          <a href="https://app.trykondo.com/inboxes/action-needed-from-lorraine" class="task-link" target="_blank">Kondo</a>
+          <a href="https://app.asana.com/1/1210774242380505/task/1213864945350051" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-item dimmed">
+      <div class="task-dot low"></div>
+      <div class="task-body">
+        <div class="task-name">Review (creatorengines.com)</div>
+        <div class="task-meta">
+          <span class="due-tag overdue">49 days overdue</span>
+        </div>
+        <div class="task-links">
+          <a href="https://app.asana.com/1/1210774242380505/task/1212801701499008" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS DEVELOPMENT -->
+  <div class="card">
+    <div class="card-title">Business Development — Recent Hires with Budget</div>
+    <p class="biz-dev-note">Web search has limited ability to find very recent LinkedIn announcements. For better results, we're exploring Clay/Apollo integration.</p>
+
+    <div class="lead-card">
+      <div class="lead-name">Latané Conant</div>
+      <div class="lead-title">Chief Revenue Officer · 6sense &nbsp;·&nbsp; <a href="https://www.linkedin.com/posts/latane-conant_so-big-news-im-honored-to-share-that-activity-7115515499781742592-MFic" class="lead-li-link" target="_blank">View LinkedIn post ↗</a></div>
       <div class="email-draft">
-        <div class="email-draft-label">&#9993; Draft Outreach Email</div>
-        <div class="email-draft-to">To: [Head of L&D, BCG or target enterprise]</div>
-        <div class="email-draft-subject">Subject: BCG's workforce transformation research — a different angle</div>
-        <div class="email-draft-body">Hi [Name],
+        <div class="email-label">Draft Outreach</div>
+        <div class="email-line"><strong>To:</strong> Latané Conant</div>
+        <div class="email-line"><strong>Subject:</strong> Congrats on the new role — and a thought for your team</div>
+        <div class="email-body">Hi Latané,
 
-I was struck by BCG's recent research on AI transformation being fundamentally a workforce transformation. It aligns closely with what I see working with Fortune 500 companies: the biggest bottleneck isn't technical reskilling — it's the identity shift employees need to make when their roles change.
+Congratulations on joining 6sense as CRO — that's a big, exciting move.
 
-I run virtual workshops on professional identity, executive presence, and visibility for organizations navigating exactly this transition. My clients include Amazon, Cisco, McKinsey, and Zoom.
+I'm Lorraine Lee — keynote speaker and author of Unforgettable Presence, and I work with customer-facing leaders at companies like Amazon, Zoom, and McKinsey to help them show up with more impact and influence.
 
-Would 15 minutes be worth exploring how this could support your team's AI transformation efforts?
+As you're building momentum in this new role, I'd love to explore whether a workshop for your revenue teams could be valuable — especially around how reps and leaders present, communicate under pressure, and build executive presence with buyers.
 
-Warm regards,
-Lorraine K. Lee</div>
+Would a 20-minute call make sense? I promise to keep it sharp.
+
+Lorraine</div>
       </div>
     </div>
 
-    <div class="card">
-      <span class="card-score">18/20</span>
-      <span class="card-tag tag-new-biz">New Business</span>
-      <h3>WEF: 120M Workers at Risk Without Reskilling</h3>
-      <p class="card-meta">World Economic Forum &middot; Jan 2026 &middot; Global signal</p>
-      <p>The World Economic Forum reports 85% of employers plan to prioritize upskilling, but 120 million workers are at medium-term risk because they won't receive the reskilling they need. The gap between intent and execution is your pitch.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Hook</div>
-          <p class="hook">"85% of companies say they'll reskill. Fewer than half actually will. The gap isn't budget — it's that reskilling without identity work doesn't stick."</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p>LinkedIn post this week using this stat. Also use in enterprise pitch decks and the one-pager you're finishing today.</p>
-        </div>
-      </div>
-    </div>
+    <div class="lead-card">
+      <div class="lead-name">Aras Kolya</div>
+      <div class="lead-title">Chief Revenue Officer · OutSystems &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/aras-kolya-a2a32538/" class="lead-li-link" target="_blank">View LinkedIn profile ↗</a></div>
+      <div class="email-draft">
+        <div class="email-label">Draft Outreach</div>
+        <div class="email-line"><strong>To:</strong> Aras Kolya</div>
+        <div class="email-line"><strong>Subject:</strong> New CRO, new chapter — a thought on your team</div>
+        <div class="email-body">Hi Aras,
 
-    <div class="card">
-      <span class="card-score">17/20</span>
-      <span class="card-tag tag-hiring">Hiring Signal</span>
-      <h3>415 VP of L&D Roles Open on LinkedIn</h3>
-      <p class="card-meta">LinkedIn Jobs &middot; Live data &middot; US market</p>
-      <p>415 VP of Learning & Development roles currently open on LinkedIn alone. Every new L&D leader needs external speakers and programs to make their mark. This is your warmest pipeline signal.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Strategy</div>
-          <p>Have Meagan monitor LinkedIn for new VP L&D hires at Fortune 500 companies. Send a welcome/congrats note within 30 days of their start date.</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Volume Play</div>
-          <p>Even a 2% close rate on 415 targets = 8 new clients. At $10K avg engagement, that's $80K in pipeline.</p>
-        </div>
-      </div>
-    </div>
+Congrats on stepping into the CRO seat at OutSystems — it's a great company with real momentum.
 
-    <div class="card">
-      <span class="card-score">16/20</span>
-      <span class="card-tag tag-enterprise">Enterprise Program</span>
-      <h3>Optum Hiring SVP Enterprise Training</h3>
-      <p class="card-meta">Indeed &middot; Posted 1 week ago &middot; Eden Prairie, MN</p>
-      <p>UnitedHealth Group's Optum is hiring a Senior VP of Enterprise Training. When a healthcare giant at this scale builds a new training function, they bring in external voices. Healthcare is a new vertical worth testing.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Pitch Angle</div>
-          <p>Healthcare workers facing AI disruption need the same identity + presence work as tech workers. Your frameworks are industry-agnostic.</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p>Flag for Meagan. Once the SVP is hired, send intro note. Meanwhile, look for existing L&D contacts at Optum/UHG on LinkedIn.</p>
-        </div>
-      </div>
-    </div>
+I'm Lorraine Lee, keynote speaker and author of Unforgettable Presence. I partner with revenue organizations at companies like Cisco, Amazon, and McKinsey to help customer-facing teams communicate with more confidence and executive presence — from how they pitch to how they show up in high-stakes moments.
 
-  </div>
-</div>
+Given you're likely building or reorganizing your team right now, I'd love to share a few ideas on what a workshop series could look like for OutSystems.
 
-<div class="divider"></div>
+Open to a quick call?
 
-<!-- SPEAKING LEADS -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#127908; Speaking Opportunities</h2>
-    <p>Open calls matched to your topics. All have virtual options.</p>
-  </div>
-  <div class="cards-grid">
-    <div class="card">
-      <span class="card-tag tag-strong">Strong Fit</span>
-      <h3>From Day One — Prospective Speakers</h3>
-      <p class="card-meta">Ongoing open call &middot; Virtual conferences on workplace topics</p>
-      <p>From Day One runs frequent virtual conferences on workplace culture, leadership, and employee development. They're actively seeking speakers and your topics are a direct match.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p><a href="https://www.fromdayone.com/speakerintro" style="color:#4179fc;">Submit speaker profile here</a>. Have Meagan draft your submission this week.</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Why It Fits</div>
-          <p>Their audience is HR and L&D leaders at major companies — exactly who hires you for enterprise workshops.</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <span class="card-tag tag-good">Good Fit</span>
-      <h3>PMI Global Summit Series 2026</h3>
-      <p class="card-meta">Project Management Institute &middot; Call for speakers open</p>
-      <p>PMI is accepting proposals from both community members and industry experts on "leading projects and people." Executive presence for project leaders is a natural fit.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p><a href="https://www.pmi.org/events/speaking-opportunities" style="color:#4179fc;">View speaking opportunities</a>. Pitch: "Executive Presence for Project Leaders in the AI Era."</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Audience</div>
-          <p>800K+ PMI members globally. Project managers are mid-career professionals who need visibility skills — your sweet spot.</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <span class="card-tag tag-good">Good Fit</span>
-      <h3>ACMP Global 2026 — Change Management</h3>
-      <p class="card-meta">Association of Change Management Professionals &middot; Open call</p>
-      <p>ACMP's 2026 conference is accepting speakers. Change management professionals deal with exactly the workforce transitions you speak about — AI adoption, role changes, identity shifts.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p><a href="https://www.acmpglobal.org/page/2026-call-for-speakers" style="color:#4179fc;">Submit proposal</a>. Pitch angle: "The Identity Gap in Change Management — Why Reskilling Fails Without Presence."</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Bonus</div>
-          <p>Change management professionals hire external speakers for their client engagements. One talk here = multiple downstream gigs.</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <span class="card-tag tag-good">Good Fit</span>
-      <h3>HCCA Compliance Conferences 2026</h3>
-      <p class="card-meta">Health Care Compliance Association &middot; Open call for speakers</p>
-      <p>Healthcare compliance professionals need communication and presence skills for regulatory presentations, board communications, and stakeholder management.</p>
-      <div class="card-sub-grid">
-        <div class="card-sub">
-          <div class="card-sub-label">Action</div>
-          <p><a href="https://www.hcca-info.org/conferences/call-speakers" style="color:#4179fc;">View call for speakers</a>. New vertical test — healthcare is underserved for executive presence training.</p>
-        </div>
-        <div class="card-sub">
-          <div class="card-sub-label">Why Now</div>
-          <p>Healthcare facing massive AI disruption (Optum hiring signal above). Communication skills become critical during transformation.</p>
-        </div>
+Lorraine</div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <!-- PASSIVE REVENUE ROADMAP -->
+  <div class="card">
+    <div class="card-title">Passive Revenue Roadmap</div>
 
-<!-- PASSIVE REVENUE IDEAS -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#128176; Passive Revenue Roadmap</h2>
-    <p>Ranked by speed to launch. Start at the top, work down.</p>
-  </div>
-  <div class="asana-list">
-    <div class="asana-item" style="border-left: 4px solid #FCE036;">
-      <div>
-        <div class="asana-task" style="font-weight:700;">1. Low-Ticket Offer + Automated Funnel</div>
-        <div class="asana-project" style="color:#1a8a4a;font-weight:600;">START HERE &middot; 2-3 weeks to launch &middot; $5K-$20K/quarter</div>
-        <div class="asana-project" style="margin-top:4px;">Create a $47-$97 digital product (Visibility Playbook or Executive Presence Starter Kit). Automated email sequence upsells to Maven course. Mahea can build the funnel. Runs on autopilot once set up.</div>
+    <div class="roadmap-item">
+      <div class="roadmap-num">1</div>
+      <div class="roadmap-body">
+        <div class="roadmap-name">Low-ticket funnel</div>
+        <span class="roadmap-stage stage-now">Start Here</span>
+        <div class="roadmap-meta">2–3 weeks to launch &nbsp;·&nbsp; $5–20K/quarter</div>
       </div>
     </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task" style="font-weight:700;">2. On-Demand Workshop Library</div>
-        <div class="asana-project" style="color:#4179fc;font-weight:600;">DO NEXT &middot; 1-2 months &middot; $6K-$24K/year per client</div>
-        <div class="asana-project" style="margin-top:4px;">Record your top 5 workshop modules. Sell as subscription to HR/L&D teams at $500-$2K/month per company. You already have the content — just record and host. ILT captures 44% of training spend, but companies increasingly want on-demand options too.</div>
+    <div class="roadmap-item">
+      <div class="roadmap-num">2</div>
+      <div class="roadmap-body">
+        <div class="roadmap-name">On-demand workshop library</div>
+        <span class="roadmap-stage stage-next">Do Next</span>
+        <div class="roadmap-meta">1–2 months &nbsp;·&nbsp; $6–24K/year per client</div>
       </div>
     </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task" style="font-weight:700;">3. License Frameworks to Enterprise L&D Teams</div>
-        <div class="asana-project" style="color:#6c3fc0;font-weight:600;">AFTER COURSE REBRAND &middot; 2-3 months &middot; $5K-$15K per license</div>
-        <div class="asana-project" style="margin-top:4px;">Package your frameworks as facilitation kits internal L&D teams deliver themselves. Create once, sell many times. L&D market is $99B in 2026 → $263B by 2036. Needs course rebrand first so the product has enterprise appeal.</div>
+    <div class="roadmap-item">
+      <div class="roadmap-num">3</div>
+      <div class="roadmap-body">
+        <div class="roadmap-name">License frameworks</div>
+        <span class="roadmap-stage stage-later">After Rebrand</span>
+        <div class="roadmap-meta">2–3 months &nbsp;·&nbsp; $5–15K per license</div>
       </div>
     </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task" style="font-weight:700;">4. Certified Executive Presence Coach Program</div>
-        <div class="asana-project" style="color:#888;font-weight:600;">BIGGEST PAYOFF, MOST WORK &middot; 4-6 months &middot; $50K-$100K/year at scale</div>
-        <div class="asana-project" style="margin-top:4px;">License Value Narrative, Impact Excavation, and Lighthouse Moments as a certified program for other coaches/trainers. $2K-$5K per certified coach, cohort-based. Executive coaching market is $113B in 2026. Scales completely without your time — but needs strong brand equity and legal setup first.</div>
+    <div class="roadmap-item">
+      <div class="roadmap-num">4</div>
+      <div class="roadmap-body">
+        <div class="roadmap-name">Certification program</div>
+        <span class="roadmap-stage stage-big">Biggest Payoff</span>
+        <div class="roadmap-meta">4–6 months &nbsp;·&nbsp; $50–100K/year</div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
-
-<!-- RECENT HIRES — PEOPLE WITH BUDGET -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#128269; Recent Hires — People With Budget</h2>
-    <p>New leaders building programs. Reach out within 90 days of their start.</p>
-  </div>
-  <div class="quick-hits">
+  <!-- QUICK HITS -->
+  <div class="card">
+    <div class="card-title">Quick Hits</div>
     <div class="quick-hit">
-      <span class="qh-tag qh-hiring">CLO</span>
-      <p><strong><a href="https://www.linkedin.com/in/marianvalia/" style="color:#494b51;">Marian Valia</a></strong> — New Chief Learning Officer at ACRP (Association of Clinical Research Professionals). Healthcare + clinical research vertical. Building learning strategy from scratch.</p>
+      <div class="qh-headline">BCG published "AI Transformation Is a Workforce Transformation"</div>
+      <div class="qh-action">This validates your pitch. Share on LinkedIn with your take, and use in enterprise outreach.</div>
     </div>
     <div class="quick-hit">
-      <span class="qh-tag qh-hiring">L&D</span>
-      <p><strong><a href="https://www.linkedin.com/in/peter-fox-65124440/" style="color:#494b51;">Peter Fox</a></strong> — Head of Learning at Citi. Major bank, 240K+ employees. Financial services is an undertapped vertical for executive presence training.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-hiring">CRO</span>
-      <p><strong><a href="https://www.linkedin.com/posts/kyle-orme-6681551_i-am-excited-to-announce-my-new-role-as-chief-activity-7414379416941670400-4a6J" style="color:#494b51;">Kyle Orme</a></strong> — New CRO at Victory Supply. Just announced entering 2026. Building go-to-market team = training budget for client-facing presence.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-hiring">CX</span>
-      <p><strong><a href="https://www.linkedin.com/in/susanne-blindheim/" style="color:#494b51;">Susanne Blindheim</a></strong> — New VP Customer Success at CatalystOne Solutions. Customer-facing leader building CS team = communication and presence training opportunity.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-hiring">CX</span>
-      <p><strong>New SVP Global Customer Experience at Illumio</strong> — Cybersecurity company, recently appointed. Customer experience leader at a growth-stage security firm = budget for external training.</p>
+      <div class="qh-headline">WEF: 85% of employers plan to upskill — but 120M workers won't get reskilling</div>
+      <div class="qh-action">Use this stat in your enterprise one-pager today. It's a perfect opening hook.</div>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
-
-<!-- QUICK HITS -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#9889; Quick Hits</h2>
-    <p>Industry intelligence worth knowing today.</p>
-  </div>
-  <div class="quick-hits">
-    <div class="quick-hit">
-      <span class="qh-tag qh-market">Market</span>
-      <p><strong>L&D market: $99B in 2026 → $263B by 2036</strong> (10.3% CAGR). Executive coaching alone is $113B. The market you're selling into is massive and growing fast.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-ai">AI + Work</span>
-      <p><strong>170M new roles created by 2030, 92M eliminated</strong> (WEF). Net gain of 78M jobs — but all require reskilling. Workers with AI skills command 56% higher wages.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-ld">L&D</span>
-      <p><strong>63% of L&D leaders expect budget increases in 2026.</strong> They're investing in digital skills and leadership gaps. Your enterprise pitch timing is ideal.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-ai">AI + Work</span>
-      <p><strong>Josh Bersin: 2026 is the year of the "Superworker Organization."</strong> His latest research says companies need to redesign work around AI-augmented humans. Your Human Premium framework maps directly to this.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-course">Course</span>
-      <p><strong>Training is shifting from "programs" to "skill intelligence"</strong> — measuring adaptability, not just completion. Position your course as building measurable capability, not just attendance.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag qh-speaking">Speaking</span>
-      <p><strong>ILT still captures 44% of corporate training spend.</strong> Live virtual sessions remain the dominant format. Your virtual-only model is well-positioned for 2026.</p>
-    </div>
-  </div>
 </div>
 
 <footer>
-  Generated by your AI Chief of Staff &middot; <strong>RISE Learning Solutions</strong> &middot; April 2, 2026<br/>
-  <span style="margin-top: 6px; display: block;">Data sources: Asana, Web Search (BCG, WEF, LinkedIn Jobs, Indeed, PMI, Technavio, Future Market Insights)</span>
+  Generated by your AI Chief of Staff &nbsp;·&nbsp; RISE Learning Solutions &nbsp;·&nbsp; April 3, 2026
 </footer>
 
 </body>

@@ -3,283 +3,485 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Morning Briefing — Mahea</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Mahea's Morning Briefing — April 3, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #f7f9fa; color: #494b51; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
-    .banner { background: #2D5F5D; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; }
-    .header { background: linear-gradient(180deg, #fff 0%, #f0f7f6 100%); padding: 40px 48px 32px; border-bottom: 1px solid #dce8e6; position: relative; overflow: hidden; }
-    .header::after { content: ''; position: absolute; bottom: 0; right: 0; width: 500px; height: 120px; background: linear-gradient(215deg, transparent 33%, #e8f2f0 33%, #e8f2f0 34%, transparent 34%), linear-gradient(205deg, transparent 40%, #dceae7 40%, #dceae7 41%, transparent 41%), linear-gradient(225deg, transparent 28%, #d0e4e0 28%, #d0e4e0 29%, transparent 29%); opacity: 0.4; }
-    .header-meta { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; position: relative; z-index: 1; }
-    .badge { background: #e8f2f0; border: 1px solid #d0e4e0; border-radius: 20px; padding: 4px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2D5F5D; }
-    .badge.live { background: #2D5F5D; border-color: #2D5F5D; color: #fff; }
-    .header h1 { font-size: 44px; font-weight: 800; color: #1E4A48; line-height: 1.1; margin-bottom: 10px; letter-spacing: -1px; position: relative; z-index: 1; }
-    .header h1 span { display: block; font-size: 18px; font-weight: 500; color: #6B9E9A; letter-spacing: 0; margin-top: 4px; }
-    .header p { color: #6B9E9A; font-size: 14px; max-width: 560px; position: relative; z-index: 1; }
-    .decor { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: 0.12; z-index: 0; letter-spacing: 12px; }
-    .hero-box { margin: 32px 48px; background: linear-gradient(135deg, #2D5F5D 0%, #3D7B78 100%); border-radius: 16px; padding: 28px 32px; color: #fff; }
-    .hero-box h2 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
-    .hero-box p { font-size: 14px; opacity: 0.85; max-width: 660px; }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 48px 32px; }
-    .stat { background: #fff; border: 1px solid #dce8e6; border-radius: 12px; padding: 20px; text-align: center; }
-    .stat-value { font-size: 28px; font-weight: 800; color: #2D5F5D; display: block; line-height: 1; margin-bottom: 6px; }
-    .stat-value.red { color: #c0392b; }
-    .stat-value.yellow { color: #b8860b; }
-    .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #bbb; }
-    .what-first { margin: 0 48px 40px; background: #fff; border-radius: 12px; border: 1px solid #dce8e6; border-left: 4px solid #F0C75E; padding: 20px 24px; }
-    .what-first h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2D5F5D; margin-bottom: 6px; }
-    .what-first p { color: #494b51; font-size: 14px; }
-    .section { padding: 0 48px 44px; }
-    .section-header { margin-bottom: 18px; }
-    .section-header h2 { font-size: 18px; font-weight: 800; color: #1E4A48; margin-bottom: 4px; }
-    .section-header p { font-size: 13px; color: #bbb; }
-    .divider { height: 1px; background: #dce8e6; margin: 0 48px 44px; }
-    .asana-list { display: flex; flex-direction: column; gap: 8px; }
-    .asana-item { background: #fff; border: 1px solid #dce8e6; border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
-    .asana-task { font-size: 14px; color: #494b51; font-weight: 500; }
-    .asana-task a { color: #494b51; text-decoration: none; border-bottom: 1px dashed #ccc; }
-    .asana-project { font-size: 12px; color: #bbb; margin-top: 2px; }
-    .asana-project a { color: #2D5F5D; text-decoration: none; }
-    .asana-due { font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
-    .due-overdue { background: #fde8e8; color: #c0392b; }
-    .due-today { background: #e8f2f0; color: #2D5F5D; }
-    .due-new { background: #fff8e1; color: #b8860b; }
-    .overdue-section { background: #fff8f8; border: 1px solid #f0dada; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
-    .overdue-section h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #c0392b; margin-bottom: 12px; }
-    .quick-hits { background: #fff; border: 1px solid #dce8e6; border-radius: 12px; overflow: hidden; }
-    .quick-hit { padding: 14px 20px; display: flex; align-items: flex-start; gap: 14px; border-bottom: 1px solid #f0f5f4; }
-    .quick-hit:last-child { border-bottom: none; }
-    .quick-hit p { font-size: 13px; color: #666; }
-    .qh-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; background: #e8f2f0; color: #2D5F5D; }
-    footer { text-align: center; padding: 36px 48px; color: #ccc; font-size: 12px; border-top: 1px solid #dce8e6; background: #fff; }
-    footer strong { color: #2D5F5D; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f9fa;
+      --white: #ffffff;
+      --teal-dark: #1E4A48;
+      --teal: #2D5F5D;
+      --teal-light: #6B9E9A;
+      --teal-pale: #d6ecea;
+      --yellow: #F0C75E;
+      --yellow-pale: #fdf5dc;
+      --charcoal: #2d3748;
+      --gray: #718096;
+      --gray-light: #e2e8f0;
+      --red-pale: #fff5f5;
+      --red-border: #fed7d7;
+      --red-text: #c53030;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--charcoal);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* HEADER — mountain theme */
+    .site-header {
+      background: linear-gradient(180deg, var(--teal-dark) 0%, var(--teal) 100%);
+      color: white;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-content {
+      padding: 48px 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal-pale);
+      opacity: 0.75;
+      margin-bottom: 14px;
+    }
+    .site-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+    .header-date { font-size: 0.9rem; opacity: 0.8; font-weight: 400; margin-bottom: 4px; }
+    .header-tagline { font-size: 0.88rem; opacity: 0.7; font-style: italic; margin-bottom: 4px; }
+    .header-role { font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.65; margin-bottom: 28px; }
+
+    /* Mountain silhouette using CSS shapes */
+    .mountains {
+      width: 100%;
+      height: 80px;
+      position: relative;
+      margin-top: 8px;
+    }
+    .mountains svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--teal-dark);
+      border-bottom: 3px solid var(--yellow);
+    }
+    .stat-item {
+      padding: 18px 20px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value { font-size: 1.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; color: var(--teal-pale); opacity: 0.7; }
+
+    /* LAYOUT */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 24px 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 26px 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .card-title {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    /* FOCUS ZONE */
+    .focus-zone {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 26px 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      border-left: 5px solid var(--teal);
+    }
+    .focus-zone .card-title { color: var(--teal-dark); }
+    .focus-task {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .focus-task:last-child { border-bottom: none; }
+    .focus-num {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--teal);
+      color: white; font-size: 0.88rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .focus-body { flex: 1; }
+    .focus-name { font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px; }
+    .focus-links { display: flex; gap: 7px; flex-wrap: wrap; }
+    .task-link {
+      font-size: 0.75rem; color: var(--teal);
+      text-decoration: none; font-weight: 500;
+      padding: 2px 9px;
+      border: 1px solid var(--teal-pale);
+      border-radius: 5px;
+      transition: background 0.15s;
+    }
+    .task-link:hover { background: var(--teal-pale); }
+
+    /* OVERDUE SECTION */
+    .overdue-message {
+      font-size: 0.88rem;
+      color: var(--red-text);
+      font-weight: 500;
+      margin-bottom: 18px;
+      padding: 12px 16px;
+      background: var(--red-pale);
+      border: 1px solid var(--red-border);
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    .overdue-group {
+      margin-bottom: 20px;
+    }
+    .overdue-group:last-child { margin-bottom: 0; }
+    .overdue-group-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .overdue-task {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 10px;
+      margin-bottom: 4px;
+      background: var(--red-pale);
+      border: 1px solid var(--red-border);
+      border-radius: 6px;
+    }
+    .overdue-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #fc8181; flex-shrink: 0; margin-top: 7px;
+    }
+    .overdue-body { flex: 1; }
+    .overdue-name { font-size: 0.88rem; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+    .overdue-link {
+      font-size: 0.73rem; color: var(--red-text);
+      text-decoration: none; font-weight: 500;
+      padding: 1px 8px;
+      border: 1px solid var(--red-border);
+      border-radius: 4px;
+    }
+    .overdue-link:hover { background: var(--red-border); }
+
+    /* BACKLOG */
+    .backlog-task {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 0;
+    }
+    .backlog-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gray); flex-shrink: 0; margin-top: 7px;
+      opacity: 0.5;
+    }
+    .backlog-body { flex: 1; opacity: 0.7; }
+    .backlog-name { font-size: 0.9rem; font-weight: 500; color: var(--charcoal); margin-bottom: 3px; }
+    .backlog-note { font-size: 0.78rem; color: var(--gray); }
+
+    /* OWNERSHIP PROMPT */
+    .prompt-card {
+      background: var(--yellow-pale);
+      border: 2px solid var(--yellow);
+      border-radius: 12px;
+      padding: 24px 26px;
+    }
+    .prompt-card .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: #8a6900;
+      margin-bottom: 10px;
+    }
+    .prompt-card p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #5a4200;
+      line-height: 1.65;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      color: var(--gray);
+      border-top: 1px solid var(--gray-light);
+      background: white;
+    }
+    footer .tagline { margin-top: 4px; font-style: italic; color: var(--teal-light); }
+
+    @media (max-width: 640px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .site-header h1 { font-size: 1.9rem; }
+      .header-content { padding: 36px 20px 16px; }
+    }
   </style>
 </head>
 <body>
 
-<div class="banner">
-  <span>RISE Learning Solutions &middot; Mahea's Morning Briefing</span>
-  <span>Content &amp; Social</span>
-</div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-content">
+    <div class="header-eyebrow">RISE Learning Solutions &nbsp;·&nbsp; Morning Briefing</div>
+    <h1>Good morning, Mahea! &#x1F3D4;&#xFE0F;</h1>
+    <p class="header-date">Thursday, April 3, 2026</p>
+    <p class="header-tagline">Mountain-high goals today.</p>
+    <p class="header-role">Content &amp; Social</p>
+  </div>
+  <!-- Mountain silhouette -->
+  <div class="mountains">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,80 120,20 220,55 340,5 460,45 580,15 700,50 820,10 940,40 1060,18 1200,35 1200,80" fill="#f7f9fa"/>
+      <polygon points="0,80 80,40 160,65 260,25 380,58 480,30 600,55 720,22 840,50 960,30 1080,48 1200,28 1200,80" fill="rgba(247,249,250,0.5)"/>
+    </svg>
+  </div>
+</header>
 
-<div class="header">
-  <div class="decor">&#9968; &#127956; &#9968;</div>
-  <div class="header-meta">
-    <span class="badge live">Morning Briefing</span>
-    <span class="badge">Content &amp; Growth</span>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">20+</div>
+    <div class="stat-label">To Triage</div>
   </div>
-  <h1>Good morning, Mahea!<span>Wednesday, April 2 &middot; Mountain-high goals today.</span></h1>
-  <p>Your Asana tasks and how they connect to RISE's revenue goals.</p>
-</div>
-
-<div class="hero-box">
-  <h2>Your content is the engine that builds the audience.</h2>
-  <p>Newsletters, social calendar, sponsored posts, Instagram growth. Every post you publish builds the visibility that drives speaking leads, course signups, and brand deals.</p>
-</div>
-
-<div class="stats">
-  <div class="stat">
-    <span class="stat-value red">20+</span>
-    <span class="stat-label">Tasks to Triage</span>
+  <div class="stat-item">
+    <div class="stat-value">~1K</div>
+    <div class="stat-label">IG Now</div>
   </div>
-  <div class="stat">
-    <span class="stat-value yellow">~1K</span>
-    <span class="stat-label">IG Followers</span>
+  <div class="stat-item">
+    <div class="stat-value">100K</div>
+    <div class="stat-label">IG Goal</div>
   </div>
-  <div class="stat">
-    <span class="stat-value">100K</span>
-    <span class="stat-label">IG Goal (Jun 2026)</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">30K</span>
-    <span class="stat-label">Newsletter Goal</span>
-  </div>
-</div>
-
-<div class="what-first">
-  <h3>Start Here</h3>
-  <p>You have 20+ overdue tasks from September 2025 through March 2026. Before starting new work, spend 30 minutes triaging: mark anything done as complete, flag anything obsolete for deletion, and set new due dates on everything else. Then focus on the newsletter and course tasks due this week.</p>
-</div>
-
-<!-- OVERDUE TRIAGE -->
-<div class="section">
-  <div class="section-header">
-    <h2>&#9888; Overdue Tasks — Triage These First</h2>
-    <p>Mark done, delete, or set new dates.</p>
-  </div>
-  <div class="overdue-section">
-    <h3>September 2025 — Are these done?</h3>
-    <div class="asana-list">
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210774220371725/task/1211345876120877">Check hot-warm-leads channel</a></div>
-          <div class="asana-project">Leads Management</div>
-        </div>
-        <span class="asana-due due-overdue">Sep 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211332149571880">Check for book comms + add to Positive Feedback Slack</a></div>
-          <div class="asana-project">Social Media</div>
-        </div>
-        <span class="asana-due due-overdue">Sep 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211332099229865">Check "reminders" in Slack and close loops</a></div>
-          <div class="asana-project">Follow Ups</div>
-        </div>
-        <span class="asana-due due-overdue">Sep 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211296562172875">Submit email drafts for review</a></div>
-          <div class="asana-project">Follow Ups</div>
-        </div>
-        <span class="asana-due due-overdue">Sep 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211626515746796">Submit post to LI News</a></div>
-          <div class="asana-project">Social Media</div>
-        </div>
-        <span class="asana-due due-overdue">Sep 2025</span>
-      </div>
-    </div>
-  </div>
-  <div class="overdue-section">
-    <h3>Substantive Tasks — Need New Deadlines</h3>
-    <div class="asana-list">
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1211603583417124">Update website (legal compliance + cookie consent)</a></div>
-          <div class="asana-project">Website &middot; Legal requirement</div>
-        </div>
-        <span class="asana-due due-overdue">Oct 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1212000384860159">Unforgettable Presence Trademark</a></div>
-          <div class="asana-project">Website &middot; IP protection</div>
-        </div>
-        <span class="asana-due due-overdue">Dec 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1212296587319135">OBA Contract + Invoice Automations</a></div>
-          <div class="asana-project">Ops &middot; Automation</div>
-        </div>
-        <span class="asana-due due-overdue">Dec 2025</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1212482411641165">Switch YouTube ownership to lorraineklee.com</a></div>
-          <div class="asana-project">Platform</div>
-        </div>
-        <span class="asana-due due-overdue">Feb 2026</span>
-      </div>
-      <div class="asana-item">
-        <div>
-          <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1211774747995446">Add Lorraine's Podcasts to Spotify & YT</a></div>
-          <div class="asana-project">Content distribution</div>
-        </div>
-        <span class="asana-due due-overdue">Feb 2026</span>
-      </div>
-    </div>
+  <div class="stat-item">
+    <div class="stat-value">30K</div>
+    <div class="stat-label">Newsletter Goal</div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="container">
 
-<!-- DUE THIS WEEK -->
-<div class="section">
-  <div class="section-header">
-    <h2>Due This Week</h2>
-    <p>After triaging overdue tasks, focus here.</p>
-  </div>
-  <div class="asana-list">
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154731">Review CB newsletter for 3/25</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.sosqqgi2spue">Open draft</a> &middot; Newsletter</div>
-      </div>
-      <span class="asana-due due-overdue">Overdue</span>
-    </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154738">Review 4/1 CB Roundup</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.4jelj55kwfr2">Open draft</a> &middot; Newsletter</div>
-      </div>
-      <span class="asana-due due-overdue">Overdue</span>
-    </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1212694295214738/task/1213504295992301">Workbook Notes</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1b8qbftJRnP25WimX9w8fLaVlTtPm7lUC4iMWn4bz5MQ/edit">Open doc</a> &middot; Masterclass</div>
-      </div>
-      <span class="asana-due due-overdue">Mar 5</span>
-    </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213703411153499">Create slides for Live sessions 2 & 3</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1eU16nHol1Y3uMKt8yut1wYo4UC0Atbp-Zz3tPdIURuY/edit">Script reference</a> &middot; Course content</div>
-      </div>
-      <span class="asana-due due-overdue">Mar 23</span>
-    </div>
-  </div>
-</div>
+  <!-- FOCUS ZONE -->
+  <div class="focus-zone">
+    <div class="card-title">Focus Zone — Your Top 2 Today</div>
 
-<div class="divider"></div>
-
-<!-- NEW TASK -->
-<div class="section">
-  <div class="section-header">
-    <h2>New This Week</h2>
-    <p>Just assigned to you.</p>
-  </div>
-  <div class="asana-list">
-    <div class="asana-item" style="border-left: 4px solid #F0C75E;">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213915766502619">Weekly LinkedIn monitoring: new L&D, CX, CRO hires</a></div>
-        <div class="asana-project">Business Development &middot; 20 min/week &middot; Recurring</div>
+    <div class="focus-task">
+      <div class="focus-num">1</div>
+      <div class="focus-body">
+        <div class="focus-name">Review CB newsletter for 3/25</div>
+        <div class="focus-links">
+          <a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.sosqqgi2spue" class="task-link" target="_blank">Google Doc</a>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154731" class="task-link" target="_blank">Asana</a>
+        </div>
       </div>
-      <span class="asana-due due-new">New</span>
     </div>
-  </div>
-</div>
 
-<div class="divider"></div>
+    <div class="focus-task">
+      <div class="focus-num">2</div>
+      <div class="focus-body">
+        <div class="focus-name">Review 4/1 CB Roundup</div>
+        <div class="focus-links">
+          <a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.4jelj55kwfr2" class="task-link" target="_blank">Google Doc</a>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154738" class="task-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- REVENUE CONTEXT -->
-<div class="section">
-  <div class="section-header">
-    <h2>How Your Work Connects to Revenue</h2>
-    <p>Every post, newsletter, and social update feeds these goals.</p>
+  <!-- OVERDUE TASKS -->
+  <div class="card">
+    <div class="card-title">Overdue Tasks — Triage These</div>
+    <div class="overdue-message">You have 20+ overdue tasks. Spend 30 minutes today: mark done, delete, or set new dates. Don't carry these forward. This is how you take ownership of your workload.</div>
+
+    <!-- September 2025 -->
+    <div class="overdue-group">
+      <div class="overdue-group-label">September 2025</div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Check hot-warm-leads channel</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210774220371725/task/1211345876120877" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Check for book comms + Positive Feedback Slack</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211332149571880" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Check reminders in Slack</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211332099229865" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Submit email drafts for review</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211296562172875" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Submit post to LI News</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211626515746796" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oct–Dec 2025 -->
+    <div class="overdue-group">
+      <div class="overdue-group-label">October–December 2025</div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Update website (legal compliance)</div>
+          <a href="https://app.asana.com/1/1210774242380505/task/1211603583417124" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Unforgettable Presence Trademark</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1212000384860159" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">OBA Contract + Invoice Automations</div>
+          <a href="https://app.asana.com/1/1210774242380505/task/1212296587319135" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Cancel Typeform account</div>
+          <a href="https://app.asana.com/1/1210774242380505/task/1212157745157505" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jan–Mar 2026 -->
+    <div class="overdue-group">
+      <div class="overdue-group-label">January–March 2026</div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Switch YouTube ownership</div>
+          <a href="https://app.asana.com/1/1210774242380505/task/1212482411641165" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Add Podcasts to Spotify &amp; YT</div>
+          <a href="https://app.asana.com/1/1210774242380505/task/1211774747995446" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Review slides for Erie</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1210802400489085/task/1213676631235984" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+
+      <div class="overdue-task">
+        <div class="overdue-dot"></div>
+        <div class="overdue-body">
+          <div class="overdue-name">Workbook Notes</div>
+          <a href="https://app.asana.com/1/1210774242380505/project/1212694295214738/task/1213504295992301" class="overdue-link" target="_blank">Asana</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="quick-hits">
-    <div class="quick-hit">
-      <span class="qh-tag">Content</span>
-      <p><strong>LinkedIn (332K followers)</strong> — Your social calendar and post scheduling builds the audience that drives speaking leads and course signups. 2 TOFU + 1-2 MOFU + 1 BOFU posts/week.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Instagram</span>
-      <p><strong>~1K to 100K by June 2026</strong> — Instagram growth is your signature project. Every reel, story, and post you coordinate with Zen moves this needle.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Newsletter</span>
-      <p><strong>30K subscriber goal</strong> — The newsletter drives course funnel signups and keeps Lorraine top-of-mind. Your CB reviews keep quality high.</p>
-    </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Brand</span>
-      <p><strong>$170K brand deal goal</strong> — Sponsored posts you coordinate are a direct revenue stream. Invoicing and deliverable tracking keep the money flowing.</p>
+
+  <!-- BACKLOG -->
+  <div class="card">
+    <div class="card-title">Backlog &mdash; Not Urgent</div>
+
+    <div class="backlog-task">
+      <div class="backlog-dot"></div>
+      <div class="backlog-body">
+        <div class="backlog-name">Create slides for Live sessions 2 &amp; 3</div>
+        <div class="backlog-note">Course is not active right now — deprioritize. &nbsp;<a href="https://app.asana.com/1/1210774242380505/task/1213703411153499" style="color: #718096; font-size: 0.73rem;" target="_blank">Asana</a></div>
+      </div>
     </div>
   </div>
+
+  <!-- OWNERSHIP PROMPT -->
+  <div class="prompt-card">
+    <div class="eyebrow">Ownership Prompt of the Day</div>
+    <p>Are open rates on the free email course staying consistent? If you don't know, check today and flag to Meagan.</p>
+  </div>
+
 </div>
 
 <footer>
-  Built with care by your AI Chief of Staff &middot; <strong>RISE Learning Solutions</strong> &middot; April 2, 2026<br/>
-  <span style="margin-top: 6px; display: block;">&#9968; Keep climbing, Mahea. The view from the top is worth it.</span>
+  <p>RISE Learning Solutions &nbsp;·&nbsp; April 3, 2026</p>
+  <p class="tagline">Keep climbing, Mahea. The view from the top is worth it. &#x26F0;&#xFE0F;</p>
 </footer>
 
 </body>

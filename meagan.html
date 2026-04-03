@@ -3,159 +3,449 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Morning Briefing — Meagan Babanao</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Meagan's Morning Briefing — April 3, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #1a1a18; color: #c8c0b4; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
-    .banner { background: #0f0f0e; color: #8a8072; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2a2825; }
-    .header { background: #1a1a18; padding: 60px 48px 40px; border-bottom: 1px solid #2a2825; }
-    .header-meta { display: flex; gap: 10px; margin-bottom: 24px; }
-    .badge { border: 1px solid #3a3632; border-radius: 0; padding: 4px 16px; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8072; }
-    .badge.live { background: #8a8072; color: #1a1a18; }
-    .header h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 56px; font-weight: 400; color: #e8e0d4; line-height: 1.05; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .header h1 span { display: block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #6a6258; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 12px; }
-    .header p { color: #6a6258; font-size: 14px; max-width: 540px; }
-    .hero-box { margin: 40px 48px; background: #22211e; border: 1px solid #2a2825; padding: 32px 36px; }
-    .hero-box h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: #e8e0d4; margin-bottom: 10px; }
-    .hero-box p { font-size: 14px; color: #8a8072; max-width: 660px; }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #2a2825; margin: 0 48px 40px; border: 1px solid #2a2825; }
-    .stat { background: #1a1a18; padding: 24px 20px; text-align: center; }
-    .stat-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 400; color: #e8e0d4; display: block; line-height: 1; margin-bottom: 8px; }
-    .stat-value.accent { color: #c9a96e; }
-    .stat-value.red { color: #a05a5a; }
-    .stat-label { font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5a5448; }
-    .what-first { margin: 0 48px 48px; background: #22211e; border: 1px solid #2a2825; border-left: 3px solid #c9a96e; padding: 24px 28px; }
-    .what-first h3 { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a96e; margin-bottom: 8px; }
-    .what-first p { color: #c8c0b4; font-size: 14px; }
-    .section { padding: 0 48px 48px; }
-    .section-header { margin-bottom: 20px; }
-    .section-header h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400; color: #e8e0d4; margin-bottom: 4px; }
-    .section-header p { font-size: 12px; color: #5a5448; letter-spacing: 0.04em; }
-    .divider { height: 1px; background: #2a2825; margin: 0 48px 48px; }
-    .asana-list { display: flex; flex-direction: column; gap: 6px; }
-    .asana-item { background: #22211e; border: 1px solid #2a2825; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
-    .asana-item:hover { background: #282723; }
-    .asana-task { font-size: 14px; color: #c8c0b4; font-weight: 500; }
-    .asana-task a { color: #c8c0b4; text-decoration: none; border-bottom: 1px solid #3a3632; }
-    .asana-task a:hover { color: #e8e0d4; border-color: #c9a96e; }
-    .asana-project { font-size: 11px; color: #5a5448; margin-top: 3px; letter-spacing: 0.02em; }
-    .asana-project a { color: #8a8072; text-decoration: none; }
-    .asana-project a:hover { color: #c9a96e; }
-    .asana-due { font-size: 10px; font-weight: 600; padding: 4px 14px; white-space: nowrap; letter-spacing: 0.06em; text-transform: uppercase; }
-    .due-overdue { background: #2a2020; color: #a05a5a; }
-    .due-today { background: #2a2820; color: #c9a96e; }
-    .due-done { background: #202a22; color: #5a8a5a; }
-    .quick-hits { border: 1px solid #2a2825; overflow: hidden; }
-    .quick-hit { padding: 16px 24px; display: flex; align-items: flex-start; gap: 16px; border-bottom: 1px solid #2a2825; background: #22211e; }
-    .quick-hit:last-child { border-bottom: none; }
-    .quick-hit:hover { background: #282723; }
-    .quick-hit p { font-size: 13px; color: #8a8072; }
-    .qh-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; border: 1px solid #3a3632; color: #6a6258; }
-    footer { text-align: center; padding: 48px; color: #3a3632; font-size: 11px; letter-spacing: 0.06em; border-top: 1px solid #2a2825; background: #0f0f0e; }
-    footer strong { color: #8a8072; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1a1a18;
+      --surface: #212120;
+      --surface2: #272624;
+      --border: #2a2825;
+      --border2: #333230;
+      --cream: #c8c0b4;
+      --cream-light: #e8e0d4;
+      --gold: #c9a96e;
+      --gold-light: #d9bc8a;
+      --gold-dim: rgba(201,169,110,0.15);
+      --text-dim: #8a8278;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
+
+    /* HEADER */
+    .site-header {
+      padding: 56px 48px 48px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 340px; height: 340px;
+      background: radial-gradient(circle at center, rgba(201,169,110,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+    .site-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.4rem;
+      font-weight: 300;
+      color: var(--cream-light);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .header-date {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .header-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-item {
+      padding: 22px 24px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--cream-light);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 44px 28px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 30px 32px;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--cream-light);
+      letter-spacing: 0.3px;
+      margin-bottom: 6px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-subtitle {
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+      padding-top: 14px;
+    }
+
+    /* START HERE */
+    .start-here {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 24px 28px;
+    }
+    .start-here .card-title { border-bottom: none; padding-bottom: 0; margin-bottom: 12px; }
+    .start-here p {
+      font-size: 0.93rem;
+      color: var(--cream);
+      line-height: 1.7;
+    }
+
+    /* TASK LIST */
+    .task-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--cream-light);
+      margin-bottom: 6px;
+    }
+    .task-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 7px; }
+    .due-tag {
+      font-size: 0.7rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 2px;
+      background: rgba(201,169,110,0.12);
+      color: var(--gold);
+      border: 1px solid rgba(201,169,110,0.25);
+    }
+    .task-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .task-link {
+      font-size: 0.75rem; color: var(--gold);
+      text-decoration: none; font-weight: 400;
+      padding: 2px 10px;
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .task-link:hover {
+      background: rgba(201,169,110,0.1);
+      border-color: var(--gold);
+    }
+
+    /* STYLED CARD — PROMPT / TIP */
+    .highlight-card {
+      background: var(--surface2);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 24px 28px;
+    }
+    .highlight-card .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      opacity: 0.7;
+    }
+    .highlight-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.28rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--cream-light);
+      line-height: 1.6;
+    }
+    .tip-card {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 22px 26px;
+    }
+    .tip-card .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+    .tip-card p {
+      font-size: 0.88rem;
+      color: var(--cream);
+      line-height: 1.65;
+    }
+    .tip-card code {
+      font-family: 'Inter', monospace;
+      font-size: 0.83rem;
+      background: rgba(201,169,110,0.1);
+      border: 1px solid rgba(201,169,110,0.2);
+      color: var(--gold-light);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* MONTHLY GOALS */
+    .goals-note {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    .goal-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .goal-row:last-of-type { border-bottom: none; }
+    .goal-name {
+      font-size: 0.88rem;
+      color: var(--cream);
+      font-weight: 500;
+      width: 200px;
+      flex-shrink: 0;
+    }
+    .goal-status {
+      flex: 1;
+      height: 1px;
+      background: var(--border2);
+      position: relative;
+    }
+    .goal-status::after {
+      content: '___________';
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+    .goal-indicator {
+      display: flex;
+      gap: 6px;
+    }
+    .dot-g { width: 10px; height: 10px; border-radius: 50%; background: #4a7c59; opacity: 0.4; }
+    .dot-y { width: 10px; height: 10px; border-radius: 50%; background: #b8960c; opacity: 0.4; }
+    .dot-r { width: 10px; height: 10px; border-radius: 50%; background: #8b3a3a; opacity: 0.4; }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: var(--bg);
+    }
+    footer p { font-size: 0.78rem; color: var(--text-dim); }
+    footer .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 640px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .site-header { padding: 40px 24px 36px; }
+      .site-header h1 { font-size: 2.4rem; }
+    }
   </style>
 </head>
 <body>
 
-<div class="banner">
-  <span>Rise Learning Solutions</span>
-  <span>Meagan Babanao &middot; Operations Lead</span>
-</div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-eyebrow">RISE Learning Solutions &nbsp;·&nbsp; Morning Briefing</div>
+  <h1>Good morning, Meagan.</h1>
+  <p class="header-date">Thursday, April 3, 2026</p>
+  <p class="header-role">Operations &amp; Strategy Lead</p>
+</header>
 
-<div class="header">
-  <div class="header-meta">
-    <span class="badge live">Morning Briefing</span>
-    <span class="badge">Operations &amp; Growth</span>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">0</div>
+    <div class="stat-label">Due Today</div>
   </div>
-  <h1>Good morning, Meagan.<span>Wednesday, April 2, 2026</span></h1>
-  <p>Your Asana tasks and how they connect to RISE's revenue goals.</p>
-</div>
-
-<div class="hero-box">
-  <h2>Proposals. Leads. Follow-ups. The work that builds a million-dollar business.</h2>
-  <p>Everything you do — qualifying leads, drafting proposals, managing the speaking pipeline, coordinating course marketing — feeds directly into RISE's $1M goal.</p>
-</div>
-
-<div class="stats">
-  <div class="stat">
-    <span class="stat-value">1</span>
-    <span class="stat-label">Due Today</span>
+  <div class="stat-item">
+    <div class="stat-value">1</div>
+    <div class="stat-label">Needs Review</div>
   </div>
-  <div class="stat">
-    <span class="stat-value red">1</span>
-    <span class="stat-label">Needs Review</span>
+  <div class="stat-item">
+    <div class="stat-value">$600K</div>
+    <div class="stat-label">Target</div>
   </div>
-  <div class="stat">
-    <span class="stat-value accent">$500K</span>
-    <span class="stat-label">2026 Target</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value accent">$1M</span>
-    <span class="stat-label">Stretch Goal</span>
+  <div class="stat-item">
+    <div class="stat-value">$700K</div>
+    <div class="stat-label">Stretch</div>
   </div>
 </div>
 
-<div class="what-first">
-  <h3>Start Here</h3>
-  <p>Review the 5-day email course performance — Lorraine wants to know if open rates are holding and if the copy needs freshening. This directly impacts the course funnel, RISE's #1 growth priority.</p>
-</div>
+<div class="container">
 
-<!-- YOUR ASANA TASKS -->
-<div class="section">
-  <div class="section-header">
-    <h2>Your Tasks</h2>
-    <p>From Asana. Revenue-generating work first.</p>
+  <!-- START HERE -->
+  <div class="start-here">
+    <div class="card-title">Start Here</div>
+    <p>The 5-day email course review (due Apr 6) is the top priority — it directly feeds the course funnel, which is RISE's #1 growth priority. Check open rates, click-through, and whether the copy needs freshening.</p>
   </div>
-  <div class="asana-list">
-    <div class="asana-item" style="border-left: 3px solid #c9a96e;">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213835090437972">Review 5-day email course performance</a></div>
-        <div class="asana-project"><a href="https://lorraineklee.com/from-invisible-to-influential/">View email course</a> &middot; Course Funnel &middot; #1 Growth Priority</div>
+
+  <!-- YOUR PRIORITIES -->
+  <div class="card">
+    <div class="card-title">Your Priorities</div>
+    <span class="card-subtitle">Asana Tasks</span>
+
+    <div class="task-item">
+      <div class="task-name">Review 5-day email course</div>
+      <div class="task-meta">
+        <span class="due-tag">Due Apr 6</span>
       </div>
-      <span class="asana-due due-today">Due Today</span>
-    </div>
-    <div class="asana-item">
-      <div>
-        <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/project/1210975840784813/task/1213903061873104">Review LI repost for 4/3</a></div>
-        <div class="asana-project"><a href="https://docs.google.com/document/d/1uw1h6x5Ie_TZIUvicj0NTCSO-ugy5hjE90kuI16BeN8/edit">Open draft</a> &middot; Social Media</div>
+      <div class="task-links">
+        <a href="https://docs.google.com/document/d/1WSgaCZyoQiTMx10ZXiN9CeSWA7vfi94IAfNyheI7BJo/edit" class="task-link" target="_blank">Edited Copy</a>
+        <a href="https://lorraineklee.com/from-invisible-to-influential/" class="task-link" target="_blank">Course Page</a>
+        <a href="https://app.asana.com/1/1210774242380505/task/1213835090437972" class="task-link" target="_blank">Asana</a>
       </div>
-      <span class="asana-due due-done">Completed</span>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <!-- OWNERSHIP PROMPT -->
+  <div class="highlight-card">
+    <div class="eyebrow">Ownership Prompt of the Day</div>
+    <blockquote>"Task thinking: 'Things are falling through the cracks.' Owner thinking: 'Here's what I'm building so this stops happening.' Which mode are you in today?"</blockquote>
+  </div>
 
-<!-- REVENUE CONTEXT -->
-<div class="section">
-  <div class="section-header">
-    <h2>How Your Work Connects to Revenue</h2>
-    <p>Every task feeds one of these goals.</p>
+  <!-- CC & N8N TIP -->
+  <div class="tip-card">
+    <div class="eyebrow">CC &amp; n8n Tip of the Day</div>
+    <p>Try asking Claude Code: <code>"Draft a follow-up email for [lead name] who inquired about speaking 2 weeks ago but hasn't responded."</code></p>
   </div>
-  <div class="quick-hits">
-    <div class="quick-hit">
-      <span class="qh-tag">Courses</span>
-      <p><strong>$250K goal</strong> — Your email course review today directly impacts the funnel that feeds Maven signups. 7 cohorts planned in 2026, scaling to $1K-$2K per seat.</p>
+
+  <!-- MONTHLY GOALS STATUS -->
+  <div class="card">
+    <div class="card-title">Monthly Goals Status</div>
+    <span class="card-subtitle">Fill In Your Status Below</span>
+
+    <div class="goal-row">
+      <div class="goal-name">Speaking Pipeline</div>
+      <div class="goal-indicator">
+        <div class="dot-g"></div>
+        <div class="dot-y"></div>
+        <div class="dot-r"></div>
+      </div>
+      <div class="goal-status"></div>
     </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Speaking</span>
-      <p><strong>$200K goal</strong> — Proposals you draft and leads you qualify grow the speaking pipeline. Target: ~20 gigs at $5K-$10K each.</p>
+    <div class="goal-row">
+      <div class="goal-name">Brand Deals</div>
+      <div class="goal-indicator">
+        <div class="dot-g"></div>
+        <div class="dot-y"></div>
+        <div class="dot-r"></div>
+      </div>
+      <div class="goal-status"></div>
     </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Enterprise</span>
-      <p><strong>New stream</strong> — Lorraine is building enterprise multi-session programs at $20K-$40K per client. You'll be coordinating proposals and follow-ups as this ramps.</p>
+    <div class="goal-row">
+      <div class="goal-name">Course Strategy</div>
+      <div class="goal-indicator">
+        <div class="dot-g"></div>
+        <div class="dot-y"></div>
+        <div class="dot-r"></div>
+      </div>
+      <div class="goal-status"></div>
     </div>
-    <div class="quick-hit">
-      <span class="qh-tag">Brand</span>
-      <p><strong>$170K goal</strong> — Brand deals managed by Aneesh. Your role: qualify inbound, coordinate deliverables, ensure timelines are met.</p>
+    <div class="goal-row">
+      <div class="goal-name">Newsletter Growth</div>
+      <div class="goal-indicator">
+        <div class="dot-g"></div>
+        <div class="dot-y"></div>
+        <div class="dot-r"></div>
+      </div>
+      <div class="goal-status"></div>
     </div>
+    <div class="goal-row">
+      <div class="goal-name">Instagram Growth</div>
+      <div class="goal-indicator">
+        <div class="dot-g"></div>
+        <div class="dot-y"></div>
+        <div class="dot-r"></div>
+      </div>
+      <div class="goal-status"></div>
+    </div>
+
+    <p class="goals-note">You prepare a monthly goals memo for Lorraine with these statuses and your recommendations. Fill in green / yellow / red and add notes before sending.</p>
   </div>
+
 </div>
 
 <footer>
-  <strong>Rise Learning Solutions</strong> &middot; Built for Meagan &middot; April 2, 2026<br/>
-  <span style="margin-top: 8px; display: block; color: #2a2825;">Designed with intention. Built with purpose.</span>
+  <p>RISE Learning Solutions &nbsp;·&nbsp; Built for Meagan &nbsp;·&nbsp; April 3, 2026</p>
+  <p class="tagline">Designed with intention. Built with purpose.</p>
 </footer>
 
 </body>
