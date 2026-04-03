@@ -8,55 +8,33 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #f7f9fa; color: #494b51; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
-
-    /* MAHEA'S THEME — mountain blues + greens, alpine aesthetic */
     .banner { background: #2D5F5D; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; }
-    .banner a { color: #A8D8D0; text-decoration: none; }
-
     .header { background: linear-gradient(180deg, #fff 0%, #f0f7f6 100%); padding: 40px 48px 32px; border-bottom: 1px solid #dce8e6; position: relative; overflow: hidden; }
-    /* Mountain silhouette */
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 500px; height: 120px;
-      background:
-        linear-gradient(215deg, transparent 33%, #e8f2f0 33%, #e8f2f0 34%, transparent 34%),
-        linear-gradient(205deg, transparent 40%, #dceae7 40%, #dceae7 41%, transparent 41%),
-        linear-gradient(225deg, transparent 28%, #d0e4e0 28%, #d0e4e0 29%, transparent 29%);
-      opacity: 0.4;
-    }
+    .header::after { content: ''; position: absolute; bottom: 0; right: 0; width: 500px; height: 120px; background: linear-gradient(215deg, transparent 33%, #e8f2f0 33%, #e8f2f0 34%, transparent 34%), linear-gradient(205deg, transparent 40%, #dceae7 40%, #dceae7 41%, transparent 41%), linear-gradient(225deg, transparent 28%, #d0e4e0 28%, #d0e4e0 29%, transparent 29%); opacity: 0.4; }
     .header-meta { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; position: relative; z-index: 1; }
     .badge { background: #e8f2f0; border: 1px solid #d0e4e0; border-radius: 20px; padding: 4px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #2D5F5D; }
     .badge.live { background: #2D5F5D; border-color: #2D5F5D; color: #fff; }
     .header h1 { font-size: 44px; font-weight: 800; color: #1E4A48; line-height: 1.1; margin-bottom: 10px; letter-spacing: -1px; position: relative; z-index: 1; }
     .header h1 span { display: block; font-size: 18px; font-weight: 500; color: #6B9E9A; letter-spacing: 0; margin-top: 4px; }
     .header p { color: #6B9E9A; font-size: 14px; max-width: 560px; position: relative; z-index: 1; }
-
     .decor { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); font-size: 64px; opacity: 0.12; z-index: 0; letter-spacing: 12px; }
-
     .hero-box { margin: 32px 48px; background: linear-gradient(135deg, #2D5F5D 0%, #3D7B78 100%); border-radius: 16px; padding: 28px 32px; color: #fff; }
     .hero-box h2 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
     .hero-box p { font-size: 14px; opacity: 0.85; max-width: 660px; }
-
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 48px 32px; }
     .stat { background: #fff; border: 1px solid #dce8e6; border-radius: 12px; padding: 20px; text-align: center; }
     .stat-value { font-size: 28px; font-weight: 800; color: #2D5F5D; display: block; line-height: 1; margin-bottom: 6px; }
     .stat-value.red { color: #c0392b; }
     .stat-value.yellow { color: #b8860b; }
     .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #bbb; }
-
-    .what-first { margin: 0 48px 40px; background: #fff; border-radius: 12px; border: 1px solid #dce8e6; border-left: 4px solid #F0C75E; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; }
-    .what-first-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .what-first { margin: 0 48px 40px; background: #fff; border-radius: 12px; border: 1px solid #dce8e6; border-left: 4px solid #F0C75E; padding: 20px 24px; }
     .what-first h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2D5F5D; margin-bottom: 6px; }
     .what-first p { color: #494b51; font-size: 14px; }
-
     .section { padding: 0 48px 44px; }
-    .section-header { margin-bottom: 18px; display: flex; align-items: baseline; gap: 12px; }
-    .section-header h2 { font-size: 18px; font-weight: 800; color: #1E4A48; }
+    .section-header { margin-bottom: 18px; }
+    .section-header h2 { font-size: 18px; font-weight: 800; color: #1E4A48; margin-bottom: 4px; }
     .section-header p { font-size: 13px; color: #bbb; }
     .divider { height: 1px; background: #dce8e6; margin: 0 48px 44px; }
-
     .asana-list { display: flex; flex-direction: column; gap: 8px; }
     .asana-item { background: #fff; border: 1px solid #dce8e6; border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
     .asana-task { font-size: 14px; color: #494b51; font-weight: 500; }
@@ -66,25 +44,14 @@
     .asana-due { font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
     .due-overdue { background: #fde8e8; color: #c0392b; }
     .due-today { background: #e8f2f0; color: #2D5F5D; }
-    .due-upcoming { background: #f9f9f9; color: #888; }
-
+    .due-new { background: #fff8e1; color: #b8860b; }
     .overdue-section { background: #fff8f8; border: 1px solid #f0dada; border-radius: 12px; padding: 20px 24px; margin-bottom: 20px; }
     .overdue-section h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #c0392b; margin-bottom: 12px; }
-
-    .goal-card { background: #fff; border: 1px solid #dce8e6; border-radius: 14px; padding: 22px; margin-bottom: 16px; }
-    .goal-card h3 { font-size: 15px; font-weight: 700; color: #1E4A48; margin-bottom: 4px; }
-    .goal-card .card-meta { font-size: 12px; color: #6B9E9A; margin-bottom: 10px; }
-    .goal-card p { font-size: 13px; color: #777; }
-    .goal-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; margin-bottom: 12px; background: #e8f2f0; color: #2D5F5D; }
-
-    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
     .quick-hits { background: #fff; border: 1px solid #dce8e6; border-radius: 12px; overflow: hidden; }
     .quick-hit { padding: 14px 20px; display: flex; align-items: flex-start; gap: 14px; border-bottom: 1px solid #f0f5f4; }
     .quick-hit:last-child { border-bottom: none; }
     .quick-hit p { font-size: 13px; color: #666; }
     .qh-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; background: #e8f2f0; color: #2D5F5D; }
-
     footer { text-align: center; padding: 36px 48px; color: #ccc; font-size: 12px; border-top: 1px solid #dce8e6; background: #fff; }
     footer strong { color: #2D5F5D; }
   </style>
@@ -103,12 +70,12 @@
     <span class="badge">Content &amp; Growth</span>
   </div>
   <h1>Good morning, Mahea!<span>Wednesday, April 2 &middot; Mountain-high goals today.</span></h1>
-  <p>Your tasks, content calendar, and what Lorraine needs from you — all tied to RISE's revenue goals.</p>
+  <p>Your Asana tasks and how they connect to RISE's revenue goals.</p>
 </div>
 
 <div class="hero-box">
   <h2>Your content is the engine that builds the audience.</h2>
-  <p>Newsletters, social calendar, sponsored posts, Instagram growth. Every post you publish builds the visibility that drives speaking leads, course signups, and brand deals. Here's what needs your attention.</p>
+  <p>Newsletters, social calendar, sponsored posts, Instagram growth. Every post you publish builds the visibility that drives speaking leads, course signups, and brand deals.</p>
 </div>
 
 <div class="stats">
@@ -131,21 +98,18 @@
 </div>
 
 <div class="what-first">
-  <div class="what-first-icon">&#9889;</div>
-  <div>
-    <h3>What to Do First</h3>
-    <p>You have 20+ overdue tasks — many from September-December 2025. Before starting new work today, spend 30 minutes triaging: mark anything that's already done as complete, flag anything obsolete for deletion, and set new due dates on everything else. Then focus on the newsletter and social tasks due this week.</p>
-  </div>
+  <h3>Start Here</h3>
+  <p>You have 20+ overdue tasks from September 2025 through March 2026. Before starting new work, spend 30 minutes triaging: mark anything done as complete, flag anything obsolete for deletion, and set new due dates on everything else. Then focus on the newsletter and course tasks due this week.</p>
 </div>
 
 <!-- OVERDUE TRIAGE -->
 <div class="section">
   <div class="section-header">
     <h2>&#9888; Overdue Tasks — Triage These First</h2>
-    <p>Mark done, delete, or set new dates. Don't carry these forward.</p>
+    <p>Mark done, delete, or set new dates.</p>
   </div>
   <div class="overdue-section">
-    <h3>From September 2025 — Are these done?</h3>
+    <h3>September 2025 — Are these done?</h3>
     <div class="asana-list">
       <div class="asana-item">
         <div>
@@ -211,14 +175,14 @@
       <div class="asana-item">
         <div>
           <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1212482411641165">Switch YouTube ownership to lorraineklee.com</a></div>
-          <div class="asana-project">Platform &middot; Follow instructions in task notes</div>
+          <div class="asana-project">Platform</div>
         </div>
         <span class="asana-due due-overdue">Feb 2026</span>
       </div>
       <div class="asana-item">
         <div>
           <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1211774747995446">Add Lorraine's Podcasts to Spotify & YT</a></div>
-          <div class="asana-project">Platform &middot; Content distribution</div>
+          <div class="asana-project">Content distribution</div>
         </div>
         <span class="asana-due due-overdue">Feb 2026</span>
       </div>
@@ -228,10 +192,10 @@
 
 <div class="divider"></div>
 
-<!-- THIS WEEK -->
+<!-- DUE THIS WEEK -->
 <div class="section">
   <div class="section-header">
-    <h2>&#128197; Due This Week</h2>
+    <h2>Due This Week</h2>
     <p>After triaging overdue tasks, focus here.</p>
   </div>
   <div class="asana-list">
@@ -271,7 +235,7 @@
 <!-- NEW TASK -->
 <div class="section">
   <div class="section-header">
-    <h2>&#127775; New This Week</h2>
+    <h2>New This Week</h2>
     <p>Just assigned to you.</p>
   </div>
   <div class="asana-list">
@@ -280,18 +244,18 @@
         <div class="asana-task"><a href="https://app.asana.com/1/1210774242380505/task/1213915766502619">Weekly LinkedIn monitoring: new L&D, CX, CRO hires</a></div>
         <div class="asana-project">Business Development &middot; 20 min/week &middot; Recurring</div>
       </div>
-      <span class="asana-due due-today">New</span>
+      <span class="asana-due due-new">New</span>
     </div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- REVENUE CONNECTION -->
+<!-- REVENUE CONTEXT -->
 <div class="section">
   <div class="section-header">
-    <h2>&#128200; Revenue Goals — How Your Work Connects</h2>
-    <p>Every post, newsletter, and social update feeds these.</p>
+    <h2>How Your Work Connects to Revenue</h2>
+    <p>Every post, newsletter, and social update feeds these goals.</p>
   </div>
   <div class="quick-hits">
     <div class="quick-hit">
@@ -300,11 +264,11 @@
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Instagram</span>
-      <p><strong>~1K → 100K by June 2026</strong> — Instagram growth is your signature project. Every reel, story, and post you coordinate with Zen moves this needle.</p>
+      <p><strong>~1K to 100K by June 2026</strong> — Instagram growth is your signature project. Every reel, story, and post you coordinate with Zen moves this needle.</p>
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Newsletter</span>
-      <p><strong>30K subscriber goal</strong> — The newsletter drives course funnel signups and keeps Lorraine top-of-mind with her audience. Your CB reviews keep quality high.</p>
+      <p><strong>30K subscriber goal</strong> — The newsletter drives course funnel signups and keeps Lorraine top-of-mind. Your CB reviews keep quality high.</p>
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Brand</span>

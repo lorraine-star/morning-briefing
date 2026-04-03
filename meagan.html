@@ -8,76 +8,31 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #1a1a18; color: #c8c0b4; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 15px; line-height: 1.6; }
-
-    /* RH AESTHETIC — dark, moody, editorial, luxe */
     .banner { background: #0f0f0e; color: #8a8072; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2a2825; }
-
     .header { background: #1a1a18; padding: 60px 48px 40px; border-bottom: 1px solid #2a2825; }
     .header-meta { display: flex; gap: 10px; margin-bottom: 24px; }
     .badge { border: 1px solid #3a3632; border-radius: 0; padding: 4px 16px; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8072; }
     .badge.live { background: #8a8072; color: #1a1a18; }
-    .header h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 56px;
-      font-weight: 400;
-      color: #e8e0d4;
-      line-height: 1.05;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
-    }
-    .header h1 span {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: #6a6258;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-top: 12px;
-    }
+    .header h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 56px; font-weight: 400; color: #e8e0d4; line-height: 1.05; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .header h1 span { display: block; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #6a6258; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 12px; }
     .header p { color: #6a6258; font-size: 14px; max-width: 540px; }
-
     .hero-box { margin: 40px 48px; background: #22211e; border: 1px solid #2a2825; padding: 32px 36px; }
-    .hero-box h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: #e8e0d4;
-      margin-bottom: 10px;
-    }
+    .hero-box h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 400; color: #e8e0d4; margin-bottom: 10px; }
     .hero-box p { font-size: 14px; color: #8a8072; max-width: 660px; }
-
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #2a2825; margin: 0 48px 40px; border: 1px solid #2a2825; }
     .stat { background: #1a1a18; padding: 24px 20px; text-align: center; }
-    .stat-value {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 36px;
-      font-weight: 400;
-      color: #e8e0d4;
-      display: block;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
+    .stat-value { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 400; color: #e8e0d4; display: block; line-height: 1; margin-bottom: 8px; }
     .stat-value.accent { color: #c9a96e; }
     .stat-value.red { color: #a05a5a; }
     .stat-label { font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5a5448; }
-
     .what-first { margin: 0 48px 48px; background: #22211e; border: 1px solid #2a2825; border-left: 3px solid #c9a96e; padding: 24px 28px; }
     .what-first h3 { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #c9a96e; margin-bottom: 8px; }
     .what-first p { color: #c8c0b4; font-size: 14px; }
-
     .section { padding: 0 48px 48px; }
     .section-header { margin-bottom: 20px; }
-    .section-header h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 24px;
-      font-weight: 400;
-      color: #e8e0d4;
-      margin-bottom: 4px;
-    }
+    .section-header h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-weight: 400; color: #e8e0d4; margin-bottom: 4px; }
     .section-header p { font-size: 12px; color: #5a5448; letter-spacing: 0.04em; }
     .divider { height: 1px; background: #2a2825; margin: 0 48px 48px; }
-
     .asana-list { display: flex; flex-direction: column; gap: 6px; }
     .asana-item { background: #22211e; border: 1px solid #2a2825; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
     .asana-item:hover { background: #282723; }
@@ -90,25 +45,13 @@
     .asana-due { font-size: 10px; font-weight: 600; padding: 4px 14px; white-space: nowrap; letter-spacing: 0.06em; text-transform: uppercase; }
     .due-overdue { background: #2a2020; color: #a05a5a; }
     .due-today { background: #2a2820; color: #c9a96e; }
-    .due-upcoming { background: #22211e; color: #5a5448; }
     .due-done { background: #202a22; color: #5a8a5a; }
-
-    .goal-card { background: #22211e; border: 1px solid #2a2825; padding: 24px; margin-bottom: 12px; }
-    .goal-card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 400; color: #e8e0d4; margin-bottom: 6px; }
-    .goal-card .card-meta { font-size: 10px; color: #5a5448; margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .goal-card p { font-size: 13px; color: #8a8072; }
-    .goal-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; margin-bottom: 14px; border: 1px solid #3a3632; color: #8a8072; }
-    .goal-tag.priority { border-color: #c9a96e; color: #c9a96e; }
-
-    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
     .quick-hits { border: 1px solid #2a2825; overflow: hidden; }
     .quick-hit { padding: 16px 24px; display: flex; align-items: flex-start; gap: 16px; border-bottom: 1px solid #2a2825; background: #22211e; }
     .quick-hit:last-child { border-bottom: none; }
-    .quick-hit:hover { background: #28272e; }
+    .quick-hit:hover { background: #282723; }
     .quick-hit p { font-size: 13px; color: #8a8072; }
     .qh-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; border: 1px solid #3a3632; color: #6a6258; }
-
     footer { text-align: center; padding: 48px; color: #3a3632; font-size: 11px; letter-spacing: 0.06em; border-top: 1px solid #2a2825; background: #0f0f0e; }
     footer strong { color: #8a8072; }
   </style>
@@ -125,13 +68,13 @@
     <span class="badge live">Morning Briefing</span>
     <span class="badge">Operations &amp; Growth</span>
   </div>
-  <h1>Good morning, Meagan.<span>Wednesday, April 2, 2026 &middot; Your work powers the whole machine.</span></h1>
-  <p>Tasks, priorities, and what Lorraine needs from you today — all tied to the revenue goals that matter most.</p>
+  <h1>Good morning, Meagan.<span>Wednesday, April 2, 2026</span></h1>
+  <p>Your Asana tasks and how they connect to RISE's revenue goals.</p>
 </div>
 
 <div class="hero-box">
   <h2>Proposals. Leads. Follow-ups. The work that builds a million-dollar business.</h2>
-  <p>Everything you do — qualifying leads, drafting proposals, managing the speaking pipeline, coordinating course marketing — feeds directly into RISE's $1M goal. Here's what needs your attention today.</p>
+  <p>Everything you do — qualifying leads, drafting proposals, managing the speaking pipeline, coordinating course marketing — feeds directly into RISE's $1M goal.</p>
 </div>
 
 <div class="stats">
@@ -141,7 +84,7 @@
   </div>
   <div class="stat">
     <span class="stat-value red">1</span>
-    <span class="stat-label">Overdue</span>
+    <span class="stat-label">Needs Review</span>
   </div>
   <div class="stat">
     <span class="stat-value accent">$500K</span>
@@ -155,14 +98,14 @@
 
 <div class="what-first">
   <h3>Start Here</h3>
-  <p>Review the 5-day email course performance — Lorraine wants to know if open rates are holding and if the copy needs freshening. This is directly tied to the course funnel, which is the #1 growth priority. After that, focus on the speaking pipeline tasks below.</p>
+  <p>Review the 5-day email course performance — Lorraine wants to know if open rates are holding and if the copy needs freshening. This directly impacts the course funnel, RISE's #1 growth priority.</p>
 </div>
 
-<!-- YOUR TASKS -->
+<!-- YOUR ASANA TASKS -->
 <div class="section">
   <div class="section-header">
     <h2>Your Tasks</h2>
-    <p>Revenue-generating and client-facing work first.</p>
+    <p>From Asana. Revenue-generating work first.</p>
   </div>
   <div class="asana-list">
     <div class="asana-item" style="border-left: 3px solid #c9a96e;">
@@ -184,43 +127,7 @@
 
 <div class="divider"></div>
 
-<!-- LORRAINE'S PRIORITIES -->
-<div class="section">
-  <div class="section-header">
-    <h2>Lorraine's Priorities You Support</h2>
-    <p>What she's focused on and where she needs you.</p>
-  </div>
-  <div class="cards-grid">
-    <div class="goal-card">
-      <span class="goal-tag priority">Due Today</span>
-      <h3>Enterprise One-Pager + Email</h3>
-      <p class="card-meta">Enterprise B2B Sales &middot; Revenue</p>
-      <p>Lorraine is finalizing the enterprise one-pager and outreach email today. Be ready to send once she approves. This is the key sales document for pitching multi-session enterprise programs — a new revenue stream targeting $20K-$40K per client.</p>
-    </div>
-    <div class="goal-card">
-      <span class="goal-tag">Business Development</span>
-      <h3>VP L&D Outreach Pipeline</h3>
-      <p class="card-meta">Speaking Pipeline &middot; New Lead Source</p>
-      <p>There are 415 open VP of L&D roles on LinkedIn right now. As new hires are announced, Lorraine wants you to send welcome notes within 30 days. Even a 2% close rate = 8 new clients at $10K avg = $80K pipeline.</p>
-    </div>
-    <div class="goal-card">
-      <span class="goal-tag">Speaking</span>
-      <h3>From Day One — Speaker Submission</h3>
-      <p class="card-meta">Speaking Pipeline</p>
-      <p>Submit Lorraine's speaker profile to <a href="https://www.fromdayone.com/speakerintro" style="color:#c9a96e;">From Day One</a>. They run virtual conferences on workplace culture for HR and L&D leaders. Draft her submission this week.</p>
-    </div>
-    <div class="goal-card">
-      <span class="goal-tag">Speaking</span>
-      <h3>ACMP Global 2026 Proposal</h3>
-      <p class="card-meta">Speaking Pipeline</p>
-      <p>Submit proposal to <a href="https://www.acmpglobal.org/page/2026-call-for-speakers" style="color:#c9a96e;">ACMP's 2026 call for speakers</a>. Pitch: "The Identity Gap in Change Management — Why Reskilling Fails Without Presence." Change managers hire speakers for their clients too.</p>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- REVENUE GOALS -->
+<!-- REVENUE CONTEXT -->
 <div class="section">
   <div class="section-header">
     <h2>How Your Work Connects to Revenue</h2>
@@ -233,11 +140,11 @@
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Speaking</span>
-      <p><strong>$200K goal</strong> — Conference submissions and the VP L&D outreach list grow the pipeline. Target: ~20 gigs at $5K-$10K each.</p>
+      <p><strong>$200K goal</strong> — Proposals you draft and leads you qualify grow the speaking pipeline. Target: ~20 gigs at $5K-$10K each.</p>
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Enterprise</span>
-      <p><strong>New stream</strong> — The enterprise one-pager is the key sales document. Multi-session programs at $20K-$40K per client. This could be the biggest growth lever of 2026.</p>
+      <p><strong>New stream</strong> — Lorraine is building enterprise multi-session programs at $20K-$40K per client. You'll be coordinating proposals and follow-ups as this ramps.</p>
     </div>
     <div class="quick-hit">
       <span class="qh-tag">Brand</span>
