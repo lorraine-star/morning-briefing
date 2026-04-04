@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Board 3: Modern Warmth — Lorraine K. Lee</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f5f0eb; color: #3d3d3d; padding: 40px; }
+  .board-header { text-align: center; margin-bottom: 48px; }
+  .board-header h1 { font-family: 'Lora', serif; font-size: 44px; font-weight: 700; color: #1a5c52; margin-bottom: 8px; }
+  .board-header .subtitle { font-size: 14px; color: #a09080; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; }
+  .board-header .for { font-size: 13px; color: #bfb5a8; margin-top: 8px; }
+  .section { margin-bottom: 56px; }
+  .section-title { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #1a5c52; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #c4a96a; display: inline-block; }
+  .palette { display: flex; gap: 16px; flex-wrap: wrap; }
+  .swatch { width: 140px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .swatch-color { height: 100px; }
+  .swatch-info { background: #fff; padding: 12px; text-align: center; }
+  .swatch-info .name { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  .swatch-info .hex { font-size: 12px; color: #888; font-family: monospace; }
+  .type-specimen { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+  .type-row { margin-bottom: 24px; }
+  .type-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #b5a898; margin-bottom: 6px; }
+  .mocks { display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
+  .linkedin-mock { width: 480px; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); overflow: hidden; }
+  .li-header { padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #eee; }
+  .li-avatar { width: 44px; height: 44px; border-radius: 50%; background: #1a5c52; display: flex; align-items: center; justify-content: center; color: #f5f0eb; font-family: 'Lora', serif; font-weight: 700; font-size: 20px; }
+  .li-name { font-weight: 600; font-size: 14px; }
+  .li-desc { font-size: 12px; color: #888; }
+  .li-slide { aspect-ratio: 4/5; background: linear-gradient(170deg, #1a5c52 0%, #22756a 50%, #2a8a7d 100%); display: flex; flex-direction: column; justify-content: center; padding: 44px; color: #f5f0eb; position: relative; overflow: hidden; }
+  .li-slide::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(196,169,106,0.12); }
+  .li-slide .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #c4a96a; margin-bottom: 20px; font-weight: 600; position: relative; z-index: 1; }
+  .li-slide h2 { font-family: 'Lora', serif; font-size: 32px; line-height: 1.25; font-weight: 700; margin-bottom: 16px; position: relative; z-index: 1; }
+  .li-slide p { font-size: 14px; line-height: 1.6; opacity: 0.85; position: relative; z-index: 1; }
+  .li-slide .gold-dot { position: absolute; bottom: 40px; left: 44px; width: 10px; height: 10px; border-radius: 50%; background: #c4a96a; z-index: 1; }
+  .ig-mock { width: 340px; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); overflow: hidden; }
+  .ig-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; }
+  .ig-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #c4a96a, #1a5c52); }
+  .ig-name { font-weight: 600; font-size: 13px; }
+  .ig-post { aspect-ratio: 1; background: linear-gradient(135deg, #f5f0eb 0%, #ede5da 100%); display: flex; flex-direction: column; justify-content: center; padding: 36px; position: relative; }
+  .ig-post .accent-circle { position: absolute; top: 20px; right: 20px; width: 48px; height: 48px; border-radius: 50%; border: 2px solid #c4a96a; opacity: 0.4; }
+  .ig-post h3 { font-family: 'Lora', serif; font-size: 22px; line-height: 1.35; color: #1a5c52; margin-bottom: 12px; font-weight: 700; }
+  .ig-post p { font-size: 13px; color: #6b6058; line-height: 1.6; }
+  .ig-post .tag { margin-top: 20px; display: inline-block; background: #1a5c52; color: #f5f0eb; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+  .ig-actions { padding: 12px 16px; display: flex; gap: 16px; }
+  .ig-actions span { font-size: 18px; }
+  .vibe-box { background: #fff; border-radius: 16px; padding: 32px 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); max-width: 700px; }
+  .vibe-box p { font-size: 16px; line-height: 1.7; color: #4a4a4a; }
+  .vibe-box .compare { margin-top: 20px; padding-top: 20px; border-top: 1px solid #e8e2da; font-size: 14px; color: #777; }
+  .vibe-box .compare strong { color: #1a5c52; }
+</style>
+</head>
+<body>
+<div class="board-header">
+  <div class="subtitle">Brand Mood Board 3</div>
+  <h1>Modern Warmth</h1>
+  <div class="for">Lorraine K. Lee — Brand Refresh 2026</div>
+</div>
+
+<div class="section">
+  <div class="section-title">Color Palette</div>
+  <div class="palette">
+    <div class="swatch"><div class="swatch-color" style="background:#1a5c52"></div><div class="swatch-info"><div class="name">Deep Teal</div><div class="hex">#1a5c52</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2a8a7d"></div><div class="swatch-info"><div class="name">Sage Teal</div><div class="hex">#2a8a7d</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#c4a96a"></div><div class="swatch-info"><div class="name">Soft Gold</div><div class="hex">#c4a96a</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#f5f0eb"></div><div class="swatch-info"><div class="name">Warm Linen</div><div class="hex">#f5f0eb</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#ede5da"></div><div class="swatch-info"><div class="name">Sand</div><div class="hex">#ede5da</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#6b6058"></div><div class="swatch-info"><div class="name">Warm Brown</div><div class="hex">#6b6058</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#3d3d3d"></div><div class="swatch-info"><div class="name">Charcoal</div><div class="hex">#3d3d3d</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Typography</div>
+  <div class="type-specimen">
+    <div class="type-row">
+      <div class="type-label">Heading — Lora (700)</div>
+      <div style="font-family:'Lora',serif;font-size:48px;font-weight:700;color:#1a5c52;">Unforgettable Presence</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Subheading — Plus Jakarta Sans (600)</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:600;color:#2a8a7d;">Get Seen. Gain Influence. Catapult Your Career.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body — Plus Jakarta Sans (400)</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.75;max-width:600px;color:#4a4a4a;">Real confidence isn't performed. It's the steady feeling of knowing your value — and trusting that the right rooms will recognize it when you walk in. That's the kind of presence I teach.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Caption — Plus Jakarta Sans (500)</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#c4a96a;">Lorraine K. Lee · Keynote Speaker · Author</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Social Post Mocks</div>
+  <div class="mocks">
+    <div class="linkedin-mock">
+      <div class="li-header">
+        <div class="li-avatar">L</div>
+        <div><div class="li-name">Lorraine K. Lee</div><div class="li-desc">Keynote Speaker · Author of Unforgettable Presence · LinkedIn Top Voice</div></div>
+      </div>
+      <div class="li-slide">
+        <div class="eyebrow">Workplace Presence</div>
+        <h2>Your Manager Can't Advocate for You If They Don't Know What You've Done</h2>
+        <p>Making your work visible isn't self-promotion. It's career self-care.</p>
+        <div class="gold-dot"></div>
+      </div>
+    </div>
+    <div class="ig-mock">
+      <div class="ig-header">
+        <div class="ig-avatar"></div>
+        <div class="ig-name">lorraineklee</div>
+      </div>
+      <div class="ig-post">
+        <div class="accent-circle"></div>
+        <h3>The promotion didn't go to the hardest worker. It went to the most visible one.</h3>
+        <p>Hard truth? Your work can't speak for itself. It needs you to speak for it.</p>
+        <div class="tag">Make Your Work Matter</div>
+      </div>
+      <div class="ig-actions"><span>♡</span><span>💬</span><span>↗</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">The Vibe</div>
+  <div class="vibe-box">
+    <p>This direction wraps professional expertise in warmth. The deep teal replaces blue with something that feels grounded and calming — like a trusted advisor you'd meet in a beautifully designed office, not a corporate conference room. Cream and sand tones create an approachable base, and the soft gold adds just enough polish. It reads as "I'm here to support your growth" rather than "I'm here to impress you."</p>
+    <div class="compare"><strong>vs. Current Brand:</strong> A full color departure — no blues at all. The teal-and-cream palette feels distinctly warmer and more personal, which could resonate strongly for course marketing and Instagram growth. Plus Jakarta Sans is modern and friendly without being childish. The risk: it's a bigger rebrand effort, and the teal-gold combination needs to feel distinctly "Lorraine" rather than generic wellness brand. The serif headlines help anchor it in authority.</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Board 5: Quiet Authority — Lorraine K. Lee</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: #f5f3f0; color: #3a3a3a; padding: 40px; }
+  .board-header { text-align: center; margin-bottom: 48px; }
+  .board-header h1 { font-family: 'Libre Baskerville', serif; font-size: 42px; font-weight: 700; color: #5a6b5a; margin-bottom: 8px; }
+  .board-header .subtitle { font-size: 14px; color: #b5a8b0; letter-spacing: 4px; text-transform: uppercase; font-weight: 400; }
+  .board-header .for { font-size: 13px; color: #c5bfc2; margin-top: 8px; }
+  .section { margin-bottom: 56px; }
+  .section-title { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 400; color: #5a6b5a; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 1.5px solid #c8b8bf; display: inline-block; }
+  .palette { display: flex; gap: 16px; flex-wrap: wrap; }
+  .swatch { width: 140px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+  .swatch-color { height: 100px; }
+  .swatch-info { background: #fff; padding: 12px; text-align: center; }
+  .swatch-info .name { font-weight: 500; font-size: 13px; margin-bottom: 2px; }
+  .swatch-info .hex { font-size: 12px; color: #999; font-family: monospace; }
+  .type-specimen { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); }
+  .type-row { margin-bottom: 24px; }
+  .type-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #b5a8b0; margin-bottom: 6px; font-weight: 400; }
+  .mocks { display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
+  .linkedin-mock { width: 480px; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden; }
+  .li-header { padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #eee; }
+  .li-avatar { width: 44px; height: 44px; border-radius: 50%; background: #5a6b5a; display: flex; align-items: center; justify-content: center; color: #f5f3f0; font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 18px; }
+  .li-name { font-weight: 500; font-size: 14px; }
+  .li-desc { font-size: 12px; color: #999; }
+  .li-slide { aspect-ratio: 4/5; background: linear-gradient(160deg, #5a6b5a 0%, #6d7f6d 40%, #7a8e7a 100%); display: flex; flex-direction: column; justify-content: center; padding: 44px; color: #f5f3f0; position: relative; }
+  .li-slide .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #d4c0c8; margin-bottom: 20px; font-weight: 400; }
+  .li-slide h2 { font-family: 'Libre Baskerville', serif; font-size: 30px; line-height: 1.35; font-weight: 400; margin-bottom: 16px; }
+  .li-slide p { font-size: 14px; line-height: 1.65; opacity: 0.8; font-weight: 300; }
+  .li-slide .soft-line { position: absolute; bottom: 44px; left: 44px; width: 40px; height: 1.5px; background: #d4c0c8; border-radius: 1px; }
+  .ig-mock { width: 340px; background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden; }
+  .ig-header { padding: 12px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; }
+  .ig-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #c8b8bf, #5a6b5a); }
+  .ig-name { font-weight: 500; font-size: 13px; }
+  .ig-post { aspect-ratio: 1; background: #f5f3f0; display: flex; flex-direction: column; justify-content: center; padding: 36px; position: relative; }
+  .ig-post::before { content: '"'; position: absolute; top: 16px; left: 28px; font-family: 'Libre Baskerville', serif; font-size: 72px; color: #c8b8bf; opacity: 0.4; line-height: 1; }
+  .ig-post h3 { font-family: 'Libre Baskerville', serif; font-size: 20px; line-height: 1.45; color: #5a6b5a; margin-bottom: 16px; font-weight: 400; font-style: italic; }
+  .ig-post p { font-size: 13px; color: #7a7a7a; line-height: 1.6; font-weight: 400; }
+  .ig-post .author-line { margin-top: 20px; font-size: 12px; color: #b5a8b0; letter-spacing: 1px; }
+  .ig-actions { padding: 12px 16px; display: flex; gap: 16px; }
+  .ig-actions span { font-size: 18px; }
+  .vibe-box { background: #fff; border-radius: 16px; padding: 32px 40px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); max-width: 700px; }
+  .vibe-box p { font-size: 16px; line-height: 1.7; color: #555; }
+  .vibe-box .compare { margin-top: 20px; padding-top: 20px; border-top: 1px solid #e8e5e2; font-size: 14px; color: #888; }
+  .vibe-box .compare strong { color: #5a6b5a; }
+</style>
+</head>
+<body>
+<div class="board-header">
+  <div class="subtitle">Brand Mood Board 5</div>
+  <h1>Quiet Authority</h1>
+  <div class="for">Lorraine K. Lee — Brand Refresh 2026</div>
+</div>
+
+<div class="section">
+  <div class="section-title">Color Palette</div>
+  <div class="palette">
+    <div class="swatch"><div class="swatch-color" style="background:#5a6b5a"></div><div class="swatch-info"><div class="name">Dusty Sage</div><div class="hex">#5a6b5a</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#7a8e7a"></div><div class="swatch-info"><div class="name">Soft Sage</div><div class="hex">#7a8e7a</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#c8b8bf"></div><div class="swatch-info"><div class="name">Soft Blush</div><div class="hex">#c8b8bf</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#d4c0c8"></div><div class="swatch-info"><div name="name">Dusty Rose</div><div class="hex">#d4c0c8</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#f5f3f0"></div><div class="swatch-info"><div class="name">Warm Fog</div><div class="hex">#f5f3f0</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#8a8580"></div><div class="swatch-info"><div class="name">Warm Gray</div><div class="hex">#8a8580</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#3a3a3a"></div><div class="swatch-info"><div class="name">Soft Black</div><div class="hex">#3a3a3a</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Typography</div>
+  <div class="type-specimen">
+    <div class="type-row">
+      <div class="type-label">Heading — Libre Baskerville (700)</div>
+      <div style="font-family:'Libre Baskerville',serif;font-size:44px;font-weight:700;color:#5a6b5a;">Unforgettable Presence</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Subheading — Libre Baskerville (400, italic)</div>
+      <div style="font-family:'Libre Baskerville',serif;font-size:24px;font-weight:400;font-style:italic;color:#7a8e7a;">Get Seen. Gain Influence. Catapult Your Career.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body — Jost (400)</div>
+      <div style="font-family:'Jost',sans-serif;font-size:16px;line-height:1.8;max-width:600px;color:#555;font-weight:400;">Presence doesn't require a loud entrance. It's the stillness that makes people lean in. The clarity that makes people listen. The consistency that makes people trust. That's the kind of presence that changes careers — quietly and permanently.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Caption — Jost (500)</div>
+      <div style="font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#c8b8bf;">Lorraine K. Lee · Keynote Speaker · Author</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Social Post Mocks</div>
+  <div class="mocks">
+    <div class="linkedin-mock">
+      <div class="li-header">
+        <div class="li-avatar">L</div>
+        <div><div class="li-name">Lorraine K. Lee</div><div class="li-desc">Keynote Speaker · Author of Unforgettable Presence · LinkedIn Top Voice</div></div>
+      </div>
+      <div class="li-slide">
+        <div class="eyebrow">Quiet Confidence</div>
+        <h2>The most powerful people in the room aren't the ones who talked the most. They're the ones everyone waited to hear from.</h2>
+        <p>Presence isn't performance. It's the steady confidence that draws people in.</p>
+        <div class="soft-line"></div>
+      </div>
+    </div>
+    <div class="ig-mock">
+      <div class="ig-header">
+        <div class="ig-avatar"></div>
+        <div class="ig-name">lorraineklee</div>
+      </div>
+      <div class="ig-post">
+        <h3>You were never too quiet. The room just wasn't designed for how you lead.</h3>
+        <p>Introvert energy is a leadership superpower when you know how to use it. You don't need to change who you are — you need to own it.</p>
+        <div class="author-line">Lorraine K. Lee</div>
+      </div>
+      <div class="ig-actions"><span>♡</span><span>💬</span><span>↗</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">The Vibe</div>
+  <div class="vibe-box">
+    <p>This is the introvert's brand — and it's intentional. The muted sage and blush palette whispers rather than shouts, creating a feeling of calm authority. Every element breathes. The generous white space, the lighter font weights, the soft gradients — it all says "I'm confident enough that I don't need to be loud." Libre Baskerville in italic feels like a handwritten letter from someone wise; Jost keeps the body text modern and effortlessly readable.</p>
+    <div class="compare"><strong>vs. Current Brand:</strong> The furthest from the current brand in energy. Where the current blues feel active and tech-forward, this palette feels grounded and introspective. It leans fully into the introvert identity as a strength. The potential risk: muted palettes can get lost on social media where everything is fighting for attention. But for someone with 332K followers and growing course revenue, the audience is already listening — the brand just needs to match the message. This is the direction that would feel most authentically "Lorraine" if the introvert brand is the long-term play.</div>
+  </div>
+</div>
+</body>
+</html>
