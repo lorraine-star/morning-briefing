@@ -2,234 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Lorraine's Morning Briefing — April 3, 2026</title>
+<title>Lorraine's Morning Briefing — April 6, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--blue:#084af3;--bright:#4179fc;--lblue:#c3e2ff;--yellow:#FCE036;--lgray:#ebebeb;--ch:#494b51;--off:#f9f9f9}
+:root{--blue:#084af3;--bright:#4179fc;--yellow:#FCE036;--lgray:#ebebeb;--ch:#494b51;--off:#f9f9f9}
 body{font-family:'Inter',sans-serif;background:var(--off);color:var(--ch);line-height:1.6}
-.site-header{background:linear-gradient(135deg,#084af3,#4179fc);color:#fff;padding:52px 40px 44px}
-.site-header h1{font-size:2.7rem;font-weight:800;letter-spacing:-.5px;margin-bottom:6px}
-.site-header .date{font-size:1.05rem;opacity:.88;margin-bottom:22px}
-.badge-row{display:flex;gap:10px;flex-wrap:wrap}
-.badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:.78rem}
-.container{max-width:900px;margin:0 auto;padding:38px 24px 64px;display:flex;flex-direction:column;gap:26px}
-.card{background:#fff;border-radius:14px;padding:28px 30px;box-shadow:0 1px 4px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.04)}
-.card-title{font-size:.68rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--bright);margin-bottom:16px}
-.do-first{border-left:5px solid var(--yellow);background:#fffef0;border-radius:0 14px 14px 0;padding:22px 28px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.do-first .card-title{color:#8a6e00}
-.do-first p{font-size:1.01rem;font-weight:500;line-height:1.65}
-.priority-group-label{font-size:.67rem;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#aaa;margin:20px 0 8px}
-.priority-group-label:first-child{margin-top:0}
-.task-item{display:flex;align-items:flex-start;gap:13px;padding:13px 0;border-bottom:1px solid var(--lgray)}
-.task-item:last-child{border-bottom:none}
-.task-item.dimmed{opacity:.5}
-.task-dot{width:9px;height:9px;border-radius:50%;background:var(--bright);flex-shrink:0;margin-top:7px}
-.task-dot.urgent{background:#e53e3e}
-.task-dot.low{background:#ccc}
-.task-body{flex:1;min-width:0}
-.task-name{font-size:.97rem;font-weight:600;margin-bottom:5px}
-.task-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-.due-tag{font-size:.71rem;font-weight:600;padding:2px 9px;border-radius:10px;background:var(--lblue);color:var(--blue)}
-.due-tag.today,.due-tag.overdue{background:#fff0f0;color:#c53030}
-.priority-flag{font-size:.7rem;font-weight:700;color:#c53030;letter-spacing:.3px}
-.task-links{display:flex;gap:7px;flex-wrap:wrap}
-.task-link{font-size:.75rem;color:var(--bright);text-decoration:none;font-weight:500;padding:2px 9px;border:1px solid var(--lblue);border-radius:6px}
-.task-link:hover{background:var(--lblue)}
-.biz-dev-note{font-size:.82rem;color:#888;font-style:italic;margin-bottom:18px;padding:10px 14px;background:#f5f5f5;border-radius:8px;line-height:1.55}
-.lead-card{border:1px solid var(--lgray);border-radius:10px;padding:18px 20px;margin-bottom:16px}
-.lead-card:last-child{margin-bottom:0}
-.lead-name{font-size:1.02rem;font-weight:700;color:var(--blue);margin-bottom:2px}
-.lead-title{font-size:.83rem;color:#777;margin-bottom:12px}
-.lead-li-link{color:var(--bright);text-decoration:none;font-weight:500}
-.email-draft{margin-top:12px;background:#f8fbff;border:1px solid var(--lblue);border-radius:8px;padding:14px 16px}
-.email-label{font-size:.66rem;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--bright);margin-bottom:8px}
-.email-line{font-size:.84rem;line-height:1.65;margin-bottom:3px}
-.email-body{font-size:.84rem;line-height:1.65;margin-top:10px;white-space:pre-wrap}
-.roadmap-item{display:flex;align-items:flex-start;gap:16px;padding:15px 0;border-bottom:1px solid var(--lgray)}
-.roadmap-item:last-child{border-bottom:none}
-.roadmap-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--bright));color:#fff;font-size:.88rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.roadmap-body{flex:1}
-.roadmap-name{font-size:.97rem;font-weight:700;margin-bottom:4px}
-.roadmap-stage{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:2px 9px;border-radius:8px;margin-bottom:4px}
-.stage-now{background:#e8f5e9;color:#2e7d32}
-.stage-next{background:#e3f2fd;color:#1565c0}
-.stage-later{background:#fff3e0;color:#e65100}
-.stage-big{background:#fce4ec;color:#880e4f}
-.roadmap-meta{font-size:.81rem;color:#888}
-.quick-hit{padding:14px 0;border-bottom:1px solid var(--lgray)}
-.quick-hit:last-child{border-bottom:none}
-.qh-headline{font-size:.97rem;font-weight:600;margin-bottom:5px}
-.qh-action{font-size:.84rem;color:var(--blue);font-weight:500;line-height:1.5}
-.qh-action::before{content:"→ ";font-weight:700}
-footer{text-align:center;padding:24px;font-size:.78rem;color:#bbb;border-top:1px solid var(--lgray);background:#fff}
+.hdr{background:linear-gradient(135deg,#084af3,#4179fc);color:#fff;padding:44px 40px 36px}
+.hdr h1{font-size:2.4rem;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
+.hdr .date{font-size:1rem;opacity:.88;margin-bottom:18px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:.76rem}
+.wrap{max-width:900px;margin:0 auto;padding:32px 20px 60px;display:flex;flex-direction:column;gap:22px}
+.card{background:#fff;border-radius:12px;padding:24px 26px;box-shadow:0 1px 4px rgba(0,0,0,.07),0 3px 12px rgba(0,0,0,.04)}
+.ct{font-size:.65rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--bright);margin-bottom:12px}
+.yellow-card{border-left:5px solid var(--yellow);background:#fffef0}
+.yellow-card .ct{color:#8a6e00}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;font-weight:600;padding:7px 10px;background:#f4f6ff;color:var(--blue);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px}
+td{padding:7px 10px;border-bottom:1px solid #f0f0f0}
+tr:last-child td{border-bottom:none}
+.tag-rev{background:#e8f5e9;color:#2e7d32;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.tag-hi{background:#e3f0ff;color:#084af3;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.tag-lo{background:#f5f5f5;color:#888;font-size:.7rem;padding:2px 8px;border-radius:10px}
+.dim{opacity:.45}
+.overdue{color:#c62828;font-weight:600}
+.flag-out{border-left:4px solid var(--yellow);background:#fffde7;padding:10px 14px;border-radius:0 8px 8px 0;font-size:.85rem;margin-top:8px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.did-you-know{background:#e8f0fe;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:14px 18px}
+.section-sub{font-size:.8rem;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px;padding-bottom:4px;border-bottom:2px solid #eee}
+.time-block{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid #f0f0f0;font-size:.88rem}
+.time-block:last-child{border-bottom:none}
+.ttime{min-width:90px;font-weight:600;color:var(--blue)}
+.due-tag{display:inline-block;background:#fce4ec;color:#c62828;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:700}
+.mtg-tag{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:.7rem;padding:2px 8px;border-radius:10px;font-weight:600}
 </style>
 </head>
 <body>
-<header class="site-header">
-  <h1>Good morning, Lorraine.</h1>
-  <p class="date">Thursday, April 3, 2026</p>
-  <div class="badge-row"><span class="badge">Morning Briefing</span><span class="badge">Sources scanned</span></div>
-</header>
-<div class="container">
-  <div class="do-first">
-    <div class="card-title">What to do first</div>
-    <p>The <strong>Enterprise One-Pager + Email (Marisa Edits)</strong> is due today — this is the key sales document for pitching multi-session enterprise programs. Get this out the door first, then update the revenue dashboard.</p>
-  </div>
-  <div class="card">
-    <div class="card-title">Priority Emails to Reply To — April 3</div>
-    <div class="task-item">
-      <div class="task-dot urgent"></div>
-      <div class="task-body">
-        <div class="task-name">Mari Townsend — The Surge Institute</div>
-        <div class="task-meta"><span class="due-tag today">HIGH PRIORITY</span><span class="priority-flag">NEW SPEAKING LEAD</span></div>
-        <div style="font-size:.84rem;color:#555;line-height:1.55"><strong>Subject:</strong> New speaking inquiry — keynote, training, or engagement<br><strong>Why:</strong> Fresh inbound speaking lead. This is revenue.<br><strong>Action:</strong> Have Meagan qualify and respond. Check Typeform for full details.</div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot" style="background:#f6ad55"></div>
-      <div class="task-body">
-        <div class="task-name">Becky Plotkin — LinkedIn</div>
-        <div class="task-meta"><span class="due-tag" style="background:#fffbeb;color:#b7791f">MONITOR</span><span style="font-size:.7rem;font-weight:700;color:#b7791f">LinkedIn Partnership</span></div>
-        <div style="font-size:.84rem;color:#555;line-height:1.55"><strong>Subject:</strong> Re: Lorraine K. Lee x LinkedIn Partnership Opportunities<br><strong>Why:</strong> May 5 event date confirmed. Unpaid collaboration but high visibility.<br><strong>Action:</strong> No reply needed — just confirm logistics are tracked.</div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot" style="background:#f6ad55"></div>
-      <div class="task-body">
-        <div class="task-name">JJ — Partnership Leaders</div>
-        <div class="task-meta"><span class="due-tag" style="background:#fffbeb;color:#b7791f">MONITOR</span><span style="font-size:.7rem;font-weight:700;color:#b7791f">Partnership Leaders / ServiceNow</span></div>
-        <div style="font-size:.84rem;color:#555;line-height:1.55"><strong>Subject:</strong> Exploring speaking ideas for 2026<br><strong>Why:</strong> Speaking lead with ServiceNow connection. Calendar invite sent.<br><strong>Action:</strong> Meeting is set. Prep notes before the call.</div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot low"></div>
-      <div class="task-body">
-        <div class="task-name">Charles Good — IMS</div>
-        <div class="task-meta"><span class="due-tag" style="background:#f5f5f5;color:#888">FYI</span><span style="font-size:.7rem;font-weight:700;color:#888">Erie Recording Received</span></div>
-        <div style="font-size:.84rem;color:#555;line-height:1.55"><strong>Subject:</strong> Recording of Erie session<br><strong>Why:</strong> Good for speaker reel and testimonials. Sent to Meagan + Mahea for timestamps.<br><strong>Action:</strong> No action needed from Lorraine.</div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Asana Priorities</div>
-    <div class="priority-group-label">Top Priority</div>
-    <div class="task-item">
-      <div class="task-dot urgent"></div>
-      <div class="task-body">
-        <div class="task-name">Enterprise One-Pager + Email (Marisa Edits)</div>
-        <div class="task-meta"><span class="due-tag today">Due Today</span><span class="priority-flag">HIGH PRIORITY</span></div>
-        <div class="task-links"><a href="https://docs.google.com/document/d/1mCQNMXzEvJECVZf_dIlJkpyr3nly693TI4AfKLtkAZw/edit" class="task-link" target="_blank">One-Pager Doc</a><a href="https://docs.google.com/document/d/1N0FtOmxN9IK408O89BD79JOH0Z8Iwq72GalVHeqpSqs/edit" class="task-link" target="_blank">Email Doc</a><a href="https://app.asana.com/1/1210774242380505/task/1213902253578260" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot urgent"></div>
-      <div class="task-body">
-        <div class="task-name">Update revenue dashboard</div>
-        <div class="task-meta"><span class="due-tag today">Due Today</span><span class="priority-flag">HIGH PRIORITY</span></div>
-        <div class="task-links"><a href="https://app.asana.com/1/1210774242380505/task/1213915874367982" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot"></div>
-      <div class="task-body">
-        <div class="task-name">For Review: Abbvie Presentation</div>
-        <div class="task-meta"><span class="due-tag">Due Apr 6</span></div>
-        <div class="task-links"><a href="https://docs.google.com/spreadsheets/d/166ljxMnZQh2RT2JnFtDALobYBODFUWrs/edit" class="task-link" target="_blank">Runsheet</a><a href="https://app.asana.com/1/1210774242380505/task/1213918608454458" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item">
-      <div class="task-dot"></div>
-      <div class="task-body">
-        <div class="task-name">Review 5-day email course</div>
-        <div class="task-meta"><span class="due-tag">Due Apr 6</span></div>
-        <div class="task-links"><a href="https://lorraineklee.com/from-invisible-to-influential/" class="task-link" target="_blank">Course Link</a><a href="https://app.asana.com/1/1210774242380505/task/1213835090437972" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item dimmed">
-      <div class="task-dot low"></div>
-      <div class="task-body">
-        <div class="task-name">Review newsletter folder for replies</div>
-        <div class="task-meta"><span class="due-tag">Due Apr 10</span></div>
-        <div class="task-links"><a href="https://app.asana.com/1/1210774242380505/task/1213862433368868" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item dimmed">
-      <div class="task-dot low"></div>
-      <div class="task-body">
-        <div class="task-name">Check Kondo: Lorraine Tab</div>
-        <div class="task-meta"><span class="due-tag today">Due Today</span></div>
-        <div class="task-links"><a href="https://app.trykondo.com/inboxes/action-needed-from-lorraine" class="task-link" target="_blank">Kondo</a><a href="https://app.asana.com/1/1210774242380505/task/1213864945350051" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="task-item dimmed">
-      <div class="task-dot low"></div>
-      <div class="task-body">
-        <div class="task-name">Review (creatorengines.com)</div>
-        <div class="task-meta"><span class="due-tag overdue">49 days overdue</span></div>
-        <div class="task-links"><a href="https://app.asana.com/1/1210774242380505/task/1212801701499008" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Business Development — Recent Hires with Budget</div>
-    <p class="biz-dev-note">Web search has limited ability to find very recent LinkedIn announcements. For better results, we're exploring Clay/Apollo integration.</p>
-    <div class="lead-card">
-      <div class="lead-name">Latané Conant</div>
-      <div class="lead-title">Chief Revenue Officer · 6sense &nbsp;·&nbsp; <a href="https://www.linkedin.com/posts/latane-conant_so-big-news-im-honored-to-share-that-activity-7115515499781742592-MFic" class="lead-li-link" target="_blank">View LinkedIn post ↗</a></div>
-      <div class="email-draft">
-        <div class="email-label">Draft Outreach</div>
-        <div class="email-line"><strong>To:</strong> Latané Conant</div>
-        <div class="email-line"><strong>Subject:</strong> The first 90 days as CRO — one thing that compounds</div>
-        <div class="email-body">Hi Latané,
-
-Congrats on the CRO role at 6sense — what an exciting chapter.
-
-One pattern I've noticed working with revenue teams: the biggest gap in most sales orgs isn't product knowledge or pipeline discipline. It's how the team shows up in the room. Reps who can command a conversation, read the room, and communicate with executive presence close at a meaningfully higher rate — but almost no one trains for it.
-
-You're in a unique window right now where investing in how your team communicates could set the tone for your entire tenure. I run virtual workshops specifically on this — happy to share what's worked for other revenue leaders in their first year.
-
-Worth a quick conversation?
-
-Lorraine</div>
-      </div>
-    </div>
-    <div class="lead-card">
-      <div class="lead-name">Aras Kolya</div>
-      <div class="lead-title">Chief Revenue Officer · OutSystems &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/aras-kolya-a2a32538/" class="lead-li-link" target="_blank">View LinkedIn profile ↗</a></div>
-      <div class="email-draft">
-        <div class="email-label">Draft Outreach</div>
-        <div class="email-line"><strong>To:</strong> Aras Kolya</div>
-        <div class="email-line"><strong>Subject:</strong> Something most new CROs miss when building their team</div>
-        <div class="email-body">Hi Aras,
-
-Congrats on the CRO move at OutSystems — exciting time to be there.
-
-Something I've seen play out repeatedly with revenue teams in high-growth companies: the difference between a good quarter and a great one often isn't strategy — it's how your people communicate in high-stakes moments. The pitch that lands vs. the one that doesn't usually comes down to presence, not product knowledge.
-
-Most CROs invest in enablement and tools in their first 90 days. The ones who also invest in how their team shows up — how they run a room, handle objections with confidence, communicate like executives — see it compound fast.
-
-I work with customer-facing teams on exactly this. Would love to share a few ideas specific to what OutSystems is building right now.
-
-Open to a quick chat?
-
-Lorraine</div>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Passive Revenue Roadmap</div>
-    <div class="roadmap-item"><div class="roadmap-num">1</div><div class="roadmap-body"><div class="roadmap-name">Low-ticket funnel</div><span class="roadmap-stage stage-now">Start Here</span><div class="roadmap-meta">2–3 weeks to launch &nbsp;·&nbsp; $5–20K/quarter</div></div></div>
-    <div class="roadmap-item"><div class="roadmap-num">2</div><div class="roadmap-body"><div class="roadmap-name">On-demand workshop library</div><span class="roadmap-stage stage-next">Do Next</span><div class="roadmap-meta">1–2 months &nbsp;·&nbsp; $6–24K/year per client</div></div></div>
-    <div class="roadmap-item"><div class="roadmap-num">3</div><div class="roadmap-body"><div class="roadmap-name">License frameworks</div><span class="roadmap-stage stage-later">After Rebrand</span><div class="roadmap-meta">2–3 months &nbsp;·&nbsp; $5–15K per license</div></div></div>
-    <div class="roadmap-item"><div class="roadmap-num">4</div><div class="roadmap-body"><div class="roadmap-name">Certification program</div><span class="roadmap-stage stage-big">Biggest Payoff</span><div class="roadmap-meta">4–6 months &nbsp;·&nbsp; $50–100K/year</div></div></div>
-  </div>
-  <div class="card">
-    <div class="card-title">Quick Hits</div>
-    <div class="quick-hit"><div class="qh-headline">BCG published "AI Transformation Is a Workforce Transformation"</div><div class="qh-action">This validates your pitch. Share on LinkedIn with your take, and use in enterprise outreach.</div></div>
-    <div class="quick-hit"><div class="qh-headline">WEF: 85% of employers plan to upskill — but 120M workers won't get reskilling</div><div class="qh-action">Use this stat in your enterprise one-pager today. It's a perfect opening hook.</div></div>
-  </div>
+<div class="hdr">
+<h1>Good morning, Lorraine</h1>
+<div class="date">Monday, April 6, 2026 — Week of Apr 6–12</div>
+<div class="badges"><span class="badge">Aneesh in town Apr 5–9</span><span class="badge">Birthday OOO Apr 16–17</span><span class="badge">Dentist today 1:45pm</span></div>
 </div>
-<footer>Generated by your AI Chief of Staff &nbsp;·&nbsp; RISE Learning Solutions &nbsp;·&nbsp; April 3, 2026</footer>
+<div class="wrap">
+<div class="card yellow-card">
+<div class="ct">What to Do First</div>
+<table>
+<tr><th>#</th><th>Task</th><th>Why Now</th><th>Time</th></tr>
+<tr><td>1</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213918608454458">For Review: Abbvie Presentation</a></td><td><span class="tag-rev">Revenue — Client</span> Due today, Mahea assigned this morning</td><td>45 min</td></tr>
+<tr><td>2</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213942640430420">Film IG scripts [60 min]</a></td><td><span class="tag-hi">Content</span> Scripts ready in teleprompter doc, block 10am–11am</td><td>60 min</td></tr>
+<tr><td>3</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213922049849067">Review &amp; finalize LinkedIn scripts + record [60 min]</a></td><td><span class="tag-hi">Content</span> Weekly Monday task, scripts in email draft</td><td>60 min</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Schedule + Prep — Monday April 6</div>
+<div class="time-block"><span class="ttime">8:45am</span><div>Focus: Review Abbvie Presentation — <span class="due-tag">DUE TODAY</span> [45 min focus block]</div></div>
+<div class="time-block"><span class="ttime">9:00am</span><div>CHECK EMAIL (recurring)</div></div>
+<div class="time-block"><span class="ttime">9:30am</span><div><strong>Team Walkthrough:</strong> New Asana Structure, Dashboards &amp; Claude Code <span class="mtg-tag">Meeting</span> — with Meagan + Mahea</div></div>
+<div class="time-block"><span class="ttime">10:00am</span><div>ASANA / HEADS DOWN — Film IG Scripts + Review visual for LinkedIn Premium Event</div></div>
+<div class="time-block"><span class="ttime">11:00am</span><div><strong>Lorraine + Pamela Bruner 1:1</strong> <span class="mtg-tag">Meeting</span> — Zoom (Simplify &amp; Scale coaching)</div></div>
+<div class="time-block"><span class="ttime">11:30am</span><div>CHECK EMAIL (recurring)</div></div>
+<div class="time-block"><span class="ttime">12:00pm</span><div>Lunch + DEADLINE: MEAGAN — Send event copy &amp; visual to LinkedIn</div></div>
+<div class="time-block"><span class="ttime">1:00pm</span><div>Focus: Review &amp; Finalize LinkedIn Scripts + Record Video [60 min]</div></div>
+<div class="time-block"><span class="ttime">1:45pm</span><div><strong>Dentist</strong> — leaves at 1:45, back ~4:15pm</div></div>
+<div class="time-block"><span class="ttime">3:30pm</span><div>CHECK EMAIL (recurring)</div></div>
+<div class="time-block"><span class="ttime">4:00pm</span><div>film IG scripts (continuation block)</div></div>
+<div class="section-sub">Current Projects calendar — deadlines visible this week</div>
+<div class="time-block"><span class="ttime">Today</span><div><span class="due-tag">DUE TODAY</span> MEAGAN — review 5-day email course</div></div>
+<div class="time-block"><span class="ttime">Today</span><div><span class="due-tag">DUE TODAY</span> Kim Ian — Updates to Speaker Page</div></div>
+<div class="time-block"><span class="ttime">Today</span><div><span class="due-tag">DUE TODAY</span> Mahea — Website Thumbnails</div></div>
+<div class="time-block"><span class="ttime">Tomorrow</span><div><span class="due-tag">DUE TOMORROW</span> MEAGAN — Draft outreach email to Jasmine (Oscar Health)</div></div>
+<div class="time-block"><span class="ttime">Tomorrow</span><div><span class="due-tag">DUE TOMORROW</span> MEAGAN — Write LinkedIn promo post 1 (drive registrations)</div></div>
+</div>
+<div class="card">
+<div class="ct">Priority Emails — Last 24h</div>
+<table>
+<tr><th>From</th><th>Subject</th><th>Action</th></tr>
+<tr><td>Sarah Squires (Women in Revenue)</td><td>checking in + what I'm hearing in 2026</td><td>Responded — she wants Lorraine to speak. Lorraine asked around. <span class="tag-rev">Speaking Opp</span></td></tr>
+<tr><td>Karen Ngo</td><td>Re: potential speaking opp ($1,500)</td><td>Karen confirmed topic interest. Lorraine to make intro. <span class="tag-rev">Revenue</span></td></tr>
+<tr><td>Mahea via Asana</td><td>For Review: Abbvie Presentation</td><td><strong>Needs review today</strong> — assigned this morning</td></tr>
+<tr><td>Pamela Bruner</td><td>Re: Clearer JDs for team</td><td>Pamela loves the updated JDs. No action needed.</td></tr>
+<tr><td>Elizabeth Weingarten</td><td>social copy for April 15th</td><td>Launch is April 14. Lorraine checking if April 13 works for team.</td></tr>
+<tr><td>Aneesh / Q2 Analytics reminder</td><td>Q2 Analytics - Due Monday April 6</td><td>Upload analytics screenshots to Drive folder. <span class="overdue">Overdue</span></td></tr>
+<tr><td>Manychat Support</td><td>IG Automation ticket #476491</td><td>Pending reply — follow up if no resolution</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Team Commitments</div>
+<div class="section-sub">With Deadlines</div>
+<table>
+<tr><th>Person</th><th>Commitment</th><th>Deadline</th><th>Status</th></tr>
+<tr><td>Meagan</td><td>Follow up with Surge Institute re: workshop date flexibility</td><td>This week</td><td>Done — Mari booked a call</td></tr>
+<tr><td>Meagan</td><td>Send event copy + visual to LinkedIn</td><td>Today (12pm PT)</td><td>Pending Lorraine approval of visual</td></tr>
+<tr><td>Meagan</td><td>Draft outreach email to Jasmine (Oscar Health)</td><td>Tue Apr 7</td><td>Pending</td></tr>
+<tr><td>Meagan</td><td>Review 5-day email course (ORs, copy audit)</td><td>Today</td><td>Pending</td></tr>
+<tr><td>Meagan</td><td>Write LinkedIn promo post 1 for May 5 event</td><td>Wed Apr 8</td><td>Pending</td></tr>
+<tr><td>Meagan</td><td>CC Challenge: 3 challenges + post in #ai</td><td>Fri Apr 10</td><td>In progress</td></tr>
+<tr><td>Mahea</td><td>Upload Q2 analytics screenshots (Wishly)</td><td>Today — <span class="overdue">OVERDUE</span></td><td>Lorraine cc'd — needs action</td></tr>
+<tr><td>Mahea</td><td>Create slides for Live Sessions 2 &amp; 3</td><td>Fri Apr 10</td><td>In progress</td></tr>
+<tr><td>Mahea</td><td>Schedule promo post 1 + update link in bio</td><td>Fri Apr 10</td><td>Pending Meagan/Lorraine approval</td></tr>
+<tr><td>Mahea</td><td>CC Challenge: 3 challenges + post in #ai</td><td>Fri Apr 10</td><td>In progress</td></tr>
+<tr><td>Kim Ian</td><td>Updates to Speaker Page (ServiceNow 4x, Google 6x, etc.)</td><td>Today</td><td>Assigned in Asana</td></tr>
+</table>
+<div class="section-sub">Outstanding (No Deadline)</div>
+<div class="flag-out">Meagan: Is the Forbes article w/ Erin's book on the content plan? Co-collaboration? — <em>Consider asking for a deadline.</em></div>
+<div class="flag-out" style="margin-top:8px">Meagan: LinkedIn Guide for Friends &amp; Family form is broken — multiple people reporting errors. — <em>Consider asking for a deadline.</em></div>
+<div class="flag-out" style="margin-top:8px">Meagan: Is affiliate links tracker up to date? Kondo missing. — <em>Consider asking for a deadline.</em></div>
+<div class="flag-out" style="margin-top:8px">Mahea: Website Updates — Awards/Accolades (#1 career book 2025 by Entrepreneur) — due Apr 10 set in Asana but no email confirmation</div>
+</div>
+<div class="card">
+<div class="ct">Asana Tasks — This Week</div>
+<table>
+<tr><th>Task</th><th>Due</th><th>Project</th><th>Priority</th></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213918608454458">For Review: Abbvie Presentation</a></td><td>Apr 6</td><td>Client &amp; Speaking</td><td><span class="tag-rev">High — Revenue</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213942640430420">Film IG scripts [60 min]</a></td><td>Apr 6</td><td>Content &amp; Audience</td><td><span class="tag-hi">High</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213922049849067">Review &amp; finalize LinkedIn scripts + record [60 min]</a></td><td>Apr 7</td><td>Content &amp; Audience</td><td><span class="tag-hi">High</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">LinkedIn Premium Event (May 5)</a></td><td>May 5</td><td>Client &amp; Speaking</td><td><span class="tag-rev">Revenue</span></td></tr>
+<tr class="dim"><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213935492459940">Check Kondo: Lorraine Tab</a></td><td>Apr 10</td><td>Content &amp; Audience</td><td><span class="tag-lo">Low</span></td></tr>
+<tr class="dim"><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213862433368868">Review newsletter folder for replies</a></td><td>Apr 10</td><td>Content &amp; Audience</td><td><span class="tag-lo">Low</span></td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Biz Dev</div>
+<table>
+<tr><th>Lead</th><th>Stage</th><th>Next Step</th></tr>
+<tr><td>Velsoft (Shane Sponagle) — eLearning Partnership</td><td>Discovery call booked</td><td>Meagan confirmed. Lorraine preps for call.</td></tr>
+<tr><td>Surge Institute — Alumni Workshop</td><td>Discovery call booked (Mari Townsend)</td><td>Meagan managing. Watch for date flexibility.</td></tr>
+<tr><td>Jasmine @ Oscar Health</td><td>Warm lead — personal connection</td><td>Meagan drafting outreach email (due Tue)</td></tr>
+<tr><td>Affirm (Kellee Van Horne) — Coaching Proposal</td><td>Proposal sent, awaiting internal approval</td><td>Lorraine followed up today</td></tr>
+<tr><td>ServiceNow / Lilli Beckwith</td><td>Checking in — waiting for Marc alignment</td><td>Lorraine followed up today</td></tr>
+<tr><td>Robert Ford (Covington) — 2026 speaking</td><td>FU sent today</td><td>Meagan cc'd</td></tr>
+<tr><td>CNBC Make It Book Club (Stav Ziv)</td><td>Pitch sent — OOO until Apr 7</td><td>Follow up next week</td></tr>
+<tr><td>RAPP (Kai Daniel)</td><td>"Will provide update early next week"</td><td>Check in mid-week</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Speaking Opps</div>
+<table>
+<tr><th>Org</th><th>Topic</th><th>Budget</th><th>Status</th></tr>
+<tr><td>Women in Revenue (Sarah Squires)</td><td>Executive framing / AI in leadership comms / Strategic storytelling</td><td>TBD (offered free)</td><td>Sarah excited — Lorraine asking around for budget</td></tr>
+<tr><td>Karen Ngo (kkarenism.com)</td><td>Strategic storytelling, handling pushback, AI in leadership</td><td>$1,500</td><td>Karen confirmed topics. Lorraine making intro.</td></tr>
+<tr><td>Surge Institute</td><td>Alumni workshop — media + visibility for founders</td><td>TBD</td><td>Discovery call booked</td></tr>
+<tr><td>LinkedIn Premium Event (May 5)</td><td>Subscriber event</td><td>Paid (LinkedIn)</td><td>Meagan coordinating, visual in review</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Passive Revenue Roadmap</div>
+<table>
+<tr><th>Product</th><th>Status</th><th>Next Step</th></tr>
+<tr><td>5-Day Email Course (Invisible to Influential)</td><td>Live — Meagan auditing performance</td><td>Review OR/CTR data, update copy if needed (due today)</td></tr>
+<tr><td>Masterclass / Live Sessions</td><td>Slides for sessions 2 &amp; 3 in progress (Mahea, due Apr 10)</td><td>Lorraine reviews once slides ready</td></tr>
+<tr><td>Unforgettable Presence — book sales</td><td>Active — #1 career book 2025 (Entrepreneur Mag)</td><td>Add awards to website (Mahea, due Apr 10)</td></tr>
+<tr><td>LinkedIn Learning courses</td><td>Partnership inquiry from Rafranz Davis (LinkedIn)</td><td>Rafranz OOO until Apr 7 — follow up Tue/Wed</td></tr>
+</table>
+</div>
+<div class="card did-you-know">
+<div class="ct" style="color:#084af3">Did You Know? — CC Tip #6</div>
+<p style="font-size:.92rem"><strong>When you get a cold email that might be real, ask CC to research the company and person, tell you if there's budget, and draft a response.</strong> Save yourself 20 minutes per email — just paste the thread and let CC do the vetting first.</p>
+</div>
+<div class="card">
+<div class="ct">Quick Hits</div>
+<ul style="font-size:.9rem;padding-left:18px;display:flex;flex-direction:column;gap:8px">
+<li>Upload Q2 analytics screenshots to Aneesh's Drive folder — <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w">link here</a> — was due today</li>
+<li>Reply to Manychat re: IG automation ticket #476491 — check if issue resolved</li>
+<li>Confirm April 13 social copy date with Elizabeth Weingarten once Mahea checks the calendar</li>
+</ul>
+</div>
+</div>
 </body>
 </html>

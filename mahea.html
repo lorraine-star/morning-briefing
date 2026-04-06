@@ -2,147 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Mahea's Morning Briefing — April 3, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Mahea's Morning Briefing — April 6, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f7f9fa;--white:#fff;--teal-dark:#1E4A48;--teal:#2D5F5D;--teal-light:#6B9E9A;--teal-pale:#d6ecea;--yellow:#F0C75E;--yellow-pale:#fdf5dc;--ch:#2d3748;--gray:#718096;--gray-light:#e2e8f0;--red-pale:#fff5f5;--red-border:#fed7d7;--red-text:#c53030}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ch);min-height:100vh;line-height:1.6}
-.site-header{background:linear-gradient(180deg,var(--teal-dark) 0%,var(--teal) 100%);color:#fff;padding:0;overflow:hidden}
-.header-content{padding:48px 40px 20px}
-.header-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal-pale);opacity:.75;margin-bottom:14px}
-.site-header h1{font-size:2.5rem;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
-.header-date{font-size:.9rem;opacity:.8;font-weight:400;margin-bottom:4px}
-.header-tagline{font-size:.88rem;opacity:.7;font-style:italic;margin-bottom:4px}
-.header-role{font-size:.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;opacity:.65;margin-bottom:28px}
-.mountains{width:100%;height:80px}
-.mountains svg{width:100%;height:100%;display:block}
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--teal-dark);border-bottom:3px solid var(--yellow)}
-.stat-item{padding:18px 20px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
-.stat-item:last-child{border-right:none}
-.stat-value{font-size:1.5rem;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
-.stat-label{font-size:.65rem;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;color:var(--teal-pale);opacity:.7}
-.container{max-width:900px;margin:0 auto;padding:36px 24px 64px;display:flex;flex-direction:column;gap:24px}
-.card{background:#fff;border-radius:12px;padding:26px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04)}
-.card-title{font-size:.67rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
-.focus-zone{background:#fff;border-radius:12px;padding:26px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);border-left:5px solid var(--teal)}
-.focus-zone .card-title{color:var(--teal-dark)}
-.focus-task{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--gray-light)}
-.focus-task:last-child{border-bottom:none}
-.focus-num{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-size:.88rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.focus-body{flex:1}
-.focus-name{font-size:1rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px}
-.focus-links{display:flex;gap:7px;flex-wrap:wrap}
-.task-link{font-size:.75rem;color:var(--teal);text-decoration:none;font-weight:500;padding:2px 9px;border:1px solid var(--teal-pale);border-radius:5px}
-.task-link:hover{background:var(--teal-pale)}
-.overdue-message{font-size:.88rem;color:var(--red-text);font-weight:500;margin-bottom:18px;padding:12px 16px;background:var(--red-pale);border:1px solid var(--red-border);border-radius:8px;line-height:1.6}
-.overdue-group{margin-bottom:20px}
-.overdue-group:last-child{margin-bottom:0}
-.overdue-group-label{font-size:.67rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--gray-light)}
-.overdue-task{display:flex;align-items:flex-start;gap:10px;padding:9px 10px;margin-bottom:4px;background:var(--red-pale);border:1px solid var(--red-border);border-radius:6px}
-.overdue-dot{width:7px;height:7px;border-radius:50%;background:#fc8181;flex-shrink:0;margin-top:7px}
-.overdue-body{flex:1}
-.overdue-name{font-size:.88rem;font-weight:500;margin-bottom:4px}
-.overdue-link{font-size:.73rem;color:var(--red-text);text-decoration:none;font-weight:500;padding:1px 8px;border:1px solid var(--red-border);border-radius:4px}
-.backlog-task{display:flex;align-items:flex-start;gap:10px;padding:12px 0}
-.backlog-dot{width:7px;height:7px;border-radius:50%;background:var(--gray);flex-shrink:0;margin-top:7px;opacity:.5}
-.backlog-body{flex:1;opacity:.7}
-.backlog-name{font-size:.9rem;font-weight:500;margin-bottom:3px}
-.backlog-note{font-size:.78rem;color:var(--gray)}
-.prompt-card{background:var(--yellow-pale);border:2px solid var(--yellow);border-radius:12px;padding:24px 26px}
-.prompt-card .eyebrow{font-size:.65rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8a6900;margin-bottom:10px}
-.prompt-card p{font-size:.95rem;font-weight:500;color:#5a4200;line-height:1.65}
-footer{text-align:center;padding:24px;font-size:.78rem;color:var(--gray);border-top:1px solid var(--gray-light);background:#fff}
-footer .tagline{margin-top:4px;font-style:italic;color:var(--teal-light)}
-@media(max-width:640px){.stats-bar{grid-template-columns:repeat(2,1fr)}.site-header h1{font-size:1.9rem}.header-content{padding:36px 20px 16px}}
+:root{--bg:#f7f9fa;--teal:#2D5F5D;--green:#6B9E9A;--dark:#1a2e2e;--mid:#e8f0ef;--text:#2a3535;--light:#f0f6f5}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.hdr{background:linear-gradient(135deg,#2D5F5D,#3d7a77);color:#fff;padding:40px 36px 32px}
+.hdr h1{font-size:2.1rem;font-weight:800;letter-spacing:-.3px;margin-bottom:4px}
+.hdr .date{font-size:.9rem;opacity:.85;margin-bottom:16px}
+.stats-row{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:10px 16px;text-align:center}
+.stat-n{font-size:1.4rem;font-weight:700}
+.stat-l{font-size:.68rem;text-transform:uppercase;letter-spacing:.7px;opacity:.8}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 54px;display:flex;flex-direction:column;gap:20px}
+.card{background:#fff;border-radius:10px;padding:20px 22px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.04)}
+.ct{font-size:.62rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{text-align:left;font-weight:600;padding:6px 10px;background:var(--light);color:var(--teal);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px}
+td{padding:7px 10px;border-bottom:1px solid #f0f4f3;color:var(--text)}
+tr:last-child td{border-bottom:none}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+.tag-rev{background:#e8f5e9;color:#2e7d32;font-size:.68rem;padding:2px 7px;border-radius:8px;font-weight:600}
+.tag-ig{background:#f3e5f5;color:#6a1b9a;font-size:.68rem;padding:2px 7px;border-radius:8px}
+.tag-bl{background:#f5f5f5;color:#888;font-size:.68rem;padding:2px 7px;border-radius:8px}
+.overdue{color:#c62828;font-weight:700}
+.flag-out{border-left:3px solid var(--teal);background:#e8f0ef;padding:9px 12px;border-radius:0 7px 7px 0;font-size:.84rem;margin-top:8px}
+.motiv{background:linear-gradient(135deg,#e8f0ef,#d1e8e6);border:1px solid var(--green);border-radius:10px;padding:18px 20px}
+.tip-box{background:#e8f0ef;border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:14px 16px}
+.section-sub{font-size:.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid #e8f0ef}
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-content">
-    <div class="header-eyebrow">RISE Learning Solutions &nbsp;·&nbsp; Morning Briefing</div>
-    <h1>Good morning, Mahea! &#x1F3D4;&#xFE0F;</h1>
-    <p class="header-date">Thursday, April 3, 2026</p>
-    <p class="header-tagline">Mountain-high goals today.</p>
-    <p class="header-role">Content &amp; Social</p>
-  </div>
-  <div class="mountains"><svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,80 120,20 220,55 340,5 460,45 580,15 700,50 820,10 940,40 1060,18 1200,35 1200,80" fill="#f7f9fa"/><polygon points="0,80 80,40 160,65 260,25 380,58 480,30 600,55 720,22 840,50 960,30 1080,48 1200,28 1200,80" fill="rgba(247,249,250,0.5)"/></svg></div>
-</header>
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-value">20+</div><div class="stat-label">To Triage</div></div>
-  <div class="stat-item"><div class="stat-value">~1K</div><div class="stat-label">IG Now</div></div>
-  <div class="stat-item"><div class="stat-value">100K</div><div class="stat-label">IG Goal</div></div>
-  <div class="stat-item"><div class="stat-value">30K</div><div class="stat-label">Newsletter Goal</div></div>
+<div class="hdr">
+<h1>Good morning, Mahea</h1>
+<div class="date">Monday, April 6, 2026</div>
+<div class="stats-row">
+<div class="stat"><div class="stat-n">6</div><div class="stat-l">Due This Week</div></div>
+<div class="stat"><div class="stat-n">2</div><div class="stat-l">Overdue</div></div>
+<div class="stat"><div class="stat-n">2</div><div class="stat-l">Lorraine Waiting</div></div>
+<div class="stat"><div class="stat-n">1</div><div class="stat-l">Team Meeting Today</div></div>
 </div>
-<div class="container">
-  <div class="focus-zone">
-    <div class="card-title">Focus Zone — Your Top 2 Today</div>
-    <div class="focus-task">
-      <div class="focus-num">1</div>
-      <div class="focus-body">
-        <div class="focus-name">Review CB newsletter for 3/25</div>
-        <div class="focus-links"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.sosqqgi2spue" class="task-link" target="_blank">Google Doc</a><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154731" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-    <div class="focus-task">
-      <div class="focus-num">2</div>
-      <div class="focus-body">
-        <div class="focus-name">Review 4/1 CB Roundup</div>
-        <div class="focus-links"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.4jelj55kwfr2" class="task-link" target="_blank">Google Doc</a><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154738" class="task-link" target="_blank">Asana</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="card" style="border:2px solid var(--yellow);background:var(--yellow-pale)">
-    <div class="card-title" style="color:#5a4200">Lorraine Is Waiting On You</div>
-    <p style="font-size:.84rem;color:#6b4e00;margin-bottom:16px;font-weight:500">She's already sent these — loop back today.</p>
-    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Q2 Analytics — newsletter analytics question</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine asked yesterday: "Is there a way to get newsletter analytics that exclude UPM/UYI emails?" No reply yet. <strong>Due Monday April 6.</strong></div></div>
-    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Erie recording — timestamp each section</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine forwarded the recording and asked both you and Meagan to timestamp sections. Sent today.</div></div>
-    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Kim Ian / sitemap issue</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine bumped this yesterday and CC'd you. Check the thread and make sure it's resolved or escalated.</div></div>
-    <div style="padding:12px 0 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Free coaching session idea</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine forwarded thoughts about doing free sessions to inform course content. She wants your input. Sent yesterday.</div></div>
-  </div>
-  <div class="card" style="border-left:5px solid var(--teal)">
-    <div class="card-title">Brand Deal Action Item</div>
-    <div style="padding:14px 0;border-bottom:1px solid var(--gray-light)"><div style="font-size:.95rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px">Q2 Analytics — Due Monday April 6</div><div style="font-size:.87rem;line-height:1.65;margin-bottom:10px">Upload analytics to Aneesh's team Google Drive. This is tied to active brand deals — don't let it slip.</div><a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w" class="task-link" target="_blank" style="display:inline-block">Google Drive Folder ↗</a></div>
-    <div style="padding:14px 0 0"><div style="font-size:.95rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px">Newsletter analytics filter</div><div style="font-size:.87rem;line-height:1.65">When pulling Q2 analytics, make sure newsletter numbers <strong>exclude UPM/UYI emails</strong> per Lorraine's request.</div></div>
-  </div>
-  <div class="card">
-    <div class="card-title">Overdue Tasks — Triage These</div>
-    <div class="overdue-message">You have 20+ overdue tasks. Spend 30 minutes today: mark done, delete, or set new dates. Don't carry these forward. This is how you take ownership of your workload.</div>
-    <div class="overdue-group">
-      <div class="overdue-group-label">September 2025</div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check hot-warm-leads channel</div><a href="https://app.asana.com/1/1210774242380505/project/1210774220371725/task/1211345876120877" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check for book comms + Positive Feedback Slack</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211332149571880" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check reminders in Slack</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211332099229865" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Submit email drafts for review</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211296562172875" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Submit post to LI News</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211626515746796" class="overdue-link" target="_blank">Asana</a></div></div>
-    </div>
-    <div class="overdue-group">
-      <div class="overdue-group-label">October–December 2025</div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Update website (legal compliance)</div><a href="https://app.asana.com/1/1210774242380505/task/1211603583417124" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Unforgettable Presence Trademark</div><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1212000384860159" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">OBA Contract + Invoice Automations</div><a href="https://app.asana.com/1/1210774242380505/task/1212296587319135" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Cancel Typeform account</div><a href="https://app.asana.com/1/1210774242380505/task/1212157745157505" class="overdue-link" target="_blank">Asana</a></div></div>
-    </div>
-    <div class="overdue-group">
-      <div class="overdue-group-label">January–March 2026</div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Switch YouTube ownership</div><a href="https://app.asana.com/1/1210774242380505/task/1212482411641165" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Add Podcasts to Spotify &amp; YT</div><a href="https://app.asana.com/1/1210774242380505/task/1211774747995446" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Review slides for Erie</div><a href="https://app.asana.com/1/1210774242380505/project/1210802400489085/task/1213676631235984" class="overdue-link" target="_blank">Asana</a></div></div>
-      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Workbook Notes</div><a href="https://app.asana.com/1/1210774242380505/project/1212694295214738/task/1213504295992301" class="overdue-link" target="_blank">Asana</a></div></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Backlog &mdash; Not Urgent</div>
-    <div class="backlog-task"><div class="backlog-dot"></div><div class="backlog-body"><div class="backlog-name">Create slides for Live sessions 2 &amp; 3</div><div class="backlog-note">Course is not active right now — deprioritize. &nbsp;<a href="https://app.asana.com/1/1210774242380505/task/1213703411153499" style="color:#718096;font-size:.73rem" target="_blank">Asana</a></div></div></div>
-  </div>
-  <div class="prompt-card">
-    <div class="eyebrow">Ownership Prompt of the Day</div>
-    <p>Are open rates on the free email course staying consistent? If you don't know, check today and flag to Meagan.</p>
-  </div>
 </div>
-<footer>
-  <p>RISE Learning Solutions &nbsp;·&nbsp; April 3, 2026</p>
-  <p class="tagline">Keep climbing, Mahea. The view from the top is worth it. &#x26F0;&#xFE0F;</p>
-</footer>
+<div class="wrap">
+<div class="card" style="border-left:4px solid var(--teal)">
+<div class="ct">Focus Zone — Top 2 Tasks</div>
+<table>
+<tr><th>#</th><th>Task</th><th>Due</th><th>Type</th></tr>
+<tr><td>1</td><td>Upload Q2 analytics screenshots to Wishly Drive</td><td><span class="overdue">TODAY — Overdue</span></td><td><span class="tag-rev">Revenue (Deals)</span></td></tr>
+<tr><td>2</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213703411153499">Create slides for Live Sessions 2 &amp; 3</a></td><td>Fri Apr 10</td><td><span class="tag-rev">Revenue</span></td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Lorraine Is Waiting On You</div>
+<table>
+<tr><th>Item</th><th>Due</th><th>Notes</th></tr>
+<tr><td>Upload Q2 analytics screenshots (Wishly)</td><td><span class="overdue">TODAY — Overdue</span></td><td>Drive: <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w">link</a> — Aneesh requested by today; Lorraine cc'd asking about newsletter analytics</td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213920348523074">Website Thumbnails update — speaking page</a></td><td><span class="overdue">TODAY</span></td><td>Assigned in Asana</td></tr>
+<tr><td>LinkedIn Premium Event visual — for Lorraine to approve by 12pm</td><td>TODAY 12pm</td><td>Lorraine reviewing now so Meagan can send to LinkedIn</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Your Open Commitments</div>
+<div class="section-sub">With Deadlines</div>
+<table>
+<tr><th>Commitment</th><th>Deadline</th><th>Status</th></tr>
+<tr><td>Upload Q2 analytics to Wishly Drive</td><td><span class="overdue">Today — Overdue</span></td><td>Lorraine + Meagan cc'd</td></tr>
+<tr><td>Website Thumbnails — speaking page</td><td><span class="overdue">Today</span></td><td>Asana task assigned</td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213703411153499">Slides for Live Sessions 2 &amp; 3</a></td><td>Fri Apr 10</td><td>Script doc ready as guide</td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213920348523071">Website: Awards/Accolades (#1 career book 2025)</a></td><td>Fri Apr 10</td><td>Add Entrepreneur Mag + Amazon #1 screenshots</td></tr>
+<tr><td>Schedule LinkedIn promo post 1 + update link in bio</td><td>Fri Apr 10</td><td>Pending Lorraine/Meagan approval of post</td></tr>
+<tr><td>CC Challenge: 3 tasks, post in #ai-wins</td><td>Fri Apr 10</td><td>In progress</td></tr>
+</table>
+<div class="section-sub">Outstanding (No Deadline Set)</div>
+<div class="flag-out">Newsletter analytics — Lorraine asked if you can pull Career Bites stats excluding UPM/UYI emails (Apr 2 thread). <em style="color:#666">Set a deadline or close the loop.</em></div>
+<div class="flag-out" style="margin-top:8px">Dilaab Digitals (Kim Ian) — Kim available after connecting over weekend. Confirm project assignments for this week. <em style="color:#666">Set a deadline or close the loop.</em></div>
+</div>
+<div class="card">
+<div class="ct">Superhuman Threads — Action Needed</div>
+<table>
+<tr><th>Thread</th><th>Your Role</th><th>Action</th></tr>
+<tr><td>Dilaab Digitals — Kim Ian availability</td><td>Your contractor coordination</td><td>Kim connected over weekend — assign work for week</td></tr>
+<tr><td>Q2 Analytics (Aneesh/Wishly)</td><td>Lorraine asked you directly on thread</td><td>Upload screenshots today + reply to Lorraine on newsletter question</td></tr>
+<tr><td>Website sitemap page (Lorraine)</td><td>Kim Ian action item</td><td>Lorraine said "it's a draft, delete that page" — confirm Kim Ian did this</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Overdue Triage</div>
+<table>
+<tr><th>Task</th><th>Was Due</th><th>Priority</th></tr>
+<tr><td>Upload Q2 analytics screenshots (Wishly)</td><td><span class="overdue">Today (Apr 6) — do now</span></td><td><span class="tag-rev">High</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213890310617879">Review: WP Tasks reverted?</a></td><td><span class="overdue">Apr 1</span></td><td>Assigned to Kim Ian — follow up status</td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213929688684493">Change Homepage header (not dynamic)</a></td><td><span class="overdue">Apr 3</span></td><td>Assigned to Kim Ian — follow up status</td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">This Week (Apr 6–10)</div>
+<table>
+<tr><th>Task</th><th>Due</th><th>Category</th></tr>
+<tr><td>Upload Q2 analytics screenshots</td><td><span class="overdue">Apr 6</span></td><td><span class="tag-rev">Revenue</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213920348523074">Website Thumbnails — speaking page</a></td><td><span class="overdue">Apr 6</span></td><td><span class="tag-rev">Revenue</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213703411153499">Slides for Live Sessions 2 &amp; 3</a></td><td>Apr 10</td><td><span class="tag-rev">Revenue</span></td></tr>
+<tr><td>Schedule LinkedIn promo post 1 + link in bio</td><td>Apr 10</td><td><span class="tag-ig">IG/Social</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213920348523071">Website Awards/Accolades</a></td><td>Apr 10</td><td><span class="tag-ig">Website</span></td></tr>
+<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1213935505694779">CC Challenge: 3 tasks, post in #ai-wins</a></td><td>Apr 10</td><td><span class="tag-ig">Admin</span></td></tr>
+</table>
+</div>
+<div class="card">
+<div class="ct">Backlog (Lower Priority)</div>
+<table>
+<tr><th>Task</th><th>Notes</th></tr>
+<tr><td class="tag-bl"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1211774747995446">Add Lorraine's Podcasts to Spotify &amp; YT</a></td><td>Transfer personal YT to lorraineklee.com account. No hard deadline.</td></tr>
+<tr><td class="tag-bl"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213935484582783">Comment on 8/21 LI post</a></td><td>Low urgency social engagement</td></tr>
+<tr><td class="tag-bl"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213935492459940">Check Kondo: Lorraine Tab</a> (Apr 10)</td><td>Recurring — coordinate with Lorraine</td></tr>
+<tr><td class="tag-bl"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1212273867389021">Review Riddle quiz data</a></td><td>Analytics review — backlog</td></tr>
+</table>
+</div>
+<div class="card motiv">
+<div class="ct" style="color:var(--teal)">Ownership Prompt</div>
+<p style="font-size:.94rem;color:var(--dark);line-height:1.7">Two things are overdue and Lorraine is cc'd on both. Handle the analytics upload first — it takes 15 minutes and closes the loop with the Wishly team. Everything else flows from there. Revenue tasks before IG, IG before backlog.</p>
+</div>
+<div class="card tip-box">
+<div class="ct" style="color:var(--teal)">CC &amp; Automation Tip #6</div>
+<p style="font-size:.88rem;color:var(--text)"><strong>For invoice follow-ups, give CC the invoice number and last email — it drafts the follow-up with the right details.</strong> Use this for any outstanding Dilaab Digitals or contractor invoices so nothing slips.</p>
+</div>
+</div>
 </body>
 </html>
