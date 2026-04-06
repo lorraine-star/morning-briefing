@@ -1,272 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahea's Morning Briefing — April 3, 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f7f9fa;
-      --white: #ffffff;
-      --teal-dark: #1E4A48;
-      --teal: #2D5F5D;
-      --teal-light: #6B9E9A;
-      --teal-pale: #d6ecea;
-      --yellow: #F0C75E;
-      --yellow-pale: #fdf5dc;
-      --charcoal: #2d3748;
-      --gray: #718096;
-      --gray-light: #e2e8f0;
-      --red-pale: #fff5f5;
-      --red-border: #fed7d7;
-      --red-text: #c53030;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--charcoal);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    /* HEADER — mountain theme */
-    .site-header {
-      background: linear-gradient(180deg, var(--teal-dark) 0%, var(--teal) 100%);
-      color: white;
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .header-content {
-      padding: 48px 40px 20px;
-      position: relative;
-      z-index: 2;
-    }
-    .header-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--teal-pale);
-      opacity: 0.75;
-      margin-bottom: 14px;
-    }
-    .site-header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      margin-bottom: 6px;
-    }
-    .header-date { font-size: 0.9rem; opacity: 0.8; font-weight: 400; margin-bottom: 4px; }
-    .header-tagline { font-size: 0.88rem; opacity: 0.7; font-style: italic; margin-bottom: 4px; }
-    .header-role { font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.65; margin-bottom: 28px; }
-
-    /* Mountain silhouette using CSS shapes */
-    .mountains {
-      width: 100%;
-      height: 80px;
-      position: relative;
-      margin-top: 8px;
-    }
-    .mountains svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    /* STATS BAR */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      background: var(--teal-dark);
-      border-bottom: 3px solid var(--yellow);
-    }
-    .stat-item {
-      padding: 18px 20px;
-      border-right: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-value { font-size: 1.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
-    .stat-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; color: var(--teal-pale); opacity: 0.7; }
-
-    /* LAYOUT */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 36px 24px 64px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* CARD */
-    .card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 26px 28px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .card-title {
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
-    }
-
-    /* FOCUS ZONE */
-    .focus-zone {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 26px 28px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
-      border-left: 5px solid var(--teal);
-    }
-    .focus-zone .card-title { color: var(--teal-dark); }
-    .focus-task {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--gray-light);
-    }
-    .focus-task:last-child { border-bottom: none; }
-    .focus-num {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--teal);
-      color: white; font-size: 0.88rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .focus-body { flex: 1; }
-    .focus-name { font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px; }
-    .focus-links { display: flex; gap: 7px; flex-wrap: wrap; }
-    .task-link {
-      font-size: 0.75rem; color: var(--teal);
-      text-decoration: none; font-weight: 500;
-      padding: 2px 9px;
-      border: 1px solid var(--teal-pale);
-      border-radius: 5px;
-      transition: background 0.15s;
-    }
-    .task-link:hover { background: var(--teal-pale); }
-
-    /* OVERDUE SECTION */
-    .overdue-message {
-      font-size: 0.88rem;
-      color: var(--red-text);
-      font-weight: 500;
-      margin-bottom: 18px;
-      padding: 12px 16px;
-      background: var(--red-pale);
-      border: 1px solid var(--red-border);
-      border-radius: 8px;
-      line-height: 1.6;
-    }
-    .overdue-group {
-      margin-bottom: 20px;
-    }
-    .overdue-group:last-child { margin-bottom: 0; }
-    .overdue-group-label {
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 8px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--gray-light);
-    }
-    .overdue-task {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 9px 10px;
-      margin-bottom: 4px;
-      background: var(--red-pale);
-      border: 1px solid var(--red-border);
-      border-radius: 6px;
-    }
-    .overdue-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #fc8181; flex-shrink: 0; margin-top: 7px;
-    }
-    .overdue-body { flex: 1; }
-    .overdue-name { font-size: 0.88rem; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
-    .overdue-link {
-      font-size: 0.73rem; color: var(--red-text);
-      text-decoration: none; font-weight: 500;
-      padding: 1px 8px;
-      border: 1px solid var(--red-border);
-      border-radius: 4px;
-    }
-    .overdue-link:hover { background: var(--red-border); }
-
-    /* BACKLOG */
-    .backlog-task {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 12px 0;
-    }
-    .backlog-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--gray); flex-shrink: 0; margin-top: 7px;
-      opacity: 0.5;
-    }
-    .backlog-body { flex: 1; opacity: 0.7; }
-    .backlog-name { font-size: 0.9rem; font-weight: 500; color: var(--charcoal); margin-bottom: 3px; }
-    .backlog-note { font-size: 0.78rem; color: var(--gray); }
-
-    /* OWNERSHIP PROMPT */
-    .prompt-card {
-      background: var(--yellow-pale);
-      border: 2px solid var(--yellow);
-      border-radius: 12px;
-      padding: 24px 26px;
-    }
-    .prompt-card .eyebrow {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: #8a6900;
-      margin-bottom: 10px;
-    }
-    .prompt-card p {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #5a4200;
-      line-height: 1.65;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.78rem;
-      color: var(--gray);
-      border-top: 1px solid var(--gray-light);
-      background: white;
-    }
-    footer .tagline { margin-top: 4px; font-style: italic; color: var(--teal-light); }
-
-    @media (max-width: 640px) {
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .site-header h1 { font-size: 1.9rem; }
-      .header-content { padding: 36px 20px 16px; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mahea's Morning Briefing — April 3, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f7f9fa;--white:#fff;--teal-dark:#1E4A48;--teal:#2D5F5D;--teal-light:#6B9E9A;--teal-pale:#d6ecea;--yellow:#F0C75E;--yellow-pale:#fdf5dc;--ch:#2d3748;--gray:#718096;--gray-light:#e2e8f0;--red-pale:#fff5f5;--red-border:#fed7d7;--red-text:#c53030}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ch);min-height:100vh;line-height:1.6}
+.site-header{background:linear-gradient(180deg,var(--teal-dark) 0%,var(--teal) 100%);color:#fff;padding:0;overflow:hidden}
+.header-content{padding:48px 40px 20px}
+.header-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal-pale);opacity:.75;margin-bottom:14px}
+.site-header h1{font-size:2.5rem;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
+.header-date{font-size:.9rem;opacity:.8;font-weight:400;margin-bottom:4px}
+.header-tagline{font-size:.88rem;opacity:.7;font-style:italic;margin-bottom:4px}
+.header-role{font-size:.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;opacity:.65;margin-bottom:28px}
+.mountains{width:100%;height:80px}
+.mountains svg{width:100%;height:100%;display:block}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--teal-dark);border-bottom:3px solid var(--yellow)}
+.stat-item{padding:18px 20px;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+.stat-item:last-child{border-right:none}
+.stat-value{font-size:1.5rem;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
+.stat-label{font-size:.65rem;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;color:var(--teal-pale);opacity:.7}
+.container{max-width:900px;margin:0 auto;padding:36px 24px 64px;display:flex;flex-direction:column;gap:24px}
+.card{background:#fff;border-radius:12px;padding:26px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04)}
+.card-title{font-size:.67rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.focus-zone{background:#fff;border-radius:12px;padding:26px 28px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);border-left:5px solid var(--teal)}
+.focus-zone .card-title{color:var(--teal-dark)}
+.focus-task{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--gray-light)}
+.focus-task:last-child{border-bottom:none}
+.focus-num{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-size:.88rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.focus-body{flex:1}
+.focus-name{font-size:1rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px}
+.focus-links{display:flex;gap:7px;flex-wrap:wrap}
+.task-link{font-size:.75rem;color:var(--teal);text-decoration:none;font-weight:500;padding:2px 9px;border:1px solid var(--teal-pale);border-radius:5px}
+.task-link:hover{background:var(--teal-pale)}
+.overdue-message{font-size:.88rem;color:var(--red-text);font-weight:500;margin-bottom:18px;padding:12px 16px;background:var(--red-pale);border:1px solid var(--red-border);border-radius:8px;line-height:1.6}
+.overdue-group{margin-bottom:20px}
+.overdue-group:last-child{margin-bottom:0}
+.overdue-group-label{font-size:.67rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--gray-light)}
+.overdue-task{display:flex;align-items:flex-start;gap:10px;padding:9px 10px;margin-bottom:4px;background:var(--red-pale);border:1px solid var(--red-border);border-radius:6px}
+.overdue-dot{width:7px;height:7px;border-radius:50%;background:#fc8181;flex-shrink:0;margin-top:7px}
+.overdue-body{flex:1}
+.overdue-name{font-size:.88rem;font-weight:500;margin-bottom:4px}
+.overdue-link{font-size:.73rem;color:var(--red-text);text-decoration:none;font-weight:500;padding:1px 8px;border:1px solid var(--red-border);border-radius:4px}
+.backlog-task{display:flex;align-items:flex-start;gap:10px;padding:12px 0}
+.backlog-dot{width:7px;height:7px;border-radius:50%;background:var(--gray);flex-shrink:0;margin-top:7px;opacity:.5}
+.backlog-body{flex:1;opacity:.7}
+.backlog-name{font-size:.9rem;font-weight:500;margin-bottom:3px}
+.backlog-note{font-size:.78rem;color:var(--gray)}
+.prompt-card{background:var(--yellow-pale);border:2px solid var(--yellow);border-radius:12px;padding:24px 26px}
+.prompt-card .eyebrow{font-size:.65rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#8a6900;margin-bottom:10px}
+.prompt-card p{font-size:.95rem;font-weight:500;color:#5a4200;line-height:1.65}
+footer{text-align:center;padding:24px;font-size:.78rem;color:var(--gray);border-top:1px solid var(--gray-light);background:#fff}
+footer .tagline{margin-top:4px;font-style:italic;color:var(--teal-light)}
+@media(max-width:640px){.stats-bar{grid-template-columns:repeat(2,1fr)}.site-header h1{font-size:1.9rem}.header-content{padding:36px 20px 16px}}
+</style>
 </head>
 <body>
-
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-content">
     <div class="header-eyebrow">RISE Learning Solutions &nbsp;·&nbsp; Morning Briefing</div>
@@ -275,256 +66,83 @@
     <p class="header-tagline">Mountain-high goals today.</p>
     <p class="header-role">Content &amp; Social</p>
   </div>
-  <!-- Mountain silhouette -->
-  <div class="mountains">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="0,80 120,20 220,55 340,5 460,45 580,15 700,50 820,10 940,40 1060,18 1200,35 1200,80" fill="#f7f9fa"/>
-      <polygon points="0,80 80,40 160,65 260,25 380,58 480,30 600,55 720,22 840,50 960,30 1080,48 1200,28 1200,80" fill="rgba(247,249,250,0.5)"/>
-    </svg>
-  </div>
+  <div class="mountains"><svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><polygon points="0,80 120,20 220,55 340,5 460,45 580,15 700,50 820,10 940,40 1060,18 1200,35 1200,80" fill="#f7f9fa"/><polygon points="0,80 80,40 160,65 260,25 380,58 480,30 600,55 720,22 840,50 960,30 1080,48 1200,28 1200,80" fill="rgba(247,249,250,0.5)"/></svg></div>
 </header>
-
-<!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-value">20+</div>
-    <div class="stat-label">To Triage</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">~1K</div>
-    <div class="stat-label">IG Now</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">100K</div>
-    <div class="stat-label">IG Goal</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">30K</div>
-    <div class="stat-label">Newsletter Goal</div>
-  </div>
+  <div class="stat-item"><div class="stat-value">20+</div><div class="stat-label">To Triage</div></div>
+  <div class="stat-item"><div class="stat-value">~1K</div><div class="stat-label">IG Now</div></div>
+  <div class="stat-item"><div class="stat-value">100K</div><div class="stat-label">IG Goal</div></div>
+  <div class="stat-item"><div class="stat-value">30K</div><div class="stat-label">Newsletter Goal</div></div>
 </div>
-
 <div class="container">
-
-  <!-- FOCUS ZONE -->
   <div class="focus-zone">
     <div class="card-title">Focus Zone — Your Top 2 Today</div>
-
     <div class="focus-task">
       <div class="focus-num">1</div>
       <div class="focus-body">
         <div class="focus-name">Review CB newsletter for 3/25</div>
-        <div class="focus-links">
-          <a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.sosqqgi2spue" class="task-link" target="_blank">Google Doc</a>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154731" class="task-link" target="_blank">Asana</a>
-        </div>
+        <div class="focus-links"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.sosqqgi2spue" class="task-link" target="_blank">Google Doc</a><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154731" class="task-link" target="_blank">Asana</a></div>
       </div>
     </div>
-
     <div class="focus-task">
       <div class="focus-num">2</div>
       <div class="focus-body">
         <div class="focus-name">Review 4/1 CB Roundup</div>
-        <div class="focus-links">
-          <a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.4jelj55kwfr2" class="task-link" target="_blank">Google Doc</a>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154738" class="task-link" target="_blank">Asana</a>
-        </div>
+        <div class="focus-links"><a href="https://docs.google.com/document/d/1uET7Ax9FtuyaH_GEKH6OeaY8viGOSKOGp-oJFMhDILU/edit?tab=t.4jelj55kwfr2" class="task-link" target="_blank">Google Doc</a><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160/task/1213788653154738" class="task-link" target="_blank">Asana</a></div>
       </div>
     </div>
   </div>
-
-  <!-- LORRAINE IS WAITING ON YOU -->
-  <div class="card" style="border: 2px solid var(--yellow); background: var(--yellow-pale);">
-    <div class="card-title" style="color: #5a4200;">Lorraine Is Waiting On You</div>
-    <p style="font-size: 0.84rem; color: #6b4e00; margin-bottom: 16px; font-weight: 500;">She's already sent these — loop back today.</p>
-
-    <div style="border-bottom: 1px solid rgba(240,199,94,0.4); padding: 12px 0;">
-      <div style="font-size: 0.95rem; font-weight: 600; color: #3a2c00; margin-bottom: 4px;">Q2 Analytics — newsletter analytics question</div>
-      <div style="font-size: 0.84rem; color: #6b4e00; line-height: 1.6;">Lorraine asked yesterday: "Is there a way to get newsletter analytics that exclude UPM/UYI emails?" No reply yet. <strong>Due Monday April 6.</strong></div>
-    </div>
-
-    <div style="border-bottom: 1px solid rgba(240,199,94,0.4); padding: 12px 0;">
-      <div style="font-size: 0.95rem; font-weight: 600; color: #3a2c00; margin-bottom: 4px;">Erie recording — timestamp each section</div>
-      <div style="font-size: 0.84rem; color: #6b4e00; line-height: 1.6;">Lorraine forwarded the recording and asked both you and Meagan to timestamp sections. Sent today.</div>
-    </div>
-
-    <div style="border-bottom: 1px solid rgba(240,199,94,0.4); padding: 12px 0;">
-      <div style="font-size: 0.95rem; font-weight: 600; color: #3a2c00; margin-bottom: 4px;">Kim Ian / sitemap issue</div>
-      <div style="font-size: 0.84rem; color: #6b4e00; line-height: 1.6;">Lorraine bumped this yesterday and CC'd you. Check the thread and make sure it's resolved or escalated.</div>
-    </div>
-
-    <div style="padding: 12px 0 0;">
-      <div style="font-size: 0.95rem; font-weight: 600; color: #3a2c00; margin-bottom: 4px;">Free coaching session idea</div>
-      <div style="font-size: 0.84rem; color: #6b4e00; line-height: 1.6;">Lorraine forwarded thoughts about doing free sessions to inform course content. She wants your input. Sent yesterday.</div>
-    </div>
+  <div class="card" style="border:2px solid var(--yellow);background:var(--yellow-pale)">
+    <div class="card-title" style="color:#5a4200">Lorraine Is Waiting On You</div>
+    <p style="font-size:.84rem;color:#6b4e00;margin-bottom:16px;font-weight:500">She's already sent these — loop back today.</p>
+    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Q2 Analytics — newsletter analytics question</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine asked yesterday: "Is there a way to get newsletter analytics that exclude UPM/UYI emails?" No reply yet. <strong>Due Monday April 6.</strong></div></div>
+    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Erie recording — timestamp each section</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine forwarded the recording and asked both you and Meagan to timestamp sections. Sent today.</div></div>
+    <div style="border-bottom:1px solid rgba(240,199,94,.4);padding:12px 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Kim Ian / sitemap issue</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine bumped this yesterday and CC'd you. Check the thread and make sure it's resolved or escalated.</div></div>
+    <div style="padding:12px 0 0"><div style="font-size:.95rem;font-weight:600;color:#3a2c00;margin-bottom:4px">Free coaching session idea</div><div style="font-size:.84rem;color:#6b4e00;line-height:1.6">Lorraine forwarded thoughts about doing free sessions to inform course content. She wants your input. Sent yesterday.</div></div>
   </div>
-
-  <!-- BRAND DEAL ACTION ITEM -->
-  <div class="card" style="border-left: 5px solid var(--teal);">
+  <div class="card" style="border-left:5px solid var(--teal)">
     <div class="card-title">Brand Deal Action Item</div>
-
-    <div style="padding: 14px 0; border-bottom: 1px solid var(--gray-light);">
-      <div style="font-size: 0.95rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px;">Q2 Analytics — Due Monday April 6</div>
-      <div style="font-size: 0.87rem; color: var(--charcoal); line-height: 1.65; margin-bottom: 10px;">Upload analytics to Aneesh's team Google Drive. This is tied to active brand deals — don't let it slip.</div>
-      <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w" class="task-link" target="_blank" style="display:inline-block;">Google Drive Folder ↗</a>
-    </div>
-
-    <div style="padding: 14px 0 0;">
-      <div style="font-size: 0.95rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 6px;">Newsletter analytics filter</div>
-      <div style="font-size: 0.87rem; color: var(--charcoal); line-height: 1.65;">When pulling Q2 analytics, make sure newsletter numbers <strong>exclude UPM/UYI emails</strong> per Lorraine's request.</div>
-    </div>
+    <div style="padding:14px 0;border-bottom:1px solid var(--gray-light)"><div style="font-size:.95rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px">Q2 Analytics — Due Monday April 6</div><div style="font-size:.87rem;line-height:1.65;margin-bottom:10px">Upload analytics to Aneesh's team Google Drive. This is tied to active brand deals — don't let it slip.</div><a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w" class="task-link" target="_blank" style="display:inline-block">Google Drive Folder ↗</a></div>
+    <div style="padding:14px 0 0"><div style="font-size:.95rem;font-weight:700;color:var(--teal-dark);margin-bottom:6px">Newsletter analytics filter</div><div style="font-size:.87rem;line-height:1.65">When pulling Q2 analytics, make sure newsletter numbers <strong>exclude UPM/UYI emails</strong> per Lorraine's request.</div></div>
   </div>
-
-  <!-- OVERDUE TASKS -->
   <div class="card">
     <div class="card-title">Overdue Tasks — Triage These</div>
     <div class="overdue-message">You have 20+ overdue tasks. Spend 30 minutes today: mark done, delete, or set new dates. Don't carry these forward. This is how you take ownership of your workload.</div>
-
-    <!-- September 2025 -->
     <div class="overdue-group">
       <div class="overdue-group-label">September 2025</div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Check hot-warm-leads channel</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210774220371725/task/1211345876120877" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Check for book comms + Positive Feedback Slack</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211332149571880" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Check reminders in Slack</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211332099229865" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Submit email drafts for review</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211296562172875" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Submit post to LI News</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211626515746796" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check hot-warm-leads channel</div><a href="https://app.asana.com/1/1210774242380505/project/1210774220371725/task/1211345876120877" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check for book comms + Positive Feedback Slack</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211332149571880" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Check reminders in Slack</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211332099229865" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Submit email drafts for review</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228555958/task/1211296562172875" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Submit post to LI News</div><a href="https://app.asana.com/1/1210774242380505/project/1210780228667967/task/1211626515746796" class="overdue-link" target="_blank">Asana</a></div></div>
     </div>
-
-    <!-- Oct–Dec 2025 -->
     <div class="overdue-group">
       <div class="overdue-group-label">October–December 2025</div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Update website (legal compliance)</div>
-          <a href="https://app.asana.com/1/1210774242380505/task/1211603583417124" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Unforgettable Presence Trademark</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1212000384860159" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">OBA Contract + Invoice Automations</div>
-          <a href="https://app.asana.com/1/1210774242380505/task/1212296587319135" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Cancel Typeform account</div>
-          <a href="https://app.asana.com/1/1210774242380505/task/1212157745157505" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Update website (legal compliance)</div><a href="https://app.asana.com/1/1210774242380505/task/1211603583417124" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Unforgettable Presence Trademark</div><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1212000384860159" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">OBA Contract + Invoice Automations</div><a href="https://app.asana.com/1/1210774242380505/task/1212296587319135" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Cancel Typeform account</div><a href="https://app.asana.com/1/1210774242380505/task/1212157745157505" class="overdue-link" target="_blank">Asana</a></div></div>
     </div>
-
-    <!-- Jan–Mar 2026 -->
     <div class="overdue-group">
       <div class="overdue-group-label">January–March 2026</div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Switch YouTube ownership</div>
-          <a href="https://app.asana.com/1/1210774242380505/task/1212482411641165" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Add Podcasts to Spotify &amp; YT</div>
-          <a href="https://app.asana.com/1/1210774242380505/task/1211774747995446" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Review slides for Erie</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1210802400489085/task/1213676631235984" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
-
-      <div class="overdue-task">
-        <div class="overdue-dot"></div>
-        <div class="overdue-body">
-          <div class="overdue-name">Workbook Notes</div>
-          <a href="https://app.asana.com/1/1210774242380505/project/1212694295214738/task/1213504295992301" class="overdue-link" target="_blank">Asana</a>
-        </div>
-      </div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Switch YouTube ownership</div><a href="https://app.asana.com/1/1210774242380505/task/1212482411641165" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Add Podcasts to Spotify &amp; YT</div><a href="https://app.asana.com/1/1210774242380505/task/1211774747995446" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Review slides for Erie</div><a href="https://app.asana.com/1/1210774242380505/project/1210802400489085/task/1213676631235984" class="overdue-link" target="_blank">Asana</a></div></div>
+      <div class="overdue-task"><div class="overdue-dot"></div><div class="overdue-body"><div class="overdue-name">Workbook Notes</div><a href="https://app.asana.com/1/1210774242380505/project/1212694295214738/task/1213504295992301" class="overdue-link" target="_blank">Asana</a></div></div>
     </div>
   </div>
-
-  <!-- BACKLOG -->
   <div class="card">
     <div class="card-title">Backlog &mdash; Not Urgent</div>
-
-    <div class="backlog-task">
-      <div class="backlog-dot"></div>
-      <div class="backlog-body">
-        <div class="backlog-name">Create slides for Live sessions 2 &amp; 3</div>
-        <div class="backlog-note">Course is not active right now — deprioritize. &nbsp;<a href="https://app.asana.com/1/1210774242380505/task/1213703411153499" style="color: #718096; font-size: 0.73rem;" target="_blank">Asana</a></div>
-      </div>
-    </div>
+    <div class="backlog-task"><div class="backlog-dot"></div><div class="backlog-body"><div class="backlog-name">Create slides for Live sessions 2 &amp; 3</div><div class="backlog-note">Course is not active right now — deprioritize. &nbsp;<a href="https://app.asana.com/1/1210774242380505/task/1213703411153499" style="color:#718096;font-size:.73rem" target="_blank">Asana</a></div></div></div>
   </div>
-
-  <!-- OWNERSHIP PROMPT -->
   <div class="prompt-card">
     <div class="eyebrow">Ownership Prompt of the Day</div>
     <p>Are open rates on the free email course staying consistent? If you don't know, check today and flag to Meagan.</p>
   </div>
-
 </div>
-
 <footer>
   <p>RISE Learning Solutions &nbsp;·&nbsp; April 3, 2026</p>
   <p class="tagline">Keep climbing, Mahea. The view from the top is worth it. &#x26F0;&#xFE0F;</p>
 </footer>
-
 </body>
 </html>
