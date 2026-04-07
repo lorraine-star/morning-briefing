@@ -1,135 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Meagan's Morning Briefing — April 6, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meagan — April 7, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#1a1a18;--cream:#c8c0b4;--gold:#c9a96e;--dark:#111110;--mid:#2a2a27;--lgold:#f0ddb8}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6}
-h1,h2,.hname{font-family:'Cormorant Garamond',serif}
-.hdr{background:linear-gradient(135deg,#111110,#2a2a27);padding:40px 36px 32px;border-bottom:1px solid #333}
-.hdr h1{font-size:2.2rem;color:var(--lgold);letter-spacing:.3px;margin-bottom:4px}
-.hdr .date{font-size:.9rem;color:#888;margin-bottom:14px}
-.stats-row{display:flex;gap:14px;flex-wrap:wrap}
-.stat{background:#222220;border:1px solid #333;border-radius:8px;padding:10px 16px;text-align:center}
-.stat-n{font-size:1.5rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif}
-.stat-l{font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.7px}
-.wrap{max-width:860px;margin:0 auto;padding:26px 18px 54px;display:flex;flex-direction:column;gap:20px}
-.card{background:var(--mid);border-radius:10px;padding:20px 22px;border:1px solid #333}
-.ct{font-size:.62rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-table{width:100%;border-collapse:collapse;font-size:.85rem}
-th{text-align:left;font-weight:600;padding:6px 10px;background:#222;color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.5px}
-td{padding:7px 10px;border-bottom:1px solid #2f2f2c;color:var(--cream)}
-tr:last-child td{border-bottom:none}
-a{color:var(--gold);text-decoration:none}
-a:hover{text-decoration:underline}
-.overdue{color:#ff6b6b;font-weight:700}
-.flag-out{border-left:3px solid var(--gold);background:#1f1d15;padding:9px 12px;border-radius:0 7px 7px 0;font-size:.84rem;margin-top:8px}
-.motiv{background:linear-gradient(135deg,#1f1b11,#2a2416);border:1px solid var(--gold);border-radius:10px;padding:18px 20px}
-.tip-box{background:#1a2030;border-left:3px solid #7aafff;border-radius:0 8px 8px 0;padding:14px 16px}
-.goal-bar{background:#222;border-radius:20px;height:8px;margin:6px 0 2px;overflow:hidden}
-.goal-fill{background:linear-gradient(90deg,var(--gold),#f0c060);height:100%;border-radius:20px}
-.section-sub{font-size:.72rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px;padding-bottom:4px;border-bottom:1px solid #333}
-</style>
-</head>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a18;color:#c8c0b4;font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;padding:24px}
+h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a96e;letter-spacing:.04em;margin-bottom:4px}
+.subtitle{color:#7a7468;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:#232320;border:1px solid #2e2e2a;border-radius:6px;padding:18px}
+.card.full{grid-column:1/-1}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#c9a96e;margin-bottom:12px;letter-spacing:.03em;border-bottom:1px solid #2e2e2a;padding-bottom:8px}
+.stat-row{display:flex;gap:20px;margin-bottom:20px}
+.stat{flex:1;text-align:center;background:#232320;border:1px solid #2e2e2a;border-radius:6px;padding:12px}
+.stat-num{font-size:1.6rem;font-weight:600;color:#c9a96e;font-family:'Cormorant Garamond',serif}
+.stat-label{font-size:.7rem;color:#7a7468;text-transform:uppercase;letter-spacing:.1em}
+.task-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #2a2a27}
+.task-row:last-child{border-bottom:none}
+.task-name{color:#c8c0b4;flex:1}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.badge-overdue{background:#5c1a1a;color:#e07070}
+.badge-today{background:#3d2a10;color:#c9a96e}
+.badge-week{background:#1e2e1e;color:#7aab7a}
+.badge-low{background:#252525;color:#7a7468}
+.priority-item{padding:10px 0;border-bottom:1px solid #2a2a27}
+.priority-item:last-child{border-bottom:none}
+.priority-item .label{font-size:.65rem;color:#7a7468;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.priority-item .value{color:#c8c0b4}
+.waiting-item{padding:8px 0;border-bottom:1px solid #2a2a27}
+.waiting-item:last-child{border-bottom:none}
+.waiting-label{color:#e07070;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.commit-item{padding:8px 0;border-bottom:1px solid #2a2a27;font-size:.85rem}
+.commit-item:last-child{border-bottom:none}
+.flag-item{padding:7px 0;border-bottom:1px solid #2a2a27;font-size:.85rem;color:#b0a898}
+.flag-item:last-child{border-bottom:none}
+.tip-box{background:#1a1a18;border-left:3px solid #c9a96e;padding:12px 14px;border-radius:0 4px 4px 0;font-size:.85rem;color:#b0a898;line-height:1.7}
+.tip-num{color:#c9a96e;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.ownership-box{background:#1e1d1b;border:1px solid #3a3530;border-radius:4px;padding:14px;font-size:.85rem;color:#9a9088;line-height:1.8;font-style:italic}
+.goals-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.goals-table th{text-align:left;color:#7a7468;font-weight:500;padding:6px 0;border-bottom:1px solid #2e2e2a;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.goals-table td{padding:7px 0;border-bottom:1px solid #252520;color:#c8c0b4;vertical-align:top}
+.goals-table tr:last-child td{border-bottom:none}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+.dot-green{background:#5a9a5a}.dot-yellow{background:#c9a96e}.dot-red{background:#c05050}
+a{color:#c9a96e;text-decoration:none}a:hover{text-decoration:underline}
+</style></head>
 <body>
-<div class="hdr">
-<h1>Good morning, Meagan</h1>
-<div class="date">Monday, April 6, 2026</div>
-<div class="stats-row">
-<div class="stat"><div class="stat-n">5</div><div class="stat-l">Due This Week</div></div>
-<div class="stat"><div class="stat-n">3</div><div class="stat-l">Lorraine Waiting</div></div>
-<div class="stat"><div class="stat-n">3</div><div class="stat-l">Open (No Deadline)</div></div>
-<div class="stat"><div class="stat-n">5+</div><div class="stat-l">Active Pipeline</div></div>
+<h1>Meagan Hekkelman</h1>
+<div class="subtitle">Tuesday · April 7, 2026 · Morning Briefing</div>
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Overdue</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Due This Week</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Open Tasks</div></div>
+  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Waiting On You</div></div>
 </div>
+<div class="grid">
+  <div class="card">
+    <div class="card-title">Start Here</div>
+    <div class="priority-item">
+      <div class="label">Overdue — Do First</div>
+      <div class="value">Review 5-day email course <span class="badge badge-overdue">Overdue</span></div>
+    </div>
+    <div class="priority-item">
+      <div class="label">Due Tomorrow (Apr 8)</div>
+      <div class="value">Write LinkedIn promo post for email course <span class="badge badge-today">Apr 8</span></div>
+    </div>
+    <div class="priority-item">
+      <div class="label">Due Thu (Apr 10)</div>
+      <div class="value">Set up CC Challenge sequence in Mailchimp <span class="badge badge-week">Apr 10</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Lorraine Is Waiting On You</div>
+    <div class="waiting-item">
+      <div class="waiting-label">Blocked — Action Needed Today</div>
+      <div>Review 5-day email course — OVERDUE. Lorraine cannot send until you sign off.</div>
+    </div>
+    <div style="margin-top:10px;font-size:.78rem;color:#7a7468">Deadline markers are on your calendar at 9am PT: Apr 7, Apr 8, Apr 10.</div>
+  </div>
+  <div class="card full">
+    <div class="card-title">Your Open Tasks</div>
+    <div class="task-row">
+      <div><div class="task-name">Review 5-day email course</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter › Review</div></div>
+      <span class="badge badge-overdue">Overdue</span>
+    </div>
+    <div class="task-row">
+      <div><div class="task-name">Write LinkedIn promo post for email course launch</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter › LinkedIn</div></div>
+      <span class="badge badge-today">Apr 8</span>
+    </div>
+    <div class="task-row">
+      <div><div class="task-name">Set up CC Challenge sequence in Mailchimp</div><div style="font-size:.75rem;color:#7a7468">CC Challenge</div></div>
+      <span class="badge badge-week">Apr 10</span>
+    </div>
+    <div class="task-row">
+      <div><div class="task-name">Newsletter review</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter</div></div>
+      <span class="badge badge-low">Apr 14</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Your Open Commitments</div>
+    <div class="commit-item">No commitment emails detected in last 7 days.<br><span style="font-size:.75rem;color:#7a7468">Check Superhuman for any pending replies marked for follow-up.</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Flagged from Lorraine's Inbox</div>
+    <div class="flag-item">Forbes article — question on positioning needs your input</div>
+    <div class="flag-item">LinkedIn lead form broken — verify form is configured correctly</div>
+    <div class="flag-item">Affiliate links tracker — confirm all links are live and tracking</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Superhuman Threads</div>
+    <div class="flag-item" style="color:#7a7468;font-style:italic">No flagged threads detected via API.<br>Open Superhuman and check for anything starred or snoozed.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Ownership Prompt</div>
+    <div class="ownership-box">"Before checking Slack or email — open Asana. What's the ONE task that, if done before noon, would move the needle most for Lorraine's business today?"</div>
+  </div>
+  <div class="card full">
+    <div class="card-title">Goals Status</div>
+    <table class="goals-table">
+      <tr><th>Goal</th><th>Status</th><th>Next Action</th></tr>
+      <tr><td>Email course launch</td><td><span class="status-dot dot-red"></span>Blocked</td><td>Complete review — OVERDUE</td></tr>
+      <tr><td>LinkedIn email course promo</td><td><span class="status-dot dot-yellow"></span>Not Started</td><td>Write post, due Apr 8</td></tr>
+      <tr><td>CC Challenge Mailchimp setup</td><td><span class="status-dot dot-yellow"></span>In Progress</td><td>Complete by Apr 10</td></tr>
+      <tr><td>Newsletter review</td><td><span class="status-dot dot-green"></span>On Track</td><td>Due Apr 14</td></tr>
+    </table>
+  </div>
+  <div class="card full">
+    <div class="card-title">CC &amp; Automation Tip — #7</div>
+    <div class="tip-num">Tip of the Day</div>
+    <div class="tip-box">For runsheets, give CC the client's event brief and it'll generate one based on Lorraine's standard format. Say: "Here's the event brief — generate a runsheet using Lorraine's usual template: venue, timings, speaker order, AV notes, buffer times." Then paste the brief. Takes 2 minutes instead of 30.</div>
+  </div>
 </div>
-<div class="wrap">
-<div class="card" style="border-left:3px solid var(--gold)">
-<div class="ct">Start Here — Top 3 Urgent</div>
-<table>
-<tr><th>#</th><th>Task</th><th>Deadline</th><th>Why</th></tr>
-<tr><td>1</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213835090437972">Review 5-day email course</a> — audit ORs, CTR, refresh copy</td><td><span class="overdue">TODAY</span></td><td>Revenue funnel — Lorraine assigned this week</td></tr>
-<tr><td>2</td><td><a href="https://app.asana.com/1/1210774242380505/task/1213935511738878">Send event copy + visual to LinkedIn</a></td><td><span class="overdue">TODAY 12pm PT</span></td><td>Lorraine approves visual first. Then send.</td></tr>
-<tr><td>3</td><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922052515233">Draft outreach — Jasmine @ Oscar Health</a></td><td>Tue Apr 7</td><td>Warm personal lead — speaking/program opp</td></tr>
-</table>
-</div>
-<div class="card">
-<div class="ct">Lorraine Is Waiting On You</div>
-<table>
-<tr><th>Item</th><th>Due</th><th>Context</th></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213835090437972">5-day email course audit + copy refresh</a></td><td><span class="overdue">TODAY</span></td><td>Check ORs staying consistent, click-throughs; flag changes needed</td></tr>
-<tr><td>Send LinkedIn Premium Event content to LinkedIn</td><td><span class="overdue">TODAY 12pm</span></td><td>Lorraine reviewing visual from Mahea — once approved, you send</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922052515233">Draft outreach to Jasmine (Oscar Health)</a> + research L&D team</td><td>Tue Apr 7</td><td>jasminew@hioscar.com — warm personal connection</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922155683593">Write LinkedIn promo post 1 for May 5 event</a></td><td>Wed Apr 8</td><td>Use LinkedIn post CC skill. Lorraine approves final.</td></tr>
-<tr><td>Forbes article + Erin's book — co-promo on content plan?</td><td>ASAP</td><td>Lorraine Inbox task from Apr 3 — no deadline set</td></tr>
-</table>
-</div>
-<div class="card">
-<div class="ct">Your Open Commitments</div>
-<div class="section-sub">With Deadlines</div>
-<table>
-<tr><th>Commitment</th><th>Deadline</th><th>Status</th></tr>
-<tr><td>5-day email course audit + copy refresh</td><td><span class="overdue">Today</span></td><td>Asana task assigned</td></tr>
-<tr><td>Send LinkedIn Premium Event copy + visual</td><td><span class="overdue">Today 12pm PT</span></td><td>Awaiting Lorraine visual approval</td></tr>
-<tr><td>Draft outreach to Jasmine @ Oscar Health</td><td>Tue Apr 7</td><td>Pending</td></tr>
-<tr><td>Write LinkedIn promo post 1 (registrations)</td><td>Wed Apr 8</td><td>Pending</td></tr>
-<tr><td>CC Challenge: 3 tasks, post in #ai-wins</td><td>Fri Apr 10</td><td>In progress</td></tr>
-</table>
-<div class="section-sub">Outstanding (No Deadline Set)</div>
-<div class="flag-out">Forbes article co-promo with Erin's book — is it on the content calendar? Lorraine asked Apr 3. <em style="color:#777">Set a deadline or close the loop.</em></div>
-<div class="flag-out" style="margin-top:8px">LinkedIn Guide for Friends &amp; Family form is broken. Multiple people reporting errors. Lorraine flagged Apr 3. <em style="color:#777">Set a deadline or close the loop.</em></div>
-<div class="flag-out" style="margin-top:8px">Affiliate links tracker — is Kondo listed? Lorraine asked Apr 3. <em style="color:#777">Set a deadline or close the loop.</em></div>
-</div>
-<div class="card">
-<div class="ct">Superhuman Threads — Action Needed</div>
-<table>
-<tr><th>Thread</th><th>Status</th><th>Your Next Move</th></tr>
-<tr><td>Surge Institute — Alumni Workshop (Mari Townsend)</td><td>Mari booked a call today</td><td>Confirm date flexibility — Lorraine traveling that week</td></tr>
-<tr><td>Velsoft — eLearning Partnership (Shane Sponagle)</td><td>Shane booking call</td><td>Confirm + brief Lorraine before discovery call</td></tr>
-<tr><td>CNBC Make It Book Club (Stav Ziv)</td><td>Lorraine pitched today; Stav OOO until Apr 7</td><td>Follow up next week if no reply</td></tr>
-</table>
-</div>
-<div class="card">
-<div class="ct">Flagged from Lorraine's Inbox</div>
-<table>
-<tr><th>Thread</th><th>Your Role</th></tr>
-<tr><td>Robert Ford (Covington) — 2026 speaking FU</td><td>Lorraine cc'd you. Monitor reply.</td></tr>
-<tr><td>Lilli Beckwith (ServiceNow) — checking in</td><td>Lorraine cc'd you. Watch for Marc alignment.</td></tr>
-<tr><td>Affirm Coaching Proposal (Kellee Van Horne)</td><td>Lorraine following up on renewal. Be ready to support close.</td></tr>
-<tr><td>Q2 Analytics (Aneesh/Wishly) — due today</td><td>You're cc'd. Remind Mahea to upload her screenshots.</td></tr>
-</table>
-</div>
-<div class="card">
-<div class="ct">Priorities — This Week (Asana)</div>
-<table>
-<tr><th>Task</th><th>Due</th><th>Project</th></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213835090437972">Review 5-day email course</a></td><td><span class="overdue">Apr 6</span></td><td>Courses &amp; Enterprise</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/task/1213935511738878">Send event copy + visual to LinkedIn</a></td><td><span class="overdue">Apr 6</span></td><td>Client &amp; Speaking</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922052515233">Draft outreach — Jasmine @ Oscar Health</a></td><td>Apr 7</td><td>Client &amp; Speaking</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922155683593">Write LinkedIn promo post 1</a></td><td>Apr 8</td><td>Client &amp; Speaking</td></tr>
-<tr><td><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1213935506451284">CC Challenge: 3 tasks + #ai-wins</a></td><td>Apr 10</td><td>Operations &amp; Admin</td></tr>
-</table>
-</div>
-<div class="card motiv">
-<div class="ct" style="color:var(--gold)">Ownership Prompt</div>
-<p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--lgold);line-height:1.7">The deals on the table — Velsoft, Surge, Oscar Health — don't close themselves. Your follow-through today is the difference between a lead and a contract. Close loops, hit your deadlines, and move things forward.</p>
-</div>
-<div class="card tip-box">
-<div class="ct" style="color:#7aafff">CC &amp; Automation Tip #6</div>
-<p style="font-size:.88rem;color:var(--cream)"><strong>When Lorraine says "set up a call," give CC the thread and it'll draft the scheduling email in her voice with her OOO dates.</strong> No more manually checking her calendar — CC knows April 16–17, May 13–18, June 29–July 9.</p>
-</div>
-<div class="card">
-<div class="ct">Goals Status</div>
-<div style="font-size:.8rem;color:#888;margin-bottom:10px">Revenue Target 2026</div>
-<div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:4px"><span>Base Goal</span><span style="color:var(--gold)">$600,000</span></div>
-<div class="goal-bar"><div class="goal-fill" style="width:35%"></div></div>
-<div style="font-size:.72rem;color:#666;margin-bottom:10px">~35% est. closed/committed YTD — update with actuals</div>
-<div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:4px"><span>Stretch Goal</span><span style="color:var(--gold)">$700,000</span></div>
-<div class="goal-bar"><div class="goal-fill" style="width:30%"></div></div>
-<div style="font-size:.72rem;color:#666">Active pipeline: Affirm, Oscar Health, Velsoft, Surge, ServiceNow, Covington</div>
-</div>
-</div>
-</body>
-</html>
+</body></html>
