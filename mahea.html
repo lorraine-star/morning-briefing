@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahea — April 7, 2026</title>
+<title>Mahea — April 8, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,9 +19,7 @@ h1{font-size:1.6rem;font-weight:600;color:#2D5F5D;letter-spacing:.01em;margin-bo
 .task-row:last-child{border-bottom:none}
 .task-name{color:#2c3e3d;flex:1;margin-right:8px}
 .badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.badge-overdue{background:#fce8e8;color:#c05050}
 .badge-thisweek{background:#e8f5e8;color:#3a7a3a}
-.badge-next{background:#f0f4ff;color:#4a5fa0}
 .badge-low{background:#f5f5f5;color:#888}
 .focus-item{padding:12px 0;border-bottom:1px solid #eef4f3}
 .focus-item:last-child{border-bottom:none}
@@ -33,93 +31,103 @@ h1{font-size:1.6rem;font-weight:600;color:#2D5F5D;letter-spacing:.01em;margin-bo
 .waiting-label{color:#c05050;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
 .commit-item{padding:8px 0;border-bottom:1px solid #eef4f3;font-size:.85rem}
 .commit-item:last-child{border-bottom:none}
+.commit-nodl{border-left:3px solid #6B9E9A;background:#eef6f5;padding:7px 12px;border-radius:0 4px 4px 0;font-size:.82rem;margin-top:5px;color:#2c3e3d}
 .flag-item{padding:7px 0;border-bottom:1px solid #eef4f3;font-size:.85rem;color:#4a6060}
 .flag-item:last-child{border-bottom:none}
-.triage-item{padding:6px 0;border-bottom:1px solid #eef4f3;font-size:.82rem;display:flex;justify-content:space-between;align-items:center}
-.triage-item:last-child{border-bottom:none}
 .tip-box{background:#eef6f5;border-left:3px solid #2D5F5D;padding:12px 14px;border-radius:0 4px 4px 0;font-size:.85rem;color:#2c3e3d;line-height:1.7}
 .tip-num{color:#2D5F5D;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
 .ownership-box{background:#eef6f5;border:1px solid #d8e8e7;border-radius:4px;padding:14px;font-size:.85rem;color:#4a6060;line-height:1.8;font-style:italic}
 a{color:#2D5F5D;text-decoration:none}a:hover{text-decoration:underline}
-.section-note{font-size:.75rem;color:#8aacaa;margin-top:8px}
+.sub{font-size:.7rem;font-weight:600;color:#8aacaa;text-transform:uppercase;letter-spacing:.1em;margin:12px 0 6px}
+.inbox-item{padding:8px 0;border-bottom:1px solid #eef4f3;font-size:.85rem}
+.inbox-item:last-child{border-bottom:none}
+.inbox-q{font-weight:500;color:#2c3e3d;margin-bottom:2px}
+.inbox-note{font-size:.75rem;color:#8aacaa}
 </style></head>
 <body>
 <h1>Mahea Fonoti</h1>
-<div class="subtitle">Tuesday · April 7, 2026 · Morning Briefing</div>
+<div class="subtitle">Wednesday · April 8, 2026 · Morning Briefing</div>
 <div class="stat-row">
   <div class="stat"><div class="stat-num">0</div><div class="stat-label">Overdue</div></div>
-  <div class="stat"><div class="stat-num">9</div><div class="stat-label">Due This Week</div></div>
-  <div class="stat"><div class="stat-num">577</div><div class="stat-label">Total Open</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Due This Week</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">In Your Inbox</div></div>
   <div class="stat"><div class="stat-num">3</div><div class="stat-label">Waiting On You</div></div>
 </div>
 <div class="grid">
   <div class="card">
     <div class="card-title">Focus Zone — Top 2 Today</div>
     <div class="focus-item">
-      <div class="focus-num">Priority 1</div>
-      <div class="focus-title">This Week's 9 Tasks (due Apr 10)</div>
-      <div class="focus-due">Review the list below and tackle highest-impact items first</div>
+      <div class="focus-num">Priority 1 — Due Friday</div>
+      <div class="focus-title">3 tasks due Apr 10: Website, Comment on post, Riddle quiz</div>
+      <div class="focus-due">Deadline markers on Lorraine's calendar at 9am Fri. Get ahead of these today.</div>
     </div>
     <div class="focus-item">
-      <div class="focus-num">Priority 2</div>
-      <div class="focus-title">Career Bites newsletter</div>
-      <div class="focus-due">Due Apr 13 — start drafting now to avoid crunch</div>
+      <div class="focus-num">Priority 2 — Lorraine's Inbox</div>
+      <div class="focus-title">3 open questions from Lorraine need your response</div>
+      <div class="focus-due">Forbes/Erin co-promo · LI form broken · affiliate links tracker</div>
     </div>
   </div>
   <div class="card">
     <div class="card-title">Lorraine Is Waiting On You</div>
     <div class="waiting-item">
-      <div class="waiting-label">Flagged</div>
-      <div>Forbes article coordination — confirm status update</div>
+      <div class="waiting-label">Open Question</div>
+      <div><a href="https://app.asana.com/0/0/1213921775341517">Is Forbes article/Erin's book co-promotion on the social calendar?</a></div>
     </div>
     <div class="waiting-item">
-      <div class="waiting-label">Flagged</div>
-      <div>LinkedIn lead form — investigate broken form issue</div>
+      <div class="waiting-label">Open Question</div>
+      <div><a href="https://app.asana.com/0/0/1213922154455263">LinkedIn Guide for Friends &amp; Family form is broken</a> — investigate + fix</div>
     </div>
     <div class="waiting-item">
-      <div class="waiting-label">Flagged</div>
-      <div>Affiliate links tracker — confirm all links are live</div>
+      <div class="waiting-label">Open Question</div>
+      <div><a href="https://app.asana.com/0/0/1213935512780326">Is the affiliate links tracker up to date?</a> — <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">sheet</a> · Kondo not on there</div>
     </div>
   </div>
   <div class="card full">
-    <div class="card-title">This Week — Due Apr 10</div>
-    <div class="task-row"><span class="task-name">Career Bites — April issue content</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Update speaker bios on website</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">LinkedIn content calendar — schedule posts</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Podcast episode notes — upload to Notion</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Research keynote venue options — Melbourne</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Speaking inquiry follow-up — pending responses</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Social media graphics — Q2 campaign</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Testimonials page — add new quotes</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name">Email list hygiene — remove bounced addresses</span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="section-note">Deadline marker set on your calendar at 9am PT on Apr 10.</div>
+    <div class="card-title">Inbox From Lorraine — For Mahea</div>
+    <div class="inbox-item">
+      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213921775341517">Is promoting Forbes article w/ Aaron (Erin's book) on our content plan? Co-collab?</a></div>
+      <div class="inbox-note">From Lorraine Apr 3 · Check social calendar and let her know the status</div>
+    </div>
+    <div class="inbox-item">
+      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213922154455263">LinkedIn Guide for Friends &amp; Family form is broken — multiple people getting errors</a></div>
+      <div class="inbox-note">From Lorraine Apr 3 · Look into what's going wrong and fix it · Non-urgent but ongoing</div>
+    </div>
+    <div class="inbox-item">
+      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213935512780326">Is this the most up-to-date affiliate links tracker? Kondo is missing.</a></div>
+      <div class="inbox-note">From Lorraine · <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">Review sheet</a> · Update or confirm is current</div>
+    </div>
   </div>
-  <div class="card">
-    <div class="card-title">Coming Up Next</div>
-    <div class="task-row"><span class="task-name">Career Bites newsletter — final draft</span><span class="badge badge-next">Apr 13</span></div>
-    <div class="task-row"><span class="task-name">Newsletter changes — implement feedback</span><span class="badge badge-next">Apr 15</span></div>
-  </div>
-  <div class="card">
+  <div class="card full">
     <div class="card-title">Your Open Commitments</div>
-    <div class="commit-item">No commitment emails detected in last 7 days.<br><span style="font-size:.75rem;color:#8aacaa">Check Superhuman for any pending reply threads.</span></div>
+    <div class="sub">With Deadlines</div>
+    <div class="commit-item">No dated commitments found in last 7 days — Q1 analytics upload delivered Apr 6 ✓</div>
+    <div class="sub" style="margin-top:12px">Outstanding (No Deadline Set)</div>
+    <div class="commit-nodl"><strong>Dilaab Digitals / Kim Ian availability</strong> — following up for this week's projects · said Apr 3 (5 days ago)</div>
+    <div class="commit-nodl"><strong>RAPP/Omnicom invoice</strong> ($4,000+ · 5+ months overdue) — following up with Jacqueline Thompson · said Apr 2 (6 days ago) · <strong style="color:#c05050">Escalate?</strong></div>
+    <div class="commit-nodl"><strong>CNBC Invoice #258</strong> ($700 course filming fee) — chasing AP team contact · said Apr 1 (7 days ago)</div>
+    <div style="font-size:.75rem;color:#8aacaa;margin-top:8px;font-style:italic">Set a deadline or close the loop on each of these.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">This Week — Due Apr 10</div>
+    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1213920348523071">Website updates: Awards/Accolades</a></span><span class="badge badge-thisweek">Apr 10</span></div>
+    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1213935484582783">Comment on 8/21 post</a></span><span class="badge badge-thisweek">Apr 10</span></div>
+    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1212273867389021">Review Riddle quiz data</a></span><span class="badge badge-thisweek">Apr 10</span></div>
+    <div style="margin-top:10px;font-size:.78rem;color:#8aacaa">Deadline markers set on Lorraine's calendar at 9am PT on Apr 10 (tangerine).</div>
   </div>
   <div class="card">
     <div class="card-title">Superhuman Threads</div>
-    <div class="flag-item" style="color:#8aacaa;font-style:italic">No flagged threads detected via API.<br>Open Superhuman and check for starred or snoozed items.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Backlog Triage</div>
-    <div class="triage-item"><span>577 total open tasks in Asana</span><span class="badge badge-low">Review Needed</span></div>
-    <div style="margin-top:10px;font-size:.82rem;color:#4a6060">Use the CC tip below to triage efficiently. Focus only on what's due this week until backlog is manageable.</div>
+    <div class="flag-item">Dilaab Digitals — Kim Ian availability · Apr 3 · awaiting response</div>
+    <div class="flag-item">RAPP/Omnicom — Jacqueline Thompson · Apr 2 · 5+ months overdue</div>
+    <div class="flag-item">CNBC AP team — Invoice #258 · Apr 1 · awaiting contact info</div>
   </div>
   <div class="card">
     <div class="card-title">Ownership Prompt</div>
     <div class="ownership-box">"Before anything else — what are the two tasks on your list that only YOU can do, that Lorraine's business is counting on this week?"</div>
   </div>
   <div class="card full">
-    <div class="card-title">CC &amp; Automation Tip — #7</div>
+    <div class="card-title">CC &amp; Automation Tip — #8</div>
     <div class="tip-num">Tip of the Day</div>
-    <div class="tip-box">To triage 20+ overdue Asana tasks, paste the list into CC and ask: "Which of these are still relevant, which should be deleted, and which should be re-dated to this week?" Then paste your task names and due dates. CC will sort them into three buckets in under a minute — saving you 30+ minutes of manual review.</div>
+    <div class="tip-box">When timestamping a video, ask CC to organize your timestamps into a formatted table. Paste your raw timestamp notes (e.g. "0:00 intro, 2:30 main point 1, 5:45 story...") and say: "Format these as a YouTube chapter table with clean titles." CC outputs a ready-to-paste table in under 10 seconds — no reformatting needed.</div>
   </div>
 </div>
 </body></html>

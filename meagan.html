@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meagan — April 7, 2026</title>
+<title>Meagan — April 8, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,11 +17,10 @@ h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a96e;letter-sp
 .stat-label{font-size:.7rem;color:#7a7468;text-transform:uppercase;letter-spacing:.1em}
 .task-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #2a2a27}
 .task-row:last-child{border-bottom:none}
-.task-name{color:#c8c0b4;flex:1}
+.task-name{color:#c8c0b4;flex:1;margin-right:8px}
 .badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .badge-overdue{background:#5c1a1a;color:#e07070}
 .badge-today{background:#3d2a10;color:#c9a96e}
-.badge-week{background:#1e2e1e;color:#7aab7a}
 .badge-low{background:#252525;color:#7a7468}
 .priority-item{padding:10px 0;border-bottom:1px solid #2a2a27}
 .priority-item:last-child{border-bottom:none}
@@ -32,6 +31,7 @@ h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a96e;letter-sp
 .waiting-label{color:#e07070;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
 .commit-item{padding:8px 0;border-bottom:1px solid #2a2a27;font-size:.85rem}
 .commit-item:last-child{border-bottom:none}
+.commit-nodl{border-left:3px solid #c9a96e;background:#1e1d1a;padding:7px 12px;border-radius:0 4px 4px 0;font-size:.82rem;margin-top:5px;color:#b0a898}
 .flag-item{padding:7px 0;border-bottom:1px solid #2a2a27;font-size:.85rem;color:#b0a898}
 .flag-item:last-child{border-bottom:none}
 .tip-box{background:#1a1a18;border-left:3px solid #c9a96e;padding:12px 14px;border-radius:0 4px 4px 0;font-size:.85rem;color:#b0a898;line-height:1.7}
@@ -44,72 +44,70 @@ h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a96e;letter-sp
 .status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
 .dot-green{background:#5a9a5a}.dot-yellow{background:#c9a96e}.dot-red{background:#c05050}
 a{color:#c9a96e;text-decoration:none}a:hover{text-decoration:underline}
+.sub{font-size:.7rem;font-weight:600;color:#7a7468;text-transform:uppercase;letter-spacing:.1em;margin:12px 0 6px}
 </style></head>
 <body>
 <h1>Meagan Hekkelman</h1>
-<div class="subtitle">Tuesday · April 7, 2026 · Morning Briefing</div>
+<div class="subtitle">Wednesday · April 8, 2026 · Morning Briefing</div>
 <div class="stat-row">
-  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Overdue</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Due This Week</div></div>
-  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Open Tasks</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Due Today</div></div>
+  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Open Tasks</div></div>
+  <div class="stat"><div class="stat-num">0</div><div class="stat-label">In Inbox</div></div>
   <div class="stat"><div class="stat-num">1</div><div class="stat-label">Waiting On You</div></div>
 </div>
 <div class="grid">
   <div class="card">
     <div class="card-title">Start Here</div>
     <div class="priority-item">
-      <div class="label">Overdue — Do First</div>
-      <div class="value">Review 5-day email course <span class="badge badge-overdue">Overdue</span></div>
+      <div class="label">Due Today — Lorraine Is Waiting</div>
+      <div class="value"><a href="https://app.asana.com/0/0/1213922155683593">Write LinkedIn promo post 1 — drive registrations</a> <span class="badge badge-today">Due Today</span></div>
+      <div style="font-size:.75rem;color:#7a7468;margin-top:4px">Use LinkedIn post skill in CC. Lorraine approves. Raising at 1:1 @ 9am.</div>
     </div>
     <div class="priority-item">
-      <div class="label">Due Tomorrow (Apr 8)</div>
-      <div class="value">Write LinkedIn promo post for email course <span class="badge badge-today">Apr 8</span></div>
-    </div>
-    <div class="priority-item">
-      <div class="label">Due Thu (Apr 10)</div>
-      <div class="value">Set up CC Challenge sequence in Mailchimp <span class="badge badge-week">Apr 10</span></div>
+      <div class="label">Due Today</div>
+      <div class="value"><a href="https://app.asana.com/0/0/1213973700308777">Review 4/24 LI Viral Repost</a> <span class="badge badge-today">Due Today</span></div>
     </div>
   </div>
   <div class="card">
     <div class="card-title">Lorraine Is Waiting On You</div>
     <div class="waiting-item">
-      <div class="waiting-label">Blocked — Action Needed Today</div>
-      <div>Review 5-day email course — OVERDUE. Lorraine cannot send until you sign off.</div>
+      <div class="waiting-label">Action Needed — Due Today</div>
+      <div><a href="https://app.asana.com/0/0/1213922155683593">LinkedIn promo post 1 for May 5 Premium Event</a> — submit before or at 1:1 (9am). Use LinkedIn post skill in CC.</div>
     </div>
-    <div style="margin-top:10px;font-size:.78rem;color:#7a7468">Deadline markers are on your calendar at 9am PT: Apr 7, Apr 8, Apr 10.</div>
+    <div style="margin-top:10px;font-size:.78rem;color:#7a7468">Deadline marker on Lorraine's calendar at 9am today (tangerine).</div>
   </div>
   <div class="card full">
     <div class="card-title">Your Open Tasks</div>
     <div class="task-row">
-      <div><div class="task-name">Review 5-day email course</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter › Review</div></div>
-      <span class="badge badge-overdue">Overdue</span>
+      <div><div class="task-name"><a href="https://app.asana.com/0/0/1213922155683593">Write LinkedIn promo post 1 — drive registrations</a></div><div style="font-size:.75rem;color:#7a7468">Content &amp; Audience · LinkedIn Premium Event</div></div>
+      <span class="badge badge-today">Today</span>
     </div>
     <div class="task-row">
-      <div><div class="task-name">Write LinkedIn promo post for email course launch</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter › LinkedIn</div></div>
-      <span class="badge badge-today">Apr 8</span>
-    </div>
-    <div class="task-row">
-      <div><div class="task-name">Set up CC Challenge sequence in Mailchimp</div><div style="font-size:.75rem;color:#7a7468">CC Challenge</div></div>
-      <span class="badge badge-week">Apr 10</span>
-    </div>
-    <div class="task-row">
-      <div><div class="task-name">Newsletter review</div><div style="font-size:.75rem;color:#7a7468">Kondo Newsletter</div></div>
-      <span class="badge badge-low">Apr 14</span>
+      <div><div class="task-name"><a href="https://app.asana.com/0/0/1213973700308777">Review 4/24 LI Viral Repost</a></div><div style="font-size:.75rem;color:#7a7468">Content &amp; Audience</div></div>
+      <span class="badge badge-today">Today</span>
     </div>
   </div>
-  <div class="card">
+  <div class="card full">
     <div class="card-title">Your Open Commitments</div>
-    <div class="commit-item">No commitment emails detected in last 7 days.<br><span style="font-size:.75rem;color:#7a7468">Check Superhuman for any pending replies marked for follow-up.</span></div>
+    <div class="sub">With Deadlines</div>
+    <div class="commit-item"><strong>LinkedIn promo post 1</strong> — for Lorraine · <strong>Due TODAY Apr 8</strong> · <a href="https://app.asana.com/0/0/1213922155683593">Asana task</a></div>
+    <div class="sub" style="margin-top:12px">Outstanding (No Deadline Set)</div>
+    <div class="commit-nodl"><strong>MasterClass scheduling</strong> — calendar link for Lauren's first-week-of-May call · said Apr 1 (7 days ago)</div>
+    <div class="commit-nodl"><strong>Book shipment for Nate Matson</strong> (MasterClass connection) · said Apr 3 (5 days ago)</div>
+    <div class="commit-nodl"><strong>Surge Institute coordination</strong> — flagged Lorraine's travel, Mari found time · said Apr 6 (2 days ago)</div>
+    <div class="commit-nodl"><strong>Velsoft eLearning partnership</strong> — gathering scope/timeline from Shane · said Apr 6–7</div>
+    <div class="commit-nodl"><strong>Apex Group response follow-up</strong> — sent 45-min keynote offer to Sheril James · said Apr 2 (6 days ago)</div>
+    <div style="font-size:.75rem;color:#7a7468;margin-top:8px;font-style:italic">Set a deadline or close the loop on each of these.</div>
   </div>
   <div class="card">
     <div class="card-title">Flagged from Lorraine's Inbox</div>
-    <div class="flag-item">Forbes article — question on positioning needs your input</div>
-    <div class="flag-item">LinkedIn lead form broken — verify form is configured correctly</div>
-    <div class="flag-item">Affiliate links tracker — confirm all links are live and tracking</div>
+    <div class="flag-item">No open "For Meagan" tasks in Inbox From Lorraine today — inbox is clear ✓</div>
   </div>
   <div class="card">
     <div class="card-title">Superhuman Threads</div>
-    <div class="flag-item" style="color:#7a7468;font-style:italic">No flagged threads detected via API.<br>Open Superhuman and check for anything starred or snoozed.</div>
+    <div class="flag-item">Velsoft (Shane) — awaiting scope reply · Apr 6–7</div>
+    <div class="flag-item">Enterprise one-pager — sent to Pamela Bruner for review · Apr 6</div>
+    <div class="flag-item">Apex Group (Sheril James) — proposal sent · Apr 2 · no reply yet</div>
   </div>
   <div class="card">
     <div class="card-title">Ownership Prompt</div>
@@ -119,16 +117,15 @@ a{color:#c9a96e;text-decoration:none}a:hover{text-decoration:underline}
     <div class="card-title">Goals Status</div>
     <table class="goals-table">
       <tr><th>Goal</th><th>Status</th><th>Next Action</th></tr>
-      <tr><td>Email course launch</td><td><span class="status-dot dot-red"></span>Blocked</td><td>Complete review — OVERDUE</td></tr>
-      <tr><td>LinkedIn email course promo</td><td><span class="status-dot dot-yellow"></span>Not Started</td><td>Write post, due Apr 8</td></tr>
-      <tr><td>CC Challenge Mailchimp setup</td><td><span class="status-dot dot-yellow"></span>In Progress</td><td>Complete by Apr 10</td></tr>
-      <tr><td>Newsletter review</td><td><span class="status-dot dot-green"></span>On Track</td><td>Due Apr 14</td></tr>
+      <tr><td>LinkedIn promo post 1 (May 5 event)</td><td><span class="status-dot dot-red"></span>Due Today</td><td>Write + submit before 9am 1:1</td></tr>
+      <tr><td>Review 4/24 LI Viral Repost</td><td><span class="status-dot dot-yellow"></span>Due Today</td><td>Review and approve</td></tr>
+      <tr><td>MasterClass rollout coordination</td><td><span class="status-dot dot-green"></span>On Track</td><td>Meeting today 1:30pm — Lorraine attends</td></tr>
     </table>
   </div>
   <div class="card full">
-    <div class="card-title">CC &amp; Automation Tip — #7</div>
+    <div class="card-title">CC &amp; Automation Tip — #8</div>
     <div class="tip-num">Tip of the Day</div>
-    <div class="tip-box">For runsheets, give CC the client's event brief and it'll generate one based on Lorraine's standard format. Say: "Here's the event brief — generate a runsheet using Lorraine's usual template: venue, timings, speaker order, AV notes, buffer times." Then paste the brief. Takes 2 minutes instead of 30.</div>
+    <div class="tip-box">Paste a brand deal brief and ask CC: "What's the effective hourly rate vs. Lorraine's $5K–$10K speaking rate?" Give CC the deliverables, timeline, and fee. It'll calculate the effective hourly, flag if the deal is below her floor, and draft a counter-offer with bundled deliverables if needed. Saves you the math and the awkward back-and-forth.</div>
   </div>
 </div>
 </body></html>
