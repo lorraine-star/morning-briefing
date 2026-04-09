@@ -1,89 +1,360 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mahea — Apr 9, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#f7f9fa;color:#2a3d3c;font-size:14px}
-.hdr{background:#2D5F5D;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.hdr h1{font-size:17px;font-weight:700}.hdr .s{font-size:11px;opacity:.75}
-.w{max-width:860px;margin:0 auto;padding:14px}
-.c{background:#fff;border-radius:8px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-h2{font-size:11px;font-weight:700;color:#2D5F5D;text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;border-bottom:1px solid #e0eded;padding-bottom:5px}
-a{color:#2D5F5D;text-decoration:none}
-.r{padding:5px 0;border-bottom:1px solid #eef2f1;display:flex;gap:8px;align-items:flex-start}.r:last-child{border-bottom:none}
-.d{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}.dh{background:#c0392b}.dt{background:#2D5F5D}.dl{background:#b0bab9}
-.t{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
-.th{background:#fde8e8;color:#c0392b}.tt{background:#e0edec;color:#2D5F5D}.td{background:#e0f0e8;color:#2e7d32}.tw{background:#fff3cd;color:#856404}
-.stat-row{display:flex;gap:10px;flex-wrap:wrap}
-.stat{flex:1;min-width:100px;background:#f0f6f5;border-radius:6px;padding:10px;text-align:center}
-.sn{font-size:22px;font-weight:700;color:#2D5F5D}.sl{font-size:11px;color:#6a8a89;margin-top:2px}
-.cd{border-left:3px solid #2D5F5D;padding-left:8px;margin:4px 0}
-.co{border-left:3px solid #6B9E9A;padding-left:8px;margin-top:5px;background:#f0f8f7;border-radius:0 4px 4px 0;padding:6px 8px}
-.tc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tip{background:#e8f2f1;border-left:4px solid #2D5F5D;padding:12px;border-radius:0 6px 6px 0}
+*{box-sizing:border-box;margin:0;padding:0}
+.db{width:100%;padding:0 0 2rem}
+.header{background:linear-gradient(135deg,#f9c6d0 0%,#fde8ec 50%,#fce4d6 100%);padding:1.5rem 2rem;border-radius:var(--border-radius-lg);margin-bottom:1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header-left h1{font-size:22px;font-weight:500;color:#7b3a52}
+.header-left p{font-size:13px;color:#a0637a;margin-top:2px}
+.header-right{text-align:right;font-size:12px;color:#a0637a}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.grid-full{margin-bottom:1rem}
+.card{background:var(--color-background-primary);border:0.5px solid #f2c4ce;border-radius:var(--border-radius-lg);padding:1.25rem}
+.card-title{font-size:11px;font-weight:500;letter-spacing:.06em;color:#a0637a;text-transform:uppercase;margin-bottom:1rem}
+.priority-item{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:0.5px solid #fde8ec}
+.priority-item:last-child{border-bottom:none}
+.badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.badge-urgent{background:#fce4e4;color:#9b3232}
+.badge-open{background:#fce8d4;color:#8a4a1a}
+.badge-new{background:#e4eeff;color:#1a3a8a}
+.item-title{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.item-title a,.item-link{color:#c4587a;text-decoration:none}
+.item-title a:hover,.item-link:hover{text-decoration:underline}
+.item-meta{font-size:12px;color:var(--color-text-secondary);margin-top:2px;line-height:1.5}
+.checkbox-wrap{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid #fde8ec;cursor:pointer}
+.checkbox-wrap:last-child{border-bottom:none}
+.cb{width:15px;height:15px;border:1.5px solid #d4a0b0;border-radius:3px;flex-shrink:0;margin-top:1px;background:var(--color-background-primary);display:flex;align-items:center;justify-content:center;font-size:10px;color:#c4587a}
+.cb.done{background:#fde8ec;border-color:#e08ea8}
+.task-text{font-size:13px;color:var(--color-text-primary)}
+.task-text a{color:#c4587a;text-decoration:none}
+.task-text a:hover{text-decoration:underline}
+.task-meta{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
+.task-done .task-text{text-decoration:line-through;color:var(--color-text-tertiary)}
+
+/* Calendar */
+.cal-header-row{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px}
+.cal-day-label{font-size:10px;color:var(--color-text-tertiary);text-align:center;padding:2px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-cell{min-height:52px;border-radius:5px;font-size:10px;padding:4px 5px;background:var(--color-background-secondary)}
+.cal-cell.today{background:#fce8ef;border:1px solid #e08ea8}
+.cal-cell.has-event{background:#fde8f4}
+.cal-date{font-weight:500;color:var(--color-text-secondary);font-size:10px}
+.cal-event{font-size:9px;color:#c4587a;line-height:1.25;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.cal-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#d4537e;margin-right:2px;vertical-align:middle}
+
+/* Slack */
+.slack-item{padding:10px 0;border-bottom:0.5px solid #fde8ec}
+.slack-item:last-child{border-bottom:none}
+.slack-ch{font-size:10px;font-weight:500;color:#a0637a;margin-bottom:3px;display:flex;align-items:center;gap:4px}
+.slack-hash{font-size:11px}
+.slack-msg{font-size:13px;color:var(--color-text-primary);line-height:1.45}
+.slack-meta{font-size:11px;color:var(--color-text-tertiary);margin-top:3px;display:flex;gap:8px}
+.slack-sender{font-weight:500;color:var(--color-text-secondary)}
+
+/* Email */
+.email-item{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:0.5px solid #fde8ec}
+.email-item:last-child{border-bottom:none}
+.avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+.av-pink{background:#fce8ef;color:#c4587a}
+.av-peach{background:#fde8d4;color:#b05a28}
+.av-lavender{background:#ede8fe;color:#6b48b8}
+.email-sender{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.email-subject a{color:#c4587a;text-decoration:none;font-size:12px}
+.email-subject a:hover{text-decoration:underline}
+.email-time{font-size:10px;color:var(--color-text-tertiary);white-space:nowrap;margin-left:auto;flex-shrink:0}
+.dot-urgent{width:7px;height:7px;border-radius:50%;background:#e24b4a;flex-shrink:0;margin-top:5px}
+.dot-norm{width:7px;height:7px;border-radius:50%;background:#d4a0b0;flex-shrink:0;margin-top:5px}
+@media(max-width:700px){.grid-2{grid-template-columns:1fr}}
 </style>
-</head>
-<body>
-<div class="hdr"><div><h1>Mahea's Dashboard</h1><div class="s">Thursday, April 9, 2026 · RISE Learning Solutions · Content Lead</div></div><div style="font-size:11px;opacity:.8">mahea@lorraineklee.com</div></div>
-<div class="w">
-<div class="c">
-<h2>Stats</h2>
-<div class="stat-row">
-<div class="stat"><div class="sn">3</div><div class="sl">Open items from Lorraine</div></div>
-<div class="stat"><div class="sn" style="color:#c0392b">1</div><div class="sl">Unresolved escalation (Kim Ian)</div></div>
-<div class="stat"><div class="sn" style="color:#27ae60">✓</div><div class="sl">Q1 Analytics uploaded Apr 6</div></div>
-<div class="stat"><div class="sn" style="color:#c0392b">!</div><div class="sl">LinkedIn form broken</div></div>
+
+<h2 class="sr-only">Mahea's morning briefing dashboard for Thursday, April 9, 2026</h2>
+<div class="db">
+
+<div class="header">
+  <div class="header-left">
+    <h1>Good morning, Mahea</h1>
+    <p>Thursday, April 9, 2026 &nbsp;·&nbsp; RISE Learning Solutions &nbsp;·&nbsp; Content Lead</p>
+  </div>
+  <div class="header-right">mahea@lorraineklee.com</div>
 </div>
+
+<!-- CALENDAR -->
+<div class="grid-full">
+  <div class="card">
+    <div class="card-title">April — calendar &amp; deadlines</div>
+    <div class="cal-header-row">
+      <div class="cal-day-label">Sun</div><div class="cal-day-label">Mon</div><div class="cal-day-label">Tue</div><div class="cal-day-label">Wed</div><div class="cal-day-label">Thu</div><div class="cal-day-label">Fri</div><div class="cal-day-label">Sat</div>
+    </div>
+    <div class="cal-grid">
+      <div class="cal-cell"></div>
+      <div class="cal-cell"></div>
+      <div class="cal-cell"><div class="cal-date">1</div></div>
+      <div class="cal-cell"><div class="cal-date">2</div></div>
+      <div class="cal-cell"><div class="cal-date">3</div></div>
+      <div class="cal-cell"><div class="cal-date">4</div></div>
+      <div class="cal-cell"><div class="cal-date">5</div></div>
+      <div class="cal-cell"><div class="cal-date">6</div></div>
+      <div class="cal-cell"><div class="cal-date">7</div></div>
+      <div class="cal-cell"><div class="cal-date">8</div></div>
+      <div class="cal-cell today">
+        <div class="cal-date">9 — today</div>
+        <div class="cal-event"><span class="cal-dot"></span>IG Engagement 9am</div>
+        <div class="cal-event"><span class="cal-dot"></span>LI Newsletter 2pm</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">10</div>
+        <div class="cal-event"><span class="cal-dot"></span>LI form fix due</div>
+        <div class="cal-event"><span class="cal-dot"></span>CC Challenge tasks</div>
+        <div class="cal-event"><span class="cal-dot"></span>Awards/Accolades due</div>
+        <div class="cal-event"><span class="cal-dot"></span>Schedule promo post 1</div>
+      </div>
+      <div class="cal-cell"><div class="cal-date">11</div></div>
+      <div class="cal-cell"><div class="cal-date">12</div></div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">13</div>
+        <div class="cal-event"><span class="cal-dot"></span>Add LI Premium to CB newsletter</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">14</div>
+        <div class="cal-event"><span class="cal-dot"></span>RISE Team Meeting 9:30am</div>
+        <div class="cal-event"><span class="cal-dot"></span>Niki reviews newsletter</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">15</div>
+        <div class="cal-event"><span class="cal-dot"></span>Newsletter changes + schedule</div>
+        <div class="cal-event"><span class="cal-dot"></span>Career Bites 10am</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">16</div>
+        <div class="cal-event"><span class="cal-dot"></span>Lorraine OOO</div>
+        <div class="cal-event"><span class="cal-dot"></span>LI Newsletter 2pm</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">17</div>
+        <div class="cal-event"><span class="cal-dot"></span>MasterClass prep due</div>
+      </div>
+      <div class="cal-cell"><div class="cal-date">18</div></div>
+      <div class="cal-cell"><div class="cal-date">19</div></div>
+      <div class="cal-cell"><div class="cal-date">20</div></div>
+      <div class="cal-cell"><div class="cal-date">21</div></div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">22</div>
+        <div class="cal-event"><span class="cal-dot"></span>Career Bites 10am</div>
+        <div class="cal-event"><span class="cal-dot"></span>Mahea : Niki 1:1 11am</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">23</div>
+        <div class="cal-event"><span class="cal-dot"></span>LI Newsletter 2pm</div>
+      </div>
+      <div class="cal-cell"><div class="cal-date">24</div></div>
+      <div class="cal-cell"><div class="cal-date">25</div></div>
+      <div class="cal-cell"><div class="cal-date">26</div></div>
+      <div class="cal-cell"><div class="cal-date">27</div></div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">28</div>
+        <div class="cal-event"><span class="cal-dot"></span>RISE Team Meeting 9am</div>
+        <div class="cal-event"><span class="cal-dot"></span>BSci Keynote</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">29</div>
+        <div class="cal-event"><span class="cal-dot"></span>Career Bites 10am</div>
+        <div class="cal-event"><span class="cal-dot"></span>Lorraine approves promo</div>
+      </div>
+      <div class="cal-cell has-event">
+        <div class="cal-date">30</div>
+        <div class="cal-event"><span class="cal-dot"></span>Schedule final promo post</div>
+      </div>
+      <div class="cal-cell"></div>
+    </div>
+  </div>
 </div>
-<div class="c">
-<h2>Focus Zone — Top 2</h2>
-<div class="r"><div class="d dh"></div><div><span class="t th">URGENT</span> <strong>Fix LinkedIn Ultimate Guide form</strong> — Multiple people are getting errors when submitting. Lorraine asked Apr 3. Check the form in Kit (or wherever it's hosted) and fix or replace it today.</div></div>
-<div class="r"><div class="d dh"></div><div><span class="t th">UNRESOLVED · 6 DAYS</span> <strong>CookieYes/website at 100% pageview limit</strong> — Kim Ian (Dilaab Digitals) still unresponsive. Escalated to clientsuccess@dilaabdigitals.com Apr 3, bumped Kim Apr 8. Call or email again today — or request a new contact.</div></div>
+
+<!-- TOP PRIORITIES -->
+<div class="grid-full">
+  <div class="card">
+    <div class="card-title">Top priorities today</div>
+    <div class="priority-item">
+      <div class="dot-urgent" style="margin-top:3px"></div>
+      <div style="flex:1">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px"><span class="badge badge-urgent">urgent · due tomorrow</span></div>
+        <div class="item-title"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263" target="_blank">LinkedIn Guide for Friends &amp; Family form is broken</a></div>
+        <div class="item-meta">Multiple users reporting errors on submit. Lorraine asked Apr 3. Check form in Kit and fix or replace today.</div>
+      </div>
+    </div>
+    <div class="priority-item">
+      <div class="dot-urgent" style="margin-top:3px"></div>
+      <div style="flex:1">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px"><span class="badge badge-open">open · no deadline</span></div>
+        <div class="item-title"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213921775341517" target="_blank">Forbes article + Aaron/Erin's book — check social calendar</a></div>
+        <div class="item-meta">Lorraine asked Apr 3: Is the Forbes promo on our content plan? Is Aaron a co-collaborator? Check and report back.</div>
+      </div>
+    </div>
+    <div class="priority-item">
+      <div class="dot-norm" style="margin-top:3px"></div>
+      <div style="flex:1">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px"><span class="badge badge-new">new today · needs decision</span></div>
+        <div class="item-title"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213987270385366" target="_blank">Archive old Asana projects — Niki &amp; Lorraine waiting</a></div>
+        <div class="item-meta">Niki cleaned up but Newsletter project is still active. Lorraine replied: "migrate with its own section." Decide and close the loop.</div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="c">
-<h2>Lorraine Is Waiting On You</h2>
-<div class="r"><div class="d dh"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263"><strong>LinkedIn Guide form is broken</strong></a> — Fix it. Multiple users affected. In Inbox From Lorraine.</div></div>
-<div class="r"><div class="d dt"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213921775341517"><strong>Forbes article + Aaron/Erin's book</strong></a> — Is it on the social calendar? Is Aaron a co-collaborator? Check and report back to Lorraine.</div></div>
-<div class="r"><div class="d dt"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213935512780326"><strong>Affiliate links tracker</strong></a> — Is <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">this file</a> up to date? Is Kondo listed? If outdated, delete it and update the master.</div></div>
+
+<!-- TASKS + PROJECTS -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Open tasks with deadlines</div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263" target="_blank">Fix LinkedIn Guide form</a></div><div class="task-meta">Due tomorrow, Apr 10 · Inbox From Lorraine</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213920348523071" target="_blank">Website updates: awards/accolades</a></div><div class="task-meta">Due tomorrow, Apr 10 · Website</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213935492459940" target="_blank">Check Kondo: Lorraine Tab</a></div><div class="task-meta">Due tomorrow, Apr 10 · Content &amp; Audience</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350" target="_blank">MasterClass launch prep</a></div><div class="task-meta">Due Apr 17 · Assigned to Niki</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1210811475334139/task/1213948362186519" target="_blank">Review Webby Honoree badge — Kim says it's done</a></div><div class="task-meta">Overdue Apr 8 · Needs your review · Website</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213903061873108" target="_blank">LI video edits — Zen</a></div><div class="task-meta">Overdue Apr 6 · Assigned to Zen · Content &amp; Audience</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213935512780326" target="_blank">Affiliate links tracker — is it current?</a></div><div class="task-meta">No deadline · Inbox From Lorraine · <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit" class="item-link">Open sheet</a></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Upcoming projects</div>
+    <div class="checkbox-wrap">
+      <div class="cb done">✓</div>
+      <div><div class="task-text task-done">Q2 Analytics (Wishly/Aneesh)</div><div class="task-meta">Completed Apr 6</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213973700308780" target="_blank">LI video — 4/10 post</a></div><div class="task-meta">Due tomorrow · Lorraine to review &amp; record</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text">4/28 Keynote — Boston Scientific</div><div class="task-meta">Logistics email active · <a href="https://mail.superhuman.com" class="item-link">RE: 4/28 Keynote logistics</a></div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350" target="_blank">MasterClass launch</a></div><div class="task-meta">Due Apr 17 · Asset approval early May, promo starts late May</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text">RAPP / Omnicom invoicing</div><div class="task-meta">Urgent · <a href="https://mail.superhuman.com" class="item-link">RE: RAPP - Lorraine Fang</a> · Atrium profile incomplete</div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text">Brand deal reconciliation — Wishly</div><div class="task-meta">Active thread · <a href="https://mail.superhuman.com" class="item-link">March Brand Deal Reconciliation Memo</a></div></div>
+    </div>
+    <div class="checkbox-wrap" onclick="var cb=this.querySelector('.cb');cb.classList.toggle('done');cb.textContent=cb.classList.contains('done')?'✓':'';this.classList.toggle('task-done')">
+      <div class="cb"></div>
+      <div><div class="task-text"><a href="https://app.asana.com/1/1210774242380505/project/1210824180398160" target="_blank">Next Career Bites newsletter</a></div><div class="task-meta">Newsletter project · No active due date set</div></div>
+    </div>
+  </div>
 </div>
-<div class="c">
-<h2>Your Open Commitments</h2>
-<div style="font-size:11px;font-weight:700;color:#6a8a89;margin-bottom:6px">WITH DEADLINES</div>
-<div class="cd"><strong>Q1 Analytics (Wishly/Aneesh)</strong> — Due Mon Apr 6 · <span class="t td">✓ Completed Apr 6</span> · <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w">Drive folder ↗</a></div>
-<div style="font-size:11px;font-weight:700;color:#6a8a89;margin:10px 0 6px">OUTSTANDING — NO DEADLINE SET</div>
-<div class="co"><strong>CookieYes/website bot filter fix</strong> — Committed to resolution. Escalated Apr 3, bumped Apr 8 — 6 days open, no response from Kim Ian. <em>Set a deadline or close the loop.</em></div>
-<div class="co"><strong>Forbes article collab check</strong> — Lorraine asked Apr 3. No response logged. Check social calendar and report back today. <em>Set a deadline or close the loop.</em></div>
+
+<!-- SLACK + EMAIL -->
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Slack — live threads</div>
+
+    <div class="slack-item">
+      <div class="slack-ch"><span class="slack-hash">#</span>instagram</div>
+      <div class="slack-msg"><span class="slack-sender">Lorraine →</span> "Did someone sign up for something under my Meta account?" You replied: not you, will check. Lorraine said she'll forward it. Niki followed up — it's the Meta Verified blue check (<a href="https://risedreamteam.slack.com/archives/C099L2UL7HT/p1775761052196079" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 1pm</span><span>Action needed</span></div>
+    </div>
+
+    <div class="slack-item">
+      <div class="slack-ch"><span class="slack-hash">#</span>ai-external</div>
+      <div class="slack-msg"><span class="slack-sender">Niki →</span> "Would Monday be better?" — re: a meeting you can't make tomorrow. Someone (Mohammed Syed) replied they'll send a Loom instead and will send you &amp; Niki an invite. (<a href="https://risedreamteam.slack.com/archives/C0AM0B92UAE/p1775757908894839" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 12–1pm</span><span>FYI / reply may be needed</span></div>
+    </div>
+
+    <div class="slack-item">
+      <div class="slack-ch"><span class="slack-hash">#</span>social-media</div>
+      <div class="slack-msg"><span class="slack-sender">Lorraine →</span> Shared a stat hook for a post: "Tech layoffs crossed 90,000 people this year." Niki called it a "perfect hook." Lorraine notes it's from a newsletter, first line is fine to use. (<a href="https://risedreamteam.slack.com/archives/C06JD84AENP/p1775759587644789" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 12:33pm</span><span>Content note</span></div>
+    </div>
+
+    <div class="slack-item">
+      <div class="slack-ch"><span class="slack-hash">#</span>newsletter-content</div>
+      <div class="slack-msg"><span class="slack-sender">Lorraine →</span> Suggests emailing 3–5 days/week (from a source). Notes it's backburner — will add to ideas doc. (<a href="https://risedreamteam.slack.com/archives/C06JADV1D45/p1775755719029419" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 11:28am</span><span>FYI / backburner idea</span></div>
+    </div>
+
+    <div class="slack-item">
+      <div class="slack-ch">DM with Lorraine</div>
+      <div class="slack-msg"><span class="slack-sender">You →</span> Working through the RAPP/Omnicom Atrium form — flagged it's locked to SSN, not EIN. Submitted partial form, a few steps remaining. (<a href="https://risedreamteam.slack.com/archives/D06K24X2RDE/p1775756234356589" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 11:37am</span><span>In progress</span></div>
+    </div>
+
+    <div class="slack-item">
+      <div class="slack-ch">DM with Zen</div>
+      <div class="slack-msg"><span class="slack-sender">You →</span> Asked Zen to try different font combos — maybe a mix of script font and Arial/sans, like in the examples shared. (<a href="https://risedreamteam.slack.com/archives/D099EMHKA6P/p1775760083221529" target="_blank" class="item-link">open thread</a>)</div>
+      <div class="slack-meta"><span>Today, 12:41pm</span><span>Waiting on Zen</span></div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <div class="card-title">Superhuman — threads to action</div>
+    <div class="email-item">
+      <div class="avatar av-pink">KD</div>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;gap:4px">
+          <div class="email-sender">Kai Daniel (Omnicom)</div>
+          <span class="email-time">Today</span>
+        </div>
+        <div class="email-subject"><a href="https://mail.superhuman.com" target="_blank">RE: Urgent Re: RAPP — LORRAINE FANG</a></div>
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Atrium profile incomplete — invoice can't process. Draft response waiting.</div>
+      </div>
+    </div>
+    <div class="email-item">
+      <div class="avatar av-peach">KL</div>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;gap:4px">
+          <div class="email-sender">Katie Liao (Boston Scientific)</div>
+          <span class="email-time">Today</span>
+        </div>
+        <div class="email-subject"><a href="https://mail.superhuman.com" target="_blank">RE: 4/28 Keynote event logistics</a></div>
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Requesting a dry run. Niki shared presentation screenshot. Confirm logistics.</div>
+      </div>
+    </div>
+    <div class="email-item">
+      <div class="avatar av-lavender">WG</div>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;gap:4px">
+          <div class="email-sender">Wishly (Aneesh/Micaela)</div>
+          <span class="email-time">Today</span>
+        </div>
+        <div class="email-subject"><a href="https://mail.superhuman.com" target="_blank">Re: March Brand Deal Reconciliation Memo</a></div>
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Business address provided. ACH transfer question pending Lorraine response.</div>
+      </div>
+    </div>
+    <div class="email-item">
+      <div class="avatar av-pink">LL</div>
+      <div style="flex:1">
+        <div style="display:flex;justify-content:space-between;gap:4px">
+          <div class="email-sender">Lorraine K. Lee</div>
+          <span class="email-time">Today</span>
+        </div>
+        <div class="email-subject"><a href="https://mail.superhuman.com" target="_blank">Fwd: Subscription confirmation</a></div>
+        <div style="font-size:11px;color:var(--color-text-secondary);margin-top:2px">Forwarded to you — likely needs action or filing.</div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="c">
-<h2>Superhuman Threads</h2>
-<div class="r"><div class="d dh"></div><div><strong>Fwd: Urgent — You've reached 100% of your pageview limit</strong> — Bumped Kim Apr 8. No response. Escalate again or find new contact at Dilaab.</div></div>
-<div class="r"><div class="d dt"></div><div><strong>Re: Q2 Analytics — Due Monday April 6</strong> — <span class="t td">✓ Completed</span> Drive folder uploaded Apr 6.</div></div>
-<div class="r"><div class="d dl"></div><div><strong>Kim Ian C. Carano-o — Availability for This Week's Projects</strong> — Escalated to company email Apr 3. No reply. Call or request new developer contact.</div></div>
+
 </div>
-<div class="tc">
-<div class="c">
-<h2>Overdue Triage</h2>
-<div class="r"><div class="d dh"></div><div><span class="t th">OPEN</span> Fix LinkedIn Ultimate Guide form — no due date, multiple users affected now</div></div>
-<div class="r"><div class="d dh"></div><div><span class="t th">OPEN · 6 DAYS</span> CookieYes/website fix — Kim Ian unresponsive</div></div>
-<div class="r"><div class="d dt"></div><div><span class="t tt">OPEN</span> Forbes article collab — asked Apr 3, no response yet</div></div>
-<div class="r"><div class="d dt"></div><div><span class="t tt">OPEN</span> Affiliate links tracker — verify accuracy &amp; add Kondo</div></div>
-</div>
-<div class="c">
-<h2>This Week</h2>
-<div class="r"><div class="d dh"></div><div>Fix broken LinkedIn form (Kit or form provider)</div></div>
-<div class="r"><div class="d dh"></div><div>Resolve Kim Ian / Dilaab Digitals — call or find new dev</div></div>
-<div class="r"><div class="d dt"></div><div>Check social calendar: Forbes + Aaron/Erin collab</div></div>
-<div class="r"><div class="d dt"></div><div>Verify affiliate links tracker; add Kondo if missing</div></div>
-</div>
-</div>
-<div class="c">
-<h2>Backlog</h2>
-<div class="r"><div class="d dl"></div><div>Course slides — low priority, no deadline set</div></div>
-<div class="r"><div class="d dl"></div><div>Website optimization work (pending Kim Ian / Dilaab resolution)</div></div>
-<div class="r"><div class="d dl"></div><div>IG content batching for next week</div></div>
-</div>
-<div class="c"><div style="font-size:13px;color:#4a6a68;font-style:italic;padding:4px 0">You own: newsletters, social calendar, Instagram, sponsored posts, affiliate links, website content updates, brand analytics. If it touches brand or content output — it's yours to drive.</div></div>
-<div class="c"><div class="tip"><div style="font-size:11px;font-weight:700;color:#2D5F5D;margin-bottom:4px">CC &amp; AUTOMATION TIP #9</div><div style="font-size:13px">For Aneesh's quarterly analytics, ask CC to create a reusable template in the format Wishly needs — so next quarter you just fill in the numbers.</div></div></div>
-</div>
-</body></html>
