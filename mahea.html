@@ -1,133 +1,89 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahea — April 8, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahea — Apr 9, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#f7f9fa;color:#2c3e3d;font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;padding:24px}
-h1{font-size:1.6rem;font-weight:600;color:#2D5F5D;letter-spacing:.01em;margin-bottom:4px}
-.subtitle{color:#8aacaa;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:#fff;border:1px solid #d8e8e7;border-radius:6px;padding:18px}
-.card.full{grid-column:1/-1}
-.card-title{font-size:1rem;font-weight:600;color:#2D5F5D;margin-bottom:12px;border-bottom:2px solid #e8f2f1;padding-bottom:8px}
-.stat-row{display:flex;gap:16px;margin-bottom:20px}
-.stat{flex:1;text-align:center;background:#fff;border:1px solid #d8e8e7;border-radius:6px;padding:12px}
-.stat-num{font-size:1.5rem;font-weight:600;color:#2D5F5D}
-.stat-label{font-size:.7rem;color:#8aacaa;text-transform:uppercase;letter-spacing:.1em}
-.task-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #eef4f3}
-.task-row:last-child{border-bottom:none}
-.task-name{color:#2c3e3d;flex:1;margin-right:8px}
-.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.badge-thisweek{background:#e8f5e8;color:#3a7a3a}
-.badge-low{background:#f5f5f5;color:#888}
-.focus-item{padding:12px 0;border-bottom:1px solid #eef4f3}
-.focus-item:last-child{border-bottom:none}
-.focus-num{font-size:.65rem;font-weight:600;color:#6B9E9A;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
-.focus-title{font-weight:500;color:#2c3e3d;margin-bottom:2px}
-.focus-due{font-size:.75rem;color:#8aacaa}
-.waiting-item{padding:8px 0;border-bottom:1px solid #eef4f3}
-.waiting-item:last-child{border-bottom:none}
-.waiting-label{color:#c05050;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
-.commit-item{padding:8px 0;border-bottom:1px solid #eef4f3;font-size:.85rem}
-.commit-item:last-child{border-bottom:none}
-.commit-nodl{border-left:3px solid #6B9E9A;background:#eef6f5;padding:7px 12px;border-radius:0 4px 4px 0;font-size:.82rem;margin-top:5px;color:#2c3e3d}
-.flag-item{padding:7px 0;border-bottom:1px solid #eef4f3;font-size:.85rem;color:#4a6060}
-.flag-item:last-child{border-bottom:none}
-.tip-box{background:#eef6f5;border-left:3px solid #2D5F5D;padding:12px 14px;border-radius:0 4px 4px 0;font-size:.85rem;color:#2c3e3d;line-height:1.7}
-.tip-num{color:#2D5F5D;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
-.ownership-box{background:#eef6f5;border:1px solid #d8e8e7;border-radius:4px;padding:14px;font-size:.85rem;color:#4a6060;line-height:1.8;font-style:italic}
-a{color:#2D5F5D;text-decoration:none}a:hover{text-decoration:underline}
-.sub{font-size:.7rem;font-weight:600;color:#8aacaa;text-transform:uppercase;letter-spacing:.1em;margin:12px 0 6px}
-.inbox-item{padding:8px 0;border-bottom:1px solid #eef4f3;font-size:.85rem}
-.inbox-item:last-child{border-bottom:none}
-.inbox-q{font-weight:500;color:#2c3e3d;margin-bottom:2px}
-.inbox-note{font-size:.75rem;color:#8aacaa}
-</style></head>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#f7f9fa;color:#2a3d3c;font-size:14px}
+.hdr{background:#2D5F5D;color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.hdr h1{font-size:17px;font-weight:700}.hdr .s{font-size:11px;opacity:.75}
+.w{max-width:860px;margin:0 auto;padding:14px}
+.c{background:#fff;border-radius:8px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+h2{font-size:11px;font-weight:700;color:#2D5F5D;text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;border-bottom:1px solid #e0eded;padding-bottom:5px}
+a{color:#2D5F5D;text-decoration:none}
+.r{padding:5px 0;border-bottom:1px solid #eef2f1;display:flex;gap:8px;align-items:flex-start}.r:last-child{border-bottom:none}
+.d{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}.dh{background:#c0392b}.dt{background:#2D5F5D}.dl{background:#b0bab9}
+.t{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.th{background:#fde8e8;color:#c0392b}.tt{background:#e0edec;color:#2D5F5D}.td{background:#e0f0e8;color:#2e7d32}.tw{background:#fff3cd;color:#856404}
+.stat-row{display:flex;gap:10px;flex-wrap:wrap}
+.stat{flex:1;min-width:100px;background:#f0f6f5;border-radius:6px;padding:10px;text-align:center}
+.sn{font-size:22px;font-weight:700;color:#2D5F5D}.sl{font-size:11px;color:#6a8a89;margin-top:2px}
+.cd{border-left:3px solid #2D5F5D;padding-left:8px;margin:4px 0}
+.co{border-left:3px solid #6B9E9A;padding-left:8px;margin-top:5px;background:#f0f8f7;border-radius:0 4px 4px 0;padding:6px 8px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tip{background:#e8f2f1;border-left:4px solid #2D5F5D;padding:12px;border-radius:0 6px 6px 0}
+</style>
+</head>
 <body>
-<h1>Mahea Fonoti</h1>
-<div class="subtitle">Wednesday · April 8, 2026 · Morning Briefing</div>
+<div class="hdr"><div><h1>Mahea's Dashboard</h1><div class="s">Thursday, April 9, 2026 · RISE Learning Solutions · Content Lead</div></div><div style="font-size:11px;opacity:.8">mahea@lorraineklee.com</div></div>
+<div class="w">
+<div class="c">
+<h2>Stats</h2>
 <div class="stat-row">
-  <div class="stat"><div class="stat-num">0</div><div class="stat-label">Overdue</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Due This Week</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">In Your Inbox</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Waiting On You</div></div>
+<div class="stat"><div class="sn">3</div><div class="sl">Open items from Lorraine</div></div>
+<div class="stat"><div class="sn" style="color:#c0392b">1</div><div class="sl">Unresolved escalation (Kim Ian)</div></div>
+<div class="stat"><div class="sn" style="color:#27ae60">✓</div><div class="sl">Q1 Analytics uploaded Apr 6</div></div>
+<div class="stat"><div class="sn" style="color:#c0392b">!</div><div class="sl">LinkedIn form broken</div></div>
 </div>
-<div class="grid">
-  <div class="card">
-    <div class="card-title">Focus Zone — Top 2 Today</div>
-    <div class="focus-item">
-      <div class="focus-num">Priority 1 — Due Friday</div>
-      <div class="focus-title">3 tasks due Apr 10: Website, Comment on post, Riddle quiz</div>
-      <div class="focus-due">Deadline markers on Lorraine's calendar at 9am Fri. Get ahead of these today.</div>
-    </div>
-    <div class="focus-item">
-      <div class="focus-num">Priority 2 — Lorraine's Inbox</div>
-      <div class="focus-title">3 open questions from Lorraine need your response</div>
-      <div class="focus-due">Forbes/Erin co-promo · LI form broken · affiliate links tracker</div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Lorraine Is Waiting On You</div>
-    <div class="waiting-item">
-      <div class="waiting-label">Open Question</div>
-      <div><a href="https://app.asana.com/0/0/1213921775341517">Is Forbes article/Erin's book co-promotion on the social calendar?</a></div>
-    </div>
-    <div class="waiting-item">
-      <div class="waiting-label">Open Question</div>
-      <div><a href="https://app.asana.com/0/0/1213922154455263">LinkedIn Guide for Friends &amp; Family form is broken</a> — investigate + fix</div>
-    </div>
-    <div class="waiting-item">
-      <div class="waiting-label">Open Question</div>
-      <div><a href="https://app.asana.com/0/0/1213935512780326">Is the affiliate links tracker up to date?</a> — <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">sheet</a> · Kondo not on there</div>
-    </div>
-  </div>
-  <div class="card full">
-    <div class="card-title">Inbox From Lorraine — For Mahea</div>
-    <div class="inbox-item">
-      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213921775341517">Is promoting Forbes article w/ Aaron (Erin's book) on our content plan? Co-collab?</a></div>
-      <div class="inbox-note">From Lorraine Apr 3 · Check social calendar and let her know the status</div>
-    </div>
-    <div class="inbox-item">
-      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213922154455263">LinkedIn Guide for Friends &amp; Family form is broken — multiple people getting errors</a></div>
-      <div class="inbox-note">From Lorraine Apr 3 · Look into what's going wrong and fix it · Non-urgent but ongoing</div>
-    </div>
-    <div class="inbox-item">
-      <div class="inbox-q"><a href="https://app.asana.com/0/0/1213935512780326">Is this the most up-to-date affiliate links tracker? Kondo is missing.</a></div>
-      <div class="inbox-note">From Lorraine · <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">Review sheet</a> · Update or confirm is current</div>
-    </div>
-  </div>
-  <div class="card full">
-    <div class="card-title">Your Open Commitments</div>
-    <div class="sub">With Deadlines</div>
-    <div class="commit-item">No dated commitments found in last 7 days — Q1 analytics upload delivered Apr 6 ✓</div>
-    <div class="sub" style="margin-top:12px">Outstanding (No Deadline Set)</div>
-    <div class="commit-nodl"><strong>Dilaab Digitals / Kim Ian availability</strong> — following up for this week's projects · said Apr 3 (5 days ago)</div>
-    <div class="commit-nodl"><strong>RAPP/Omnicom invoice</strong> ($4,000+ · 5+ months overdue) — following up with Jacqueline Thompson · said Apr 2 (6 days ago) · <strong style="color:#c05050">Escalate?</strong></div>
-    <div class="commit-nodl"><strong>CNBC Invoice #258</strong> ($700 course filming fee) — chasing AP team contact · said Apr 1 (7 days ago)</div>
-    <div style="font-size:.75rem;color:#8aacaa;margin-top:8px;font-style:italic">Set a deadline or close the loop on each of these.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">This Week — Due Apr 10</div>
-    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1213920348523071">Website updates: Awards/Accolades</a></span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1213935484582783">Comment on 8/21 post</a></span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div class="task-row"><span class="task-name"><a href="https://app.asana.com/0/0/1212273867389021">Review Riddle quiz data</a></span><span class="badge badge-thisweek">Apr 10</span></div>
-    <div style="margin-top:10px;font-size:.78rem;color:#8aacaa">Deadline markers set on Lorraine's calendar at 9am PT on Apr 10 (tangerine).</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Superhuman Threads</div>
-    <div class="flag-item">Dilaab Digitals — Kim Ian availability · Apr 3 · awaiting response</div>
-    <div class="flag-item">RAPP/Omnicom — Jacqueline Thompson · Apr 2 · 5+ months overdue</div>
-    <div class="flag-item">CNBC AP team — Invoice #258 · Apr 1 · awaiting contact info</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Ownership Prompt</div>
-    <div class="ownership-box">"Before anything else — what are the two tasks on your list that only YOU can do, that Lorraine's business is counting on this week?"</div>
-  </div>
-  <div class="card full">
-    <div class="card-title">CC &amp; Automation Tip — #8</div>
-    <div class="tip-num">Tip of the Day</div>
-    <div class="tip-box">When timestamping a video, ask CC to organize your timestamps into a formatted table. Paste your raw timestamp notes (e.g. "0:00 intro, 2:30 main point 1, 5:45 story...") and say: "Format these as a YouTube chapter table with clean titles." CC outputs a ready-to-paste table in under 10 seconds — no reformatting needed.</div>
-  </div>
+</div>
+<div class="c">
+<h2>Focus Zone — Top 2</h2>
+<div class="r"><div class="d dh"></div><div><span class="t th">URGENT</span> <strong>Fix LinkedIn Ultimate Guide form</strong> — Multiple people are getting errors when submitting. Lorraine asked Apr 3. Check the form in Kit (or wherever it's hosted) and fix or replace it today.</div></div>
+<div class="r"><div class="d dh"></div><div><span class="t th">UNRESOLVED · 6 DAYS</span> <strong>CookieYes/website at 100% pageview limit</strong> — Kim Ian (Dilaab Digitals) still unresponsive. Escalated to clientsuccess@dilaabdigitals.com Apr 3, bumped Kim Apr 8. Call or email again today — or request a new contact.</div></div>
+</div>
+<div class="c">
+<h2>Lorraine Is Waiting On You</h2>
+<div class="r"><div class="d dh"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263"><strong>LinkedIn Guide form is broken</strong></a> — Fix it. Multiple users affected. In Inbox From Lorraine.</div></div>
+<div class="r"><div class="d dt"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213921775341517"><strong>Forbes article + Aaron/Erin's book</strong></a> — Is it on the social calendar? Is Aaron a co-collaborator? Check and report back to Lorraine.</div></div>
+<div class="r"><div class="d dt"></div><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213935512780326"><strong>Affiliate links tracker</strong></a> — Is <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">this file</a> up to date? Is Kondo listed? If outdated, delete it and update the master.</div></div>
+</div>
+<div class="c">
+<h2>Your Open Commitments</h2>
+<div style="font-size:11px;font-weight:700;color:#6a8a89;margin-bottom:6px">WITH DEADLINES</div>
+<div class="cd"><strong>Q1 Analytics (Wishly/Aneesh)</strong> — Due Mon Apr 6 · <span class="t td">✓ Completed Apr 6</span> · <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w">Drive folder ↗</a></div>
+<div style="font-size:11px;font-weight:700;color:#6a8a89;margin:10px 0 6px">OUTSTANDING — NO DEADLINE SET</div>
+<div class="co"><strong>CookieYes/website bot filter fix</strong> — Committed to resolution. Escalated Apr 3, bumped Apr 8 — 6 days open, no response from Kim Ian. <em>Set a deadline or close the loop.</em></div>
+<div class="co"><strong>Forbes article collab check</strong> — Lorraine asked Apr 3. No response logged. Check social calendar and report back today. <em>Set a deadline or close the loop.</em></div>
+</div>
+<div class="c">
+<h2>Superhuman Threads</h2>
+<div class="r"><div class="d dh"></div><div><strong>Fwd: Urgent — You've reached 100% of your pageview limit</strong> — Bumped Kim Apr 8. No response. Escalate again or find new contact at Dilaab.</div></div>
+<div class="r"><div class="d dt"></div><div><strong>Re: Q2 Analytics — Due Monday April 6</strong> — <span class="t td">✓ Completed</span> Drive folder uploaded Apr 6.</div></div>
+<div class="r"><div class="d dl"></div><div><strong>Kim Ian C. Carano-o — Availability for This Week's Projects</strong> — Escalated to company email Apr 3. No reply. Call or request new developer contact.</div></div>
+</div>
+<div class="tc">
+<div class="c">
+<h2>Overdue Triage</h2>
+<div class="r"><div class="d dh"></div><div><span class="t th">OPEN</span> Fix LinkedIn Ultimate Guide form — no due date, multiple users affected now</div></div>
+<div class="r"><div class="d dh"></div><div><span class="t th">OPEN · 6 DAYS</span> CookieYes/website fix — Kim Ian unresponsive</div></div>
+<div class="r"><div class="d dt"></div><div><span class="t tt">OPEN</span> Forbes article collab — asked Apr 3, no response yet</div></div>
+<div class="r"><div class="d dt"></div><div><span class="t tt">OPEN</span> Affiliate links tracker — verify accuracy &amp; add Kondo</div></div>
+</div>
+<div class="c">
+<h2>This Week</h2>
+<div class="r"><div class="d dh"></div><div>Fix broken LinkedIn form (Kit or form provider)</div></div>
+<div class="r"><div class="d dh"></div><div>Resolve Kim Ian / Dilaab Digitals — call or find new dev</div></div>
+<div class="r"><div class="d dt"></div><div>Check social calendar: Forbes + Aaron/Erin collab</div></div>
+<div class="r"><div class="d dt"></div><div>Verify affiliate links tracker; add Kondo if missing</div></div>
+</div>
+</div>
+<div class="c">
+<h2>Backlog</h2>
+<div class="r"><div class="d dl"></div><div>Course slides — low priority, no deadline set</div></div>
+<div class="r"><div class="d dl"></div><div>Website optimization work (pending Kim Ian / Dilaab resolution)</div></div>
+<div class="r"><div class="d dl"></div><div>IG content batching for next week</div></div>
+</div>
+<div class="c"><div style="font-size:13px;color:#4a6a68;font-style:italic;padding:4px 0">You own: newsletters, social calendar, Instagram, sponsored posts, affiliate links, website content updates, brand analytics. If it touches brand or content output — it's yours to drive.</div></div>
+<div class="c"><div class="tip"><div style="font-size:11px;font-weight:700;color:#2D5F5D;margin-bottom:4px">CC &amp; AUTOMATION TIP #9</div><div style="font-size:13px">For Aneesh's quarterly analytics, ask CC to create a reusable template in the format Wishly needs — so next quarter you just fill in the numbers.</div></div></div>
 </div>
 </body></html>

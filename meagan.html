@@ -1,131 +1,95 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meagan — April 8, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meagan — Apr 9, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a1a18;color:#c8c0b4;font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;padding:24px}
-h1{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#c9a96e;letter-spacing:.04em;margin-bottom:4px}
-.subtitle{color:#7a7468;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:#232320;border:1px solid #2e2e2a;border-radius:6px;padding:18px}
-.card.full{grid-column:1/-1}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#c9a96e;margin-bottom:12px;letter-spacing:.03em;border-bottom:1px solid #2e2e2a;padding-bottom:8px}
-.stat-row{display:flex;gap:20px;margin-bottom:20px}
-.stat{flex:1;text-align:center;background:#232320;border:1px solid #2e2e2a;border-radius:6px;padding:12px}
-.stat-num{font-size:1.6rem;font-weight:600;color:#c9a96e;font-family:'Cormorant Garamond',serif}
-.stat-label{font-size:.7rem;color:#7a7468;text-transform:uppercase;letter-spacing:.1em}
-.task-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #2a2a27}
-.task-row:last-child{border-bottom:none}
-.task-name{color:#c8c0b4;flex:1;margin-right:8px}
-.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.badge-overdue{background:#5c1a1a;color:#e07070}
-.badge-today{background:#3d2a10;color:#c9a96e}
-.badge-low{background:#252525;color:#7a7468}
-.priority-item{padding:10px 0;border-bottom:1px solid #2a2a27}
-.priority-item:last-child{border-bottom:none}
-.priority-item .label{font-size:.65rem;color:#7a7468;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
-.priority-item .value{color:#c8c0b4}
-.waiting-item{padding:8px 0;border-bottom:1px solid #2a2a27}
-.waiting-item:last-child{border-bottom:none}
-.waiting-label{color:#e07070;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
-.commit-item{padding:8px 0;border-bottom:1px solid #2a2a27;font-size:.85rem}
-.commit-item:last-child{border-bottom:none}
-.commit-nodl{border-left:3px solid #c9a96e;background:#1e1d1a;padding:7px 12px;border-radius:0 4px 4px 0;font-size:.82rem;margin-top:5px;color:#b0a898}
-.flag-item{padding:7px 0;border-bottom:1px solid #2a2a27;font-size:.85rem;color:#b0a898}
-.flag-item:last-child{border-bottom:none}
-.tip-box{background:#1a1a18;border-left:3px solid #c9a96e;padding:12px 14px;border-radius:0 4px 4px 0;font-size:.85rem;color:#b0a898;line-height:1.7}
-.tip-num{color:#c9a96e;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
-.ownership-box{background:#1e1d1b;border:1px solid #3a3530;border-radius:4px;padding:14px;font-size:.85rem;color:#9a9088;line-height:1.8;font-style:italic}
-.goals-table{width:100%;border-collapse:collapse;font-size:.82rem}
-.goals-table th{text-align:left;color:#7a7468;font-weight:500;padding:6px 0;border-bottom:1px solid #2e2e2a;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
-.goals-table td{padding:7px 0;border-bottom:1px solid #252520;color:#c8c0b4;vertical-align:top}
-.goals-table tr:last-child td{border-bottom:none}
-.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
-.dot-green{background:#5a9a5a}.dot-yellow{background:#c9a96e}.dot-red{background:#c05050}
-a{color:#c9a96e;text-decoration:none}a:hover{text-decoration:underline}
-.sub{font-size:.7rem;font-weight:600;color:#7a7468;text-transform:uppercase;letter-spacing:.1em;margin:12px 0 6px}
-</style></head>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#1a1a18;color:#c8c0b4;font-size:14px}
+.hdr{background:#111110;border-bottom:1px solid #2a2a28;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.hdr h1{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#c8c0b4}.hdr .s{font-size:11px;color:#6a6a64}
+.w{max-width:860px;margin:0 auto;padding:14px}
+.c{background:#222220;border:1px solid #2e2e2c;border-radius:8px;padding:14px;margin-bottom:10px}
+h2{font-size:11px;font-weight:700;color:#c9a96e;text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;border-bottom:1px solid #2e2e2c;padding-bottom:5px}
+a{color:#c9a96e;text-decoration:none}
+.r{padding:5px 0;border-bottom:1px solid #2a2a28;display:flex;gap:8px;align-items:flex-start}.r:last-child{border-bottom:none}
+.d{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}.dh{background:#e07060}.dg{background:#c9a96e}.dl{background:#4a4a46}
+.t{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.th{background:#3d1818;color:#e07060}.tg{background:#2a2210;color:#c9a96e}.td{background:#1a2e1a;color:#7ab87a}.tw{background:#2a2410;color:#d4a843}
+.stat-row{display:flex;gap:10px;flex-wrap:wrap}
+.stat{flex:1;min-width:100px;background:#1a1a18;border-radius:6px;padding:10px;text-align:center}
+.sn{font-size:22px;font-weight:700;color:#c9a96e}.sl{font-size:11px;color:#6a6a64;margin-top:2px}
+.cd{border-left:3px solid #c9a96e;padding-left:8px;margin:4px 0}
+.co{border-left:3px solid #c9a96e;padding-left:8px;margin-top:5px;background:#1f1c10;border-radius:0 4px 4px 0;padding:6px 8px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tip{background:#1e1c10;border-left:3px solid #c9a96e;padding:12px;border-radius:0 6px 6px 0}
+</style>
+</head>
 <body>
-<h1>Meagan Hekkelman</h1>
-<div class="subtitle">Wednesday · April 8, 2026 · Morning Briefing</div>
+<div class="hdr"><div><h1>Meagan's Dashboard</h1><div class="s">Thursday, April 9, 2026 · RISE Learning Solutions · Ops Lead</div></div><div style="color:#c9a96e;font-size:11px">meagan@lorraineklee.com</div></div>
+<div class="w">
+<div class="c">
+<h2>Stats</h2>
 <div class="stat-row">
-  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Due Today</div></div>
-  <div class="stat"><div class="stat-num">2</div><div class="stat-label">Open Tasks</div></div>
-  <div class="stat"><div class="stat-num">0</div><div class="stat-label">In Inbox</div></div>
-  <div class="stat"><div class="stat-num">1</div><div class="stat-label">Waiting On You</div></div>
+<div class="stat"><div class="sn">0</div><div class="sl">Tasks in Inbox From Lorraine</div></div>
+<div class="stat"><div class="sn">3</div><div class="sl">Active revenue deals</div></div>
+<div class="stat"><div class="sn">1</div><div class="sl">Call confirmed Mon Apr 13</div></div>
+<div class="stat"><div class="sn" style="color:#e07060">⚠</div><div class="sl">RAPP payment — last day of window</div></div>
 </div>
-<div class="grid">
-  <div class="card">
-    <div class="card-title">Start Here</div>
-    <div class="priority-item">
-      <div class="label">Due Today — Lorraine Is Waiting</div>
-      <div class="value"><a href="https://app.asana.com/0/0/1213922155683593">Write LinkedIn promo post 1 — drive registrations</a> <span class="badge badge-today">Due Today</span></div>
-      <div style="font-size:.75rem;color:#7a7468;margin-top:4px">Use LinkedIn post skill in CC. Lorraine approves. Raising at 1:1 @ 9am.</div>
-    </div>
-    <div class="priority-item">
-      <div class="label">Due Today</div>
-      <div class="value"><a href="https://app.asana.com/0/0/1213973700308777">Review 4/24 LI Viral Repost</a> <span class="badge badge-today">Due Today</span></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title">Lorraine Is Waiting On You</div>
-    <div class="waiting-item">
-      <div class="waiting-label">Action Needed — Due Today</div>
-      <div><a href="https://app.asana.com/0/0/1213922155683593">LinkedIn promo post 1 for May 5 Premium Event</a> — submit before or at 1:1 (9am). Use LinkedIn post skill in CC.</div>
-    </div>
-    <div style="margin-top:10px;font-size:.78rem;color:#7a7468">Deadline marker on Lorraine's calendar at 9am today (tangerine).</div>
-  </div>
-  <div class="card full">
-    <div class="card-title">Your Open Tasks</div>
-    <div class="task-row">
-      <div><div class="task-name"><a href="https://app.asana.com/0/0/1213922155683593">Write LinkedIn promo post 1 — drive registrations</a></div><div style="font-size:.75rem;color:#7a7468">Content &amp; Audience · LinkedIn Premium Event</div></div>
-      <span class="badge badge-today">Today</span>
-    </div>
-    <div class="task-row">
-      <div><div class="task-name"><a href="https://app.asana.com/0/0/1213973700308777">Review 4/24 LI Viral Repost</a></div><div style="font-size:.75rem;color:#7a7468">Content &amp; Audience</div></div>
-      <span class="badge badge-today">Today</span>
-    </div>
-  </div>
-  <div class="card full">
-    <div class="card-title">Your Open Commitments</div>
-    <div class="sub">With Deadlines</div>
-    <div class="commit-item"><strong>LinkedIn promo post 1</strong> — for Lorraine · <strong>Due TODAY Apr 8</strong> · <a href="https://app.asana.com/0/0/1213922155683593">Asana task</a></div>
-    <div class="sub" style="margin-top:12px">Outstanding (No Deadline Set)</div>
-    <div class="commit-nodl"><strong>MasterClass scheduling</strong> — calendar link for Lauren's first-week-of-May call · said Apr 1 (7 days ago)</div>
-    <div class="commit-nodl"><strong>Book shipment for Nate Matson</strong> (MasterClass connection) · said Apr 3 (5 days ago)</div>
-    <div class="commit-nodl"><strong>Surge Institute coordination</strong> — flagged Lorraine's travel, Mari found time · said Apr 6 (2 days ago)</div>
-    <div class="commit-nodl"><strong>Velsoft eLearning partnership</strong> — gathering scope/timeline from Shane · said Apr 6–7</div>
-    <div class="commit-nodl"><strong>Apex Group response follow-up</strong> — sent 45-min keynote offer to Sheril James · said Apr 2 (6 days ago)</div>
-    <div style="font-size:.75rem;color:#7a7468;margin-top:8px;font-style:italic">Set a deadline or close the loop on each of these.</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Flagged from Lorraine's Inbox</div>
-    <div class="flag-item">No open "For Meagan" tasks in Inbox From Lorraine today — inbox is clear ✓</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Superhuman Threads</div>
-    <div class="flag-item">Velsoft (Shane) — awaiting scope reply · Apr 6–7</div>
-    <div class="flag-item">Enterprise one-pager — sent to Pamela Bruner for review · Apr 6</div>
-    <div class="flag-item">Apex Group (Sheril James) — proposal sent · Apr 2 · no reply yet</div>
-  </div>
-  <div class="card">
-    <div class="card-title">Ownership Prompt</div>
-    <div class="ownership-box">"Before checking Slack or email — open Asana. What's the ONE task that, if done before noon, would move the needle most for Lorraine's business today?"</div>
-  </div>
-  <div class="card full">
-    <div class="card-title">Goals Status</div>
-    <table class="goals-table">
-      <tr><th>Goal</th><th>Status</th><th>Next Action</th></tr>
-      <tr><td>LinkedIn promo post 1 (May 5 event)</td><td><span class="status-dot dot-red"></span>Due Today</td><td>Write + submit before 9am 1:1</td></tr>
-      <tr><td>Review 4/24 LI Viral Repost</td><td><span class="status-dot dot-yellow"></span>Due Today</td><td>Review and approve</td></tr>
-      <tr><td>MasterClass rollout coordination</td><td><span class="status-dot dot-green"></span>On Track</td><td>Meeting today 1:30pm — Lorraine attends</td></tr>
-    </table>
-  </div>
-  <div class="card full">
-    <div class="card-title">CC &amp; Automation Tip — #8</div>
-    <div class="tip-num">Tip of the Day</div>
-    <div class="tip-box">Paste a brand deal brief and ask CC: "What's the effective hourly rate vs. Lorraine's $5K–$10K speaking rate?" Give CC the deliverables, timeline, and fee. It'll calculate the effective hourly, flag if the deal is below her floor, and draft a counter-offer with bundled deliverables if needed. Saves you the math and the awkward back-and-forth.</div>
-  </div>
+</div>
+<div class="c">
+<h2>Start Here</h2>
+<div class="r"><div class="d dh"></div><div><span class="t th">ACTION</span> <strong>Gusto UGC (VaynerMedia)</strong> — Ella Lammin responded, wants call early next week. Aneesh/Wishly needs a rate estimate first. Coordinate with Aneesh today — don't let this stall.</div></div>
+<div class="r"><div class="d dh"></div><div><span class="t th">CONFIRM</span> <strong>MasterClass Zoom invite</strong> — Call confirmed Mon Apr 13, 1:30 PM ET with Kristin Harris. Has the Zoom link arrived? Check inbox + confirm with Lorraine.</div></div>
+<div class="r"><div class="d dg"></div><div><span class="t tg">FOLLOW UP</span> <strong>Wishly check-in</strong> — Micaela Crosta confirmed you're attending in Lorraine's place. Confirm date/time and add to both calendars.</div></div>
+<div class="r"><div class="d dh"></div><div><span class="t th">TODAY</span> <strong>RAPP/Omnicom payment</strong> — Kai Daniel said "this week." Today = last day of that window. Flag for Lorraine if nothing comes in. Follow up Monday if needed.</div></div>
+</div>
+<div class="c">
+<h2>Lorraine Is Waiting On You</h2>
+<div class="r"><div class="d dh"></div><div><strong>Gusto UGC rate quote</strong> — Get Aneesh's number so Ella can schedule the call. Lorraine flagged as revenue priority.</div></div>
+<div class="r"><div class="d dg"></div><div><strong>Wishly check-in date/time</strong> — Confirm call details with Micaela and share with Lorraine.</div></div>
+<div class="r"><div class="d dg"></div><div><strong>Medline / Ashley Buchner</strong> — "I look forward to learning more about the program." Draft a follow-up from Lorraine with program details.</div></div>
+</div>
+<div class="c">
+<h2>Your Open Commitments</h2>
+<div style="font-size:11px;font-weight:700;color:#6a6a64;margin-bottom:6px">WITH DEADLINES</div>
+<div class="cd"><strong>Gusto UGC</strong> — Coordinate rate with Aneesh for VaynerMedia/Ella · <span class="t tw">Before Mon Apr 13</span> · <a href="#">No Asana task — create one?</a></div>
+<div class="cd" style="margin-top:5px"><strong>MasterClass call prep</strong> — Confirm Zoom invite from Kristin Harris · <span class="t tw">Before Mon Apr 13</span> · <a href="#">No Asana task — create one?</a></div>
+<div class="cd" style="margin-top:5px"><strong>Wishly check-in call</strong> — Attend in Lorraine's place · Date TBD (confirm with Micaela) · <a href="#">No Asana task — create one?</a></div>
+<div style="font-size:11px;font-weight:700;color:#6a6a64;margin:10px 0 6px">OUTSTANDING — NO DEADLINE SET</div>
+<div style="padding:10px;background:#1a1a18;border-radius:6px;font-size:13px;color:#7a7a74">No outstanding commitments without deadlines detected — nice work staying on top of things.</div>
+</div>
+<div class="c">
+<h2>Superhuman Threads</h2>
+<div class="r"><div class="d dg"></div><div><strong>Intro: VaynerMedia / Gusto UGC Opportunity</strong> — Ella responded Thu Apr 9. Wants early next week call. <span class="t tg">ACTIVE DEAL</span></div></div>
+<div class="r"><div class="d dg"></div><div><strong>Re: another project? (MasterClass)</strong> — Kristin Harris confirmed call Mon Apr 13. Zoom invite expected.</div></div>
+<div class="r"><div class="d dl"></div><div><strong>RE: Unforgettable Presence Bulk Book Order — Boston Scientific</strong> — Katie Liao updated. AAPI newsletter recap planned. No action needed.</div></div>
+<div class="r"><div class="d dg"></div><div><strong>Re: Lorraine x Wishly — Checkin call</strong> — Micaela confirmed you're attending. Confirm date/time.</div></div>
+</div>
+<div class="tc">
+<div class="c">
+<h2>Flagged from Lorraine's Inbox</h2>
+<div class="r"><div class="d dh"></div><div><strong>VaynerMedia/Ella</strong> — Active deal, you're CC'd. Needs rate quote ASAP.</div></div>
+<div class="r"><div class="d dg"></div><div><strong>Medline / Ashley Buchner</strong> — Interest in "the program." Draft Lorraine's follow-up.</div></div>
+<div class="r"><div class="d dg"></div><div><strong>CHIEF / Erica Anderson Rooney</strong> — Lorraine to respond, but calendar management may be needed.</div></div>
+</div>
+<div class="c">
+<h2>Priorities</h2>
+<div class="r"><div class="d dh"></div><div>1. Gusto UGC rate from Aneesh → Ella</div></div>
+<div class="r"><div class="d dh"></div><div>2. MasterClass Zoom invite confirmed</div></div>
+<div class="r"><div class="d dg"></div><div>3. Wishly check-in date confirmed</div></div>
+<div class="r"><div class="d dg"></div><div>4. Medline follow-up drafted</div></div>
+<div class="r"><div class="d dl"></div><div>5. RAPP/Omnicom — monitor; flag if no payment</div></div>
+</div>
+</div>
+<div class="c"><div style="font-size:13px;color:#8a8a82;font-style:italic;padding:4px 0">You own: proposals, lead follow-ups, Forbes articles, speaking pipeline, course marketing emails, client communications. If it's client-facing or revenue-related, it's yours to drive.</div></div>
+<div class="c"><div class="tip"><div style="font-size:11px;font-weight:700;color:#c9a96e;margin-bottom:4px">CC &amp; AUTOMATION TIP #9</div><div style="font-size:13px;color:#c8c0b4">Before Monday meetings, ask CC to summarize all Asana tasks completed last week and anything overdue.</div></div></div>
+<div class="c">
+<h2>Goals Status</h2>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Revenue Target</div><div style="font-size:20px;font-weight:700;color:#c9a96e">$600K</div><div style="font-size:10px;color:#4a4a46">$700K stretch</div></div>
+<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Active Deals</div><div style="font-size:20px;font-weight:700;color:#c9a96e">3</div><div style="font-size:10px;color:#4a4a46">MasterClass · Gusto · Medline</div></div>
+<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Next Call</div><div style="font-size:20px;font-weight:700;color:#c9a96e">Mon</div><div style="font-size:10px;color:#4a4a46">Apr 13 · MasterClass 1:30 PM ET</div></div>
+</div>
+</div>
 </div>
 </body></html>
