@@ -1,95 +1,87 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meagan — Apr 9, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#1a1a18;color:#c8c0b4;font-size:14px}
-.hdr{background:#111110;border-bottom:1px solid #2a2a28;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
-.hdr h1{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#c8c0b4}.hdr .s{font-size:11px;color:#6a6a64}
-.w{max-width:860px;margin:0 auto;padding:14px}
-.c{background:#222220;border:1px solid #2e2e2c;border-radius:8px;padding:14px;margin-bottom:10px}
-h2{font-size:11px;font-weight:700;color:#c9a96e;text-transform:uppercase;letter-spacing:.8px;margin-bottom:9px;border-bottom:1px solid #2e2e2c;padding-bottom:5px}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meagan — Apr 9, 2026</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#1a1a18;color:#c8c0b4;font-family:'Inter',sans-serif;font-size:14px}
+.top{background:#111110;border-bottom:1px solid #2e2e2a;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.top h1{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#c9a96e}
+.top .sub{font-size:11px;color:#7a7166}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px;max-width:1200px;margin:0 auto}
+.card{background:#222220;border-radius:10px;padding:13px;border:1px solid #2e2e2a}
+.card h2{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:#c9a96e;margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid #2e2e2a}
+.full{grid-column:1/-1}
+.row{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #2a2a28}
+.row:last-child{border-bottom:none}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;background:#c9a96e}
+.dot-lo{background:#4a4a46}
 a{color:#c9a96e;text-decoration:none}
-.r{padding:5px 0;border-bottom:1px solid #2a2a28;display:flex;gap:8px;align-items:flex-start}.r:last-child{border-bottom:none}
-.d{width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}.dh{background:#e07060}.dg{background:#c9a96e}.dl{background:#4a4a46}
-.t{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
-.th{background:#3d1818;color:#e07060}.tg{background:#2a2210;color:#c9a96e}.td{background:#1a2e1a;color:#7ab87a}.tw{background:#2a2410;color:#d4a843}
-.stat-row{display:flex;gap:10px;flex-wrap:wrap}
-.stat{flex:1;min-width:100px;background:#1a1a18;border-radius:6px;padding:10px;text-align:center}
-.sn{font-size:22px;font-weight:700;color:#c9a96e}.sl{font-size:11px;color:#6a6a64;margin-top:2px}
-.cd{border-left:3px solid #c9a96e;padding-left:8px;margin:4px 0}
-.co{border-left:3px solid #c9a96e;padding-left:8px;margin-top:5px;background:#1f1c10;border-radius:0 4px 4px 0;padding:6px 8px}
-.tc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tip{background:#1e1c10;border-left:3px solid #c9a96e;padding:12px;border-radius:0 6px 6px 0}
-</style>
-</head>
-<body>
-<div class="hdr"><div><h1>Meagan's Dashboard</h1><div class="s">Thursday, April 9, 2026 · RISE Learning Solutions · Ops Lead</div></div><div style="color:#c9a96e;font-size:11px">meagan@lorraineklee.com</div></div>
-<div class="w">
-<div class="c">
-<h2>Stats</h2>
-<div class="stat-row">
-<div class="stat"><div class="sn">0</div><div class="sl">Tasks in Inbox From Lorraine</div></div>
-<div class="stat"><div class="sn">3</div><div class="sl">Active revenue deals</div></div>
-<div class="stat"><div class="sn">1</div><div class="sl">Call confirmed Mon Apr 13</div></div>
-<div class="stat"><div class="sn" style="color:#e07060">⚠</div><div class="sl">RAPP payment — last day of window</div></div>
+.warn{background:#2a2a20;border-left:3px solid #c9a96e;padding:7px 10px;border-radius:0 6px 6px 0;margin:5px 0;font-size:12px}
+.tip{background:#1e2015;border-left:4px solid #c9a96e;padding:10px 12px;border-radius:0 8px 8px 0;font-size:13px}
+.dim{color:#5a5a54;font-style:italic;font-size:12px}
+.no{color:#5a5a54;font-size:12px;padding:6px 0}
+.stat{text-align:center;padding:8px 4px}.stat .n{font-size:24px;font-weight:700;color:#c9a96e}.stat .l{font-size:10px;color:#7a7166;margin-top:2px}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sec-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#7a7166;margin-bottom:6px}
+.badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600;background:#2a2008;color:#c9a96e}
+</style></head><body>
+<div class="top"><h1>Meagan — Ops Lead</h1><div class="sub">Thu Apr 9, 2026 &nbsp;·&nbsp; RISE Learning Solutions</div></div>
+<div class="grid">
+
+<div class="card full"><h2>📊 Stats</h2>
+<div style="display:flex;gap:10px;justify-content:space-around">
+<div class="stat"><div class="n">—</div><div class="l">Open Asana Tasks</div></div>
+<div class="stat"><div class="n">—</div><div class="l">Overdue</div></div>
+<div class="stat"><div class="n">—</div><div class="l">Due This Week</div></div>
+<div class="stat"><div class="n">—</div><div class="l">Proposals in Flight</div></div>
 </div>
+<div class="no" style="text-align:center;margin-top:6px">Asana + Gmail integration required for live stats</div>
 </div>
-<div class="c">
-<h2>Start Here</h2>
-<div class="r"><div class="d dh"></div><div><span class="t th">ACTION</span> <strong>Gusto UGC (VaynerMedia)</strong> — Ella Lammin responded, wants call early next week. Aneesh/Wishly needs a rate estimate first. Coordinate with Aneesh today — don't let this stall.</div></div>
-<div class="r"><div class="d dh"></div><div><span class="t th">CONFIRM</span> <strong>MasterClass Zoom invite</strong> — Call confirmed Mon Apr 13, 1:30 PM ET with Kristin Harris. Has the Zoom link arrived? Check inbox + confirm with Lorraine.</div></div>
-<div class="r"><div class="d dg"></div><div><span class="t tg">FOLLOW UP</span> <strong>Wishly check-in</strong> — Micaela Crosta confirmed you're attending in Lorraine's place. Confirm date/time and add to both calendars.</div></div>
-<div class="r"><div class="d dh"></div><div><span class="t th">TODAY</span> <strong>RAPP/Omnicom payment</strong> — Kai Daniel said "this week." Today = last day of that window. Flag for Lorraine if nothing comes in. Follow up Monday if needed.</div></div>
+
+<div class="card full"><h2>🚀 Start Here — Your Top Priorities Today</h2>
+<div class="warn">Asana + Gmail integrations not active — connect MCP tools to populate live priorities.</div>
+<div class="row"><div class="dot"></div><div><strong>Speaking pipeline</strong> — follow up on any proposals out &gt;48h with no reply</div></div>
+<div class="row"><div class="dot"></div><div><strong>Lead follow-ups</strong> — check Typeform / inbox for new inbound leads to qualify</div></div>
+<div class="row"><div class="dot dot-lo"></div><div>Forbes article coordination — confirm status with Lorraine</div></div>
 </div>
-<div class="c">
-<h2>Lorraine Is Waiting On You</h2>
-<div class="r"><div class="d dh"></div><div><strong>Gusto UGC rate quote</strong> — Get Aneesh's number so Ella can schedule the call. Lorraine flagged as revenue priority.</div></div>
-<div class="r"><div class="d dg"></div><div><strong>Wishly check-in date/time</strong> — Confirm call details with Micaela and share with Lorraine.</div></div>
-<div class="r"><div class="d dg"></div><div><strong>Medline / Ashley Buchner</strong> — "I look forward to learning more about the program." Draft a follow-up from Lorraine with program details.</div></div>
+
+<div class="card full"><h2>⏳ Lorraine Is Waiting On You</h2>
+<div class="no">Connect "Inbox From Lorraine" Asana project (GID: 1213915874399989) — "For Meagan" section (GID: 1213915874399991) to load tasks here.</div>
 </div>
-<div class="c">
-<h2>Your Open Commitments</h2>
-<div style="font-size:11px;font-weight:700;color:#6a6a64;margin-bottom:6px">WITH DEADLINES</div>
-<div class="cd"><strong>Gusto UGC</strong> — Coordinate rate with Aneesh for VaynerMedia/Ella · <span class="t tw">Before Mon Apr 13</span> · <a href="#">No Asana task — create one?</a></div>
-<div class="cd" style="margin-top:5px"><strong>MasterClass call prep</strong> — Confirm Zoom invite from Kristin Harris · <span class="t tw">Before Mon Apr 13</span> · <a href="#">No Asana task — create one?</a></div>
-<div class="cd" style="margin-top:5px"><strong>Wishly check-in call</strong> — Attend in Lorraine's place · Date TBD (confirm with Micaela) · <a href="#">No Asana task — create one?</a></div>
-<div style="font-size:11px;font-weight:700;color:#6a6a64;margin:10px 0 6px">OUTSTANDING — NO DEADLINE SET</div>
-<div style="padding:10px;background:#1a1a18;border-radius:6px;font-size:13px;color:#7a7a74">No outstanding commitments without deadlines detected — nice work staying on top of things.</div>
+
+<div class="card full"><h2>📋 Your Open Commitments</h2>
+<div class="tg">
+<div><div class="sec-lbl">With Deadlines</div>
+<div class="no">Gmail scan unavailable — dated commitments will appear here. Overdue items flagged red.</div>
 </div>
-<div class="c">
-<h2>Superhuman Threads</h2>
-<div class="r"><div class="d dg"></div><div><strong>Intro: VaynerMedia / Gusto UGC Opportunity</strong> — Ella responded Thu Apr 9. Wants early next week call. <span class="t tg">ACTIVE DEAL</span></div></div>
-<div class="r"><div class="d dg"></div><div><strong>Re: another project? (MasterClass)</strong> — Kristin Harris confirmed call Mon Apr 13. Zoom invite expected.</div></div>
-<div class="r"><div class="d dl"></div><div><strong>RE: Unforgettable Presence Bulk Book Order — Boston Scientific</strong> — Katie Liao updated. AAPI newsletter recap planned. No action needed.</div></div>
-<div class="r"><div class="d dg"></div><div><strong>Re: Lorraine x Wishly — Checkin call</strong> — Micaela confirmed you're attending. Confirm date/time.</div></div>
-</div>
-<div class="tc">
-<div class="c">
-<h2>Flagged from Lorraine's Inbox</h2>
-<div class="r"><div class="d dh"></div><div><strong>VaynerMedia/Ella</strong> — Active deal, you're CC'd. Needs rate quote ASAP.</div></div>
-<div class="r"><div class="d dg"></div><div><strong>Medline / Ashley Buchner</strong> — Interest in "the program." Draft Lorraine's follow-up.</div></div>
-<div class="r"><div class="d dg"></div><div><strong>CHIEF / Erica Anderson Rooney</strong> — Lorraine to respond, but calendar management may be needed.</div></div>
-</div>
-<div class="c">
-<h2>Priorities</h2>
-<div class="r"><div class="d dh"></div><div>1. Gusto UGC rate from Aneesh → Ella</div></div>
-<div class="r"><div class="d dh"></div><div>2. MasterClass Zoom invite confirmed</div></div>
-<div class="r"><div class="d dg"></div><div>3. Wishly check-in date confirmed</div></div>
-<div class="r"><div class="d dg"></div><div>4. Medline follow-up drafted</div></div>
-<div class="r"><div class="d dl"></div><div>5. RAPP/Omnicom — monitor; flag if no payment</div></div>
-</div>
-</div>
-<div class="c"><div style="font-size:13px;color:#8a8a82;font-style:italic;padding:4px 0">You own: proposals, lead follow-ups, Forbes articles, speaking pipeline, course marketing emails, client communications. If it's client-facing or revenue-related, it's yours to drive.</div></div>
-<div class="c"><div class="tip"><div style="font-size:11px;font-weight:700;color:#c9a96e;margin-bottom:4px">CC &amp; AUTOMATION TIP #9</div><div style="font-size:13px;color:#c8c0b4">Before Monday meetings, ask CC to summarize all Asana tasks completed last week and anything overdue.</div></div></div>
-<div class="c">
-<h2>Goals Status</h2>
-<div style="display:flex;gap:10px;flex-wrap:wrap">
-<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Revenue Target</div><div style="font-size:20px;font-weight:700;color:#c9a96e">$600K</div><div style="font-size:10px;color:#4a4a46">$700K stretch</div></div>
-<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Active Deals</div><div style="font-size:20px;font-weight:700;color:#c9a96e">3</div><div style="font-size:10px;color:#4a4a46">MasterClass · Gusto · Medline</div></div>
-<div style="flex:1;min-width:110px;padding:10px;background:#1a1a18;border-radius:6px;text-align:center"><div style="font-size:10px;color:#6a6a64">Next Call</div><div style="font-size:20px;font-weight:700;color:#c9a96e">Mon</div><div style="font-size:10px;color:#4a4a46">Apr 13 · MasterClass 1:30 PM ET</div></div>
+<div><div class="sec-lbl">Outstanding — No Deadline Set</div>
+<div class="warn" style="margin-top:0">Set a deadline or close the loop on any open items.</div>
+<div class="no">Gmail scan unavailable.</div>
 </div>
 </div>
 </div>
-</body></html>
+
+<div class="card full"><h2>📧 Superhuman Threads — Needs Action</h2>
+<div class="no">Gmail integration required to surface threads needing a reply or follow-up.</div>
+<div class="row"><div class="dot dot-lo"></div><div>Meagan owns: proposals, lead follow-ups, Forbes articles, speaking pipeline, course marketing emails, client comms</div></div>
+</div>
+
+<div class="card full"><h2>🔍 Flagged from Lorraine's Inbox</h2>
+<div class="no">Gmail integration required to surface items Lorraine has forwarded or flagged for Meagan.</div>
+</div>
+
+<div class="card full"><h2>✅ Priorities — Your Asana Tasks</h2>
+<div class="no">Asana integration required (assignee: meagan@lorraineklee.com). Tasks appear revenue-first.</div>
+</div>
+
+<div class="card"><h2>💬 Ownership Prompt</h2>
+<div style="font-size:13px;line-height:1.6">Before end of day: close the loop on anything you said you'd do this week. If a deadline shifted, update Asana and let Lorraine know. No surprises.</div>
+</div>
+
+<div class="card"><h2>📊 Goals Status</h2>
+<div class="row"><div class="dot"></div><div>Speaking revenue target: <span class="dim">data needed</span></div></div>
+<div class="row"><div class="dot"></div><div>Proposals sent this month: <span class="dim">data needed</span></div></div>
+<div class="row"><div class="dot dot-lo"></div><div>Conversion rate: <span class="dim">data needed</span></div></div>
+</div>
+
+<div class="card full"><h2>🤖 CC &amp; Automation Tip #9</h2>
+<div class="tip">Before Monday meetings, ask CC to summarize all Asana tasks completed last week and anything overdue. Walk in knowing the score instead of scrambling to remember.</div>
+</div>
+
+</div></body></html>
