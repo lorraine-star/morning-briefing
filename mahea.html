@@ -123,6 +123,38 @@ body{font-family:'Inter',sans-serif;background:#fdf8f6;min-height:100vh}
 .ownership strong{color:#4a3430;font-weight:500}
 .ai-thinking{font-size:12px;color:#c4948a;font-style:italic;padding:6px 0}
 @media(max-width:768px){.grid-2,.grid-4c,.grid-2e,.grid-3{grid-template-columns:1fr}.stat-grid{grid-template-columns:repeat(2,1fr)}.body{padding:16px}.topbar{padding:12px 16px;flex-direction:column;gap:6px;text-align:center}}
+
+.pay-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:.5px solid #fae8e2;cursor:pointer;user-select:none}
+.pay-row:last-of-type{border-bottom:none}
+.pay-row:hover{background:#fffaf8;margin:0 -4px;padding:10px 4px;border-radius:6px}
+.pay-chevron{font-size:10px;color:#c4948a;flex-shrink:0;transition:transform .2s;width:12px;text-align:center}
+.pay-chevron.open{transform:rotate(90deg)}
+.pay-title{flex:1;font-size:13px;color:#4a3430;font-weight:400}
+.pay-amount-inline{font-family:Georgia,serif;font-size:13px;color:#4a3430;white-space:nowrap;margin-right:8px}
+.pay-expand{display:none;background:#fffaf8;border:.5px solid #f0d8d0;border-radius:8px;padding:12px 16px;margin:0 0 8px 22px;font-size:12px;color:#4a3430;line-height:1.8}
+.pay-expand.open{display:block}
+.pay-expand strong{color:#4a3430;font-weight:500}
+.pay-expand a{color:#c06858;font-size:11px;text-decoration:none}
+.pay-note-alert{color:#b04030;font-style:italic;font-size:11px;margin-top:4px}
+
+.pay-tabs{display:flex;gap:0;margin-bottom:16px;border-bottom:.5px solid #f0d8d0}
+.pay-tab{font-size:12px;padding:8px 18px;border:none;background:none;color:#a07060;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:'Inter',sans-serif;transition:color .15s}
+.pay-tab:hover{color:#4a3430}
+.pay-tab.active{color:#7a4035;border-bottom:2px solid #e8908a;font-weight:500}
+.pay-tab-content{display:block}
+
+.sched-wrap{position:relative;width:100%;overflow:hidden}
+.sched-timeline{display:flex;flex-direction:column;gap:0}
+.sched-row{display:flex;align-items:stretch;min-height:36px}
+.sched-time{width:60px;font-size:11px;color:#c4948a;flex-shrink:0;padding-top:8px;text-align:right;padding-right:10px}
+.sched-bar-col{flex:1;padding:2px 0}
+.sched-block{border-radius:6px;padding:5px 10px;font-size:12px;line-height:1.4;margin:1px 0}
+.sched-work{background:#fae8e2;color:#7a4035}
+.sched-break{background:#f5f0ee;color:#a07060;font-style:italic}
+.sched-deadline{background:#fde8e8;color:#903030}
+.sched-task{background:#f0e8fc;color:#604090}
+.sched-now-line{position:absolute;left:60px;right:0;height:2px;background:#e8908a;z-index:2}
+.sched-now-dot{position:absolute;left:54px;width:12px;height:12px;border-radius:50%;background:#e8908a;margin-top:-5px;z-index:3}
 </style>
 </head>
 <body>
@@ -184,6 +216,72 @@ body{font-family:'Inter',sans-serif;background:#fdf8f6;min-height:100vh}
       <div><div class="focus-rank">content second</div><div class="focus-text" id="focus2">CC Challenge: Complete 3 challenges &amp; post in #ai — due today</div></div>
     </div>
   </div>
+
+  <!-- MEETINGS AND SCHEDULE BLOCK -->
+  <div class="card">
+    <div class="pill">today's schedule — fri apr 10</div>
+    <div id="day-schedule-grid"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="pill">meetings this week</div>
+      <div class="section-divider">friday apr 10 — today</div>
+      <div class="mtg-row"><div class="mtg-time">9:00 am</div><div class="mtg-title">Event Prep: Abbvie<a href="#">open invite</a></div><span class="tag tag-mtg">meet</span></div>
+      <div class="section-divider" style="margin-top:10px">monday apr 13</div>
+      <div class="mtg-row"><div class="mtg-time">10:00 am</div><div class="mtg-title">RISE — Review Automations for OBA Speaking Pipeline<a href="#">open invite</a></div><span class="tag tag-mtg">meet</span></div>
+      <div class="section-divider" style="margin-top:10px">tuesday apr 14</div>
+      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — Shane Sponagle<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
+      <div class="section-divider" style="margin-top:10px">wednesday apr 15</div>
+      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — L'Oreal AANHPI ERG (Helen Kwok)<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
+      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — Mari Townsend (alumni workshop)<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
+      <div class="section-divider" style="margin-top:10px">tuesday apr 21</div>
+      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — Georgetown Women's Alliance (Honor Murphy)<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
+      <div class="section-divider" style="margin-top:10px">tuesday apr 28</div>
+      <div class="mtg-row"><div class="mtg-time">9:00 am PST</div><div class="mtg-title">Boston Scientific — Keynote (Unforgettable Presence)<a href="#">open invite</a></div><span class="tag tag-mtg">zoom</span></div>
+    </div>
+    <div class="card">
+      <div class="pill">reminders</div>
+      <div id="reminders-list">
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Lorraine OOO Apr 16–17 (birthday) — plan content around this</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Newsletter sends Wed Apr 15 — changes must be done by EOD Tue</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Affirm Invoice #243 — confirm payment cleared today (was expected Apr 10)</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Her Workplace invoice waiting on sponsor — follow up early May</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Wiley royalties expected April 2026 — confirm payment received</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Airtable/Lumanu invoice approved — initiate Instant Pay payout</div></div>
+        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">OBA invoice system: set up automated follow-ups (Day 7/14/21+) per Lorraine</div></div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <input type="text" id="reminder-input" placeholder="add a reminder..." style="flex:1;font-size:12px;padding:6px 10px;border:.5px solid #f0d8d0;border-radius:6px;background:#fffaf8;color:#4a3430;outline:none">
+        <button onclick="addReminder()" style="font-size:11px;background:#fae8e2;color:#7a4035;border:.5px solid #e8b0a4;border-radius:6px;padding:6px 12px;cursor:pointer">add</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="pill">this week</div>
+      <div id="this-week-list">
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">LinkedIn Guide form broken — fix &amp; confirm<a href="https://app.asana.com/0/0/1213922154455263" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">CC Challenge: Complete 3 challenges, post in #ai<a href="https://app.asana.com/0/0/1213935505694779" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Weekly LinkedIn monitoring: new L&amp;D, CX, CRO hires<a href="https://app.asana.com/0/0/1213935478671287" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Add articles to website/LI — follow up w/ Kim<a href="https://app.asana.com/0/0/1213920652704484" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Update Passionfroot numbers<a href="https://app.asana.com/0/0/1213987270385361" target="_blank">open task</a></div><span class="tag tag-due">mon</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Newsletter Feature #1<a href="https://app.asana.com/0/0/1213986513522360" target="_blank">open task</a></div><span class="tag tag-due">wed</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Make newsletter changes + schedule (Wed Apr 15 send)<a href="https://app.asana.com/0/0/1213922342320365" target="_blank">open task</a></div><span class="tag tag-due">wed</span></div>
+        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">MC BTS video<a href="https://app.asana.com/0/0/1213987270385354" target="_blank">open task</a></div><span class="tag tag-due">fri</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="pill">overdue triage</div>
+      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Update LinkedIn Testimonials<a href="https://app.asana.com/0/0/1213935484679782" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Add Lorraine's Podcasts to Spotify &amp; YT<a href="https://app.asana.com/0/0/1211774747995446" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Review Riddle quiz data<a href="https://app.asana.com/0/0/1212273867389021" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Create slides for Live Sessions 2 &amp; 3<a href="https://app.asana.com/0/0/1213703411153499" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Schedule promo post 1<a href="https://app.asana.com/0/0/1213922392423261" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+    </div>
+  </div>
+
 
   <div class="card">
     <div class="pill">replies &amp; loose ends</div>
@@ -280,286 +378,615 @@ body{font-family:'Inter',sans-serif;background:#fdf8f6;min-height:100vh}
     </div>
   </div>
 
-  <div class="card">
-    <div class="pill">invoices &amp; payments</div>
-    <div class="section-divider">outstanding — needs follow-up</div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Lal Ventures (Wishly) — Invoice #1197</div><div class="pay-amount">$4,421.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Lal Ventures Inc. (Aneesh/Mica) via QuickBooks<br>
-        <strong>Due:</strong> Apr 8, 2026 — <span style="color:#b04030;font-weight:500">OVERDUE</span><br>
-        <strong>Came in:</strong> Apr 8, 2026<br>
-        <strong>Latest:</strong> March brand deal reconciliation memo sent — Lorraine confirmed payment sent Apr 9 via ACH. Mica confirmed receipt.<br>
-        <strong>Notes:</strong> March brand deal. Wire/ACH transfer completed — confirm cleared.
-      </div>
-      <span class="tag tag-pending" style="margin-top:6px;display:inline-block">confirm cleared</span>
+  <!-- PAYMENTS SECTION -->
+<div class="card">
+  <div class="pill">invoices &amp; payments</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+    <div class="pay-tabs">
+      <button class="pay-tab active" onclick="switchTab('incoming')">incoming payments</button>
+      <button class="pay-tab" onclick="switchTab('outgoing')">outgoing payments</button>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">CNBC / Versant Media — Invoice #258</div><div class="pay-amount">$700.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Versant Media (CNBC Make It filming)<br>
-        <strong>Due:</strong> Net terms TBD<br>
-        <strong>Came in:</strong> Mar 30, 2026 (submitted)<br>
-        <strong>Latest:</strong> Meline confirmed invoice received by AP team Mar 23. Mahea asked for AP contact Apr 1 — no response yet.<br>
-        <strong>Notes:</strong> "Standing Out as an Introvert" course filming fee. Submitted via Basware. Need direct AP contact.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">waiting on AP contact</span>
+    <a href="https://docs.google.com/spreadsheets/d/1IewWLBZKKrgWpqPpKmSdORMeZ51DGzXFhoH92T5K4j0/edit" target="_blank" style="font-size:11px;color:#c06858;text-decoration:none;white-space:nowrap">open invoice tracker</a>
+  </div>
+
+  <div id="tab-incoming" class="pay-tab-content">
+    <div class="section-divider" style="margin-top:8px">outstanding — needs follow-up</div>
+
+    <div class="pay-row" onclick="togglePay('p1')">
+      <span class="pay-chevron" id="chev-p1">&#9654;</span>
+      <span class="pay-title">BSCI Keynote — Apr 28, 2026</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag" style="background:#fde8e8;color:#b03030">no invoice sent</span>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Affirm — Invoice #243 (Executive Coaching)</div><div class="pay-amount">TBD</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Affirm (Kellee Van Horne) | PO 3349<br>
-        <strong>Due:</strong> Pending<br>
-        <strong>Came in:</strong> Mar 11, 2026 (submitted)<br>
-        <strong>Latest:</strong> Zip system rejected invoice Mar 24 (no attachment). Resubmitted. Kellee now asking about proposal revision — separate from invoice.<br>
-        <strong>Notes:</strong> Coaching engagement for Alex Stowell &amp; Sophie Choi. Invoice may need resubmission with PDF attachment to Zip system.
-      </div>
-      <span class="tag tag-pending" style="margin-top:6px;display:inline-block">pending — check Zip system</span>
+    <div class="pay-expand" id="p1">
+      <strong>What:</strong> Boston Scientific keynote — "Unforgettable Presence," PEARL + ERGs<br>
+      <strong>From:</strong> Boston Scientific (Katie Liao)<br>
+      <strong>Event date:</strong> Apr 28, 2026 — 9am PST<br>
+      <strong>Invoice status:</strong> No invoice found in email threads — needs to be sent<br>
+      <div class="pay-note-alert">Flag: invoice not yet sent — create and send after event</div>
+      <a href="#">open email thread</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Erie / IMS — Invoice #254</div><div class="pay-amount">$6,500.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> IMS Online (Stacey) / Erie client<br>
-        <strong>Due:</strong> Net terms<br>
-        <strong>Came in:</strong> Mar 25, 2026 (submitted same day as event)<br>
-        <strong>Latest:</strong> Stacey confirmed receipt Mar 27, submitted to Erie for processing. Charles historically fast with payment.<br>
-        <strong>Notes:</strong> Custom session delivered Mar 25, 2026. W9 included. Follow up if no payment by mid-April.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">processing at IMS/Erie</span>
+
+    <div class="pay-row" onclick="togglePay('p2')">
+      <span class="pay-chevron" id="chev-p2">&#9654;</span>
+      <span class="pay-title">Erie / IMS — Invoice #254</span>
+      <span class="pay-amount-inline">$6,500</span>
+      <span class="tag tag-waiting">processing at IMS</span>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Elevate Her Summit / Her Workplace — Invoice #250</div><div class="pay-amount">TBD</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Marilynn Joyner / Her Workplace (billing CC'd)<br>
-        <strong>Due:</strong> Pending sponsor payment<br>
-        <strong>Came in:</strong> Mar 11, 2026 (submitted)<br>
-        <strong>Latest:</strong> Marilynn confirmed Mar 23 — waiting on sponsor to pay first. CFO added to thread.<br>
-        <strong>Notes:</strong> Speaking fee + travel. Sponsor-dependent payment — follow up early May.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">waiting on sponsor</span>
+    <div class="pay-expand" id="p2">
+      <strong>What:</strong> Custom session delivered Mar 25, 2026<br>
+      <strong>From:</strong> IMS Online / Erie client (Stacey, Charles)<br>
+      <strong>Submitted:</strong> Mar 25, 2026 (same day as event, W9 included)<br>
+      <strong>Latest:</strong> Stacey confirmed receipt Mar 27, submitted to Erie for processing. Charles historically pays fast.<br>
+      <strong>Contract match:</strong> IMS engagement — $6,500 + book purchase per agreement<br>
+      <div class="pay-note-alert">Follow up if no payment by mid-April</div>
+      <a href="#">open email</a> &nbsp;|&nbsp; <a href="https://docs.google.com/spreadsheets/d/1IewWLBZKKrgWpqPpKmSdORMeZ51DGzXFhoH92T5K4j0/edit" target="_blank">invoice tracker</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">CNBC Travel Reimbursement — Invoice</div><div class="pay-amount">$883.49</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Versant Media / CNBC (travel reimbursement)<br>
-        <strong>Due:</strong> Net terms<br>
-        <strong>Came in:</strong> Mar 11, 2026 (submitted via Basware &amp; Apex portal)<br>
-        <strong>Latest:</strong> Meline confirmed AP team received invoice Mar 13. ACH payment initiated.<br>
-        <strong>Notes:</strong> NYC filming travel Mar 2–6, 2026. ACH initiated — confirm cleared.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">ACH initiated — confirm</span>
+
+    <div class="pay-row" onclick="togglePay('p3')">
+      <span class="pay-chevron" id="chev-p3">&#9654;</span>
+      <span class="pay-title">Estée Lauder — Invoice #257626165</span>
+      <span class="pay-amount-inline">$21,000</span>
+      <span class="tag tag-waiting">SAP Ariba processing</span>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Estée Lauder — Invoice #257626165</div><div class="pay-amount">$21,000.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Estée Lauder Companies (Shayla/Tina) via SAP Ariba<br>
-        <strong>Due:</strong> Per PO terms (PO# 3501431665)<br>
-        <strong>Came in:</strong> Mar 18–19, 2026 (submitted via SAP &amp; Iron Mountain)<br>
-        <strong>Latest:</strong> SAP system updated Mar 19. Iron Mountain confirmed receipt. Apr–Jun 2026 contract period.<br>
-        <strong>Notes:</strong> 3-month contract renewal ($84K total, $21K/installment). Lorraine requested invoice early per prior practice.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">processing via SAP Ariba</span>
+    <div class="pay-expand" id="p3">
+      <strong>What:</strong> 3-month contract renewal installment, Apr–Jun 2026<br>
+      <strong>From:</strong> Estée Lauder Companies (Shayla McGough / Tina Cooke)<br>
+      <strong>PO#:</strong> 3501431665 — $21K of $84K total<br>
+      <strong>Submitted:</strong> Mar 18–19, 2026 via SAP Ariba + Iron Mountain<br>
+      <strong>Latest:</strong> SAP system updated Mar 19. Iron Mountain confirmed receipt.<br>
+      <strong>Contract match:</strong> 3-month ELC renewal — signed Dec 2025. Lorraine requested early invoicing per prior practice.<br>
+      <div class="pay-note-alert">Check SAP Ariba portal for current payment status</div>
+      <a href="#">open email</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">CopperPoint — Invoice #256 (Final 50%)</div><div class="pay-amount">TBD</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> CopperPoint (Nicole Gaspar / Irma Aguirre)<br>
-        <strong>Due:</strong> Net terms<br>
-        <strong>Came in:</strong> Mar 11, 2026 (submitted)<br>
-        <strong>Latest:</strong> Nicole confirmed invoice sent to internal team Mar 12.<br>
-        <strong>Notes:</strong> Final 50% for Jan 28 keynote + Mar 11 fireside chat. Follow up if no payment by end of April.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">processing internally</span>
+
+    <div class="pay-row" onclick="togglePay('p4')">
+      <span class="pay-chevron" id="chev-p4">&#9654;</span>
+      <span class="pay-title">AbbVie — LDP Week speaking fee</span>
+      <span class="pay-amount-inline">~$10,000</span>
+      <span class="tag tag-waiting">90-day terms</span>
     </div>
-    <div class="section-divider" style="margin-top:16px">recurring &amp; one-off payments</div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Wiley Royalties</div><div class="pay-amount">$1,152.89</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Wiley Publishing<br>
-        <strong>Expected:</strong> Next royalty run — April 2026<br>
-        <strong>Notes:</strong> Current balance per latest royalty statement. Pending royalty run.
-      </div>
-      <span class="tag tag-pending" style="margin-top:6px;display:inline-block">pending royalty run</span>
+    <div class="pay-expand" id="p4">
+      <strong>What:</strong> AbbVie LDP Week presentation, April 2026<br>
+      <strong>From:</strong> AbbVie Learning &amp; Leadership Development<br>
+      <strong>Terms:</strong> 90-day payment terms per contract<br>
+      <strong>Invoice status:</strong> Contract signed — invoice timing TBD per payment terms<br>
+      <strong>Contract match:</strong> AbbVie speaking engagement contract — signed<br>
+      <a href="#">open email</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Airtable Q1'26 Announcement — Lumanu</div><div class="pay-amount">TBD</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Creator Match Payables / Lumanu<br>
-        <strong>Date:</strong> Approved Mar 11, 2026<br>
-        <strong>Latest:</strong> Invoice approved by Creator Match Payables. Instant Pay option available.<br>
-        <strong>Notes:</strong> 1 LinkedIn post for Airtable Q1'26 announcement.
-      </div>
-      <span class="tag tag-pending" style="margin-top:6px;display:inline-block">approved — initiate payout</span>
+
+    <div class="pay-row" onclick="togglePay('p5')">
+      <span class="pay-chevron" id="chev-p5">&#9654;</span>
+      <span class="pay-title">CopperPoint — Invoice #256 (final 50%)</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-waiting">processing internally</span>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Nike (Nancy Choi coaching)</div><div class="pay-amount">€900.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Nike / Nancy Choi<br>
-        <strong>Date:</strong> Received Mar 16, 2026<br>
-        <strong>Notes:</strong> Payment confirmed received.
-      </div>
-      <span class="tag tag-paid" style="margin-top:6px;display:inline-block">received</span>
+    <div class="pay-expand" id="p5">
+      <strong>What:</strong> Final 50% — Jan 28 keynote + Mar 11 fireside chat<br>
+      <strong>From:</strong> CopperPoint Insurance (Nicole Gaspar, Irma Aguirre)<br>
+      <strong>Submitted:</strong> Mar 11, 2026<br>
+      <strong>Latest:</strong> Nicole confirmed sent to internal team Mar 12.<br>
+      <strong>Contract match:</strong> CopperPoint speaking agreement — two sessions confirmed<br>
+      <div class="pay-note-alert">Follow up if no payment by end of April</div>
+      <a href="#">open email</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Gamma — Brand Partnership</div><div class="pay-amount">$4,930.00</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Gamma (via bank transfer)<br>
-        <strong>Date:</strong> Mar 10, 2026<br>
-        <strong>Notes:</strong> Funds on the way via bank transfer as of Mar 10. Confirm received.
-      </div>
-      <span class="tag tag-waiting" style="margin-top:6px;display:inline-block">confirm received</span>
+
+    <div class="pay-row" onclick="togglePay('p6')">
+      <span class="pay-chevron" id="chev-p6">&#9654;</span>
+      <span class="pay-title">Seismic — AAPI keynote + fireside (balance due)</span>
+      <span class="pay-amount-inline">~$5,000 remaining</span>
+      <span class="tag tag-waiting">post-event invoicing</span>
     </div>
-    <div class="pay-card">
-      <div class="pay-header"><div class="pay-name">Medline — Invoice #255</div><div class="pay-amount">TBD</div></div>
-      <div class="pay-meta">
-        <strong>From:</strong> Medline PROD (via Coupa)<br>
-        <strong>Date:</strong> Paid Mar 12, 2026<br>
-        <strong>Notes:</strong> Marked as paid by Medline via SAP/Coupa system.
-      </div>
-      <span class="tag tag-paid" style="margin-top:6px;display:inline-block">paid</span>
+    <div class="pay-expand" id="p6">
+      <strong>What:</strong> May 20 keynote + Jun 10 fireside chat — balance after deposits<br>
+      <strong>From:</strong> Seismic / Melanie Ministerio<br>
+      <strong>Deposits received:</strong> $2,575 + $2,575 = $5,150 (Feb 27, 2026)<br>
+      <strong>Total fee:</strong> ~$5,000 special partner rate (AAPI initiative)<br>
+      <strong>Invoice status:</strong> Balance invoice to be sent after events complete<br>
+      <strong>Contract match:</strong> Seismic speaker agreement — amended version signed Apr 6<br>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('p7')">
+      <span class="pay-chevron" id="chev-p7">&#9654;</span>
+      <span class="pay-title">Elevate Her Summit — Invoice #250</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-waiting">waiting on sponsor</span>
+    </div>
+    <div class="pay-expand" id="p7">
+      <strong>What:</strong> Speaking fee + travel, Elevate Her Summit<br>
+      <strong>From:</strong> Her Workplace (Marilynn Joyner + CFO)<br>
+      <strong>Submitted:</strong> Mar 11, 2026<br>
+      <strong>Latest:</strong> Waiting on sponsor to pay first. CFO added to thread Mar 23.<br>
+      <div class="pay-note-alert">Follow up early May if no update from sponsor</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('p8')">
+      <span class="pay-chevron" id="chev-p8">&#9654;</span>
+      <span class="pay-title">Affirm — Invoice #243 (Executive Coaching)</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-pending">check Zip system</span>
+    </div>
+    <div class="pay-expand" id="p8">
+      <strong>What:</strong> Coaching — Alex Stowell &amp; Sophie Choi | PO 3349<br>
+      <strong>From:</strong> Affirm (Kellee Van Horne / AP team)<br>
+      <strong>Submitted:</strong> Mar 11, 2026 via Zip<br>
+      <strong>Latest:</strong> Zip rejected Mar 24 (no attachment). Resubmitted. AP confirmed receipt. Mahea confirmed Apr 10 payment expected by Apr 10.<br>
+      <strong>Slack:</strong> <a href="https://risedreamteam.slack.com/archives/C06JYKUMTC1/p1774452264094669" target="_blank">confirmed in #invoice-and-payments</a><br>
+      <div class="pay-note-alert">Confirm payment has actually cleared today — was expected Apr 10</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('p9')">
+      <span class="pay-chevron" id="chev-p9">&#9654;</span>
+      <span class="pay-title">CNBC / Versant — Invoice #258 (filming fee)</span>
+      <span class="pay-amount-inline">$700</span>
+      <span class="tag tag-waiting">need AP contact</span>
+    </div>
+    <div class="pay-expand" id="p9">
+      <strong>What:</strong> CNBC Make It "Stand Out as Introvert" course filming<br>
+      <strong>From:</strong> Versant Media (Meline Rosales / AP team)<br>
+      <strong>Submitted:</strong> Mar 30, 2026 via Basware<br>
+      <strong>Latest:</strong> AP received per Meline. Asked for direct AP contact Apr 1 — no response yet.<br>
+      <div class="pay-note-alert">Follow up with Meline — need direct AP contact name</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('p10')">
+      <span class="pay-chevron" id="chev-p10">&#9654;</span>
+      <span class="pay-title">CNBC / Versant — Travel Reimbursement</span>
+      <span class="pay-amount-inline">$883</span>
+      <span class="tag tag-waiting">ACH initiated</span>
+    </div>
+    <div class="pay-expand" id="p10">
+      <strong>What:</strong> NYC travel reimbursement for CNBC filming Mar 2–6, 2026<br>
+      <strong>From:</strong> Versant Media / CNBC<br>
+      <strong>Submitted:</strong> Mar 11 via Basware + Apex portal<br>
+      <strong>Latest:</strong> AP confirmed receipt Mar 13. ACH initiated.<br>
+      <div class="pay-note-alert">Confirm ACH has cleared in Lorraine's account</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="section-divider" style="margin-top:14px">flagged — invoice not yet sent</div>
+
+    <div class="pay-row" onclick="togglePay('flag1')">
+      <span class="pay-chevron" id="chev-flag1">&#9654;</span>
+      <span class="pay-title">IPMA — balance invoice (50% remaining)</span>
+      <span class="pay-amount-inline">$5,000</span>
+      <span class="tag" style="background:#fde8e8;color:#b03030">invoice needed</span>
+    </div>
+    <div class="pay-expand" id="flag1">
+      <strong>What:</strong> IPMA Partnership — $10K total, $5K deposit already received<br>
+      <strong>From:</strong> IPMA<br>
+      <strong>Deposit received:</strong> $5,000 (confirmed per Slack/email)<br>
+      <strong>Status:</strong> Balance invoice ($5K) needs to be sent after event<br>
+      <strong>Slack context:</strong> Signed by Mahea on behalf of Lorraine, Morgan signed for IPMA<br>
+      <div class="pay-note-alert">Send balance invoice — $5,000 remaining after deposit</div>
+      <a href="https://risedreamteam.slack.com/archives/D0947LMCHSR/p1772574315740799" target="_blank">open Slack thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('flag2')">
+      <span class="pay-chevron" id="chev-flag2">&#9654;</span>
+      <span class="pay-title">Medline — final 50% balance</span>
+      <span class="pay-amount-inline">~$5,000</span>
+      <span class="tag" style="background:#fde8e8;color:#b03030">invoice needed</span>
+    </div>
+    <div class="pay-expand" id="flag2">
+      <strong>What:</strong> Medline Women's History Month — $10K total, 50% deposit received and Invoice #255 marked paid<br>
+      <strong>From:</strong> Medline PROD<br>
+      <strong>Status:</strong> First 50% paid Mar 12. Final 50% balance invoice may still need to be sent.<br>
+      <strong>Contract match:</strong> Medline contract &amp; proposal confirmed<br>
+      <div class="pay-note-alert">Confirm whether final 50% invoice has been sent — check invoice tracker</div>
+      <a href="https://docs.google.com/spreadsheets/d/1IewWLBZKKrgWpqPpKmSdORMeZ51DGzXFhoH92T5K4j0/edit" target="_blank">check invoice tracker</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('flag3')">
+      <span class="pay-chevron" id="chev-flag3">&#9654;</span>
+      <span class="pay-title">Sidebar Workshops — two sessions</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag" style="background:#fde8e8;color:#b03030">invoice needed</span>
+    </div>
+    <div class="pay-expand" id="flag3">
+      <strong>What:</strong> Two confirmed workshop sessions — "we are all set for both dates!"<br>
+      <strong>Status:</strong> Confirmed via email. Invoice to be sent for both sessions.<br>
+      <div class="pay-note-alert">Create and send invoice for both Sidebar sessions</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="section-divider" style="margin-top:14px">recurring &amp; one-off</div>
+
+    <div class="pay-row" onclick="togglePay('r1')">
+      <span class="pay-chevron" id="chev-r1">&#9654;</span>
+      <span class="pay-title">Wiley — Royalties</span>
+      <span class="pay-amount-inline">$1,153</span>
+      <span class="tag tag-pending">pending royalty run</span>
+    </div>
+    <div class="pay-expand" id="r1">
+      <strong>What:</strong> Wiley book royalties — current balance<br>
+      <strong>From:</strong> Wiley Publishing<br>
+      <strong>Expected:</strong> Next royalty run, April 2026<br>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('r2')">
+      <span class="pay-chevron" id="chev-r2">&#9654;</span>
+      <span class="pay-title">Airtable Q1'26 — Lumanu (brand post)</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-pending">initiate payout</span>
+    </div>
+    <div class="pay-expand" id="r2">
+      <strong>What:</strong> 1 LinkedIn post — Airtable Q1'26 announcement<br>
+      <strong>From:</strong> Creator Match Payables / Lumanu<br>
+      <strong>Approved:</strong> Mar 11, 2026. Instant Pay available.<br>
+      <div class="pay-note-alert">Log into Lumanu and initiate Instant Pay payout</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('r3')">
+      <span class="pay-chevron" id="chev-r3">&#9654;</span>
+      <span class="pay-title">Seismic — AAPI deposits (x2)</span>
+      <span class="pay-amount-inline">$5,150</span>
+      <span class="tag tag-paid">received</span>
+    </div>
+    <div class="pay-expand" id="r3">
+      <strong>From:</strong> Seismic / Melanie Ministerio — $2,575 x 2<br>
+      <strong>Received:</strong> Feb 27, 2026. Both deposits confirmed.<br>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('r4')">
+      <span class="pay-chevron" id="chev-r4">&#9654;</span>
+      <span class="pay-title">Gamma — Brand partnership</span>
+      <span class="pay-amount-inline">$4,930</span>
+      <span class="tag tag-waiting">confirm received</span>
+    </div>
+    <div class="pay-expand" id="r4">
+      <strong>From:</strong> Gamma — bank transfer initiated Mar 10, 2026<br>
+      <div class="pay-note-alert">Confirm ACH cleared in Lorraine's account</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('r5')">
+      <span class="pay-chevron" id="chev-r5">&#9654;</span>
+      <span class="pay-title">Nike (Nancy Choi) — coaching</span>
+      <span class="pay-amount-inline">€900</span>
+      <span class="tag tag-paid">received</span>
+    </div>
+    <div class="pay-expand" id="r5">
+      <strong>From:</strong> Nike / Nancy Choi — received Mar 16, 2026<br>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('r6')">
+      <span class="pay-chevron" id="chev-r6">&#9654;</span>
+      <span class="pay-title">Medline — Invoice #255 (first 50%)</span>
+      <span class="pay-amount-inline">~$5,000</span>
+      <span class="tag tag-paid">paid</span>
+    </div>
+    <div class="pay-expand" id="r6">
+      <strong>From:</strong> Medline PROD via Coupa — marked paid Mar 12, 2026<br>
+      <a href="#">open email</a>
     </div>
   </div>
 
-  <div class="card">
-    <div class="pill">contracts &amp; agreements</div>
-    <div class="grid-2e">
-      <div>
-        <div class="section-divider">active / recent</div>
-        <div class="contract-card">
-          <div class="contract-name">Estée Lauder — Contract Renewal (Apr–Jun 2026)</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> Estée Lauder Companies (Tina Cooke / Shayla McGough)<br>
-            <strong>Value:</strong> $21,000 of $84,000 total PO<br>
-            <strong>Status:</strong> <span class="tag tag-confirmed" style="font-size:10px">active</span><br>
-            <strong>Notes:</strong> 3-month renewal confirmed Dec 2025. Invoice submitted Mar 18 via SAP Ariba.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">Seismic — Speaker Agreement (AAPI Month)</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> Seismic / Seismic Sisters ERG<br>
-            <strong>Events:</strong> May 20 keynote + Jun 10 fireside chat<br>
-            <strong>Status:</strong> <span class="tag tag-confirmed" style="font-size:10px">signed</span><br>
-            <strong>Notes:</strong> Amended agreement sent Apr 6, being processed. Deposits ($5,150) received Feb 27.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">AbbVie — Speaking Engagement Contract</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> AbbVie Learning &amp; Leadership Development<br>
-            <strong>Event:</strong> LDP Week, April 2026<br>
-            <strong>Fee:</strong> ~$10,000 | 90-day payment terms<br>
-            <strong>Status:</strong> <span class="tag tag-confirmed" style="font-size:10px">signed</span>
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">pclub — Course Author Agreement 2026</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> pclub (Corinne Wainer)<br>
-            <strong>Status:</strong> <span class="tag tag-confirmed" style="font-size:10px">signed</span><br>
-            <strong>Notes:</strong> Course author agreement with attachment. Forwarded by Meagan Jan 22.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-      </div>
-      <div>
-        <div class="section-divider">archived / completed</div>
-        <div class="contract-card">
-          <div class="contract-name">Quarles &amp; Brady — SOW (July 2025 program)</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> Quarles &amp; Brady (Erica Gholson)<br>
-            <strong>Status:</strong> <span class="tag tag-paid" style="font-size:10px">fully executed</span><br>
-            <strong>Notes:</strong> Signed by all parties May 22, 2025. Fully executed PDF sent.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">Glassdoor — Content Creator Contract</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> Glassdoor (creators@glassdoor.com)<br>
-            <strong>Status:</strong> <span class="tag tag-confirmed" style="font-size:10px">agreed</span><br>
-            <strong>Notes:</strong> Lorraine agreed via email Mar 4, 2025. New agreement accepted.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">CopperPoint — Speaking Engagement (Jan + Mar 2026)</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> CopperPoint Insurance<br>
-            <strong>Status:</strong> <span class="tag tag-waiting" style="font-size:10px">invoice outstanding</span><br>
-            <strong>Notes:</strong> Jan 28 keynote + Mar 11 fireside chat. Final 50% invoice submitted.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-        <div class="contract-card">
-          <div class="contract-name">Medline Industries — Contract &amp; Proposal</div>
-          <div class="contract-meta">
-            <strong>Client:</strong> Medline Industries<br>
-            <strong>Status:</strong> <span class="tag tag-paid" style="font-size:10px">completed &amp; paid</span><br>
-            <strong>Notes:</strong> Invoice #255 marked paid Mar 12, 2026 via Coupa.
-          </div>
-          <a href="#" style="font-size:10px;color:#c06858;text-decoration:none">open email</a>
-        </div>
-      </div>
+  <div id="tab-outgoing" class="pay-tab-content" style="display:none">
+    <div class="section-divider" style="margin-top:8px">needs action</div>
+
+    <div class="pay-row" onclick="togglePay('out1')">
+      <span class="pay-chevron" id="chev-out1">&#9654;</span>
+      <span class="pay-title">Lal Ventures (Wishly) — Invoice #1197</span>
+      <span class="pay-amount-inline">$4,421</span>
+      <span class="tag tag-pending">confirm cleared</span>
+    </div>
+    <div class="pay-expand" id="out1">
+      <strong>What:</strong> March brand deal reconciliation — services from Wishly/Aneesh<br>
+      <strong>To:</strong> Lal Ventures Inc. (Aneesh &amp; Mica) via QuickBooks<br>
+      <strong>Due:</strong> Apr 8, 2026 — was overdue<br>
+      <strong>Latest:</strong> Lorraine confirmed ACH sent Apr 9. Mica confirmed receipt.<br>
+      <strong>Slack:</strong> <a href="https://thewishlygroup.slack.com/archives/C0A3XEUSTU6" target="_blank">open #wishly channel</a><br>
+      <div class="pay-note-alert">Confirm ACH wire has fully cleared on Lorraine's bank end</div>
+      <a href="#">open email</a>
+    </div>
+
+    <div class="section-divider" style="margin-top:14px">tools &amp; subscriptions</div>
+
+    <div class="pay-row" onclick="togglePay('out2')">
+      <span class="pay-chevron" id="chev-out2">&#9654;</span>
+      <span class="pay-title">Canva — subscription renewal</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-due">recent</span>
+    </div>
+    <div class="pay-expand" id="out2">
+      <strong>To:</strong> Canva<br>
+      <strong>Date:</strong> Apr 6, 2026 — likely auto-charged<br>
+      <strong>Latest:</strong> Invoice received. Confirm in Canva billing settings.<br>
+      <a href="#">open email</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTRACTS SECTION -->
+<div class="card">
+  <div class="pill">contracts &amp; agreements</div>
+  <div class="pay-tabs">
+    <button class="pay-tab active" onclick="switchContracts('signed')">signed &amp; ready</button>
+    <button class="pay-tab" onclick="switchContracts('negotiating')">in negotiation</button>
+    <button class="pay-tab" onclick="switchContracts('email-only')">email-confirmed only</button>
+  </div>
+
+  <div id="tab-signed" class="pay-tab-content">
+    <div class="section-divider" style="margin-top:8px">active — invoice sent or due soon</div>
+
+    <div class="pay-row" onclick="togglePay('c1')">
+      <span class="pay-chevron" id="chev-c1">&#9654;</span>
+      <span class="pay-title">Estée Lauder — Contract Renewal (Apr–Jun 2026)</span>
+      <span class="pay-amount-inline">$21,000</span>
+      <span class="tag tag-confirmed">active</span>
+    </div>
+    <div class="pay-expand" id="c1">
+      <strong>Client:</strong> Estée Lauder (Tina Cooke / Shayla McGough)<br>
+      <strong>Value:</strong> $21,000 installment of $84,000 total PO<br>
+      <strong>Signed:</strong> Dec 2025 — 3-month renewal<br>
+      <strong>Invoice:</strong> #257626165 submitted Mar 18–19 via SAP Ariba<br>
+      <strong>Asana:</strong> <a href="https://app.asana.com/0/1213915874399989" target="_blank">open related task</a><br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c2')">
+      <span class="pay-chevron" id="chev-c2">&#9654;</span>
+      <span class="pay-title">Seismic — AAPI Speaker Agreement</span>
+      <span class="pay-amount-inline">~$5,000</span>
+      <span class="tag tag-confirmed">signed</span>
+    </div>
+    <div class="pay-expand" id="c2">
+      <strong>Client:</strong> Seismic / Seismic Sisters ERG<br>
+      <strong>Events:</strong> May 20 keynote + Jun 10 fireside chat<br>
+      <strong>Signed:</strong> Amended agreement sent Apr 6, being processed<br>
+      <strong>Deposits received:</strong> $5,150 (Feb 27)<br>
+      <strong>Balance invoice:</strong> To be sent after events<br>
+      <strong>Slack context:</strong> <a href="https://risedreamteam.slack.com/archives/C08C5DE24P9" target="_blank">#booked-clients</a><br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c3')">
+      <span class="pay-chevron" id="chev-c3">&#9654;</span>
+      <span class="pay-title">AbbVie — LDP Week Speaking Contract</span>
+      <span class="pay-amount-inline">~$10,000</span>
+      <span class="tag tag-confirmed">signed</span>
+    </div>
+    <div class="pay-expand" id="c3">
+      <strong>Client:</strong> AbbVie Learning &amp; Leadership Development<br>
+      <strong>Event:</strong> LDP Week, April 2026 — 25 min, ON24 virtual<br>
+      <strong>Terms:</strong> 90-day payment after event<br>
+      <strong>Signed:</strong> Contract signed (confirmed Mar 12 per email)<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c4')">
+      <span class="pay-chevron" id="chev-c4">&#9654;</span>
+      <span class="pay-title">pclub — Course Author Agreement 2026</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-confirmed">signed</span>
+    </div>
+    <div class="pay-expand" id="c4">
+      <strong>Client:</strong> pclub (Corinne Wainer)<br>
+      <strong>Attachment:</strong> Lorraine's Course Author Agreement 2026.docx.pdf<br>
+      <strong>Signed:</strong> Jan 22, 2026 — forwarded by Meagan<br>
+      <strong>Invoice status:</strong> No invoice yet — check if invoicing is required<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c5')">
+      <span class="pay-chevron" id="chev-c5">&#9654;</span>
+      <span class="pay-title">IPMA — Partnership Agreement</span>
+      <span class="pay-amount-inline">$10,000 total</span>
+      <span class="tag tag-confirmed">signed</span>
+    </div>
+    <div class="pay-expand" id="c5">
+      <strong>Client:</strong> IPMA (Morgan signed)<br>
+      <strong>Total fee:</strong> $10,000 — $5,000 deposit received<br>
+      <strong>Signed:</strong> Mahea signed on behalf of Lorraine<br>
+      <strong>Balance:</strong> $5,000 remaining — invoice needed<br>
+      <strong>Slack:</strong> <a href="https://risedreamteam.slack.com/archives/D0947LMCHSR/p1772574315740799" target="_blank">open DM thread</a><br>
+      <div class="pay-note-alert">Send balance invoice ($5,000)</div>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="section-divider" style="margin-top:14px">completed &amp; paid</div>
+
+    <div class="pay-row" onclick="togglePay('c6')">
+      <span class="pay-chevron" id="chev-c6">&#9654;</span>
+      <span class="pay-title">Quarles &amp; Brady — SOW (July 2025)</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-paid">fully executed</span>
+    </div>
+    <div class="pay-expand" id="c6">
+      <strong>Client:</strong> Quarles &amp; Brady (Erica Gholson, Jennifer Michalski)<br>
+      <strong>SOW:</strong> Partnership_Contract_SOW_Quarles_RISE_Learning_Solutions.pdf<br>
+      <strong>Signed:</strong> May 22, 2025 — all parties signed<br>
+      <strong>Slack context:</strong> <a href="https://risedreamteam.slack.com/archives/C06JYKUMTC1/p1749827509785339" target="_blank">#invoice-and-payments — Karen confirmed no invoice created yet (Jun 2025)</a><br>
+      <div class="pay-note-alert">Verify Quarles invoice was eventually created and paid — Karen noted it was missing as of Jun 2025</div>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c7')">
+      <span class="pay-chevron" id="chev-c7">&#9654;</span>
+      <span class="pay-title">Medline Industries — Contract &amp; Proposal</span>
+      <span class="pay-amount-inline">~$10,000</span>
+      <span class="tag tag-paid">first 50% paid</span>
+    </div>
+    <div class="pay-expand" id="c7">
+      <strong>Client:</strong> Medline Industries<br>
+      <strong>Invoice #255:</strong> Paid Mar 12 via Coupa<br>
+      <strong>Balance:</strong> Final 50% invoice status unclear — verify in tracker<br>
+      <a href="https://docs.google.com/spreadsheets/d/1IewWLBZKKrgWpqPpKmSdORMeZ51DGzXFhoH92T5K4j0/edit" target="_blank">check invoice tracker</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('c8')">
+      <span class="pay-chevron" id="chev-c8">&#9654;</span>
+      <span class="pay-title">CopperPoint — Jan + Mar 2026 Sessions</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-waiting">final invoice outstanding</span>
+    </div>
+    <div class="pay-expand" id="c8">
+      <strong>Client:</strong> CopperPoint Insurance<br>
+      <strong>Events:</strong> Jan 28 keynote + Mar 11 fireside chat<br>
+      <strong>Invoice #256:</strong> Final 50% submitted Mar 11 — processing<br>
+      <a href="#">open email thread</a>
     </div>
   </div>
 
-  <div class="grid-2">
-    <div class="card">
-      <div class="pill">meetings this week</div>
-      <div class="section-divider">friday apr 10 — today</div>
-      <div class="mtg-row"><div class="mtg-time">9:00 am</div><div class="mtg-title">Event Prep: Abbvie<a href="#">open invite</a></div><span class="tag tag-mtg">meet</span></div>
-      <div class="section-divider" style="margin-top:10px">monday apr 13</div>
-      <div class="mtg-row"><div class="mtg-time">10:00 am</div><div class="mtg-title">RISE — Review Automations for OBA Speaking Engagement Pipeline<a href="#">open invite</a></div><span class="tag tag-mtg">meet</span></div>
-      <div class="section-divider" style="margin-top:10px">tuesday apr 14</div>
-      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — Shane Sponagle<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
-      <div class="section-divider" style="margin-top:10px">wednesday apr 15</div>
-      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — L'Oreal AANHPI ERG (Helen Kwok)<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
-      <div class="mtg-row"><div class="mtg-time">TBD</div><div class="mtg-title">Discovery call — Mari Townsend (alumni workshop)<a href="#">open invite</a></div><span class="tag tag-mtg">call</span></div>
+  <div id="tab-negotiating" class="pay-tab-content" style="display:none">
+    <div class="section-divider" style="margin-top:8px">active negotiations</div>
+
+    <div class="pay-row" onclick="togglePay('n1')">
+      <span class="pay-chevron" id="chev-n1">&#9654;</span>
+      <span class="pay-title">Affirm — Continued Coaching Engagement</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-pending">proposal revision</span>
     </div>
-    <div class="card">
-      <div class="pill">this week</div>
-      <div id="this-week-list">
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">LinkedIn Guide form broken — fix &amp; confirm<a href="https://app.asana.com/0/0/1213922154455263" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">CC Challenge: Complete 3 challenges, post in #ai<a href="https://app.asana.com/0/0/1213935505694779" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Weekly LinkedIn monitoring: new L&amp;D, CX, CRO hires<a href="https://app.asana.com/0/0/1213935478671287" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Add articles to website/LI — follow up w/ Kim<a href="https://app.asana.com/0/0/1213920652704484" target="_blank">open task</a></div><span class="tag tag-due">today</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Update Passionfroot numbers<a href="https://app.asana.com/0/0/1213987270385361" target="_blank">open task</a></div><span class="tag tag-due">mon</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Newsletter Feature #1<a href="https://app.asana.com/0/0/1213986513522360" target="_blank">open task</a></div><span class="tag tag-due">wed</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Make newsletter changes + schedule (Wed Apr 15 send)<a href="https://app.asana.com/0/0/1213922342320365" target="_blank">open task</a></div><span class="tag tag-due">wed</span></div>
-        <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">MC BTS video<a href="https://app.asana.com/0/0/1213987270385354" target="_blank">open task</a></div><span class="tag tag-due">fri</span></div>
-      </div>
+    <div class="pay-expand" id="n1">
+      <strong>Client:</strong> Affirm (Kellee Van Horne)<br>
+      <strong>Status:</strong> Kellee replied Apr 10 asking about revised proposal — separate from existing Invoice #243<br>
+      <strong>Sticking point:</strong> Pricing clarification — Kellee asked if revised proposal uses full budget on additional sessions<br>
+      <strong>Latest:</strong> Lorraine followed up Apr 10 ("Happy Friday — were you able to review?")<br>
+      <strong>Note:</strong> This is a new/continued engagement on top of Invoice #243<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('n2')">
+      <span class="pay-chevron" id="chev-n2">&#9654;</span>
+      <span class="pay-title">VaynerMedia / Gusto — Creator Agreement</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-pending">under review</span>
+    </div>
+    <div class="pay-expand" id="n2">
+      <strong>Client:</strong> VaynerMedia (Ella) / Gusto campaign<br>
+      <strong>Status:</strong> Lorraine received outreach + Creator Agreement attachment. Flagged to Aneesh (Wishly) — "no redlines" policy<br>
+      <strong>Sticking point:</strong> Standard no-redlines contract. Need to verify with Aneesh before proceeding<br>
+      <strong>Slack:</strong> <a href="https://thewishlygroup.slack.com/archives/C0A3XEUSTU6/p1775675464600149" target="_blank">open #wishly discussion</a><br>
+      <strong>Next step:</strong> Confirm with Aneesh whether to proceed<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('n3')">
+      <span class="pay-chevron" id="chev-n3">&#9654;</span>
+      <span class="pay-title">Georgetown Women's Alliance — Discovery call</span>
+      <span class="pay-amount-inline">$1,000–1,500</span>
+      <span class="tag tag-later">call Apr 21</span>
+    </div>
+    <div class="pay-expand" id="n3">
+      <strong>Client:</strong> Honor Murphy / Georgetown Women's Alliance<br>
+      <strong>Budget:</strong> $1,000–1,500<br>
+      <strong>Discovery call:</strong> April 21, 2026<br>
+      <strong>Status:</strong> Pre-contract — discovery stage<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('n4')">
+      <span class="pay-chevron" id="chev-n4">&#9654;</span>
+      <span class="pay-title">L'Oreal AANHPI ERG — Discovery call</span>
+      <span class="pay-amount-inline">$1,500–2,500</span>
+      <span class="tag tag-later">call Apr 15</span>
+    </div>
+    <div class="pay-expand" id="n4">
+      <strong>Client:</strong> Helen Kwok / L'Oreal AANHPI ERG<br>
+      <strong>Budget:</strong> $1,500–2,500<br>
+      <strong>Discovery call:</strong> April 15, 2026<br>
+      <strong>Status:</strong> Pre-contract — discovery stage<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('n5')">
+      <span class="pay-chevron" id="chev-n5">&#9654;</span>
+      <span class="pay-title">Mari Townsend — Alumni Workshop</span>
+      <span class="pay-amount-inline">$1,500</span>
+      <span class="tag tag-later">call completed</span>
+    </div>
+    <div class="pay-expand" id="n5">
+      <strong>Client:</strong> Mari Townsend (alumni)<br>
+      <strong>Budget:</strong> $1,500 for business branding/marketing workshop<br>
+      <strong>Discovery call:</strong> Completed Apr 15<br>
+      <strong>Status:</strong> Post-discovery — awaiting follow-up<br>
+      <a href="#">open email thread</a>
     </div>
   </div>
 
-  <div class="grid-2">
-    <div class="card">
-      <div class="pill">overdue triage</div>
-      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Update LinkedIn Testimonials<a href="https://app.asana.com/0/0/1213935484679782" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
-      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Add Lorraine's Podcasts to Spotify &amp; YT<a href="https://app.asana.com/0/0/1211774747995446" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
-      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Review Riddle quiz data<a href="https://app.asana.com/0/0/1212273867389021" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
-      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Create slides for Live Sessions 2 &amp; 3<a href="https://app.asana.com/0/0/1213703411153499" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
-      <div class="row"><div class="cb" onclick="toggleCb(this)"></div><div class="row-text">Schedule promo post 1<a href="https://app.asana.com/0/0/1213922392423261" target="_blank">open task</a></div><span class="tag tag-overdue">1d late</span></div>
+  <div id="tab-email-only" class="pay-tab-content" style="display:none">
+    <div class="section-divider" style="margin-top:8px">confirmed via email — no formal contract</div>
+
+    <div class="pay-row" onclick="togglePay('e1')">
+      <span class="pay-chevron" id="chev-e1">&#9654;</span>
+      <span class="pay-title">Boston Scientific — BSCI Keynote Apr 28</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-confirmed">email confirmed</span>
     </div>
-    <div class="card">
-      <div class="pill">reminders</div>
-      <div id="reminders-list">
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Lorraine OOO Apr 16–17 (birthday) — plan content around this</div></div>
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Newsletter sends Wed Apr 15 — changes must be done by EOD Tue</div></div>
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Affirm Invoice #243 — Zip system may need PDF reattachment</div></div>
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Her Workplace invoice waiting on sponsor — follow up early May</div></div>
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Wiley royalties expected April 2026 — confirm payment received</div></div>
-        <div class="reminder-row"><div class="reminder-pin"></div><div class="row-text">Airtable/Lumanu invoice approved — initiate Instant Pay payout</div></div>
-      </div>
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <input type="text" id="reminder-input" placeholder="add a reminder..." style="flex:1;font-size:12px;padding:6px 10px;border:.5px solid #f0d8d0;border-radius:6px;background:#fffaf8;color:#4a3430;outline:none">
-        <button onclick="addReminder()" style="font-size:11px;background:#fae8e2;color:#7a4035;border:.5px solid #e8b0a4;border-radius:6px;padding:6px 12px;cursor:pointer">add</button>
-      </div>
+    <div class="pay-expand" id="e1">
+      <strong>Confirmed by:</strong> Email chain with Katie Liao — logistics fully finalized<br>
+      <strong>Status:</strong> No formal contract found in threads — confirmed through event logistics emails<br>
+      <strong>Invoice:</strong> Not yet sent — needs to be created<br>
+      <div class="pay-note-alert">No contract on file — confirm fee agreed and create invoice after event</div>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('e2')">
+      <span class="pay-chevron" id="chev-e2">&#9654;</span>
+      <span class="pay-title">LinkedIn Premium — Subscriber Event May 5</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-confirmed">email confirmed</span>
+    </div>
+    <div class="pay-expand" id="e2">
+      <strong>Confirmed by:</strong> LinkedIn email thread — promotional materials being finalized<br>
+      <strong>Fee:</strong> Not specified in threads found<br>
+      <strong>Invoice:</strong> Not yet sent<br>
+      <div class="pay-note-alert">Confirm fee amount and whether invoice is needed — LinkedIn may handle differently</div>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('e3')">
+      <span class="pay-chevron" id="chev-e3">&#9654;</span>
+      <span class="pay-title">Glassdoor — Content Creator Agreement</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-confirmed">email agreed</span>
+    </div>
+    <div class="pay-expand" id="e3">
+      <strong>Confirmed by:</strong> Lorraine replied "I Lorraine K. Lee agree to the New Agreement" via email Mar 4, 2025<br>
+      <strong>Platform:</strong> Glassdoor Worklife Pro creators program<br>
+      <strong>Payment:</strong> Paid via Tremendous/PayPal<br>
+      <strong>Note:</strong> Agreement via email reply — no signed PDF on file<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('e4')">
+      <span class="pay-chevron" id="chev-e4">&#9654;</span>
+      <span class="pay-title">Adobe — Brand content deal</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-confirmed">email confirmed</span>
+    </div>
+    <div class="pay-expand" id="e4">
+      <strong>Confirmed by:</strong> Lorraine shared in #booked-clients — "details on Adobe - payment terms"<br>
+      <strong>Status:</strong> Payment terms and content specifications noted<br>
+      <strong>Slack:</strong> <a href="https://risedreamteam.slack.com/archives/C08C5DE24P9/p1771958794518849" target="_blank">open #booked-clients</a><br>
+      <strong>Note:</strong> Zen (Dawsen) was asked to pull content specs for video<br>
+      <a href="#">open email thread</a>
+    </div>
+
+    <div class="pay-row" onclick="togglePay('e5')">
+      <span class="pay-chevron" id="chev-e5">&#9654;</span>
+      <span class="pay-title">Elevate Her Summit — speaking + travel</span>
+      <span class="pay-amount-inline">TBD</span>
+      <span class="tag tag-waiting">waiting on sponsor</span>
+    </div>
+    <div class="pay-expand" id="e5">
+      <strong>Confirmed by:</strong> Email with Marilynn Joyner — invoice #250 sent<br>
+      <strong>No formal contract found</strong> — agreed and invoiced via email<br>
+      <strong>Status:</strong> Invoice submitted, waiting on Her Workplace sponsor to pay<br>
+      <a href="#">open email thread</a>
     </div>
   </div>
+</div>
+
 
   <div class="card">
     <div class="pill">Do Later</div>
@@ -594,7 +1021,7 @@ body{font-family:'Inter',sans-serif;background:#fdf8f6;min-height:100vh}
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var calData={
   10:{label:'Friday, April 10 — today',items:[
     {name:'LinkedIn Guide form broken — fix & confirm',source:'asana',url:'https://app.asana.com/0/0/1213922154455263',type:'task'},
@@ -728,6 +1155,66 @@ function updateTimestamp(){
 }
 function doRefresh(){updateTimestamp();generateTip();updateCapacityBar();}
 function scheduleAutoRefresh(){var mt=getMTTime();var next=getNextRefresh();setTimeout(function(){doRefresh();scheduleAutoRefresh();},next-mt);}
+
+function buildDaySchedule(){
+  // Friday = work 7:30am - 4:30pm MT
+  var dayOfWeek = new Date(new Date().toLocaleString('en-US',{timeZone:'America/Denver'})).getDay(); // 5=Fri
+  var startHour, endHour;
+  if(dayOfWeek===2||dayOfWeek===4){startHour=7;endHour=15.5;} // Tue/Thu 7am-3:30pm
+  else{startHour=7.5;endHour=16.5;} // Mon/Wed/Fri 7:30am-4:30pm
+
+  var blocks=[
+    {start:7.5,end:9,label:'Morning Block — Recurring & Admin',type:'sched-work'},
+    {start:9,end:9.5,label:'Schedule promo post 1 + add event to bio',type:'sched-task'},
+    {start:9,end:11,label:'Midday Block — Meetings & Follow-Ups',type:'sched-work'},
+    {start:10,end:10.25,label:'DEADLINES: CC Challenge · Promo Post · Slides · Website · Podcasts · Riddle · LinkedIn Monitoring',type:'sched-deadline'},
+    {start:11,end:11.5,label:'Break',type:'sched-break'},
+    {start:11.5,end:13.5,label:'Afternoon Block — Deep Work & Client Tasks',type:'sched-work'},
+    {start:13.5,end:14,label:'Break',type:'sched-break'},
+    {start:14,end:16,label:'Buffer Block — Ad-Hoc & Urgent Tasks',type:'sched-work'},
+    {start:16,end:16.5,label:'End-of-Day — Wrap-Up & Next-Day Planning',type:'sched-work'},
+  ];
+
+  var mt=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Denver'}));
+  var nowHour=mt.getHours()+mt.getMinutes()/60;
+  var totalHours=endHour-startHour;
+  var g=document.getElementById('day-schedule-grid');
+  if(!g)return;
+
+  var pxPerHour=44;
+  var html='<div class="sched-wrap" style="height:'+(totalHours*pxPerHour+20)+'px;margin-top:8px">';
+
+  // Hour gridlines + time labels
+  for(var h=Math.ceil(startHour);h<=Math.floor(endHour);h++){
+    var top=((h-startHour)*pxPerHour);
+    var label=h<=12?h+':00 am':(h===12?'12:00 pm':(h-12)+':00 pm');
+    if(h===12)label='12:00 pm';
+    if(h>12)label=(h-12)+':00 pm';
+    html+='<div style="position:absolute;top:'+top+'px;left:0;right:0;display:flex;align-items:center;gap:0;pointer-events:none">';
+    html+='<span style="width:60px;font-size:10px;color:#c4948a;text-align:right;padding-right:8px;flex-shrink:0">'+label+'</span>';
+    html+='<div style="flex:1;height:.5px;background:#f0d8d0"></div></div>';
+  }
+
+  // Blocks
+  blocks.forEach(function(b){
+    if(b.end<=startHour||b.start>=endHour)return;
+    var s=Math.max(b.start,startHour);
+    var e=Math.min(b.end,endHour);
+    var top=(s-startHour)*pxPerHour;
+    var height=(e-s)*pxPerHour-2;
+    html+='<div class="sched-block '+b.type+'" style="position:absolute;top:'+top+'px;left:68px;right:4px;height:'+height+'px;overflow:hidden">'+b.label+'</div>';
+  });
+
+  // Now line
+  if(nowHour>=startHour&&nowHour<=endHour){
+    var nowTop=(nowHour-startHour)*pxPerHour;
+    html+='<div class="sched-now-dot" style="top:'+(nowTop-5)+'px"></div>';
+    html+='<div class="sched-now-line" style="top:'+nowTop+'px"></div>';
+  }
+
+  html+='</div>';
+  g.innerHTML=html;
+}
 function buildCalendar(){
   var g=document.getElementById('cal-grid');
   var days=['su','mo','tu','we','th','fr','sa'];
@@ -756,9 +1243,22 @@ async function generateTip(){
     var data=await r.json();var text=data.content&&data.content[0]&&data.content[0].text;
     if(text){tipEl.style.color='#4a3430';tipEl.style.fontStyle='normal';tipEl.textContent=text;}
     else{tipEl.style.color='#4a3430';tipEl.style.fontStyle='normal';tipEl.textContent='Fix the LinkedIn form first - then batch your invoice follow-ups in one focused block before end of day.';}
-  }catch(e){tipEl.style.color='#4a3430';tipEl.style.fontStyle='normal';tipEl.textContent='Fix the LinkedIn form first - then batch your invoice follow-ups in one focused block before end of day.';}
+  }catch(e){tipEl.style.color='#4a3430';tipEl.style.fontStyle='normal';tipEl.textCofunction switchContracts(tab){
+  ['signed','negotiating','email-only'].forEach(function(t){
+    var el=document.getElementById('tab-'+t);
+    if(el)el.style.display=t===tab?'block':'none';
+  });
+  document.querySelectorAll('.pay-tabs').forEach(function(tabsEl,i){
+    if(i===1){tabsEl.querySelectorAll('.pay-tab').forEach(function(btn,j){
+      btn.classList.toggle('active',
+        (j===0&&tab==='signed')||(j===1&&tab==='negotiating')||(j===2&&tab==='email-only'));
+    });}
+  });
 }
-buildCalendar();updateTimestamp();scheduleAutoRefresh();updateCapacityBar();generateTip();
-</script>
-</body>
-</html>
+function switchTab(tab){
+  document.getElementById('tab-incoming').style.display=tab==='incoming'?'block':'none';
+  document.getElementById('tab-outgoing').style.display=tab==='outgoing'?'block':'none';
+  document.querySelectorAll('.pay-tab').forEach(function(el,i){el.classList.toggle('active',(i===0&&tab==='incoming')||(i===1&&tab==='outgoing'));});
+}
+function togglePay(id){var el=document.getElementById(id);var chev=document.getElementById('chev-'+id);var isOpen=el.classList.contains('open');el.classList.toggle('open',!isOpen);chev.classList.toggle('open',!isOpen);}
+n
