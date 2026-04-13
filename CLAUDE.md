@@ -14,8 +14,10 @@ Read this before every run. These rules override anything in the prompt that's a
 - Do NOT place a focus block earlier than the due date (e.g. do not schedule Monday work for a Wednesday task)
 
 ### Deadline markers (Meagan & Mahea team tasks)
-- Create on **Current Projects calendar**: `c_b03e66f8a2cf3bd2e82725f1791f1bd7f6aa2b07798f3e284d49034f36d55e85@group.calendar.google.com`
-- NEVER on `lorraine@lorraineklee.com` (primary) or any other calendar
+⚠️ HARD RULE — any prompt language saying "on Lorraine's calendar" does NOT apply here. This overrides the trigger prompt.
+- calendarId = `c_b03e66f8a2cf3bd2e82725f1791f1bd7f6aa2b07798f3e284d49034f36d55e85@group.calendar.google.com` (Current Projects) — no exceptions
+- NEVER use `lorraine@lorraineklee.com` or `primary` for deadline markers
+- Before creating any deadline marker, confirm calendarId is the Current Projects ID above
 - Color: tangerine (6)
 - Duration: exactly 15 minutes, at 9:00am PT on the due date
 - Summary format: `DEADLINE: [PERSON NAME] — [Task name]`
