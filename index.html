@@ -1,145 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lorraine — Morning Briefing · April 13, 2026</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lorraine — Mon Apr 13</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f5f7ff;color:#1a1a2e;font-size:14px;line-height:1.5}
-header{background:#084af3;color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
-header h1{font-size:20px;font-weight:700}
-header span{background:#FCE036;color:#084af3;font-weight:700;padding:4px 12px;border-radius:20px;font-size:13px}
-.container{max-width:900px;margin:0 auto;padding:16px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 1px 4px rgba(8,74,243,.08)}
-.card h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#084af3;margin-bottom:10px;border-bottom:2px solid #FCE036;padding-bottom:6px}
-.full{grid-column:1/-1}
-.task{padding:8px 0;border-bottom:1px solid #f0f0f8}
-.task:last-child{border:none}
-.task a{color:#084af3;text-decoration:none;font-weight:500}
-.task a:hover{text-decoration:underline}
-.badge{display:inline-block;font-size:11px;padding:2px 7px;border-radius:10px;font-weight:600;margin-left:4px}
-.badge-hi{background:#e8edff;color:#084af3}
-.badge-lo{background:#f0f0f0;color:#888}
-.badge-over{background:#ffe8e8;color:#c0392b}
-.badge-rev{background:#e6f9f0;color:#1a7a4a}
-.dim{opacity:.5}
-.sched-row{display:flex;gap:10px;padding:5px 0;border-bottom:1px solid #f0f0f8}
-.sched-row:last-child{border:none}
-.sched-time{font-size:12px;color:#666;min-width:78px}
-.commit-row{padding:8px 0;border-bottom:1px solid #f0f0f8}
-.commit-row:last-child{border:none}
-.commit-who{font-weight:600;color:#4179fc}
-.yellow-border{border-left:3px solid #FCE036;padding-left:10px;margin:4px 0}
-.tip-box{background:#e8edff;border-left:4px solid #084af3;padding:12px;border-radius:6px}
-.tip-box p{font-size:13px;color:#084af3}
-.email-row{padding:6px 0;border-bottom:1px solid #f0f0f8}
-.email-row:last-child{border:none}
-.sub{font-size:12px;color:#666;margin-top:2px}
-.slabel{font-size:11px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.05em;margin:10px 0 6px}
-ul{padding-left:18px}
-ul li{margin-bottom:4px}
-</style>
-</head>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#f5f7ff;color:#1a1a2e;font-size:14px}
+.hdr{background:linear-gradient(135deg,#084af3,#4179fc);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.hdr h1{font-size:18px;font-weight:700}.hdr .sub{font-size:12px;opacity:.85;margin-top:2px}
+.bx{background:#FCE036;color:#084af3;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px}
+.bxr{background:#fff;color:#d00;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px}
+.wrap{max-width:940px;margin:0 auto;padding:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#084af3;margin-bottom:9px;border-bottom:2px solid #4179fc22;padding-bottom:5px}
+.row{padding:5px 0;border-bottom:1px solid #f0f0f0;line-height:1.45;font-size:13px}.row:last-child{border-bottom:none}
+a{color:#084af3;text-decoration:none;font-weight:500}a:hover{text-decoration:underline}
+.t{font-size:10px;padding:1px 5px;border-radius:7px;font-weight:700;display:inline-block;margin-left:3px}
+.hot{background:#fff0f0;color:#c00}.warm{background:#fff8e6;color:#b45}.due{background:#fef3c7;color:#92400e}
+.ok{background:#e8f5e9;color:#2e7d32}.low{opacity:.5;font-style:italic}
+.tm{font-size:11px;color:#777;display:inline-block;min-width:48px}
+.alert{background:#fff0f0;border-left:3px solid #c00;padding:8px 10px;border-radius:4px;margin-bottom:8px;font-size:13px}
+.tip{background:#e8f0fe;border-left:3px solid #4179fc;padding:10px;border-radius:5px;font-size:13px}
+.nd{background:#fffbeb;border-left:2px solid #f59e0b;padding:5px 8px;border-radius:3px;margin:3px 0;font-size:12px}
+.full{grid-column:1/-1}.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.clbl{font-size:10px;font-weight:700;text-transform:uppercase;color:#777;margin:6px 0 3px}
+.ovr{color:#c00;font-weight:700}</style></head>
 <body>
-<header>
-<h1>Lorraine K. Lee — Morning Briefing</h1>
-<span>Monday, April 13, 2026</span>
-</header>
-<div class="container">
-<div class="grid">
+<div class="hdr">
+  <div><h1>☀️ Lorraine — Morning Briefing</h1><div class="sub">Monday, April 13, 2026 · RISE Learning Solutions · $600K target | $700K stretch</div></div>
+  <div><span class="bx">🔥 ServiceNow HOT</span><span class="bxr">3 OVERDUE</span></div>
+</div>
+<div class="wrap"><div class="grid">
 
 <div class="card full">
-<h2>What to Do First (Top 3)</h2>
-<div class="task"><strong>1.</strong> <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong on Whatsapp</a> <span class="badge badge-hi">Due Apr 15 · Client &amp; Speaking</span> — FU on L&amp;D intros: Rebecca Krouse (Chief People Officer), Natalie King (Talent Dev), Kristie Kuo (Perf Mgmt). Jasmine forwarded your blurb.</div>
-<div class="task"><strong>2.</strong> <a href="https://app.asana.com/1/1210774242380505/task/1213922392397679">Check Meagan: Review newsletter with event inclusion</a> <span class="badge badge-hi">Due Apr 14</span> — LinkedIn Premium Event Apr 22 mention must be in. Review Meagan's draft before it goes out.</div>
-<div class="task"><strong>3. Reply to ServiceNow (Adam Sones)</strong> — They're in on Scenario 3 of the Educator Community proposal. <span class="badge badge-rev">Revenue</span> Move to contract stage today.</div>
+  <h2>🚀 What to Do First</h2>
+  <div class="alert">🔥 <strong>Reply to ServiceNow — Adam Sones</strong>: "Scenario 3 fits what we need." Warm → HOT. Send proposal next steps today. <a href="https://mail.google.com/mail/u/0/#inbox/19d7939ff4549fc0">Open email →</a></div>
+  <div class="row">🎯 <strong>Review LI Vids [30 min]</strong> <span class="t hot">DUE TODAY</span> — Block 10:15–10:45 on calendar. <a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1214033655707895">Asana</a> · <a href="https://docs.google.com/document/d/1uw1h6x5Ie_TZIUvicj0NTCSO-ugy5hjE90kuI16BeN8/edit?tab=t.dv5jjm6n8ta">Doc 1</a> · <a href="https://docs.google.com/document/d/1uw1h6x5Ie_TZIUvicj0NTCSO-ugy5hjE90kuI16BeN8/edit?tab=t.6iwz5bfaonp0">Doc 2</a> · <a href="https://docs.google.com/document/d/1uw1h6x5Ie_TZIUvicj0NTCSO-ugy5hjE90kuI16BeN8/edit?tab=t.ld1mpwad2e13">Doc 3</a></div>
+  <div class="row">📧 <strong>Affirm / Kellee</strong> — She asked: "Is the revised proposal using the entire budget?" Lorraine replied today. <a href="https://mail.google.com/mail/u/0/#inbox/19d7814120c8a11d">Thread →</a></div>
+  <div class="row">🎤 <strong>AbbVie LDP Webinar at 12:40 PM</strong> — "Supercharge Your Executive Presence." Review RAVE model.</div>
 </div>
 
 <div class="card">
-<h2>Today's Schedule</h2>
-<div class="sched-row"><span class="sched-time">8:00 AM</span><span>Figure out clients for market research</span></div>
-<div class="sched-row"><span class="sched-time">8:30 AM</span><span>Check Email</span></div>
-<div class="sched-row"><span class="sched-time">9:00 AM</span><span>RISE — Review Automations for OBA Speaking Pipeline</span></div>
-<div class="sched-row"><span class="sched-time">9:45 AM</span><span>Focus: Review &amp; Finalize LinkedIn Scripts + Record Video [60 min]</span></div>
-<div class="sched-row"><span class="sched-time">10:00 AM</span><span>ASANA / HEADS DOWN (10–10:30)</span></div>
-<div class="sched-row"><span class="sched-time">10:30 AM</span><span>MasterClass x Lorraine K. Lee</span></div>
-<div class="sched-row"><span class="sched-time">12:40 PM</span><span>AbbVie LDP Week Webinar: Supercharge Your Executive Presence</span></div>
-<div class="sched-row"><span class="sched-time">2:00 PM</span><span>Finish team JDs</span></div>
-<div class="sched-row"><span class="sched-time">4:30 PM</span><span>LuxFit</span></div>
-<div class="task sub" style="margin-top:8px;padding-top:8px">DUE TODAY (team): Meagan — Review Q1 Estee Analytics deck · Install GA4 &amp; Hotjar · Review Career Bites newsletter drafts</div>
+  <h2>📅 Schedule + Prep</h2>
+  <div class="row"><span class="tm">9:00</span>RISE — OBA Automations review</div>
+  <div class="row"><span class="tm">9:45</span>Focus: LinkedIn Scripts + Record [60 min]</div>
+  <div class="row"><span class="tm">10:00</span>✅ ASANA / HEADS DOWN → 🎯 Jasmine (10:00) + 🎯 LI Vids (10:15–10:45)</div>
+  <div class="row"><span class="tm">10:30</span>MasterClass call (Sam/Oliver)</div>
+  <div class="row"><span class="tm">12:40</span><strong>AbbVie LDP Webinar</strong></div>
+  <div class="row"><span class="tm">14:00</span>Finish team JDs</div>
+  <div class="row"><span class="tm">16:00</span>LuxFit</div>
+  <div style="margin-top:8px;font-size:12px;padding:6px 8px;background:#fef9c3;border-radius:4px">📌 Apr 14: Team Mtg · Apr 15: Multiple calls + Meagan 1:1 · Apr 16–17 OOO 🪄 · Apr 28: BSci PEARL Keynote</div>
 </div>
 
 <div class="card">
-<h2>Priority Emails (Last 24h)</h2>
-<div class="email-row"><strong>ServiceNow (Adam Sones)</strong><div class="sub"><span style="color:#1a7a4a;font-weight:600">Revenue — They want Scenario 3.</span> Reply to advance to contract.</div></div>
-<div class="email-row"><strong>Affirm (Kellee Van Horne)</strong><div class="sub">Reviewed proposal with team, asks clarifying question on budget. <span style="color:#c0392b;font-weight:600">Needs your reply.</span></div></div>
-<div class="email-row"><strong>MasterClass (Oliver Kiss / Sam Hayes)</strong><div class="sub">You approved Option B headshot. Marketing timing confirmed. Meagan is coordinating launch (Apr 17).</div></div>
-<div class="email-row"><strong>Boston Scientific (Katie Liao) — Apr 28 Keynote</strong><div class="sub">Loves slides-as-feedback idea. Wants your feedback form. Send it.</div></div>
-<div class="email-row"><strong>Apex Group (Sheril James)</strong><div class="sub">Meagan sent prep questions today. Discovery call Apr 15 — read Meagan's notes before the call.</div></div>
+  <h2>📬 Priority Emails</h2>
+  <div class="row"><strong>ServiceNow — Adam Sones</strong> <span class="t hot">HOT</span><br><small>"Scenario 3 fits what we need" — Apr 10. Act now. <a href="https://mail.google.com/mail/u/0/#inbox/19d7939ff4549fc0">View →</a></small></div>
+  <div class="row"><strong>Affirm — Kellee Van Horne</strong> <span class="t warm">WARM</span><br><small>Budget clarification on coaching proposal. Lorraine replied Apr 13. <a href="https://mail.google.com/mail/u/0/#inbox/19d7814120c8a11d">View →</a></small></div>
+  <div class="row"><strong>MasterClass — Oliver & Sam</strong><br><small>Photo Option B approved. Oliver looping in comms director. <a href="https://mail.google.com/mail/u/0/#inbox/19d7f0ae9ab3166a">View →</a></small></div>
+  <div class="row"><strong>BSci / Katie Liao (Apr 28)</strong><br><small>Katie asked for dry run. Meagan sent screenshot. Dry run still open. <a href="https://mail.google.com/mail/u/0/#inbox/19d74c5ffb5caca6">View →</a></small></div>
+  <div class="row"><strong>Apex Group / Sheril James</strong><br><small>Discovery call Apr 15. Prep email sent today. ✓ Ready. <a href="https://mail.google.com/mail/u/0/#inbox/19d86f0bd72a435a">View →</a></small></div>
 </div>
 
 <div class="card full">
-<h2>Team Commitments</h2>
-<div class="slabel">With Deadlines</div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — Q1 Estee Analytics <span class="badge badge-over">OVERDUE Apr 10</span> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213974557616304">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — CC Challenge: 3 challenges, post in #ai <span class="badge badge-over">OVERDUE Apr 10</span> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1213935506451284">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — Review Q1 Estee Analytics deck [30 min] · <strong>Today Apr 13</strong> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/task/1214032473265391">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — Review Career Bites April newsletter drafts · <strong>Today Apr 13</strong> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/task/1213970860320102">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — Review newsletter with event inclusion · <strong>Apr 14</strong> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/task/1213922392397679">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — MasterClass Launch · <strong>Apr 17</strong> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MEAGAN</span> — Create presentation outline for Lorraine · <strong>Apr 22</strong> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/task/1214032545852231">Asana task</a></div></div>
-<div class="commit-row"><span class="commit-who">MAHEA</span> — LinkedIn Guide friends &amp; family form fix <span class="badge badge-over">OVERDUE Apr 10</span> <div class="sub"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">Asana task</a></div></div>
-<div class="slabel" style="margin-top:12px">Outstanding (No Deadline)</div>
-<div class="commit-row yellow-border"><span class="commit-who">MEAGAN</span> — VaynerMedia / Gusto UGC: Ella Lammin circling back with Aneesh at Wishly on creative direction for Lorraine. No task. <div class="sub">Apr 10 · 3 days ago. Consider asking for a deadline.</div></div>
-<div class="commit-row yellow-border"><span class="commit-who">MAHEA</span> — Affiliate links tracker missing Kondo. <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">Tracker</a>. <div class="sub">Flagged ~Apr 3. Consider asking for a deadline.</div></div>
-<div class="commit-row yellow-border"><span class="commit-who">MAHEA</span> — Forbes article co-promo with Aaron's book — on content plan? <div class="sub">Flagged Apr 3. Consider asking for a deadline.</div></div>
+  <h2>🤝 Team Commitments</h2>
+  <div class="cgrid">
+    <div>
+      <div class="clbl">Meagan — With Deadlines</div>
+      <div class="row"><strong>BSci Apr 28 dry run</strong> — Katie Liao asked Apr 9. Not confirmed yet. <span class="t due">Apr 28</span></div>
+      <div class="row"><strong>MasterClass launch coordination</strong> — Working with Oliver/Sam. <span class="t due">Apr 17</span></div>
+      <div class="row"><strong>Create presentation outline</strong> — For Lorraine. <span class="t due">Apr 22</span> <a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213987270385366">Asana</a></div>
+      <div class="clbl" style="margin-top:6px">Meagan — Outstanding (No Deadline)</div>
+      <div class="nd"><strong>VaynerMedia/Gusto UGC</strong> — Intro made to Aneesh Apr 8, 5 days ago. No deadline. <em>Consider asking for next step.</em></div>
+    </div>
+    <div>
+      <div class="clbl">Mahea — With Deadlines</div>
+      <div class="row"><strong>Elevate Her Summit invoice $6,237.43</strong> — <span class="ovr">OVERDUE since Apr 10.</span> Mahea followed up. Check with Marilynn.</div>
+      <div class="row"><strong>LinkedIn Guide F&F form fix</strong> <span class="t due">Apr 17</span> — DEADLINE on calendar. <a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">Asana</a></div>
+      <div class="clbl" style="margin-top:6px">Mahea — Outstanding (No Deadline)</div>
+      <div class="nd"><strong>Website pageview / WPEngine bots</strong> — Bumped Kim Apr 8. 5 days, no resolution. <em>Consider asking for a deadline.</em></div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-<h2>Asana Tasks (Apr 13–26)</h2>
-<div class="task"><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong on Whatsapp</a> <span class="badge badge-hi">Apr 15</span></div>
-<div class="task"><a href="https://app.asana.com/1/1210774242380505/task/1214032545852235">Lorraine to review presentation outline</a> <span class="badge badge-hi">Apr 23</span></div>
-<div class="task"><a href="https://app.asana.com/1/1210774242380505/task/1212801701499008">Review (creatorengines.com)</a> <span class="badge badge-lo">Apr 24 · Admin</span></div>
-<div class="task dim"><a href="https://app.asana.com/1/1210774242380505/task/1213935492459940">Check Kondo: Lorraine Tab</a> <span class="badge badge-lo">OVERDUE · Low</span></div>
-<div class="task dim"><a href="https://app.asana.com/1/1210774242380505/task/1214016214198744">Review newsletter folder for replies</a> <span class="badge badge-lo">Apr 17 · Low</span></div>
+  <h2>✅ Asana Tasks (14-day window)</h2>
+  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1214033655707895">Review LI Vids [30 min]</a> <span class="t hot">TODAY</span></div>
+  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong</a> <span class="t due">Apr 15</span> — 🎯 Block ✓</div>
+  <div class="row"><a href="https://app.asana.com/1/1210774242380505/task/1214032545852235">Review presentation outline</a> <span class="t due">Apr 23</span> — 🎯 Block ✓</div>
+  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1212801701499008">Review Creator Engines</a> <span class="t due">Apr 24</span> — 🎯 Block at 9:15 AM</div>
+  <div class="row low">Check Kondo (Apr 10 overdue) · Newsletter folder review (Apr 17) — low priority</div>
 </div>
 
 <div class="card">
-<h2>Biz Dev &amp; Speaking Opps</h2>
-<div class="task"><strong>ServiceNow (Adam Sones)</strong> — Wants Scenario 3. <span class="badge badge-rev">Hot</span> Move to contract.</div>
-<div class="task"><strong>Affirm (Kellee Van Horne)</strong> — Communication Coaching renewal. Awaiting your reply on budget. <span class="badge badge-rev">Warm</span></div>
-<div class="task"><strong>AbbVie LDP Webinar</strong> — TODAY 12:40 PM. Have your slides ready.</div>
-<div class="task"><strong>Boston Scientific — Apr 28 Keynote</strong> — Confirmed. Send feedback form to Katie.</div>
-<div class="task"><strong>Apex Group (Sheril James)</strong> — Discovery call Apr 15. Meagan prepped notes.</div>
-<div class="task"><strong>Seismic Partnership Call — Apr 23</strong> 11:30 AM. Prep angles.</div>
-<div class="task"><strong>LinkedIn Premium Event — May 5</strong> <span class="badge badge-rev">Revenue</span> Promo Post 1 this week. Newsletter Apr 15. <a href="https://www.linkedin.com/events/7447381332030263296/?viewAsMember=true">Event link</a></div>
+  <h2>💼 Biz Dev + Speaking Opps</h2>
+  <div class="row"><strong>ServiceNow</strong> <span class="t hot">Respond NOW</span> — Adam Sones ready for Scenario 3. <a href="https://mail.google.com/mail/u/0/#inbox/19d7939ff4549fc0">Reply →</a></div>
+  <div class="row"><strong>Apex Group / Sheril James</strong> — Discovery call Apr 15. Women Accelerator Network keynote.</div>
+  <div class="row"><strong>BSci PEARL</strong> <span class="t ok">CONFIRMED Apr 28</span> — Dry run open with Katie.</div>
+  <div class="row"><strong>Affirm coaching</strong> — Revised proposal under review. Budget Q TBD.</div>
+  <div class="row"><strong>Oscar / Jasmine Wong</strong> — Intro requests sent Apr 9 to L&D/People. Follow up Apr 15.</div>
+  <div class="row"><strong>Ché Ugwuala (Google)</strong> — Checking on Suzanne intro. <a href="https://mail.google.com/mail/u/0/#inbox/19d738a5c5d185fe">Thread →</a></div>
 </div>
 
-<div class="card full">
-<h2>Passive Revenue Roadmap</h2>
-<div class="task"><strong>MasterClass</strong> — Launches Apr 17. Photo approved. Meagan owns coordination with LinkedIn.</div>
-<div class="task"><strong>LinkedIn Premium Event (May 5)</strong> — Paid subscriber event. Promo Post 1 this week. <a href="https://www.canva.com/design/DAHBNSF8Mp4/gQVj0Gaz1QTvnbdgEGsRZw/view">Playbook</a>. Approve final promo post Apr 29.</div>
-<div class="task"><strong>Ultimate LinkedIn Guide</strong> — Friends &amp; family form broken (Mahea fixing). Check before next promotion.</div>
+<div class="card">
+  <h2>💰 Passive Revenue Roadmap</h2>
+  <div class="row"><strong>LinkedIn Premium Event May 5</strong> <span class="t ok">ACTIVE</span> — Week of Apr 13: Promo Post 1. Apr 15 newsletter: first feature mention. <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">Asana →</a></div>
+  <div class="row"><strong>MasterClass</strong> — Paid deal in development. Photo approved, comms director looping in.</div>
+  <div class="row"><strong>Gusto UGC (VaynerMedia)</strong> — Potential brand deal. Aneesh negotiating with Ella. No rate confirmed.</div>
+  <div class="row"><strong>Maven Course / Unforgettable Presence</strong> — Retool + enterprise licensing in Ideas backlog.</div>
 </div>
 
-<div class="card full tip-box">
-<h2 style="color:#084af3;border-color:#084af3">Did You Know? Tip #13</h2>
-<p>Before a podcast appearance, ask CC what topics the host covers and what angle you should take.</p>
+<div class="card">
+  <h2>💡 Did You Know? (CC Tip — Day 13)</h2>
+  <div class="tip">Before a coaching session, ask CC to pull up your last session notes and suggest topics based on what's happened since. Paste your notes file + a quick brain dump of this week → instant session agenda tailored to where your clients are right now.</div>
 </div>
 
-<div class="card full">
-<h2>Quick Hits</h2>
-<ul>
-<li>Reply to Affirm's Kellee Van Horne — clarifying question on budget, window is open.</li>
-<li>Reply to ServiceNow's Adam Sones — move to contract stage for Scenario 3.</li>
-<li>Send feedback form to Boston Scientific's Katie Liao before Apr 28 keynote.</li>
-</ul>
+<div class="card">
+  <h2>⚡ Quick Hits</h2>
+  <div class="row">🔥 <strong>Reply to Adam Sones (ServiceNow)</strong> — Scenario 3 confirmed interest. Draft proposal response.</div>
+  <div class="row">📝 <strong>Review LI Vids at 10:15 AM</strong> — 3 Doc tabs linked above. 🎯 Block on calendar.</div>
+  <div class="row">🎤 <strong>AbbVie webinar at 12:40 PM</strong> — RAVE model. Live audience. No dry run needed.</div>
 </div>
 
-</div>
-</div>
-</body>
-</html>
+</div></div></body></html>
