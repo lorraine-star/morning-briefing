@@ -7,9 +7,11 @@ Read this before every run. These rules override anything in the prompt that's a
 ### Focus blocks (Lorraine's work tasks)
 - Create on **primary calendar**: `lorraine@lorraineklee.com`
 - Color: blueberry (9) for high priority, graphite (8) for low
-- Must be placed INSIDE existing "✅ ASANA / HEADS DOWN" recurring blocks
-- If no HEADS DOWN block is available, check the full day calendar and pick the best open slot — do NOT skip the task
+- Must be placed INSIDE existing "✅ ASANA / HEADS DOWN" recurring blocks **on the task's due date**
+- If no HEADS DOWN block exists on the due date, check the full day calendar for that date and pick the best open slot — do NOT skip the task
+- If the due date is today and the ASANA block has already passed, place the block in the next available open slot today
 - Check the full day schedule before deciding a slot is unavailable — the initial ASANA search only returns events with Asana URLs in their description
+- Do NOT place a focus block earlier than the due date (e.g. do not schedule Monday work for a Wednesday task)
 
 ### Deadline markers (Meagan & Mahea team tasks)
 - Create on **Current Projects calendar**: `c_b03e66f8a2cf3bd2e82725f1791f1bd7f6aa2b07798f3e284d49034f36d55e85@group.calendar.google.com`
