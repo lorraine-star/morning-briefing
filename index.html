@@ -2,123 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lorraine — Tue Apr 14, 2026</title>
+<title>Lorraine — Morning Briefing | Tue Apr 14, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#f5f7fa;color:#1a1a2e;font-size:14px}
-.top{background:linear-gradient(135deg,#084af3,#4179fc);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
-.top h1{font-size:20px;font-weight:700}.top .sub{font-size:12px;opacity:.85;margin-top:3px}
-.badge{background:#FCE036;color:#084af3;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:8px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px;max-width:1200px;margin:0 auto}
-.full{grid-column:1/-1}.card{background:#fff;border-radius:10px;padding:15px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#084af3;margin-bottom:10px;border-bottom:2px solid #e8f0ff;padding-bottom:5px}
-h3{font-size:11px;font-weight:600;color:#777;text-transform:uppercase;letter-spacing:.3px;margin:8px 0 4px}
-.item{padding:5px 0;border-bottom:1px solid #f2f2f2;display:flex;align-items:flex-start;gap:8px}.item:last-child{border-bottom:none}
-.pill{font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0}
-.red{background:#ffe5e5;color:#c0392b}.orange{background:#fff3e0;color:#e65100}.green{background:#e8f5e9;color:#2e7d32}
-.blue{background:#e8f0ff;color:#084af3}.gray{background:#f0f0f0;color:#666}.yellow{background:#FCE036;color:#084af3}
-.time{font-size:11px;color:#888;min-width:76px;flex-shrink:0}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#f5f7ff;color:#1a1a2e;font-size:14px}
+.header{background:linear-gradient(135deg,#084af3,#4179fc);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-size:20px;font-weight:700}.header .sub{font-size:12px;opacity:.85;margin-top:2px}
+.ooo-bar{background:#FCE036;color:#1a1a2e;text-align:center;padding:7px;font-weight:700;font-size:13px}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+h2{font-size:12px;font-weight:700;color:#084af3;margin-bottom:10px;text-transform:uppercase;letter-spacing:.6px}
+h3{font-size:12px;font-weight:600;color:#555;margin:10px 0 5px}
+.hi{background:#f0f4ff;border-left:3px solid #4179fc;padding:7px 10px;border-radius:4px;margin:5px 0;font-size:13px}
+.row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px}
+.row:last-child{border-bottom:none}.meta{color:#888;font-size:11px;white-space:nowrap;margin-left:8px}
+.srow{display:grid;grid-template-columns:75px 1fr;gap:4px;padding:4px 0;border-bottom:1px solid #f5f5f5;font-size:13px}
+.srow:last-child{border-bottom:none}.t{color:#888;font-size:11px}
 a{color:#084af3;text-decoration:none}
-.tip{background:linear-gradient(135deg,#e8f0ff,#d0e3ff);border-left:4px solid #084af3;padding:12px;border-radius:0 8px 8px 0}
-.cd{border-left:3px solid #4179fc;padding:5px 10px;margin:3px 0;background:#f8fbff;border-radius:0 5px 5px 0}
-.co{border-left:3px solid #e6b800;padding:5px 10px;margin:3px 0;background:#fffbef;border-radius:0 5px 5px 0}
-.wait{border-left:3px solid #c0392b;padding:5px 10px;margin:3px 0;background:#fff8f8;border-radius:0 5px 5px 0}
+.badge{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;font-weight:600;margin-left:4px}
+.red{background:#fee2e2;color:#b91c1c}.blue{background:#dbeafe;color:#1d4ed8}.yel{background:#fef9c3;color:#854d0e}.grn{background:#dcfce7;color:#166534}
+.dim{opacity:.4}.outstanding{border-left:3px solid #f59e0b;background:#fffbeb;padding:7px 10px;border-radius:4px;margin:5px 0;font-size:13px}
+.tip{background:#f0f4ff;border-left:4px solid #4179fc;padding:12px;border-radius:6px;font-size:13px;line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="top"><div><h1>Good morning, Lorraine ☀️ <span class="badge">Tue Apr 14</span></h1><div class="sub">RISE Learning Solutions · Revenue $600K target / $700K stretch · 3 discovery calls today</div></div><div style="text-align:right;font-size:12px;opacity:.9">Boston Scientific keynote Apr 28 · LinkedIn Premium Event May 5</div></div>
-<div class="grid">
+<div class="header">
+  <div><h1>Good morning, Lorraine</h1><div class="sub">Tuesday, April 14, 2026 · RISE Learning Solutions · Revenue Goal: $600K / Stretch $700K</div></div>
+</div>
+<div class="ooo-bar">OOO Thu–Fri Apr 16–17 (Birthday) — Wrap anything time-sensitive by Wed EOD</div>
+<div class="wrap">
 
-<div class="card full">
-<h2>🎯 What to Do First</h2>
-<div class="item"><span class="pill red">NOW</span><div><strong>Verify Meagan completed newsletter review</strong> — "Review newsletter with event inclusion" was due TODAY before Mahea schedules the Apr 15 send. Confirm in Asana. <a href="https://app.asana.com/1/1210774242380505/task/1213922392397679">↗</a></div></div>
-<div class="item"><span class="pill red">URGENT</span><div><strong>Sheril James (Apex Group) just replied</strong> — Women Accelerator Network details for your call TOMORROW Apr 15. Read thread "Apex Group x Lorraine K. Lee" before EOD to prep.</div></div>
-<div class="item"><span class="pill orange">TODAY · 3 calls</span><div><strong>Discovery calls</strong> — Lamiaa 10am (intro via Matt Abrahams), Jacklyn/Box 10:30am ($1K budget, virtual), Shane/Velsoft 11am (eLearning partnership). Review briefs before each.</div></div>
-<div class="item"><span class="pill blue">TOMORROW</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong on WhatsApp</a> — Re: intros to Rebecca Krouse (CPO), Natalie King (L&D), Kristie Kuo. Block set ✓ 10am Apr 15.</div></div>
+<div class="card">
+<h2>1 · What To Do First</h2>
+<div class="hi">🔴 <strong>Review newsletter with event inclusion</strong> — DUE TODAY before Mahea schedules Apr 15 send · <a href="https://app.asana.com/1/1210774242380505/task/1213922392397679">Asana</a></div>
+<div class="hi">🎯 <strong>Affirm coaching proposal</strong> sent Apr 13 to Kellee Van Horne (Sophie + Alex bi-weekly sessions thru June). Watch inbox for signature.</div>
+<div class="hi">📅 <strong>Tomorrow: 6 discovery calls back-to-back</strong> (8:30am–noon) + Jasmine Wong follow-up block at 10am. Review your notes tonight.</div>
+<div class="hi">💼 <strong>ServiceNow</strong> — Adam Sones responded positively Apr 13. Meagan to schedule next call.</div>
 </div>
 
 <div class="card">
-<h2>📅 Today's Schedule + Prep</h2>
-<div class="item"><span class="time">8:00am</span><div>Check Email + <strong>Call Katie Lee</strong></div></div>
-<div class="item"><span class="time">8:30am</span><div>✨ <strong>RISE Team Meeting</strong> — <a href="https://docs.google.com/document/d/179NXOl7GPQCaGetVeysvJI0mYwogG7wtzj0y0jBwYOs/edit">agenda</a> · Flag Meagan's 5 overdue tasks</div></div>
-<div class="item"><span class="time">9:30am</span><div>CCC 1-on-1 support call</div></div>
-<div class="item"><span class="time">10:00am</span><div>🤝 <strong>Lamiaa &lt;&gt; Lorraine</strong> — Intro via Matt Abrahams · communication/thought leadership</div></div>
-<div class="item"><span class="time">10:30am</span><div>🤝 <strong>Jacklyn Tanarov / Box</strong> — Discovery. Budget $1K virtual. Source: Her Summit. <em>Qualify budget first.</em></div></div>
-<div class="item"><span class="time">11:00am</span><div>🤝 <strong>Shane Sponagle / Velsoft</strong> — eLearning partnership. Budget unclear. Meagan asked for context Apr 7.</div></div>
-<div class="item"><span class="time">1:00pm</span><div>Mohammed priority list + Aneesh catch-up (through 4pm) + 🚨 Business Dev 1:30pm</div></div>
-<div class="item"><span class="time">2:45pm</span><div>🏢 Wisprflow office visit — 444 Townsend St SF</div></div>
-<div class="item"><span class="time">TOMORROW</span><div style="color:#c0392b">📞 <strong>Apex Group (Sheril)</strong> — Women Accelerator Network. She just replied. PREP NEEDED.</div></div>
+<h2>2 · Schedule + Prep</h2>
+<div class="srow"><div class="t">8:00am</div><div>CHECK EMAIL · call katie lee</div></div>
+<div class="srow"><div class="t">8:30am</div><div>✨ RISE Team Meeting (Touch Base)</div></div>
+<div class="srow"><div class="t">9:30am</div><div>CCC 1-on-1 support request</div></div>
+<div class="srow"><div class="t">10:30am</div><div>🤝 Jacklyn x Lorraine — Discovery Call</div></div>
+<div class="srow"><div class="t">11:00am</div><div>🤝 Shane x Lorraine — Discovery Call (Velsoft eLearning)</div></div>
+<div class="srow"><div class="t">1:00pm</div><div>Mohammed priority list + Aneesh catch-up</div></div>
+<div class="srow"><div class="t">1:30pm</div><div>🚨 Business Development block</div></div>
+<div class="srow"><div class="t">3:00pm</div><div>Visit Wisprflow office</div></div>
+<p style="font-size:11px;color:#888;margin-top:8px">Tomorrow Apr 15: Sheril/Apex Group WAN 9:30am · Apr 23: Review presentation outline · Apr 28: BSci keynote (9am)</p>
 </div>
 
 <div class="card">
-<h2>📬 Priority Emails</h2>
-<div class="item"><span class="pill red">PREP</span><div><strong>Sheril James — Apex Group</strong> just replied with Women Accelerator Network details for tomorrow's call. Read + prep talking points before EOD.</div></div>
-<div class="item"><span class="pill orange">RESPOND</span><div><strong>AbbVie — Nicole Jamin</strong> (Manager, Release Mgmt) LinkedIn invite pending. Enterprise pharma = worth accepting.</div></div>
-<div class="item"><span class="pill blue">REMINDER</span><div><strong>CNBC Make It Book Club</strong> — Follow up with Stav about Unforgettable Presence for next book club round. Superhuman reminder fired today.</div></div>
-<div class="item"><span class="pill blue">REMINDER</span><div><strong>Lilli</strong> — Check if she and Marc aligned. Offer proposal draft. Superhuman reminder.</div></div>
-<div class="item"><span class="pill blue">REMINDER</span><div><strong>Robert</strong> — 2026 speaking opps follow-up. How did March program land? Superhuman reminder.</div></div>
-<div class="item"><span class="pill green">RESOLVED</span><div>Manychat old reply automation fixed by support. No action needed.</div></div>
+<h2>3 · Priority Emails (24h)</h2>
+<div class="row"><div>💼 <strong>Affirm</strong> — Coaching proposal sent (Kellee Van Horne). Sophie+Alex sessions thru June. <span class="badge grn">Awaiting signature</span></div></div>
+<div class="row"><div>💼 <strong>ServiceNow</strong> — Adam Sones engaged on educator community series (Apr 13). <span class="badge blue">Hot lead</span></div></div>
+<div class="row"><div>🎤 <strong>IPMA May 6</strong> — Meagan locking in session time with Morgan. Waiting on calendar invite. <span class="badge yel">Pending</span></div></div>
+<div class="row"><div>🎤 <strong>BSci 4/28 Keynote</strong> — Meagan sent slide format screenshot + followed up on book orders. <span class="badge blue">On track</span></div></div>
+<div class="row"><div>🎬 <strong>MasterClass Press</strong> — Tawnya Bear (MasterClass Comms) intro'd; Meagan looped in. <span class="badge blue">Meagan handling</span></div></div>
+<div class="row"><div>🎙️ <strong>Beacons Panel Apr 21</strong> — Confirmed participation. Asked for Qs in advance. <span class="badge grn">Confirmed</span></div></div>
+<div class="row"><div>💸 <strong>Her Workplace Invoice #250</strong> ($6,237.43) — Mahea followed up Apr 10+13. Sponsor hasn't paid. <span class="badge red">Overdue</span></div></div>
 </div>
 
-<div class="card full">
-<h2>👥 Team Commitments</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-<div>
+<div class="card">
+<h2>4 · Team Commitments</h2>
 <h3>With Deadlines</h3>
-<div class="cd"><strong>Meagan</strong> — MasterClass Launch <span class="pill orange">Apr 17</span> <a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350">↗</a></div>
-<div class="cd"><strong>Meagan</strong> — Create presentation outline for Lorraine <span class="pill blue">Apr 22</span> <a href="https://app.asana.com/1/1210774242380505/task/1214032545852231">↗</a></div>
-<div class="cd"><strong>Meagan</strong> — Write final LinkedIn promo post <span class="pill blue">Apr 28</span> <a href="https://app.asana.com/1/1210774242380505/task/1213922342428126">↗</a></div>
-<div class="cd" style="border-color:#c0392b;background:#fff8f8"><strong>Mahea</strong> — Invoice #250 Her Workplace $6,237.43 <span class="pill red">OVERDUE Apr 10</span> — 2nd follow-up sent Apr 13. No payment yet.</div>
-</div>
-<div>
+<div class="row"><div><strong>Mahea</strong> — Invoice #250 follow-up (Her Workplace $6,237.43) · Due Apr 10 <span class="badge red">OVERDUE</span></div></div>
+<div class="row"><div><strong>Meagan</strong> — IPMA May 6 session time lock-in with Morgan · Targeting before Apr 21 <span class="badge yel">Pending</span></div></div>
+<div class="row"><div><strong>Meagan</strong> — MasterClass Apr 17 launch coordination with Tawnya · No firm date set <span class="badge blue">In progress</span></div></div>
 <h3>Outstanding (No Deadline)</h3>
-<div class="co"><strong>Meagan</strong> — Velsoft eLearning follow-up (asked Apr 7 — 7 days ago, no deadline set). <em>Consider asking for a deadline.</em></div>
-<div class="co"><strong>Meagan</strong> — IPMA scheduling: waiting on Morgan for June 3 calendar invite (asked today). <em>Consider asking for a deadline.</em></div>
-<div class="co"><strong>Mahea</strong> — Kim website pageview limit fix (bumped Apr 8 — 6 days ago, still unresolved). <em>Consider asking for a deadline.</em></div>
+<div class="outstanding"><strong>Meagan</strong> — Velsoft eLearning partnership: said "will follow up for more context" (Apr 7) · 7 days ago · <em>Consider asking for a deadline.</em></div>
+<div class="outstanding"><strong>Mahea</strong> — Website pageview limit: bumped developer Kim Apr 8, no response · 6 days ago · <em>Consider asking for a deadline.</em></div>
+<div class="outstanding"><strong>Mahea</strong> — Forbes article + Aaron's book co-promotion: Lorraine asked, no status update · <em>Consider asking for a deadline.</em></div>
 </div>
+
+<div class="card">
+<h2>5 · Asana — Open Tasks (14-day window)</h2>
+<div class="row"><div>🎯 <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong on Whatsapp</a> <span class="badge blue">Block: Apr 15 10am</span></div><div class="meta">Apr 15</div></div>
+<div class="row"><div>📋 <a href="https://app.asana.com/1/1210774242380505/task/1214032545852235">Lorraine to review presentation outline</a> <span class="badge blue">Block: Apr 23 9:30am</span></div><div class="meta">Apr 23 · 45 min</div></div>
+<div class="row"><div>🔍 <a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1212801701499008">Review Creator Engines</a> <span class="badge blue">Block: Apr 24 9:15am</span></div><div class="meta">Apr 24</div></div>
+<div class="row"><div>🎬 <a href="https://app.asana.com/1/1210774242380505/project/1214060742877814/task/1214060245952281">Filming Day – Week of Apr 27</a></div><div class="meta">Apr 27 · 60 min</div></div>
+<div class="row dim"><div>📧 <a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1214016214198744">Review newsletter folder for replies</a> <span class="badge yel">LOW</span></div><div class="meta">Apr 17</div></div>
+<div class="row dim"><div>🔑 <a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213935492459940">Check Kondo: Lorraine Tab</a> <span class="badge red">OVERDUE</span> <span class="badge yel">LOW</span></div><div class="meta">Was Apr 10</div></div>
+</div>
+
+<div class="g2">
+<div class="card">
+<h2>6 · Biz Dev</h2>
+<div class="row"><div>🔥 <strong>Affirm</strong> — Coaching continuation (proposal sent)</div></div>
+<div class="row"><div>🔥 <strong>ServiceNow</strong> — Educator series (warm)</div></div>
+<div class="row"><div>📞 <strong>Apex Group WAN</strong> — Sheril call tomorrow</div></div>
+<div class="row"><div>📞 <strong>Velsoft</strong> — eLearning partnership (qualifying)</div></div>
+<div class="row"><div>💬 <strong>Corinne</strong> — Coaching inquiry ($5K+, Meagan qualifying)</div></div>
+<div class="row"><div>📍 <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213974557616297">pClub</a></div></div>
+</div>
+<div class="card">
+<h2>7 · Speaking</h2>
+<div class="row"><div>✅ <strong>BSci Apr 28</strong> — Confirmed. Logistics underway.</div></div>
+<div class="row"><div>✅ <strong>IPMA May 6</strong> — Locking in time</div></div>
+<div class="row"><div>🎬 <strong>MasterClass Apr 17</strong> — Launch (Meagan handling)</div></div>
+<div class="row"><div>⏳ <strong>LI Premium Event May 5</strong> — Promo push this week</div></div>
+<div class="row"><div>⏳ <strong>Beacons Panel Apr 21</strong> — Confirmed</div></div>
 </div>
 </div>
 
 <div class="card">
-<h2>✅ Asana — Your Tasks</h2>
-<div class="item"><span class="pill blue">Apr 15</span><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214011204300248">Follow up with Jasmine Wong on WhatsApp</a><span style="margin-left:auto;font-size:11px;color:#2e7d32">block set ✓</span></div>
-<div class="item"><span class="pill blue">Apr 23</span><a href="https://app.asana.com/1/1210774242380505/task/1214032545852235">Review presentation outline (45 min)</a><span style="margin-left:auto;font-size:11px;color:#2e7d32">block set ✓</span></div>
-<div class="item"><span class="pill blue">Apr 24</span><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1212801701499008">Review Creator Engines</a><span style="margin-left:auto;font-size:11px;color:#2e7d32">block set ✓</span></div>
-<div class="item"><span class="pill gray">LOW · Apr 17</span><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1214016214198744">Review newsletter folder for replies</a></div>
-<div class="item"><span class="pill red">OVERDUE</span><a href="https://app.asana.com/0/1213935492459940/1213935492459940">Check Kondo: Lorraine Tab</a> <span class="pill gray" style="margin-left:auto">LOW priority</span></div>
-<div class="item"><span class="pill blue">May 5</span><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">LinkedIn Premium Event</a> — Newsletter mention starts Apr 15</div>
+<h2>8 · Passive Revenue Roadmap</h2>
+<div class="row"><div>📈 <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">LI Premium Event May 5</a> — Drive registrations this week. Promo Post #2 due week of Apr 20.</div></div>
+<div class="row"><div>💰 <a href="https://app.asana.com/1/1210774242380505/project/1213914805812107/task/1213915875783360">Low-Ticket Product + Funnel</a> — $5K/month math: 63 subs at $80. 0.1% of 332K audience = 332. Explore.</div></div>
+<div class="row"><div>🏢 <a href="https://app.asana.com/1/1210774242380505/project/1213914805812107/task/1213915839595501">Enterprise Multi-Session Series</a> — $20K–$40K/year per client</div></div>
+<div class="row"><div>📚 <a href="https://app.asana.com/1/1210774242380505/project/1213914805812107/task/1213915839438892">License Course Frameworks to L&D</a> — $5K–$15K per license</div></div>
 </div>
 
 <div class="card">
-<h2>🚀 Biz Dev + Speaking Opps</h2>
-<div class="item"><span class="pill red">Apr 28</span><div><strong>Boston Scientific</strong> — Keynote confirmed. Slide preview sent Apr 9. Book orders + logistics ongoing.</div></div>
-<div class="item"><span class="pill red">TOMORROW</span><div><strong>Apex Group — Women Accelerator Network</strong> — Sheril James replied. Global fin-services org. High potential. Call Apr 15.</div></div>
-<div class="item"><span class="pill blue">Jun 3</span><div><strong>IPMA</strong> — Session confirmed. Meagan waiting on Morgan for calendar invite.</div></div>
-<div class="item"><span class="pill gray">QUALIFY</span><div><strong>Box (Jacklyn)</strong> — $1K virtual, TBD date, source: Her Summit. Low budget — qualify or steer to a coaching option.</div></div>
-<div class="item"><span class="pill gray">QUALIFY</span><div><strong>Velsoft (Shane)</strong> — eLearning partnership. Budget unclear. Meagan asked for context Apr 7.</div></div>
-<div class="item"><span class="pill gray">QUALIFY</span><div><strong>Coaching — Corinne</strong> — Inquiry received. Meagan sent $5K+ response Apr 10.</div></div>
+<h2>9 · Did You Know? (CC Tip of the Day — Tip 14)</h2>
+<div class="tip">💡 <strong>When evaluating a new opportunity, ask CC if it's worth your time given your 2026 goals.</strong><br><br>
+You have Velsoft (eLearning), Wisprflow (today), and Beacons panel all in the mix this week. Before saying yes to anything new, paste the details into CC and ask: "Given my $600K revenue goal and current pipeline, is this worth pursuing? What should I find out before committing?"</div>
 </div>
 
 <div class="card">
-<h2>💰 Passive Revenue Roadmap</h2>
-<div class="item"><span class="pill blue">IN MOTION</span><div><strong>LinkedIn Premium Event May 5</strong> — Newsletter features start Apr 15. Promo Post 1 this week. Final post Apr 28–May 1. <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">↗</a></div></div>
-<div class="item"><span class="pill gray">EXPLORE</span><div><strong>Low-ticket digital product ($20–$97)</strong> — $5K/mo = 250 subs @ $20. With 332K LinkedIn, 0.1% = 332 subs. Needs product + funnel + automation.</div></div>
-<div class="item"><span class="pill gray">EXPLORE</span><div><strong>Enterprise Course Licensing ($5K–$15K/license)</strong> — Package frameworks for L&D teams. Create once, sell many. Needs rebrand first.</div></div>
-<div class="item"><span class="pill gray">EXPLORE</span><div><strong>GEO Optimization</strong> — Surface in ChatGPT, Perplexity, AI Overviews. Long-term visibility play.</div></div>
-</div>
-
-<div class="card full">
-<div class="tip">
-<h2 style="color:#084af3;border:none;margin-bottom:8px">💡 Did You Know? — CC Tip for Day 14</h2>
-<p>Before a podcast appearance, ask CC what topics the host covers and what angle you should take. Give it the show name + recent episode list — it'll tell you what themes are trending for that audience and suggest a hook that makes you memorable to their listeners.</p>
-</div>
-</div>
-
-<div class="card full">
-<h2>⚡ Quick Hits</h2>
-<div class="item"><span class="pill blue">ACTION</span><div>At RISE Team Meeting today — flag Meagan's 5 overdue tasks and get a verbal ETA on newsletter review (due today).</div></div>
-<div class="item"><span class="pill blue">ACTION</span><div>Read Sheril's reply and prep 3 talking points for the Apex Group call tomorrow (financial services org, free global membership community for women).</div></div>
-<div class="item"><span class="pill orange">WATCH</span><div>Her Workplace invoice ($6,237.43) is 4 days overdue. Mahea is chasing. If sponsor doesn't pay by EOW, you may need to send a direct follow-up.</div></div>
+<h2>10 · Quick Hits</h2>
+<div class="row"><div>⚡ Approve newsletter draft before 10am — Mahea schedules Apr 15 send · <a href="https://app.asana.com/1/1210774242380505/task/1213922392397679">Asana</a></div></div>
+<div class="row"><div>📱 Jasmine Wong WA follow-up block is Apr 15 10am — review your Asana notes first</div></div>
+<div class="row"><div>🎯 Approve final LinkedIn promo post by Apr 29 · <a href="https://app.asana.com/1/1210774242380505/task/1213941967498266">Asana</a></div></div>
 </div>
 
 </div>
