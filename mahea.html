@@ -1,114 +1,125 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mahea — Mon Apr 13</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahea — Tue Apr 14, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#f7f9fa;color:#1a2e2d;font-size:13px}
-.hdr{background:#2D5F5D;color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
-.hdr h1{font-size:18px;font-weight:700}.hdr .sub{font-size:11px;opacity:.8;margin-top:2px}
-.bx{background:#6B9E9A;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;margin-left:6px}
-.bxr{background:#fff2;color:#ffd;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;margin-left:6px;border:1px solid #fff4}
-.wrap{max-width:940px;margin:0 auto;padding:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 1px 3px rgba(45,95,93,.1)}
-.card h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2D5F5D;margin-bottom:9px;border-bottom:2px solid #2D5F5D22;padding-bottom:5px}
-.row{padding:5px 0;border-bottom:1px solid #eef2f2;line-height:1.45;font-size:13px}.row:last-child{border-bottom:none}
-a{color:#2D5F5D;text-decoration:none;font-weight:500}a:hover{text-decoration:underline}
-.t{font-size:10px;padding:1px 5px;border-radius:6px;font-weight:700;display:inline-block;margin-left:3px}
-.hot{background:#fff0f0;color:#c00}.warm{background:#fff8e6;color:#b45}.due{background:#e8f5f4;color:#2D5F5D;border:1px solid #6B9E9A44}
-.ok{background:#e8f5e9;color:#2e7d32}.ovr{color:#c00;font-weight:700}.full{grid-column:1/-1}
-.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
-.sbox{background:#fff;border:1px solid #d0e8e7;border-radius:6px;padding:10px;text-align:center;box-shadow:0 1px 2px rgba(45,95,93,.07)}
-.snum{font-size:22px;font-weight:700;color:#2D5F5D;display:block}.slbl{font-size:10px;color:#6B9E9A;display:block;margin-top:2px}
-.nd{background:#fffbeb;border-left:2px solid #6B9E9A;padding:5px 8px;border-radius:3px;margin:3px 0;font-size:12px}
-.clbl{font-size:10px;font-weight:700;text-transform:uppercase;color:#777;margin:6px 0 3px}
-.tip{background:#e8f5f4;border-left:3px solid #2D5F5D;padding:10px;border-radius:5px;font-size:13px}
-.alert{background:#fff0f0;border-left:3px solid #c00;padding:8px 10px;border-radius:4px;margin-bottom:8px;font-size:13px}
-.focus{background:#e8f5f4;border:1px solid #6B9E9A;border-radius:6px;padding:10px;margin-bottom:8px}
-.focus-n{font-size:11px;font-weight:700;color:#2D5F5D;text-transform:uppercase;margin-bottom:4px}</style></head>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#f7f9fa;color:#2c3e50;font-size:14px}
+.top{background:#2D5F5D;color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.top h1{font-size:20px;font-weight:700}.top .sub{font-size:12px;opacity:.8;margin-top:3px}
+.badge{background:#6B9E9A;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;margin-left:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px;max-width:1200px;margin:0 auto}
+.full{grid-column:1/-1}.card{background:#fff;border-radius:10px;padding:15px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2D5F5D;margin-bottom:10px;border-bottom:2px solid #e0eeee;padding-bottom:5px}
+h3{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.4px;margin:8px 0 4px}
+.item{padding:5px 0;border-bottom:1px solid #f0f4f4;display:flex;align-items:flex-start;gap:8px}.item:last-child{border-bottom:none}
+.pill{font-size:10px;font-weight:600;padding:1px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.red{background:#ffe5e5;color:#c0392b}.orange{background:#fff3e0;color:#e65100}.teal{background:#e0eeee;color:#2D5F5D}
+.green{background:#e8f5e9;color:#2e7d32}.gray{background:#f0f0f0;color:#666}
+a{color:#2D5F5D;text-decoration:none;font-weight:500}
+.stat{background:#f0f7f7;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
+.stat .n{font-size:26px;font-weight:700;color:#2D5F5D}.stat .l{font-size:11px;color:#888;margin-top:2px}
+.cd{border-left:3px solid #2D5F5D;padding:5px 10px;margin:3px 0;background:#f0f7f7;border-radius:0 5px 5px 0}
+.co{border-left:3px solid #6B9E9A;padding:5px 10px;margin:3px 0;background:#f4faf9;border-radius:0 5px 5px 0}
+.tip{background:#e8f5f4;border-left:4px solid #2D5F5D;padding:12px;border-radius:0 8px 8px 0}
+.wait{border-left:3px solid #c0392b;padding:5px 10px;margin:3px 0;background:#fff8f8;border-radius:0 5px 5px 0}
+</style>
+</head>
 <body>
-<div class="hdr">
-  <div><h1>🌿 Mahea — Morning Brief</h1><div class="sub">Monday, April 13, 2026 · Content Lead · RISE Learning Solutions</div></div>
-  <div><span class="bxr">Invoice OVERDUE</span><span class="bx">Website at limit</span></div>
-</div>
-<div class="wrap">
-
-<div class="stat">
-  <div class="sbox"><span class="snum">Apr 15</span><span class="slbl">Newsletter Due</span></div>
-  <div class="sbox"><span class="snum" style="color:#c00">100%</span><span class="slbl">Pageview Limit</span></div>
-  <div class="sbox"><span class="snum" style="color:#c00">$6,237</span><span class="slbl">Invoice Overdue</span></div>
-  <div class="sbox"><span class="snum">Apr 17</span><span class="slbl">Form Fix Due</span></div>
-</div>
-
+<div class="top"><div><h1>Good morning, Mahea <span class="badge">Tue Apr 14</span></h1><div class="sub">RISE Learning Solutions — Content · mahea@lorraineklee.com</div></div><div style="text-align:right;font-size:12px;opacity:.85">Newsletter sends TOMORROW · 2 overdue</div></div>
 <div class="grid">
 
 <div class="card full">
-  <h2>🎯 Focus Zone — Top 2</h2>
-  <div class="focus">
-    <div class="focus-n">#1 · Revenue Impact</div>
-    <strong>Newsletter — LinkedIn Premium Event Mention (Apr 15)</strong> — This is the first newsletter mention of the May 5 Premium Event (feature, not PS). Promo Post 1 also going out this week on LinkedIn + IG. Make sure both are ready. <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1213922342449580">Event Asana →</a>
-  </div>
-  <div class="focus">
-    <div class="focus-n">#2 · Lorraine Flagged</div>
-    <strong>Fix LinkedIn Guide Friends & Family form</strong> <span class="t hot">DUE APR 17</span> — Multiple people reporting errors on the Ultimate Guide to LinkedIn signup form. Find the bug, fix it. DEADLINE marker on calendar. <a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">Asana →</a>
-  </div>
+<h2>Stats</h2>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<div class="stat"><div class="n" style="color:#c0392b">2</div><div class="l">Overdue</div></div>
+<div class="stat"><div class="n">3</div><div class="l">Due tomorrow</div></div>
+<div class="stat"><div class="n">5</div><div class="l">Due Thu Apr 17</div></div>
+<div class="stat"><div class="n" style="color:#e65100">1</div><div class="l">Invoice overdue</div></div>
+</div>
 </div>
 
 <div class="card">
-  <h2>🔔 Lorraine Is Waiting On You</h2>
-  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">LinkedIn Guide F&F form fix</a> <span class="t hot">DUE Apr 17</span> — Multiple error reports from real users. Fix and confirm to Lorraine.</div>
-  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213921775341517">Forbes article + Erin's book co-promotion?</a> — Lorraine asked Apr 3. Is this on the social calendar? Check and report back. No due date.</div>
-  <div class="row"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213935512780326">Affiliate links tracker — Kondo missing</a> — Is the current spreadsheet up to date? Lorraine flagged. No due date. <a href="https://docs.google.com/spreadsheets/d/1Z6zAuWbL9w6bZTQxIlr2wfgGe2wvwk3NeOR_IqHK4-I/edit">Sheet →</a></div>
+<h2>Focus Zone — Top 2</h2>
+<div class="item"><span class="pill red">URGENT · Apr 15</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213922342320365">Make newsletter changes + schedule (Wed April 15 send)</a> — Incorporate Meagan's review. Newsletter sends TOMORROW.</div></div>
+<div class="item"><span class="pill orange">Apr 15</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213986513522360">Newsletter Feature #1</a> — Finalize before the Apr 15 send.</div></div>
 </div>
 
 <div class="card">
-  <h2>📋 Your Open Commitments</h2>
-  <div class="clbl">With Deadlines</div>
-  <div class="row"><strong>Elevate Her Summit invoice $6,237.43</strong> — <span class="ovr">Overdue since Apr 10.</span> Mahea followed up Apr 10. Waiting for Marilynn at Her Workplace. <span class="t hot">CHASE NOW</span></div>
-  <div class="row"><strong>LinkedIn Guide F&F form fix</strong> <span class="t due">Apr 17</span> — DEADLINE on Current Projects calendar.</div>
-  <div class="clbl" style="margin-top:6px">Outstanding (No Deadline Set)</div>
-  <div class="nd"><strong>Website pageview / WPEngine bot filtering</strong> — Mahea bumped Kim on Apr 8 (5 days ago). No resolution. <em>Consider asking for a deadline or escalating.</em></div>
-  <div class="nd"><strong>RAPP / Atrium invoice portal</strong> — Profile filled, invoice submitted Apr 9. Kai confirmed receipt. <em>Likely resolved — verify payment status.</em></div>
+<h2>Lorraine Is Waiting On You</h2>
+<div class="wait"><a href="https://app.asana.com/1/1210774242380505/task/1214060743536159">💬 [LORRAINE] IG reels for review</a> — Assigned today. Check Asana for client feedback or "looks good" confirmation.</div>
+<div class="wait"><a href="https://app.asana.com/1/1210774242380505/task/1213994691196776">Newsletter quote for upcoming edition</a> — Due Apr 17.</div>
+<div class="wait"><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214016227547118">Boston Scientific Feedback Form</a> — Due Apr 15. Event is Apr 28.</div>
+<div class="wait"><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">LinkedIn Guide for Friends &amp; Family form is broken</a> — Due Apr 17. Multiple reports. Fix ASAP.</div>
+</div>
+
+<div class="card full">
+<h2>Your Open Commitments</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div>
+<h3>With Deadlines</h3>
+<div class="cd" style="border-color:#c0392b;background:#fff8f8"><strong>Invoice #250 — Her Workplace ($6,237.43)</strong> — <strong style="color:#c0392b">OVERDUE Apr 10</strong>. 2 follow-ups sent (Apr 10 + Apr 13). Waiting on Marilynn — sponsor hasn't paid. Escalate today if no response.</div>
+</div>
+<div>
+<h3>Outstanding (No Deadline Set)</h3>
+<div class="co"><strong>Kim — website pageview limit fix</strong> — You bumped Apr 8 (6 days ago). Site is at 100% of its pageview limit. No resolution confirmed. <em>Set a deadline or close the loop.</em></div>
+</div>
+</div>
 </div>
 
 <div class="card">
-  <h2>✉️ Superhuman Threads</h2>
-  <div class="row"><strong>Elevate Her Summit / Marilynn</strong> — Invoice $6,237.43 due Apr 10. Mahea followed up. No payment yet. <a href="https://mail.google.com/mail/u/0/#inbox/19d78c5a45b53676">View →</a></div>
-  <div class="row"><strong>RAPP / Kai Daniel (Omnicom)</strong> — Invoice submitted Apr 9. Kai confirmed receipt. Monitor. <a href="https://mail.google.com/mail/u/0/#inbox/19d73d3cfd9b26a0">View →</a></div>
-  <div class="row"><strong>WPEngine / Kim Ian</strong> — Lorraine asked about bot filtering Apr 13. You bumped Apr 8. Kim's analysis: mix of organic + bots. <a href="https://mail.google.com/mail/u/0/#inbox/19d878f2ed30381e">Thread →</a></div>
-  <div class="row"><strong>VaynerMedia / Gusto UGC</strong> — Ella Lammin circled back Apr 10. Aneesh engaging. You're CC'd. Monitor progress. <a href="https://mail.google.com/mail/u/0/#inbox/19d78c81864b1239">View →</a></div>
-  <div class="row"><strong>Q2 Analytics → Aneesh</strong> — Q1 screenshots uploaded Apr 6. <a href="https://drive.google.com/drive/folders/1e1mlp3sKCvmWAZAHlIHixlBvcoGXRw6w">Drive folder →</a></div>
+<h2>Superhuman Threads</h2>
+<div class="item"><span class="pill red">FOLLOW UP</span><div><strong>Her Workplace — Invoice #250 ($6,237.43)</strong> — Overdue 4 days. You followed up twice. Consider asking Lorraine to send a direct note if no response today.</div></div>
+<div class="item"><span class="pill teal">CONFIRM</span><div><strong>RAPP / OMC — Invoice submitted</strong> — You submitted Apr 9. Follow up to confirm payment processing is underway.</div></div>
+<div class="item"><span class="pill orange">OPEN</span><div><strong>Kim — website pageview limit</strong> — Bumped Apr 8. What's the status? The site is at 100% limit — this may be affecting traffic now.</div></div>
 </div>
 
 <div class="card">
-  <h2>🗓️ This Week</h2>
-  <div class="row">📧 <strong>Newsletter — Apr 15</strong>: Feature mention of LinkedIn Premium Event (May 5). First push.</div>
-  <div class="row">📱 <strong>LinkedIn + IG Promo Post 1</strong> — Week of Apr 13. Drive registrations for May 5 event.</div>
-  <div class="row">🔧 <strong>Fix LI Guide F&F form</strong> — Due Apr 17. DEADLINE on calendar.</div>
-  <div class="row">💰 <strong>Chase Marilynn for $6,237.43</strong> — Elevate Her Summit. Overdue since Apr 10.</div>
-  <div class="row">🌐 <strong>WPEngine bot filter</strong> — Follow up with Kim on resolution timeline.</div>
+<h2>Overdue Triage</h2>
+<div class="item"><span class="pill red">1 day</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213922342478856">Add event to Career Bites newsletter</a> — LinkedIn Premium Event mention (May 5). Overdue since Apr 13.</div></div>
+<div class="item"><span class="pill red">1 day</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1213199981431218">Figure out wtf is happening w Google permissions</a> — Blocking someone's access. Overdue since Apr 13.</div></div>
+</div>
+
+<div class="card full">
+<h2>This Week</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+<div><h3>Tomorrow · Apr 15</h3>
+<div class="item" style="padding:3px 0"><span class="pill red">!</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213922342320365">Newsletter changes + schedule</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill orange">!</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213986513522360">Newsletter Feature #1</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill orange">!</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214016227547118">Boston Scientific Feedback Form</a></div></div></div>
+<div><h3>Thursday · Apr 17</h3>
+<div class="item" style="padding:3px 0"><span class="pill teal"></span><div><a href="https://app.asana.com/1/1210774242380505/task/1213994691196776">Newsletter quote for upcoming edition</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill teal"></span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1213922154455263">LinkedIn Guide form broken — fix</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill teal"></span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399968/task/1213703411153499">Slides for Live sessions 2 &amp; 3</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill gray"></span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385354">MC BTS video</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill gray"></span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1212420682548772">Rob Hartnett — YT thumbnail</a></div></div></div>
+<div><h3>Apr 22–24</h3>
+<div class="item" style="padding:3px 0"><span class="pill teal">Apr 22</span><div><a href="https://app.asana.com/1/1210774242380505/task/1213986513522361">Newsletter Feature #2</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill teal">Apr 24</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1214039516553893">Update LinkedIn Testimonials</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill teal">Apr 24</span><div><a href="https://app.asana.com/1/1210774242380505/task/1214032545852233">Design presentation outline</a></div></div>
+<div class="item" style="padding:3px 0"><span class="pill gray">Apr 17</span><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399982/task/1211774747995446">Lorraine's Podcasts to Spotify &amp; YT</a></div></div></div>
+</div>
 </div>
 
 <div class="card">
-  <h2>📦 Overdue Triage</h2>
-  <div class="row"><span class="ovr">OVERDUE</span> Elevate Her Summit invoice — client payment not received. Chase.</div>
-  <div class="row"><span class="t due" style="background:#e8f5f4">Pending</span> Forbes article co-promotion — Lorraine asked Apr 3. No answer given yet.</div>
-  <div class="row"><span class="t due" style="background:#e8f5f4">Pending</span> Affiliate links tracker update — Kondo not in spreadsheet. Lorraine flagged.</div>
+<h2>Backlog</h2>
+<div class="item"><span class="pill gray">BACKLOG</span><div>Course slides — low priority per team guidance</div></div>
+<div class="item"><span class="pill gray">EXPLORE</span><div>Aneesh quarterly analytics template (Wishly format)</div></div>
 </div>
 
 <div class="card">
-  <h2>📚 Backlog</h2>
-  <div class="row">Versant Media (Introverts course) IG collab — launch late May. Lorraine following up.</div>
-  <div class="row">Q2 Analytics package for Aneesh (Wishly) — screenshots uploaded, quarterly report TBD.</div>
-  <div class="row">Course slides (Unforgettable Presence) — no active deadline.</div>
-  <div class="row">Affiliate links tracker audit — add Kondo, verify all links current.</div>
+<h2>Ownership Prompt</h2>
+<p style="color:#555;line-height:1.6;font-size:13px">Newsletter sends TOMORROW — your two jobs today are to confirm newsletter changes are locked with Meagan's feedback, and finalize Feature #1. The LinkedIn Guide form is also urgent (multiple people affected). Everything else on Apr 17 can wait until those are done.</p>
 </div>
 
-<div class="card">
-  <h2>🙋 Ownership Prompt</h2>
-  <div style="padding:8px;background:#e8f5f4;border-radius:6px;font-size:13px">When you look at today's list, what's the one thing that — if you don't do it today — affects revenue, Lorraine's rep, or a real person? Start there.</div>
+<div class="card full">
+<div class="tip">
+<h2 style="color:#2D5F5D;border:none;margin-bottom:6px">CC &amp; Automation Tip — Day 14</h2>
+<p style="line-height:1.5"><strong>If the website hits its pageview limit, ask CC which pages could be cached or optimized.</strong> Give it your site structure + traffic patterns — it'll tell you which high-traffic pages to serve statically or move to a CDN. <strong style="color:#c0392b">This is happening right now — your site is at 100%.</strong></p>
+</div>
 </div>
 
-<div class="card">
-  <h2>🤖 CC & Automation Tip — Day 13</h2>
-  <div class="tip">To adapt a LinkedIn post for IG, give CC both platform constraints and ask it to reformat. Example: "Here's a LinkedIn post — rewrite it for Instagram: max 2200 chars, no hashtags in body, hook in first line, Lorraine's voice."</div>
 </div>
-
-</div></div></body></html>
+</body>
+</html>
