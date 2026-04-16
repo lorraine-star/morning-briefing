@@ -1,95 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Meagan Babanao — Daily Briefing · Apr 16, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#1a1a18;color:#c8c0b4;font-size:14px}header{background:#111110;border-bottom:1px solid #2a2a28;padding:18px 28px;display:flex;justify-content:space-between;align-items:center}.logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:#c9a96e;font-weight:600}.meta{font-size:12px;color:#6b6860}.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;padding:18px 28px}.card{background:#222220;border-radius:10px;padding:14px;border:1px solid #2e2e2c}.card h2{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#c9a96e;margin-bottom:8px}.full{grid-column:1/-1}.half{grid-column:span 2}.pill{display:inline-block;padding:2px 7px;border-radius:20px;font-size:11px;font-weight:600}.red{background:#3d1515;color:#f87171}.yellow{background:#3d3000;color:#fbbf24}.blue{background:#0f2044;color:#60a5fa}.green{background:#0f2e1a;color:#4ade80}.gold{background:#3d2a00;color:#c9a96e}.row{display:flex;justify-content:space-between;align-items:flex-start;padding:5px 0;border-bottom:1px solid #2a2a28}.row:last-child{border-bottom:none}.tag{font-size:11px;color:#6b6860;margin-top:1px}.hl{font-size:13px;font-weight:500;color:#c8c0b4}a{color:#c9a96e;text-decoration:none;font-size:12px}.waiting-item{padding:6px 0;border-bottom:1px solid #2a2a28}.waiting-item:last-child{border-bottom:none}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meagan's Morning Briefing — April 16, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1a18;color:#e8e0d0;font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.6;padding:28px;max-width:920px;margin:0 auto}
+h1{font-size:2.1rem;font-weight:300;color:#c9a96e;letter-spacing:0.05em;margin-bottom:4px}
+.date{color:#6a6050;font-size:0.9rem;margin-bottom:32px;font-style:italic}
+section{margin-bottom:26px;border-top:1px solid #282620;padding-top:20px}
+h2{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.18em;color:#c9a96e;margin-bottom:14px;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-box{background:#1f1f1d;border:1px solid #282620;border-radius:4px;padding:16px}
+.stat-label{font-size:0.72rem;color:#6a6050;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px}
+.stat-val{font-size:1.6rem;color:#c9a96e;font-weight:300}
+.stat-sub{font-size:0.8rem;color:#6a6050;margin-top:3px}
+.progress-bar{height:3px;background:#282620;border-radius:2px;margin-top:10px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#c9a96e,#e0c882);border-radius:2px}
+.start-here{background:#1f1f1d;border-left:3px solid #c9a96e;padding:16px 20px;border-radius:0 4px 4px 0}
+.start-task{font-size:1.05rem;font-weight:600;color:#f0e8d8;margin-bottom:6px}
+.start-why{color:#8a7a68;font-size:0.88rem;font-style:italic}
+table{width:100%;border-collapse:collapse;font-size:0.88rem}
+thead tr{border-bottom:1px solid #282620}
+th{text-align:left;padding:6px 10px;color:#6a6050;font-weight:400;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em}
+td{padding:8px 10px;border-bottom:1px solid #222220;vertical-align:top}
+.badge{display:inline-block;font-size:0.68rem;padding:2px 8px;border-radius:20px;letter-spacing:0.03em;font-weight:400}
+.badge-warn{background:#2a1e08;color:#c9a96e;border:1px solid #5a4020}
+.badge-ok{background:#182218;color:#70b070;border:1px solid #305030}
+.flag{color:#c07060;font-size:0.78rem;font-weight:600}
+.tip-box{background:#1f1f1d;border:1px solid #282620;border-radius:4px;padding:16px 18px}
+.tip-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.15em;color:#c9a96e;margin-bottom:8px}
+.tip-body{font-size:0.88rem;color:#b0a898;line-height:1.7}
+.thread-item{padding:9px 0;border-bottom:1px solid #222220;font-size:0.88rem}
+.thread-item:last-child{border-bottom:none}
+.thread-subj{color:#e8e0d0;font-weight:600}
+.thread-meta{color:#6a6050;font-size:0.8rem;margin-top:2px}
+.dot-green::before{content:"● ";color:#70b070}
+.dot-yellow::before{content:"● ";color:#d4a840}
+.dot-red::before{content:"● ";color:#c06050}
+.note{color:#6a6050;font-size:0.82rem;font-style:italic;margin-top:10px}
+</style>
 </head>
 <body>
-<header>
-<div><div class="logo">Meagan Babanao · RISE Ops Lead</div><div style="font-size:11px;color:#6b6860;margin-top:2px">meagan@lorraineklee.com · Client &amp; Speaking · Proposals · Lead Follow-ups · Course Marketing</div></div>
-<div class="meta">Thursday, April 16, 2026 · Lorraine OOO 🎂 (returns Apr 18)</div>
-</header>
-<div class="grid">
-<div class="card full" style="border-left:4px solid #c9a96e;background:#1d1a14">
-<h2>🎯 One Thing Today</h2>
-<div style="font-size:16px;font-family:'Cormorant Garamond',serif;font-weight:700;color:#c9a96e;margin-bottom:4px">Any Speaking Client — due TODAY (overdue)</div>
-<div style="font-size:13px;color:#c8c0b4">This task is overdue as of Apr 16. Identify and action the highest-priority speaking client in the pipeline. Check inbox + pipeline tracker. <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214061690862822">→ Asana</a></div>
+<h1>Meagan's Morning Briefing</h1>
+<div class="date">Thursday, April 16, 2026 — Lorraine is OOO today &amp; tomorrow (birthday!)</div>
+
+<section>
+<h2>§1 — Stats</h2>
+<div class="row">
+  <div class="stat-box">
+    <div class="stat-label">Revenue Target</div>
+    <div class="stat-val">$600K</div>
+    <div class="stat-sub">Stretch goal: $700K</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
+    <div class="stat-sub" style="margin-top:6px">~$330K est. YTD · based on last pipeline review</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-label">Pipeline Highlights</div>
+    <div class="stat-val" style="font-size:1rem;margin-top:6px">Active deals in flight</div>
+    <div class="stat-sub" style="margin-top:8px">Seismic · IPMA (May 6 + Jun 3) · Box AAPI · Boston Scientific (Apr 28) · Heartland Bank · ServiceNow</div>
+    <div class="stat-sub" style="margin-top:6px">New: Velsoft eLearning partnership · MasterClass (May 7)</div>
+  </div>
 </div>
-<div class="card">
-<h2>🔴 Lorraine Is Waiting On You</h2>
-<div class="waiting-item"><span class="pill red">🔴 3 days</span><div style="margin-top:4px"><div class="hl">Email: "test: wanted to run something by you!"</div><div class="tag">Lorraine sent Apr 13 · Draft outreach email to Carlo Dela Fuente (Cisco) · No reply from Meagan visible</div></div></div>
-<div class="waiting-item"><span class="pill red">🔴 Overdue</span><div style="margin-top:4px"><div class="hl">Asana: Any Speaking Client</div><div class="tag">Due Apr 16 (today) · Lorraine is follower · No activity</div></div></div>
-<div class="waiting-item"><span class="pill yellow">🟡 Tomorrow</span><div style="margin-top:4px"><div class="hl">Asana: MasterClass Launch</div><div class="tag">Due Apr 17 · <a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350">Asana</a> · Lorraine is follower · MasterClass team reaching out early May</div></div></div>
-<div class="waiting-item"><span class="pill yellow">🟡 Tomorrow</span><div style="margin-top:4px"><div class="hl">Asana: Follow up with market research contacts</div><div class="tag">Due Apr 17 · Diana Steen (ASICS), Carlo (Cisco) · <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214064402410134">Asana</a></div></div></div>
-<div class="waiting-item"><span class="pill yellow">🟡 Apr 20</span><div style="margin-top:4px"><div class="hl">Asana: Send Helen Kwok (L'Oreal) materials</div><div class="tag">Due Apr 20 · Use helen.c.kwok@gmail.com (NOT work email) · <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214088622607400">Asana</a></div></div></div>
+</section>
+
+<section>
+<h2>§2 — Start Here</h2>
+<div class="start-here">
+  <div class="start-task">Confirm MasterClass May 7 meeting logistics + add to Lorraine's calendar</div>
+  <div class="start-why">Lauren Williams at MasterClass confirmed the date yesterday. This is a major brand partnership driving visibility and a potential revenue multiplier — Lorraine should walk in fully prepped. Lorraine is OOO, which makes this yours to own today.</div>
 </div>
-<div class="card">
-<h2>📋 Your Open Commitments</h2>
-<div style="font-weight:600;font-size:11px;color:#c9a96e;margin-bottom:5px">WITH DEADLINES</div>
-<div class="row"><div><div class="hl">Follow up re: Heartland Bank — Ryan Maher</div><div class="tag">"I'll plan to follow up in early August" · Apr 15 email</div></div><span class="pill blue">August</span></div>
-<div class="row"><div><div class="hl">Boston Scientific debrief call</div><div class="tag">"We'd love to schedule a debrief call" · Apr 15 email to Katie Liao · After Apr 28 event</div></div><span class="pill yellow">After Apr 28</span></div>
-<div style="font-weight:600;font-size:11px;color:#c9a96e;margin:8px 0 5px">OUTSTANDING — NO DEADLINE</div>
-<div style="border-left:3px solid #c9a96e;padding-left:8px">
-<div class="row"><div><div class="hl">Corinne Koochoo coaching inquiry</div><div class="tag">Checked in Apr 14 · No reply yet · Set a deadline or close the loop.</div></div></div>
-<div class="row"><div><div class="hl">All the Cool Girls Get Fired — publisher title update</div><div class="tag">Checked in Apr 15 with Alli Armstrong · Set a deadline or close the loop.</div></div></div>
+</section>
+
+<section>
+<h2>§3 — Lorraine Is Waiting on You</h2>
+<table>
+<thead><tr><th>Subject</th><th>Sent</th><th>Summary</th></tr></thead>
+<tbody>
+<tr>
+  <td>Contract renewal + salary discussion</td>
+  <td>Apr 16</td>
+  <td>Lorraine wrote directly to Meagan — wants to approach thoughtfully, needs reflection before responding</td>
+</tr>
+<tr>
+  <td>Re: Courses to Consider (LinkedIn Learning)</td>
+  <td>Apr 16</td>
+  <td>Lorraine &amp; Rafranz discussed new LinkedIn Learning courses — Meagan CC'd, next steps need tracking</td>
+</tr>
+<tr>
+  <td>Re: Thank you — MasterClass + course idea</td>
+  <td>Apr 15</td>
+  <td>May 7 confirmed with Lauren Williams — Meagan should calendar + confirm logistics</td>
+</tr>
+<tr>
+  <td>Re: Box x Lorraine K. Lee — AAPI/Women in Tech</td>
+  <td>Apr 15</td>
+  <td>Lorraine sent proposal to Jackie Tanarov (Box) — Meagan CC'd, track for reply</td>
+</tr>
+<tr>
+  <td>Re: Resources + Intros for L&amp;D / People teams</td>
+  <td>Apr 15</td>
+  <td>Following up with Jasmine (Oscar Health) — Jasmine replied today with new contacts Natalie &amp; Rebecca</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>§4 — Your Open Commitments</h2>
+<table>
+<thead><tr><th>Commitment</th><th>Date</th><th>Asana Task?</th></tr></thead>
+<tbody>
+<tr>
+  <td>"I'll plan to follow up in early August" — Heartland Bank (Ryan Maher)</td>
+  <td>Apr 15</td>
+  <td><span class="flag">⚠ No task found</span></td>
+</tr>
+<tr>
+  <td>"We'd love to schedule a debrief call" — Boston Scientific (post Apr 28 keynote)</td>
+  <td>Apr 15</td>
+  <td><span class="flag">⚠ No task found</span></td>
+</tr>
+<tr>
+  <td>"I wanted to check in on the status of the signed agreement" — Seismic AAPI (Taz)</td>
+  <td>Apr 15</td>
+  <td><span class="flag">⚠ No task found</span></td>
+</tr>
+<tr>
+  <td>Lorraine available Apr 29–30 — offered to ServiceNow's Adam Sones</td>
+  <td>Apr 15</td>
+  <td><span class="flag">⚠ No task found</span></td>
+</tr>
+<tr>
+  <td>"Checking in on publisher update" — All the Cool Girls Get Fired (Alli at BU)</td>
+  <td>Apr 15</td>
+  <td><span class="flag">⚠ No task found</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>§5 — Check Superhuman Threads</h2>
+<div class="thread-item">
+  <div class="thread-subj">Resources + Intros for L&amp;D / People teams</div>
+  <div class="thread-meta">Apr 16 · Jasmine Wong (Oscar Health) replied with new L&amp;D contact names — Natalie &amp; Rebecca. These are warm leads for speaking pipeline. Action: log and follow up.</div>
 </div>
+<div class="thread-item">
+  <div class="thread-subj">AbbVie Feedback: Supercharge Your Executive Presence (Apr 2026)</div>
+  <div class="thread-meta">Apr 16 · New form response received — check for testimonials and follow-up opportunities.</div>
 </div>
-<div class="card">
-<h2>💬 Missed in Slack</h2>
-<div style="color:#6b6860;font-size:12px;font-style:italic;padding:6px 0">No Slack integration available this session. Check your DMs and mentions manually — especially from Lorraine and the team channel.</div>
+<div class="thread-item">
+  <div class="thread-subj">Using Claude Code in the New Claude Desktop App</div>
+  <div class="thread-meta">Apr 16 · Lorraine forwarded to team as FYI — no action required.</div>
 </div>
-<div class="card">
-<h2>📧 Superhuman Threads</h2>
-<div class="row"><div><div class="hl">IPMA — June 3 timing</div><div class="tag">Calendar invites received for May 6. June 3 time still TBD. Follow up with Morgan Rohrhofer.</div></div><span class="pill yellow">Action</span></div>
-<div class="row"><div><div class="hl">ServiceNow — scheduling Apr 29/30 call</div><div class="tag">Adam Sones + Rosanne McBrayer · Lorraine confirmed availability · Send calendar link</div></div><span class="pill yellow">Action</span></div>
-<div class="row"><div><div class="hl">Seismic — signed agreement</div><div class="tag">Tazrina Afrin · Checked in Apr 15 · Lorraine's agreement shared · Awaiting legal team</div></div><span class="pill blue">Waiting</span></div>
-<div class="row"><div><div class="hl">Boston Scientific debrief</div><div class="tag">Katie Liao · Sent invite Apr 15 · Confirm time is booked</div></div><span class="pill blue">Confirm</span></div>
-<div class="row"><div><div class="hl">Affirm — coaching proposal</div><div class="tag">Kellee Van Horne · Lorraine replied Apr 14 · Follow up on next steps</div></div><span class="pill yellow">Action</span></div>
+</section>
+
+<section>
+<h2>§6 — Flagged from Lorraine's Inbox</h2>
+<table>
+<thead><tr><th>Thread</th><th>From</th><th>Relevance</th></tr></thead>
+<tbody>
+<tr>
+  <td>Re: Resources + Intros for L&amp;D / People teams</td>
+  <td>Jasmine Wong · Oscar Health</td>
+  <td>New internal L&amp;D contacts (Natalie / Rebecca) shared — hot speaking lead, act today</td>
+</tr>
+</tbody>
+</table>
+<div class="note">No additional starred/important items found in Lorraine's inbox in last 24h. She is OOO Apr 16–17.</div>
+</section>
+
+<section>
+<h2>§7 — Priorities</h2>
+<table>
+<thead><tr><th>Task</th><th>Project</th><th>Due</th></tr></thead>
+<tbody>
+<tr>
+  <td>MasterClass Launch — confirm May 7 logistics</td>
+  <td>Content &amp; Audience</td>
+  <td><span class="badge badge-warn">Apr 17 ↑</span></td>
+</tr>
+<tr>
+  <td>Follow up with market research email contacts [30 min]</td>
+  <td>Client &amp; Speaking — High</td>
+  <td><span class="badge badge-warn">Apr 20</span></td>
+</tr>
+<tr>
+  <td>Send Helen Kwok (L'Oreal) speaker materials + follow-up email [30 min]</td>
+  <td>Client &amp; Speaking — Med</td>
+  <td><span class="badge badge-warn">Apr 20</span></td>
+</tr>
+<tr>
+  <td>FYI: Mari (Surge Institute) responds to Lorraine by Tue 4/21 — monitor</td>
+  <td>Inbox From Lorraine</td>
+  <td><span class="badge badge-warn">Apr 21</span></td>
+</tr>
+<tr>
+  <td>Q1 Estee Analytics</td>
+  <td>Client &amp; Speaking — High</td>
+  <td>Jul 15</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>§8 — Ownership Prompt</h2>
+<div class="tip-box">
+  <div class="tip-label">Today's Theme: What / So What / Now What</div>
+  <div class="tip-body">Before sending Lorraine any update — on a deal, a conversation, or a task — run it through three questions: <strong>What</strong> happened? <strong>So what</strong> does it mean for the business or relationship? <strong>Now what</strong> should happen next, and who should do it? This turns you from a status reporter into a strategic partner Lorraine can rely on to think ahead.</div>
 </div>
-<div class="card half">
-<h2>📌 Flagged from Lorraine's Inbox</h2>
-<div class="row"><div><div class="hl">FYI: Mari (Surge Institute) getting back to Lorraine by Tuesday 4/21</div><div class="tag">Follow up with Mari if no response by EOD Tuesday Apr 21 · <a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1214072871309574">Asana</a></div></div><span class="pill yellow">Due Apr 21</span></div>
-<div class="row"><div><div class="hl">FYI: Velsoft one-pager arriving EOD Wednesday 4/15</div><div class="tag">Velsoft (e-learning, Nova Scotia) · Co-branded course partnership · Review when received · <a href="https://app.asana.com/1/1210774242380505/project/1213915874399989/task/1214065203133752">Asana</a></div></div><span class="pill green">✅ Done</span></div>
+</section>
+
+<section>
+<h2>§9 — CC &amp; N8N Tip of the Day</h2>
+<div class="tip-box">
+  <div class="tip-label">Tip #7 — Commitment Surfacing from Email Chains</div>
+  <div class="tip-body">Paste a long email thread into Claude and ask: <em>"List every commitment made, by whom, and to whom — flag anything without a clear deadline."</em> Run this weekly on your sent folder to build your task list before Lorraine notices the gap. Pair with an N8N automation to auto-forward your sent emails to a Claude prompt that creates Asana tasks from commitment language.</div>
 </div>
-<div class="card full">
-<h2>🗂 Priorities This Week</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-<div style="border-left:3px solid #c9a96e;padding-left:8px">
-<div style="font-size:11px;font-weight:600;color:#c9a96e;margin-bottom:4px">CLIENT &amp; SPEAKING</div>
-<div class="row"><div><span class="pill red">🔴 Today</span> <a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214061690862822">Any Speaking Client</a><div class="tag">OVERDUE — action now</div></div></div>
-<div class="row"><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214064402410134">Follow up: market research contacts</a><div class="tag">Due Apr 17 · Diana Steen, Carlo</div></div></div>
-<div class="row"><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874367988/task/1214088622607400">Send Helen Kwok (L'Oreal) materials</a><div class="tag">Due Apr 20 · Use personal email!</div></div></div>
-<div class="row"><div><a href="https://app.asana.com/1/1210774242380505/task/1213922342428126">Write final LinkedIn promo post</a><div class="tag">Due Apr 28 · Lock-in attendance for May 5</div></div></div>
-</div>
-<div style="border-left:3px solid #60a5fa;padding-left:8px">
-<div style="font-size:11px;font-weight:600;color:#60a5fa;margin-bottom:4px">CONTENT &amp; AUDIENCE</div>
-<div class="row"><div><a href="https://app.asana.com/1/1210774242380505/project/1213915874399975/task/1213987270385350">MasterClass Launch</a><div class="tag">Due Apr 17 · MasterClass team contact in early May</div></div></div>
-<div class="row"><div><a href="https://app.asana.com/1/1210774242380505/task/1213922342449580">LinkedIn Premium Event (May 5)</a><div class="tag">Due May 5 · Meagan coordinates LinkedIn delivery</div></div></div>
-</div>
-<div style="border-left:3px solid #4ade80;padding-left:8px">
-<div style="font-size:11px;font-weight:600;color:#4ade80;margin-bottom:4px">PIPELINE STATUS</div>
-<div class="row"><div><div class="hl">Boston Scientific</div><div class="tag">Apr 28 CONFIRMED ✅ · Debrief April 29</div></div></div>
-<div class="row"><div><div class="hl">IPMA</div><div class="tag">May 6 ✅ · June 3 pending time</div></div></div>
-<div class="row"><div><div class="hl">Box AAPI Event</div><div class="tag">Proposal sent Apr 15 · Awaiting Jackie/Lydia</div></div></div>
-<div class="row"><div><div class="hl">ServiceNow</div><div class="tag">Scheduling Apr 29/30 · Active</div></div></div>
-</div>
-</div>
-</div>
-<div class="card">
-<h2>🏷 Ownership Prompt</h2>
-<div style="font-size:12px;color:#c8c0b4;line-height:1.7">You own: speaking proposals, lead follow-ups, Forbes ghostwriting, speaking pipeline, course marketing, client comms. If an email touches Lorraine's speaking business, you drive it — not Lorraine.</div>
-</div>
-<div class="card" style="border-left:4px solid #c9a96e;background:#1d1a14">
-<h2>💡 CC &amp; Automation Tip of the Day</h2>
-<div style="font-size:13px;line-height:1.6;color:#c8c0b4"><strong>Tip #16 of 20:</strong> When Lorraine says "take another stab," paste her feedback + your draft and ask CC to revise only what she flagged. Don't rewrite the whole thing — surgical edits only.</div>
-</div>
-<div class="card">
-<h2>📈 Monthly Goals Status</h2>
-<div style="font-size:12px;color:#c8c0b4;line-height:1.8">Revenue target: <strong style="color:#c9a96e">$600K / $700K stretch</strong><br>Pipeline active: Box, ServiceNow, Apex Group, L'Oreal, Affirm<br>Confirmed revenue: Boston Scientific (Apr 28), IPMA (May 6 + Jun 3)<br>MasterClass partnership: May 7 meeting · course deal TBD<br>LinkedIn Premium Event: May 5 · Registration drive underway</div>
-</div>
-</div>
-<div style="text-align:center;font-size:11px;color:#4a4a48;padding:10px">RISE Learning Solutions · Apr 16, 2026 · <a href="index.html" style="color:#c9a96e">Lorraine Dashboard</a> · <a href="mahea.html" style="color:#c9a96e">Mahea Dashboard</a></div>
+</section>
+
+<section>
+<h2>§10 — Monthly Goals Status</h2>
+<table>
+<thead><tr><th>Goal</th><th>Status</th><th>Notes</th></tr></thead>
+<tbody>
+<tr>
+  <td>Close 2+ new speaking bookings this month</td>
+  <td class="dot-yellow">In Progress</td>
+  <td>Warm leads active: Box, Seismic, ServiceNow, IPMA (May 6 confirmed), Apex Group</td>
+</tr>
+<tr>
+  <td>Complete all post-event debriefs (Q1 closes)</td>
+  <td class="dot-yellow">In Progress</td>
+  <td>AbbVie feedback arrived ✓ · Boston Scientific debrief set for post Apr 28</td>
+</tr>
+<tr>
+  <td>Revenue pipeline updated in Asana</td>
+  <td class="dot-red">Behind</td>
+  <td>No Asana revenue data found today — needs owner and update</td>
+</tr>
+</tbody>
+</table>
+</section>
+
 </body>
 </html>
