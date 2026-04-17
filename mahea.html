@@ -1,158 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mahea — Morning Briefing · April 16, 2026</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahea — Morning Briefing · April 17, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#f7f9fa;color:#1e3432;font-family:-apple-system,'Segoe UI',Helvetica,sans-serif;font-size:15px;padding:28px}
-header{background:#2D5F5D;border-radius:6px;margin-bottom:22px;overflow:hidden;position:relative;padding:24px 28px}
-header svg{position:absolute;bottom:0;left:0;right:0;width:100%;opacity:.13}
-.hc{position:relative;z-index:1}
-header h1{color:#f0faf9;font-size:1.9rem;font-weight:300;letter-spacing:.02em}
-header .sub{color:#9dd4d0;font-size:.88rem;margin-top:5px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{background:#fff;border:1px solid #dde8e7;border-radius:5px;padding:16px}
-.full{grid-column:1/-1}
-h2{color:#2D5F5D;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:11px;padding-bottom:7px;border-bottom:2px solid #2D5F5D1a}
-.stat-row{display:flex;gap:20px}
-.stat-label{font-size:.72rem;color:#6a9290;margin-bottom:3px}
-.stat-val{font-size:1.4rem;color:#2D5F5D;font-weight:600}
-.bar{height:6px;background:#e4eeed;border-radius:3px;margin-top:7px}
-.fill{height:100%;background:#2D5F5D;border-radius:3px}
-table{width:100%;border-collapse:collapse;font-size:.83rem}
-th{color:#6a9290;font-weight:600;text-align:left;padding:3px 6px 7px 0;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid #dde8e7}
-td{padding:7px 6px 7px 0;border-bottom:1px solid #f2f6f6;vertical-align:top;line-height:1.5}
-td.h{color:#1e3432;font-weight:500;font-size:.83rem}
-td.m{color:#6a9290;font-size:.8rem}
-.tag{display:inline-block;font-size:.67rem;padding:2px 7px;border-radius:3px;font-weight:600}
-.tr{background:#fde8e8;color:#b02020}
-.ty{background:#fef9e2;color:#9a6800}
-.tg{background:#e4f5ef;color:#1e6648}
-.tf{background:#fde8f5;color:#8a2060}
-.tod{background:#fff0e8;color:#b04a10}
-.big{font-size:1rem;color:#1e3432;font-weight:600;margin-bottom:5px}
-.why{font-size:.82rem;color:#6a9290;line-height:1.65;margin-bottom:14px}
-.italic{font-size:.9rem;line-height:1.75;color:#1e3432}
-.ov{color:#b02020;font-size:.75rem;font-weight:700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f7f9fa;color:#1d2b2a;font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;padding:24px}
+.wrap{max-width:860px;margin:0 auto}
+header{position:relative;background:#2D5F5D;color:#fff;border-radius:8px;padding:28px 28px 20px;margin-bottom:28px;overflow:hidden}
+header::before{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 860 60'%3E%3Cpath d='M0 60L60 35L120 48L180 20L240 38L300 10L360 32L420 18L480 40L540 5L600 28L660 45L720 12L780 35L860 22L860 60Z' fill='%23245150' opacity='0.5'/%3E%3Cpath d='M0 60L80 42L160 55L220 30L290 50L360 18L440 45L500 28L560 52L630 20L700 40L780 15L860 38L860 60Z' fill='%231e4442' opacity='0.4'/%3E%3C/svg%3E") no-repeat bottom;background-size:cover}
+header h1{font-size:1.75rem;font-weight:300;letter-spacing:.02em}
+header .date{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:4px}
+.ooo{background:#fff8e1;border-left:4px solid #2D5F5D;padding:10px 16px;border-radius:0 4px 4px 0;margin-bottom:24px;font-size:.88rem;color:#3a4a49}
+section{background:#fff;border:1px solid #e0e8e7;border-radius:6px;padding:20px 22px;margin-bottom:20px}
+h2{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2D5F5D;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #e8f2f1}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-box{background:#f3f9f8;border:1px solid #cde4e2;border-radius:6px;padding:16px}
+.stat-box .label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5a7a78;margin-bottom:4px}
+.stat-box .val{font-size:1.6rem;color:#2D5F5D;font-weight:500}
+.stat-box .sub{font-size:.78rem;color:#888;margin-top:3px}
+.bar-wrap{background:#e0e8e7;border-radius:3px;height:6px;margin-top:10px}
+.bar{height:6px;border-radius:3px;background:#2D5F5D}
+.focus-card{background:#f3f9f8;border:1px solid #cde4e2;border-radius:6px;padding:14px 16px;margin-bottom:10px}
+.focus-card .num{font-size:.72rem;font-weight:600;color:#2D5F5D;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.focus-card .task{font-size:1rem;font-weight:500;color:#1d2b2a;margin-bottom:4px}
+.focus-card .why{font-size:.83rem;color:#5a7a78;font-style:italic}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;color:#5a7a78;font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;padding:6px 8px;border-bottom:2px solid #e8f2f1}
+td{padding:8px 8px;border-bottom:1px solid #f0f5f4;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.7rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.badge-overdue{background:#fde8e8;color:#c0392b}
+.badge-today{background:#fff3cd;color:#856404}
+.badge-ok{background:#d4edda;color:#155724}
+.badge-upcoming{background:#e8f2f1;color:#2D5F5D}
+.badge-warn{background:#fff3cd;color:#856404}
+.flag{color:#c0392b;font-size:.78rem;margin-top:2px;font-style:italic}
+.days-late{color:#c0392b;font-weight:600;font-size:.82rem}
+.prompt-box{background:#f3f9f8;border-left:4px solid #2D5F5D;border-radius:0 6px 6px 0;padding:14px 18px}
+.prompt-box p{color:#2d4544}
+.prompt-box .cta{margin-top:10px;font-size:.85rem;color:#2D5F5D;font-weight:500}
+.row-alt{background:#fafcfc}
 </style>
 </head>
 <body>
+<div class="wrap">
 
 <header>
-  <svg viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon fill="white" points="0,90 140,32 280,58 440,12 580,44 720,8 860,36 1000,18 1200,42 1200,90"/>
-    <polygon fill="white" points="0,90 180,60 360,80 540,38 700,62 880,28 1060,50 1200,35 1200,90" opacity="0.4"/>
-  </svg>
-  <div class="hc">
-    <h1>Good morning, Mahea.</h1>
-    <div class="sub">Thursday, April 16, 2026 &nbsp;·&nbsp; Lorraine is OOO today &amp; tomorrow &nbsp;·&nbsp; You are the primary point of contact</div>
-  </div>
+  <h1>Good morning, Mahea.</h1>
+  <p class="date">Friday · April 17, 2026</p>
 </header>
 
-<div class="grid">
+<div class="ooo">Lorraine is OOO today (Apr 16–17 — birthday celebration in Orlando). Back Monday, April 20. You're holding down content and ops.</div>
 
-<div class="card">
-  <h2>§1 · Instagram Growth</h2>
-  <div class="stat-row">
-    <div><div class="stat-label">Current Followers</div><div class="stat-val">—</div></div>
-    <div><div class="stat-label">Goal · June 2026</div><div class="stat-val">100K</div></div>
+<!-- SECTION 1: STATS -->
+<section>
+<h2>Growth Dashboard</h2>
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="label">Instagram Followers</div>
+    <div class="val">~90K</div>
+    <div class="sub">Goal: 100K by June 2026</div>
+    <div class="bar-wrap"><div class="bar" style="width:90%"></div></div>
+    <div style="font-size:.72rem;color:#888;margin-top:4px">~90% to goal · last updated Apr 12 (est.)</div>
   </div>
-  <div class="bar"><div class="fill" style="width:0%"></div></div>
-  <div style="font-size:.75rem;color:#6a9290;margin-top:7px">Pull current count from Instagram or analytics report to update this.</div>
-</div>
-
-<div class="card">
-  <h2>§1 · Newsletter Subscribers</h2>
-  <div class="stat-row">
-    <div><div class="stat-label">Current Subscribers</div><div class="stat-val">—</div></div>
-    <div><div class="stat-label">Goal</div><div class="stat-val">30K</div></div>
+  <div class="stat-box">
+    <div class="label">Newsletter Subscribers</div>
+    <div class="val">—</div>
+    <div class="sub">Goal: 30K subscribers</div>
+    <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
+    <div style="font-size:.72rem;color:#888;margin-top:4px">Pull from Kit dashboard to update</div>
   </div>
-  <div class="bar"><div class="fill" style="width:0%"></div></div>
-  <div style="font-size:.75rem;color:#6a9290;margin-top:7px">Check Kit (ConvertKit) dashboard for latest subscriber count.</div>
 </div>
+</section>
 
-<div class="card full">
-  <h2>§2 · Focus Zone — Top 2 Today</h2>
-  <div class="big">1. Fix the LinkedIn Guide for Friends &amp; Family form</div>
-  <div class="why">Multiple people reported errors on this live, public-facing form. Every hour it stays broken costs Lorraine sign-ups and credibility — this is a brand emergency. Fix it first.</div>
-  <div class="big">2. Weekly Content Plan + Script Research — Week of Apr 21 (Visibility)</div>
-  <div class="why">These tasks were due yesterday (Apr 15) and are now 1 day overdue. Lorraine's filming day is Monday Apr 20 — Mahea must deliver the filming prep brief by tomorrow, Apr 17. Get this done today.</div>
+<!-- SECTION 2: FOCUS ZONE -->
+<section>
+<h2>Focus Zone — Top 2 Today</h2>
+<div class="focus-card">
+  <div class="num">Priority 1</div>
+  <div class="task">📋 Script Research &amp; Writing — IG Reels system (Weekly)</div>
+  <div class="why">The entire IG Reels pipeline for Week of Apr 21 stalls if scripts aren't ready today — Zen can't edit without them, and the schedule can't hold.</div>
 </div>
+<div class="focus-card">
+  <div class="num">Priority 2</div>
+  <div class="task">Add newsletter notice to bottom of all client feedback forms [30 min]</div>
+  <div class="why">This is a High Priority client &amp; speaking task that directly grows the newsletter subscriber base — a small fix with compounding impact on the 30K goal.</div>
+</div>
+</section>
 
-<div class="card full">
-  <h2>§3 · Lorraine Is Waiting on You <span style="color:#6a9290;font-weight:400;font-size:.72rem">(last 5 days)</span></h2>
-  <table>
-    <tr><th>Subject</th><th>Sent</th><th>Summary</th></tr>
-    <tr><td class="h">Fwd: Urgent — pageview limit (WPEngine bot issue) [BUMP]</td><td class="m">Apr 14</td><td class="m">Lorraine sent a "bump" — she's been waiting on Mahea's response about WPEngine bot filtering to fix the pageview overages.</td></tr>
-    <tr><td class="h">Fwd: Your End of Week Analytics Report</td><td class="m">Apr 15</td><td class="m">Lorraine forwarded with notes; "We're not using Stanley anymore." Needs Mahea to acknowledge and action the update.</td></tr>
-    <tr><td class="h">Fwd: Using Claude Code in the New Claude Desktop App</td><td class="m">Apr 16</td><td class="m">Lorraine forwarded as FYI — Claude Code as a potential team workflow tool.</td></tr>
-    <tr><td class="h">Fwd: Yo! You're in! (newsletter/book selling idea)</td><td class="m">Apr 11</td><td class="m">Lorraine sharing a newsletter format and asking if Mahea wants to explore selling the book at the end of newsletters.</td></tr>
-  </table>
-</div>
+<!-- SECTION 3: LORRAINE WAITING -->
+<section>
+<h2>Lorraine Is Waiting on You</h2>
+<table>
+<thead><tr><th>Subject</th><th>Date Sent</th><th>Summary</th></tr></thead>
+<tbody>
+<tr>
+  <td>Fwd: Using Claude Code in the New Claude Desktop App</td>
+  <td>Apr 16</td>
+  <td>Lorraine forwarded a Claude Code demo recording as an FYI for you and Meagan — no acknowledgement sent.</td>
+</tr>
+<tr class="row-alt">
+  <td>Fwd: Your End of Week Analytics Report</td>
+  <td>Apr 15</td>
+  <td>Lorraine shared 3 content ideas and noted the team is no longer using Stanley for analytics — no reply from you.</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top:8px;font-size:.78rem;color:#888;font-style:italic">No other unreplied direct messages from Lorraine in the last 5 days.</div>
+</section>
 
-<div class="card full">
-  <h2>§4 · Your Open Commitments <span style="color:#6a9290;font-weight:400;font-size:.72rem">(sent mail · last 14 days)</span></h2>
-  <table>
-    <tr><th>Thread</th><th>Commitment</th><th>Asana?</th></tr>
-    <tr><td class="h">RAPP – LORRAINE FANG (Kai Daniel, OMC)</td><td class="m">"Will look out for more details from your team this week." (Apr 14 — this week)</td><td><span class="tag tf">⚠ No task found</span></td></tr>
-    <tr><td class="h">Omnicom Supplier Portal (Jacqueline Thompson)</td><td class="m">Checking in on HR update re: supplier registration (Apr 2) — no tracked follow-up.</td><td><span class="tag tf">⚠ No task found</span></td></tr>
-    <tr><td class="h">Re: Fwd: Re: Got your book!! (Nikolett)</td><td class="m">Added LI doc details for May 12 — completed.</td><td><span class="tag tg">Done ✓</span></td></tr>
-    <tr><td class="h">Q2 Analytics (Aneesh / Wishly)</td><td class="m">Uploaded Q1 screenshots to Drive folder — complete.</td><td><span class="tag tg">Done ✓</span></td></tr>
-  </table>
-</div>
+<!-- SECTION 4: OPEN COMMITMENTS -->
+<section>
+<h2>Your Open Commitments</h2>
+<table>
+<thead><tr><th>Thread</th><th>Commitment Made</th><th>Date</th><th>Asana Task?</th></tr></thead>
+<tbody>
+<tr>
+  <td>Got your book!! (Simone Stolzoff, May 12 collab post)</td>
+  <td>"I added these details to your LI doc for May 12" — IG collab post with Nikolett</td>
+  <td>Apr 15</td>
+  <td><div class="flag">⚠ No Asana task found — create one for May 12</div></td>
+</tr>
+<tr class="row-alt">
+  <td>RAPP – Lorraine Fang invoice</td>
+  <td>"Will look out for more details from your team this week" — Kai said payment is being routed</td>
+  <td>Apr 14</td>
+  <td><span class="badge badge-warn">Monitor</span></td>
+</tr>
+<tr>
+  <td>Seismic AAPI / Q2 Analytics folder</td>
+  <td>Mahea uploaded all Q1 analytics screenshots on Apr 6</td>
+  <td>Apr 6</td>
+  <td><span class="badge badge-ok">Done ✓</span></td>
+</tr>
+</tbody>
+</table>
+</section>
 
-<div class="card">
-  <h2>§5 · Superhuman Threads <span style="color:#6a9290;font-weight:400;font-size:.72rem">(48h)</span></h2>
-  <table>
-    <tr><th>Thread</th><th>Note</th></tr>
-    <tr><td class="h">Using Claude Code in the New Claude Desktop App</td><td class="m">Lorraine shared for team awareness — AI tool worth exploring.</td></tr>
-    <tr><td class="h">Resources + Intros for L&D / People teams</td><td class="m">Lorraine shared Jasmine Wong's (Oscar Health) reply — active L&D lead, Meagan owns follow-up.</td></tr>
-    <tr><td class="h">AbbVie Feedback: Supercharge Your Exec Presence</td><td class="m">New form responses — Lorraine shared; feeds into testimonial bank.</td></tr>
-    <tr><td class="h">New Broadcast (Resource Bites newsletter)</td><td class="m">Lorraine shared newsletter format — likely tied to the book-selling idea (Apr 11 fwd).</td></tr>
-  </table>
-</div>
+<!-- SECTION 5: SUPERHUMAN THREADS -->
+<section>
+<h2>Check Superhuman Threads (Last 48h)</h2>
+<table>
+<thead><tr><th>Thread</th><th>Time</th><th>Relevance for You</th></tr></thead>
+<tbody>
+<tr>
+  <td>Early notice — RAPP / Omnicom engagement ending in 2 weeks</td>
+  <td>Apr 17 · 00:23</td>
+  <td>You submitted the RAPP invoice — contract expires soon. Check status with Kai when Lorraine is back.</td>
+</tr>
+<tr class="row-alt">
+  <td>2026 AAPI Programming at Seismic</td>
+  <td>Apr 16 · 21:42</td>
+  <td>Tafrin confirmed speaker agreement; Seismic wants to connect with Lorraine re: keynote messaging — you were CC'd.</td>
+</tr>
+<tr>
+  <td>Using Claude Code in the New Claude Desktop App</td>
+  <td>Apr 16 · 17:51</td>
+  <td>FYI resource from Lorraine — useful for understanding AI tools in content workflow.</td>
+</tr>
+</tbody>
+</table>
+</section>
 
-<div class="card">
-  <h2>§6 · Overdue — Triage Now</h2>
-  <table>
-    <tr><th>Task</th><th>Project</th><th>Days Over</th></tr>
-    <tr><td class="h">🗓️ WEEKLY CONTENT PLAN — Week of Apr 21 · Visibility</td><td class="m">IG Reels – Lorraine</td><td><span class="ov">1 day</span></td></tr>
-    <tr><td class="h">🔍 Video Research + Script Generation — Week of Apr 21</td><td class="m">IG Reels – Lorraine</td><td><span class="ov">1 day</span></td></tr>
-    <tr><td class="h">📋 Script Research &amp; Writing (Weekly System)</td><td class="m">IG Reels – Lorraine</td><td><span class="ov">1 day</span></td></tr>
-    <tr><td class="h">LinkedIn Guide for Friends &amp; Family form is broken</td><td class="m">Inbox From Lorraine</td><td><span class="tag tr">Today</span></td></tr>
-    <tr><td class="h">The Resource Edit</td><td class="m">Content &amp; Audience</td><td><span class="tag tr">Today</span></td></tr>
-  </table>
-</div>
+<!-- SECTION 6: OVERDUE TASKS -->
+<section>
+<h2>Overdue Tasks — Triage Now</h2>
+<table>
+<thead><tr><th>Task</th><th>Project</th><th>Due Date</th><th>Days Late</th></tr></thead>
+<tbody>
+<tr>
+  <td>Share Data</td>
+  <td>—</td>
+  <td>Apr 7</td>
+  <td><span class="days-late">10 days ⚠⚠</span></td>
+</tr>
+<tr class="row-alt">
+  <td>Figure out wtf is happening w Google permissions &amp; access requests</td>
+  <td>Operations &amp; Admin <span class="badge badge-overdue" style="margin-left:4px">High Priority</span></td>
+  <td>Apr 16</td>
+  <td><span class="days-late">1 day</span></td>
+</tr>
+<tr>
+  <td>The Resource Edit</td>
+  <td>Content &amp; Audience</td>
+  <td>Apr 16</td>
+  <td><span class="days-late">1 day</span></td>
+</tr>
+<tr class="row-alt">
+  <td>LinkedIn Guide for Friends &amp; Family form is broken — multiple people reporting errors</td>
+  <td>Inbox From Lorraine</td>
+  <td>Apr 16</td>
+  <td><span class="days-late">1 day</span></td>
+</tr>
+</tbody>
+</table>
+</section>
 
-<div class="card full">
-  <h2>§7 · This Week <span style="color:#6a9290;font-weight:400;font-size:.72rem">(Apr 16–22 · chronological · top 7)</span></h2>
-  <table>
-    <tr><th>Task</th><th>Project</th><th>Due</th></tr>
-    <tr><td class="h">Figure out Google permissions issue (keep people from requesting access)</td><td class="m">Operations &amp; Admin</td><td class="m">Apr 16 <span class="tag tr">Today</span></td></tr>
-    <tr><td class="h">📣 Send Lorraine Filming Prep Brief (Weekly System)</td><td class="m">IG Reels – Lorraine</td><td class="m">Apr 17</td></tr>
-    <tr><td class="h">Add newsletter notice to bottom of all feedback forms [30 min]</td><td class="m">Client &amp; Speaking</td><td class="m">Apr 17</td></tr>
-    <tr><td class="h">create slides for Live sessions 2 &amp; 3</td><td class="m">Courses &amp; Enterprise</td><td class="m">Apr 17</td></tr>
-    <tr><td class="h">MC BTS video + Write to Rob Hartnett re: YouTube thumbnail</td><td class="m">Content &amp; Audience</td><td class="m">Apr 17</td></tr>
-    <tr><td class="h">LI: Weekly LinkedIn Monitoring + CB: Review newsletter replies</td><td class="m">Content Calendar</td><td class="m">Apr 18</td></tr>
-    <tr><td class="h">⚠️ IG — UP 1 Year Anniversary + LI Post: Edit LI Vids + CB: Review 4/22 issue</td><td class="m">Content Calendar</td><td class="m">Apr 22</td></tr>
-  </table>
-</div>
+<!-- SECTION 7: THIS WEEK -->
+<section>
+<h2>This Week — Due by Apr 23</h2>
+<table>
+<thead><tr><th>Task</th><th>Project</th><th>Due</th></tr></thead>
+<tbody>
+<tr><td>📣 WEEKLY SYSTEM: Send Lorraine Filming Prep Brief</td><td>IG Reels – Lorraine</td><td>Apr 17</td></tr>
+<tr class="row-alt"><td>📋 WEEKLY SYSTEM: Script Research &amp; Writing</td><td>IG Reels – Lorraine</td><td>Apr 17</td></tr>
+<tr><td>🔍 WEEKLY: Video Research + Script Generation — Week of Apr 21</td><td>IG Reels – Lorraine</td><td>Apr 17</td></tr>
+<tr class="row-alt"><td>🗓️ WEEKLY CONTENT PLAN — Week of Apr 21 | Topic: Visibility</td><td>IG Reels – Lorraine</td><td>Apr 17</td></tr>
+<tr><td>Add newsletter notice to bottom of all feedback forms</td><td>Client &amp; Speaking</td><td>Apr 17</td></tr>
+<tr class="row-alt"><td>Newsletter quote for upcoming edition</td><td>—</td><td>Apr 17</td></tr>
+<tr><td>LI: Weekly LinkedIn Monitoring</td><td>Content Calendar</td><td>Apr 18</td></tr>
+</tbody>
+</table>
+</section>
 
-<div class="card">
-  <h2>§8 · Backlog — Keep on Radar</h2>
-  <table>
-    <tr><th>Task</th><th>Project</th></tr>
-    <tr><td class="h">Weekly LinkedIn monitoring: new L&D, CX, CRO hires at target companies</td><td class="m">Content &amp; Audience (Medium Priority)</td></tr>
-    <tr><td class="h">IG Reel Script Backlog: "How to say I need more time without looking incompetent"</td><td class="m">IG Reels – Lorraine</td></tr>
-    <tr><td class="h">Review slides for Live Sessions</td><td class="m">Client &amp; Speaking (Medium Priority)</td></tr>
-  </table>
-</div>
+<!-- SECTION 8: BACKLOG -->
+<section>
+<h2>Backlog — Keep on Radar</h2>
+<table>
+<thead><tr><th>Task</th><th>Project</th><th>Priority</th></tr></thead>
+<tbody>
+<tr>
+  <td>Create slides for Live Sessions 2 &amp; 3</td>
+  <td>Courses &amp; Enterprise</td>
+  <td><span class="badge badge-upcoming">Low Priority</span></td>
+</tr>
+<tr class="row-alt">
+  <td>Add Lorraine's Podcasts to Spotify &amp; YouTube</td>
+  <td>Operations &amp; Admin</td>
+  <td><span class="badge badge-upcoming">Low Priority</span></td>
+</tr>
+<tr>
+  <td>Weekly LinkedIn monitoring: new L&amp;D, CX, CRO hires at target companies</td>
+  <td>Content &amp; Audience</td>
+  <td><span class="badge badge-warn">Medium Priority</span></td>
+</tr>
+</tbody>
+</table>
+</section>
 
-<div class="card">
-  <h2>§9 · Coaching Prompt &nbsp;<span style="color:#6a9290;font-weight:400">Closing the Loop</span></h2>
-  <div class="italic">You don't just complete tasks — you close loops. When you finish something Lorraine or a client is waiting on, send a one-liner: "Done ✅ — here's what happened." That sentence is the difference between executing and owning. Try it three times today — it will change how people see you.</div>
+<!-- SECTION 9: OWNERSHIP PROMPT -->
+<section>
+<h2>Your Growth Prompt Today — Content Ownership</h2>
+<div class="prompt-box">
+  <p>You are the owner of Lorraine's content pipeline — and that means the buck stops with you before it ever reaches her. Content ownership isn't just about executing tasks; it's about seeing two steps ahead.</p>
+  <p style="margin-top:10px">Today, look at the IG Reels system with fresh eyes: Is the Week of Apr 21 pipeline solid from end to end? If anything is missing or unclear, fix it now — while Lorraine is OOO and can't be asked.</p>
+  <div class="cta">You've got this. Own the week. 🌿</div>
 </div>
+</section>
 
 </div>
 </body>
