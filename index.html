@@ -3,301 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lorraine's Morning Briefing — April 23, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lorraine's Morning Briefing — Friday, April 24, 2026</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#f7f8fc;color:#1a1a2e;font-size:14px;line-height:1.5}
-.header{background:#084af3;color:white;padding:20px 28px;display:flex;justify-content:space-between;align-items:center}
-.header h1{font-size:20px;font-weight:700}
-.header .sub{font-size:12px;opacity:.85;margin-top:3px}
-.header .right{font-size:12px;opacity:.8;text-align:right}
-.container{max-width:920px;margin:0 auto;padding:20px 16px}
-.section{background:white;border-radius:10px;padding:18px 20px;margin-bottom:14px;border:1px solid #e8eaf0}
-.stitle{font-size:10.5px;font-weight:700;letter-spacing:.09em;color:#084af3;text-transform:uppercase;margin-bottom:12px}
-.one-thing{background:#eef2ff;border-left:4px solid #084af3;border-radius:6px;padding:14px 16px}
-.ot-task{font-size:15px;font-weight:700;color:#084af3;margin-bottom:5px}
-.ot-why{font-size:13px;color:#444}
-.badge{display:inline-block;background:#084af3;color:white;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600;margin-left:7px;vertical-align:middle}
-.card{border-bottom:1px solid #f0f0f5;padding:10px 0}
-.card:last-child{border-bottom:none}
-.row-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px}
-.sender{font-weight:600;font-size:13px}
-.flag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;margin-right:5px}
-.red{background:#fde8e8;color:#c0392b}
-.orange{background:#fff3e0;color:#e07b00}
-.blue{background:#eef2ff;color:#084af3}
-.subj{font-size:12px;color:#666;margin-bottom:3px}
-.summ{font-size:12px;color:#555;margin-bottom:6px}
-.draft{background:#f5f7ff;border-left:3px solid #084af3;padding:8px 11px;font-size:12px;color:#333;border-radius:0 6px 6px 0;font-style:italic}
-.task-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid #f0f0f5}
-.task-row:last-child{border-bottom:none}
-.tname{font-weight:600;font-size:13px}
-.tmeta{font-size:11px;color:#888;margin-top:2px}
-.due{font-size:11px;color:#888;white-space:nowrap;margin-left:12px}
-.due.today{color:#e05a00;font-weight:700}
-.due.soon{color:#e07b00;font-weight:600}
-.due.over{color:#c0392b;font-weight:700}
-.meet-card{border-bottom:1px solid #f0f0f5;padding:12px 0}
-.meet-card:last-child{border-bottom:none}
-.mtime{font-size:11px;color:#084af3;font-weight:700;margin-bottom:3px}
-.mtitle{font-size:14px;font-weight:700;margin-bottom:3px}
-.matt{font-size:11px;color:#777;margin-bottom:7px}
-.prep{padding-left:14px}
-.prep li{font-size:12px;color:#444;margin-bottom:2px}
-.biz-card{border-bottom:1px solid #f0f0f5;padding:10px 0}
-.biz-card:last-child{border-bottom:none}
-.btitle{font-weight:600;font-size:13px;margin-bottom:3px}
-.bwhy{font-size:12px;color:#555}
-.team-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid #f0f0f5}
-.team-row:last-child{border-bottom:none}
-.person{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#084af3;margin-right:7px}
-.tip-box{background:#eef2ff;border-radius:8px;padding:14px 16px}
-.tip-label{font-size:11px;font-weight:700;color:#084af3;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
-.tip-text{font-size:13px;color:#333}
-.slack-note{color:#888;font-size:13px;font-style:italic}
-footer{text-align:center;padding:14px;font-size:11px;color:#bbb}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f7f8fc;color:#1a1a2e;font-size:14px;line-height:1.55}
+header{background:#084af3;color:#fff;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+header h1{font-size:19px;font-weight:700;letter-spacing:-.3px}
+header .date{font-size:12px;opacity:.85}
+.container{max-width:860px;margin:0 auto;padding:22px 14px}
+.section{background:#fff;border-radius:10px;padding:18px 22px;margin-bottom:16px;border:1px solid #e6e9f0}
+.section-title{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;color:#084af3;margin-bottom:13px}
+.one-thing-name{font-size:17px;font-weight:700;color:#084af3;margin-bottom:5px}
+.one-thing-why{color:#555;font-size:13px}
+.row{padding:11px 0;border-bottom:1px solid #f0f2f8}
+.row:last-child{border-bottom:none}
+.label{font-weight:600;font-size:13px}
+.meta{font-size:11px;color:#888;margin-top:2px}
+.body{font-size:12.5px;color:#444;margin-top:5px}
+.draft{background:#eef2ff;border-left:3px solid #084af3;padding:7px 11px;margin-top:7px;font-size:12px;color:#333;border-radius:0 6px 6px 0;font-style:italic}
+.tag{display:inline-block;padding:1px 7px;border-radius:20px;font-size:10px;font-weight:700;margin-left:5px;vertical-align:middle}
+.rev{background:#e8f5e9;color:#2e7d32}
+.cli{background:#e3f2fd;color:#1565c0}
+.ops{background:#f5f5f5;color:#666;border:1px solid #ddd}
+.ov{background:#ffebee;color:#c62828}
+.td{background:#fff3e0;color:#e65100}
+.time{font-weight:700;color:#084af3;font-size:13px;min-width:110px;display:inline-block}
+.bullets{margin-top:6px;padding-left:15px}
+.bullets li{font-size:12px;color:#555;margin-bottom:2px}
+.why{font-size:11px;color:#084af3;font-style:italic;margin-top:4px}
+.tip-box{background:#eef2ff;border-radius:8px;padding:13px 15px}
+.tip-title{font-weight:700;color:#084af3;margin-bottom:5px;font-size:13px}
+.tip-body{font-size:12px;color:#444}
+.err{font-size:12px;color:#aaa;font-style:italic}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <div>
-    <h1>Good morning, Lorraine ☀️</h1>
-    <div class="sub">Thursday, April 23, 2026 &nbsp;·&nbsp; RISE Learning Solutions Daily Briefing</div>
-  </div>
-  <div class="right">3 focus blocks added to your calendar<br>Boston Scientific keynote is tomorrow (Apr 28)</div>
-</div>
+<header>
+  <h1>Good morning, Lorraine</h1>
+  <span class="date">Friday, April 24, 2026 &nbsp;&middot;&nbsp; Generated by Claude Code</span>
+</header>
 
 <div class="container">
 
-<!-- §1 ONE THING -->
+<!-- 1 ONE THING -->
 <div class="section">
-  <div class="stitle">① One Thing Today</div>
-  <div class="one-thing">
-    <div class="ot-task">Follow up with Justin (Justine's friend) — speaking opportunity <span class="badge">9:00am block ✓</span></div>
-    <div class="ot-why">This is an active speaking lead due today. A 15-minute email could close a paid gig — it's the highest-leverage revenue action before your 8:30am call and it's already blocked on your calendar.</div>
+  <div class="section-title">1 &mdash; One Thing Today</div>
+  <div class="one-thing-name">LinkedIn Premium Event &mdash; May 5 is 11 days away</div>
+  <div class="one-thing-why">The final promo post needs your approval by April 29, the last newsletter mention goes out Wed April 29, and registration urgency peaks this week — touching this today keeps the revenue flywheel moving on your highest-visibility paid event of the quarter.</div>
+</div>
+
+<!-- 2 PRIORITY EMAILS -->
+<div class="section">
+  <div class="section-title">2 &mdash; Priority Emails</div>
+  <p class="err">&#9888;&#65039; Gmail authorization token expired &mdash; unable to retrieve emails. Re-authorize Gmail in your MCP settings to restore this section.</p>
+</div>
+
+<!-- 3 ASANA PRIORITIES -->
+<div class="section">
+  <div class="section-title">3 &mdash; Asana Priorities</div>
+
+  <div class="row">
+    <span class="label">LinkedIn Premium Event (May 5)</span><span class="tag rev">Revenue</span>
+    <div class="meta">Speaking + Biz Dev &nbsp;&middot;&nbsp; Due May 5, 2026</div>
+    <div class="body">Live LinkedIn subscriber event. Approve final promo post by Apr 29. Final newsletter PS due Apr 29. Focus block on your calendar: Thu Apr 30, 12:30&ndash;2pm.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Review presentation outline + scripting</span><span class="tag rev">Revenue</span>
+    <div class="meta">Due April 27, 2026</div>
+    <div class="body">Already blocked Mon 8&ndash;8:30am. Lorraine's scripting is blocked on Meagan's overdue outline (due Apr 22). If not received by EOD today, escalate.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Have CC scrape LinkedIn contacts &mdash; identify outreach targets [45 min]</span><span class="tag rev">Revenue</span>
+    <div class="meta">Biz Dev &nbsp;&middot;&nbsp; Due April 27, 2026</div>
+    <div class="body">Export LinkedIn connections CSV, paste into Claude. Filter for Director+ in L&amp;D, HR, CPO, events. Focus block added: Thu Apr 30, 8:00&ndash;8:45am.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Write thank you emails &mdash; UP 1 Year Anniversary interviewees</span><span class="tag cli">Client</span>
+    <div class="meta">Due Today, April 24</div>
+    <div class="body">Focus block already on calendar 9:30&ndash;10:15am. Warm relationship touchpoint &mdash; must not slip to next week.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Review Meg's email draft for St&eacute;phane [ELC] [15 min]</span><span class="tag cli">Client</span>
+    <div class="meta">Speaking + Biz Dev &nbsp;&middot;&nbsp; Due Today, April 24</div>
+    <div class="body">Focus block added 3:45&ndash;4pm (right after eye appt). Client-facing &mdash; treat as must-do before EOD.</div>
   </div>
 </div>
 
-<!-- §2 EMAILS -->
+<!-- 4 TODAY'S SCHEDULE -->
 <div class="section">
-  <div class="stitle">② Priority Emails — Last 24h</div>
+  <div class="section-title">4 &mdash; Today's Schedule + Prep</div>
 
-  <div class="card">
-    <div class="row-top">
-      <span class="sender">Lilli Beckwith · ServiceNow</span>
-      <span class="flag red">3 follow-ups, no reply</span>
-    </div>
-    <div class="subj">"Checking In" — re: scope &amp; format, waiting on Marc</div>
-    <div class="summ">Three follow-ups since Mar 31, Superhuman reminder fired today. She and Marc still haven't aligned. Change tactics — give her something concrete to react to.</div>
-    <div class="draft">"Hi Lilli, I know things get busy — happy to make this easy. Would it help if I sent a quick one-pager with 2–3 format options so you and Marc have something concrete to react to? Just say the word and I'll put it together."</div>
+  <div class="row">
+    <span class="time">9:00&ndash;9:15am</span> Send email to authoress &mdash; intro thread
+    <div class="body">Outbound intro. No prep needed &mdash; just send.</div>
   </div>
 
-  <div class="card">
-    <div class="row-top">
-      <span class="sender">Rafranz Davis · LinkedIn Learning</span>
-      <span class="flag red">No reply since Mar 27</span>
-    </div>
-    <div class="subj">"Courses to Consider" — Business Writing + Invest In You</div>
-    <div class="summ">Rafranz said she'd have direction ready by Mar 30. Lorraine followed up Apr 1 — silence since. A LinkedIn Learning deal is still on the table.</div>
-    <div class="draft">"Hi Rafranz, just wanted to resurface this in case it got buried. Still excited about Business Writing Principles and Invest In You — happy to hop on a quick call or answer any questions to move things forward!"</div>
+  <div class="row">
+    <span class="time">9:15&ndash;9:30am</span> Review Creator Engines
+    <div class="body">Evaluate creatorengines.com as a content system/tool. Quick research sprint &mdash; 15 min cap.</div>
   </div>
 
-  <div class="card">
-    <div class="row-top">
-      <span class="sender">Sheril James · Apex Group</span>
-      <span class="flag orange">Reminder fired today</span>
-    </div>
-    <div class="subj">"Great connecting today! Session details + testimonials" — Women's Accelerator Network</div>
-    <div class="summ">Sent SuperCharge Your Executive Presence overview + testimonials Apr 15. No reply. Superhuman nudging today.</div>
-    <div class="draft">"Hi Sheril, just following up on the SuperCharge overview I sent last week — happy to answer questions or tailor anything to better fit the WAN event. Looking forward to making this happen!"</div>
+  <div class="row">
+    <span class="time">9:30&ndash;10:15am</span> HEADS DOWN: Write Thank You Emails &mdash; UP 1 Year Anniv
+    <div class="body">Focus block. Personal, warm notes to each UP interviewee. Reference their specific contribution to the book.</div>
   </div>
 
-  <div class="card">
-    <div class="row-top">
-      <span class="sender">Elisa MacLellan · Google</span>
-      <span class="flag orange">No reply since Apr 9</span>
-    </div>
-    <div class="subj">"Thanks for making the time for lunch!" — Google SF AAPI lead referral</div>
-    <div class="summ">Lorraine asked Apr 9 about Elisa's conversation with the Google SF AAPI team lead — potential intro opportunity, still unanswered.</div>
-    <div class="draft">"Hi Elisa, no rush at all — just wanted to check in on your chat with the AAPI lead at the SF office. Even a quick intro would mean a lot. Hope you're well!"</div>
-  </div>
-
-  <div class="card">
-    <div class="row-top">
-      <span class="sender">Knox · Book Launch</span>
-      <span class="flag blue">Amplify opportunity</span>
-    </div>
-    <div class="subj">"Follow Up on Book Launch" — Validated, launch week Apr 20–27</div>
-    <div class="summ">Knox asking for support spreading the word during launch week. A LinkedIn post or story mention would be a meaningful peer gesture and good reciprocal visibility.</div>
-    <div class="draft">"Hey Knox — congrats on the launch! So exciting. Happy to give Validated a shout on LinkedIn this week. Sending good vibes your way! 🎉"</div>
-  </div>
-</div>
-
-<!-- §3 ASANA -->
-<div class="section">
-  <div class="stitle">③ Asana Priorities</div>
-
-  <div class="task-row">
-    <div>
-      <div class="tname">Follow up with Justin (Justine's friend) — speaking opportunity</div>
-      <div class="tmeta">Biz Dev · 15 min <span class="badge">9:00am ✓</span></div>
-    </div>
-    <div class="due today">Due today</div>
-  </div>
-
-  <div class="task-row">
-    <div>
-      <div class="tname">Replace small talk module → Credibility Ladder [Exec Presence program]</div>
-      <div class="tmeta">Exec Presence · 30 min · pull from G-Tech materials <span class="badge">10:30am ✓</span></div>
-    </div>
-    <div class="due today">Due today</div>
-  </div>
-
-  <div class="task-row">
-    <div>
-      <div class="tname">Review Meagan's email draft for Stéphane [ELC]</div>
-      <div class="tmeta">ELC Client · 15 min <span class="badge">12:15pm ✓</span></div>
-    </div>
-    <div class="due today">Due today</div>
-  </div>
-
-  <div class="task-row">
-    <div>
-      <div class="tname">LinkedIn Premium Event (May 5) — Approve Final Promo Post</div>
-      <div class="tmeta">LinkedIn Premium Event · urgency post ~Apr 28–May 1 <span class="badge">2:30pm ✓</span></div>
-    </div>
-    <div class="due soon">Due Apr 29</div>
-  </div>
-
-  <div class="task-row">
-    <div>
-      <div class="tname">Write thank you emails — Unforgettable Presence 1-year anniv interviewees</div>
-      <div class="tmeta">Brand / Relationships <span class="badge">Apr 24 4pm ✓</span></div>
-    </div>
-    <div class="due soon">Due Apr 24</div>
-  </div>
-</div>
-
-<!-- §4 SCHEDULE -->
-<div class="section">
-  <div class="stitle">④ Today's Schedule + Prep</div>
-
-  <div class="meet-card">
-    <div class="mtime">8:30 – 9:00 AM PT</div>
-    <div class="mtitle">🤝 Discovery Call — Stephanie Cheng (1Password / AgileBits)</div>
-    <div class="matt">Stephanie Cheng · Desiree McConnell (Culture &amp; Inclusion Lead) · Lianne Huynh (opt.) · Zoom</div>
-    <ul class="prep">
-      <li>Budget ~$2K, virtual keynote, mid-May to end of May — bring 3 open date options</li>
-      <li>Desiree is your champion (she's their C&amp;I Lead who made the intro) — acknowledge her warmly in the call</li>
-      <li>Ask: audience size, live vs. recorded, what does success look like? Get enough to send a tailored proposal same day</li>
+  <div class="row">
+    <span class="time">10:30&ndash;11:00am</span> &#10024; Ash x Lorraine
+    <div class="meta">aswatts@cisco.com &nbsp;&middot;&nbsp; Cisco</div>
+    <ul class="bullets">
+      <li>Ashley Watts is at Cisco &mdash; an existing enterprise relationship likely tied to speaking or L&amp;D work.</li>
+      <li>Cisco is an active account; could be a program check-in, referral conversation, or new engagement scoping.</li>
+      <li>Aim: confirm any upcoming work, probe FY2026 budget cycle, explore whether RAVE model fits a Cisco team initiative.</li>
     </ul>
   </div>
 
-  <div class="meet-card">
-    <div class="mtime">11:00 – 11:15 AM PT</div>
-    <div class="mtitle">🙌 Catch Up — Minh Pham-Costello</div>
-    <div class="matt">Minh Pham-Costello · Zoom</div>
-    <ul class="prep">
-      <li>Part of your enterprise market research outreach — confirmed via Meagan's tracker</li>
-      <li>Come with 2 focused questions on L&amp;D structure or budget at his organization</li>
-      <li>Ask for a referral: "Is there anyone else in your network in L&amp;D I should be talking to?"</li>
+  <div class="row">
+    <span class="time">12:30&ndash;2:00pm</span> Learning Session (Momentum recordings)
+    <ul class="bullets">
+      <li>Watch: Million Dollar Mindset (Momentum) &amp; Rory Vaden recording.</li>
+      <li>Take notes on frameworks or story angles you can adapt for keynotes or content.</li>
+      <li>These investments compound into stage presence and content differentiation.</li>
     </ul>
   </div>
-</div>
 
-<!-- §5 BIZ DEV -->
-<div class="section">
-  <div class="stitle">⑤ Biz Dev Signals</div>
-
-  <div class="biz-card">
-    <div class="btitle">🔥 Boston Scientific — PEARL ERG keynote TOMORROW (Apr 28, 9am PT)</div>
-    <div class="bwhy">You're delivering "Unforgettable Presence" for their Pan-Asian ERG. After the session, ask organizers Katie Liao and Hollina Ung for an intro to their broader L&amp;D or HR leadership — ERG keynotes frequently convert to company-wide programs.</div>
+  <div class="row">
+    <span class="time">2:15&ndash;3:45pm</span> Eye appointment
+    <div class="body">Personal. Build in travel/recovery buffer. The 3:45pm ELC review block starts immediately after.</div>
   </div>
 
-  <div class="biz-card">
-    <div class="btitle">📈 ServiceNow — Adam Sones discovery call Wednesday (Apr 29, 9am PT)</div>
-    <div class="bwhy">Adam wants to understand your cohort program structure, logistics, and proposal. Lilli Beckwith is also at ServiceNow — these threads may be connected. Confirm Meagan has a clean cohort one-pager ready before Wednesday's call.</div>
-  </div>
-
-  <div class="biz-card">
-    <div class="btitle">📊 AAPI Heritage Month = speaking season — pitch NOW, events are in May</div>
-    <div class="bwhy">May is AAPI Heritage Month. Boston Scientific booked you. Target 3–5 more F500 AAPI ERG leads this week with "booking fast for May" urgency. Reuse the 1Password/Apex Group outreach template — Meagan has it.</div>
-  </div>
-
-  <div class="biz-card">
-    <div class="btitle">💡 Outreach idea: "Visible Leadership in a Hybrid World" workshop pitch</div>
-    <div class="bwhy">Companies announcing RTO mandates are facing new presence and communication challenges. A targeted pitch to L&amp;D teams at organizations with recent RTO announcements positions your Executive Presence work as a business-critical skill, not a soft skill — reframing you as a strategic investment vs. a nice-to-have speaker.</div>
+  <div class="row">
+    <span class="time">3:45&ndash;4:00pm</span> [NEW] HEADS DOWN: Review Meg&rsquo;s ELC Draft &mdash; St&eacute;phane
+    <div class="body">15-min client email review. St&eacute;phane is an ELC-level contact &mdash; approve or edit Meagan&rsquo;s draft before sending.</div>
   </div>
 </div>
 
-<!-- §6 WAITING ON TEAM -->
+<!-- 5 BIZ DEV -->
 <div class="section">
-  <div class="stitle">⑥ Waiting on Team</div>
+  <div class="section-title">5 &mdash; Biz Dev</div>
 
-  <div class="team-row">
-    <div>
-      <span class="flag red">Overdue</span><span class="person">Meagan</span>
-      <span class="tname">Create presentation outline for Lorraine</span>
-      <div class="tmeta" style="margin-top:3px">Due Apr 22 — directly blocks your 9:30am review block</div>
-    </div>
-    <div class="due over">Apr 22</div>
+  <div class="row">
+    <div class="label">&#128308; Boston Scientific PEARL ERG &mdash; Post-Keynote Expansion</div>
+    <div class="body">You&rsquo;re keynoting their PEARL ERG on April 28. Their 2026 campaign is a multi-session learning initiative titled &ldquo;Visibility Through Actions Together.&rdquo; Post-event debrief with Katie Liao is already on your calendar Apr 29.</div>
+    <div class="why">Why this matters: Pitch a multi-session series ($10K&ndash;$30K) directly in the debrief call. They&rsquo;ve already invested in you once &mdash; the door is wide open.</div>
   </div>
 
-  <div class="team-row">
-    <div>
-      <span class="flag orange">Due today</span><span class="person">Mahea</span>
-      <span class="tname">Design presentation outline</span>
-      <div class="tmeta" style="margin-top:3px">Companion to Meagan's outline — both needed for your review</div>
-    </div>
-    <div class="due today">Apr 23</div>
+  <div class="row">
+    <div class="label">&#128308; Inclusive Leadership Training Gap &mdash; Enterprise Signal</div>
+    <div class="body">2026 L&amp;D reports confirm companies are explicitly citing a gap in manager training for &ldquo;conscious inclusion, empathy, and psychologically safe leadership.&rdquo; Your RAVE model addresses all three. Any company with an active ERG is a warm prospect.</div>
+    <div class="why">Why this matters: Position the RAVE model as a manager training curriculum &mdash; not just a keynote. Higher contract value, recurring delivery.</div>
   </div>
 
-  <div class="team-row">
-    <div>
-      <span class="flag orange">Due today</span><span class="person">Meagan</span>
-      <span class="tname">Final Review + Submit to Wishly</span>
-      <div class="tmeta" style="margin-top:3px">Modified early this morning — check Asana for completion status</div>
-    </div>
-    <div class="due today">Apr 23</div>
+  <div class="row">
+    <div class="label">&#128308; RTO Push = Demand for In-Person Executive Presence Training</div>
+    <div class="body">Enterprise reports confirm companies are &ldquo;reinvesting in immersive, in-person leadership experiences&rdquo; as hybrid structures solidify. AI supplements but doesn&rsquo;t replace live training for presence and communication.</div>
+    <div class="why">Why this matters: Update your speaker one-sheet to explicitly call out hybrid/RTO teams as the target audience. This language will resonate with CPOs and L&amp;D buyers right now.</div>
   </div>
 
-  <div class="team-row">
-    <div>
-      <span class="flag red">Overdue</span><span class="person">Meagan</span>
-      <span class="tname">FYI: Mari (Surge Institute) — follow up if no reply by Tue 4/21</span>
-      <div class="tmeta" style="margin-top:3px">Due Apr 21, no recent update — Mari was supposed to respond; nudge Meagan</div>
-    </div>
-    <div class="due over">Apr 21</div>
-  </div>
-
-  <div class="team-row">
-    <div>
-      <span class="flag orange">Due today</span><span class="person">Mahea</span>
-      <span class="tname">QA Review &amp; Caption Edit — Week of Apr 21</span>
-      <div class="tmeta" style="margin-top:3px">Weekly recurring — approve reels + finalize captions before passing to Zen for scheduling</div>
-    </div>
-    <div class="due today">Apr 23</div>
+  <div class="row">
+    <div class="label">&#9989; Outreach Idea: AbbVie Discovery Call (Wed Apr 29)</div>
+    <div class="body">Lara Tahchi at AbbVie (lara.tahchi@abbvie.com) &mdash; Fortune 500 pharma with strong L&amp;D investment. Prep a 1-pager with enterprise programs + pricing. After the call, send RAVE model overview + a proposal for executive presence training. If she&rsquo;s not the budget holder, ask for a warm intro to whoever is.</div>
+    <div class="why">Potential value: $5K&ndash;$25K enterprise engagement.</div>
   </div>
 </div>
 
-<!-- §7 SLACK -->
+<!-- 6 WAITING ON TEAM -->
 <div class="section">
-  <div class="stitle">⑦ Slack — Unreplied Threads</div>
-  <div class="slack-note">Slack isn't connected to this briefing. Check manually for @mentions in the last 48h — especially from Mahea re: reel approvals and Meagan re: the presentation outline status.</div>
+  <div class="section-title">6 &mdash; Waiting on Team</div>
+
+  <div class="row">
+    <span class="label">Meagan: Create presentation outline for Lorraine</span><span class="tag ov">OVERDUE Apr 22</span>
+    <div class="meta">Last updated Apr 23 &nbsp;&middot;&nbsp; No recent activity</div>
+    <div class="body">&#9888;&#65039; 2 days overdue. Lorraine&rsquo;s scripting task (due Apr 27) is blocked on this. Follow up with Meagan today by EOD.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Meagan: Update Speaking Agreement &mdash; Box (May 28, $1,500)</span><span class="tag ov">OVERDUE Apr 22</span>
+    <div class="meta">Last updated Apr 23</div>
+    <div class="body">Box AAPI Heritage Month fireside chat. Speaking agreement needs updating. Confirm with Meagan &mdash; Box contact needs this soon.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Meagan: Follow up with market research email contacts</span><span class="tag ov">OVERDUE Apr 21</span>
+    <div class="meta">Last updated Apr 21 &nbsp;&middot;&nbsp; 3 days no update</div>
+    <div class="body">Nicole Kayla and Frederick Kurniadi (FU sent Apr 21) still pending. Eric from UPM (J&amp;J L&amp;D) also pending. Nudge Meagan for status.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Mahea: IG Post &ldquo;One Woman, Five Obsessions&rdquo; &mdash; Review + Approve</span><span class="tag td">DUE TODAY</span>
+    <div class="meta">Last updated this morning &nbsp;&middot;&nbsp; Status: MAHEA TO REVIEW + APPROVE</div>
+    <div class="body">Post was scheduled for April 21 &mdash; 3 days late. Needs Mahea&rsquo;s action today before passing to Zen to schedule.</div>
+  </div>
+
+  <div class="row">
+    <span class="label">Mahea: Design presentation outline</span><span class="tag td">DUE TODAY</span>
+    <div class="meta">Last updated this morning</div>
+    <div class="body">Lorraine&rsquo;s scripting (due Apr 27) depends on this. Check with Mahea on progress by midday.</div>
+  </div>
 </div>
 
-<!-- §8 CC TIP -->
+<!-- 7 SLACK -->
 <div class="section">
-  <div class="stitle">⑧ CC Tip of the Day</div>
+  <div class="section-title">7 &mdash; Slack Unreplied Threads</div>
+  <p class="err">No @mentions found in the last 48 hours &mdash; you appear to be caught up. Worth a quick manual scan to confirm.</p>
+</div>
+
+<!-- 8 CC TIP -->
+<div class="section">
+  <div class="section-title">8 &mdash; Claude Code Tip of the Day</div>
   <div class="tip-box">
-    <div class="tip-label">Tip #4 — The Warm Re-Introduction Move</div>
-    <div class="tip-text">When following up on a stalled thread (Lilli at ServiceNow, Sheril at Apex Group), don't write "any update?" — lead with new value instead: a case study, a relevant win, or a short resource. It resets the energy of the email and gives them a reason to respond. Try it on both follow-ups today and notice the difference in reply rate.</div>
+    <div class="tip-title">Tip #5 &mdash; Audit your bio for executive presence language</div>
+    <div class="tip-body">Paste your current speaker bio into Claude and say: <em>&ldquo;Does this bio communicate executive-level authority? Rewrite it using language that signals C-suite trust and enterprise credibility &mdash; assume the reader is a Chief People Officer evaluating speakers for a high-stakes leadership event.&rdquo;</em> Run this every time you add a new credential or update your positioning.</div>
   </div>
 </div>
 
+<!-- CALENDAR BLOCKS ADDED -->
+<div class="section">
+  <div class="section-title">&#128197; Calendar Blocks Added Today</div>
+  <div class="row">
+    <span class="label">ASANA / HEADS DOWN: Review Meg&rsquo;s ELC Email Draft &mdash; St&eacute;phane [15 min]</span>
+    <div class="meta">Today, Apr 24 &nbsp;&middot;&nbsp; 3:45&ndash;4:00pm PT &nbsp;&middot;&nbsp; Lorraine&rsquo;s calendar</div>
+  </div>
+  <div class="row">
+    <span class="label">ASANA / HEADS DOWN: LinkedIn Outreach Target Research [45 min]</span>
+    <div class="meta">Thu, Apr 30 &nbsp;&middot;&nbsp; 8:00&ndash;8:45am PT &nbsp;&middot;&nbsp; Lorraine&rsquo;s calendar</div>
+  </div>
+  <div class="row">
+    <span class="label">ASANA / HEADS DOWN: LinkedIn Premium Event Prep [90 min]</span>
+    <div class="meta">Thu, Apr 30 &nbsp;&middot;&nbsp; 12:30&ndash;2:00pm PT &nbsp;&middot;&nbsp; Lorraine&rsquo;s calendar</div>
+  </div>
+  <div class="row">
+    <span class="label">MEAGAN: Create Presentation Outline for Lorraine (OVERDUE Apr 22)</span>
+    <div class="meta">Today, Apr 24 &nbsp;&middot;&nbsp; Current Projects calendar</div>
+  </div>
+  <div class="row">
+    <span class="label">MAHEA: IG Post &ldquo;One Woman, Five Obsessions&rdquo; &mdash; Review + Approve</span>
+    <div class="meta">Today, Apr 24 &nbsp;&middot;&nbsp; Current Projects calendar</div>
+  </div>
 </div>
-<footer>Generated April 23, 2026 · lorraine@lorraineklee.com · RISE Learning Solutions · Calendar: 3 focus blocks added ✓</footer>
+
+</div><!-- /container -->
 </body>
 </html>
