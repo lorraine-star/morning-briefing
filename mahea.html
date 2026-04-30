@@ -3,253 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahea — Morning Briefing — April 29, 2026</title>
+<title>Mahea — Morning Briefing · April 30, 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f0f4f3;color:#2a3530;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;padding:24px;max-width:920px;margin:0 auto}
-.header{background:#2D5F5D;padding:28px 24px 44px;border-radius:8px;margin-bottom:26px;position:relative;overflow:hidden}
-.mtn{position:absolute;bottom:0;left:0;right:0;opacity:.13}
-.header h1{color:#fff;font-size:1.75rem;font-weight:300;letter-spacing:.04em;position:relative;z-index:1}
-.header .date{color:#9ecfcc;font-size:.78rem;margin-top:5px;position:relative;z-index:1;letter-spacing:.05em}
-.section{margin-bottom:22px}
-.st{color:#2D5F5D;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px;font-weight:700;border-bottom:1px solid #c8dedd;padding-bottom:5px}
-.card{background:#fff;border:1px solid #ddeae8;border-radius:6px;padding:13px 15px;margin-bottom:8px;box-shadow:0 1px 3px #00000008}
-.card h3{font-size:.93rem;color:#1a2f2e;margin-bottom:4px;font-weight:500}
-.meta{font-size:.73rem;color:#888;margin-bottom:6px}
-.card p{font-size:.87rem;color:#4a5a55;line-height:1.55}
-.focus{background:#2D5F5D;color:#fff;border-radius:6px;padding:15px 16px;margin-bottom:9px}
-.focus h3{font-size:.95rem;color:#a8e0dc;margin-bottom:6px;font-weight:500}
-.focus p{font-size:.86rem;color:#c5e8e5;line-height:1.52}
-.tag{display:inline-block;font-size:.63rem;padding:2px 7px;border-radius:2px;font-family:sans-serif;margin-right:5px}
-.t-ov{background:#fee2e2;color:#cc2222}
-.t-cr{background:#cc2222;color:#fff}
-.t-fl{background:#fef3c7;color:#885500}
-.t-ok{background:#d1fae5;color:#155724}
-.stat-row{display:flex;gap:14px;margin-bottom:8px}
-.stat-box{flex:1;background:#fff;border:1px solid #ddeae8;border-radius:6px;padding:14px;box-shadow:0 1px 3px #00000008}
-.stat-label{font-size:.67rem;color:#999;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
-.stat-val{font-size:1.6rem;font-weight:300;color:#2D5F5D}
-.stat-goal{font-size:.75rem;color:#888;margin-top:3px}
-.bar{background:#e0edec;border-radius:3px;height:6px;margin-top:9px}
-.bar-fill{background:#2D5F5D;border-radius:3px;height:6px}
-.days-ov{color:#cc2222;font-size:.76rem;font-family:sans-serif;white-space:nowrap}
-table{width:100%;border-collapse:collapse;font-size:.85rem}
-th{color:#2D5F5D;font-weight:600;text-align:left;padding:7px 8px;border-bottom:2px solid #c8dedd;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase}
-td{padding:7px 8px;border-bottom:1px solid #e8f0ee;vertical-align:top;color:#3a4a45}
-.prompt{background:#edf6f5;border-left:3px solid #2D5F5D;padding:14px 16px;border-radius:0 6px 6px 0}
-.prompt p{color:#2D5F5D;font-size:1rem;font-style:italic;margin-bottom:7px}
-.prompt small{color:#5a7875;font-size:.8rem;line-height:1.6}
-.note{font-size:.78rem;color:#888;margin-top:7px;font-style:italic}
+body{background:#f7f9fa;color:#263030;font-family:-apple-system,'Segoe UI',Helvetica,sans-serif;font-size:15px;line-height:1.6}
+.mhdr{background:linear-gradient(175deg,#1e4d4b 0%,#2D5F5D 55%,#4a8583 100%);padding:44px 20px 68px;position:relative;overflow:hidden}
+.mhdr svg{position:absolute;bottom:0;left:0;right:0;width:100%}
+.hc{position:relative;z-index:2;max-width:880px;margin:0 auto}
+.mhdr h1{font-size:2.1rem;color:#fff;font-weight:700}
+.mhdr .sub{color:rgba(255,255,255,.75);font-size:.9rem;margin-top:4px}
+.wrap{max-width:880px;margin:0 auto;padding:22px 20px 44px}
+.s{background:#fff;border-left:4px solid #2D5F5D;padding:16px 20px;margin-bottom:14px;border-radius:0 8px 8px 0;box-shadow:0 1px 5px rgba(45,95,93,.09)}
+.s h2{color:#2D5F5D;font-size:.71rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+td,th{padding:7px 10px;text-align:left;vertical-align:top}
+th{color:#2D5F5D;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border-bottom:2px solid #e4eeee}
+tr:not(:last-child) td{border-bottom:1px solid #f0f5f5}
+.t{display:inline-block;font-size:.68rem;padding:2px 7px;border-radius:9px;font-weight:700}
+.r{background:#fce8e8;color:#b91c1c}
+.y{background:#fef3cd;color:#854d0e}
+.g{background:#dcfce7;color:#15803d}
+.f{background:#fff3cd;color:#854d0e}
+.crit{background:#fee2e2;color:#991b1b}
+.td{background:#fce8e8;color:#b91c1c}
+.bw{background:#dde9e9;border-radius:3px;height:8px;margin-top:6px}
+.bf{background:linear-gradient(90deg,#2D5F5D,#4a9997);height:8px;border-radius:3px}
+.sl{font-size:.8rem;color:#6b8888;margin-top:3px}
+.sv{font-size:1.35rem;font-weight:700;color:#2D5F5D;margin-top:2px}
+.row2{display:flex;gap:28px;flex-wrap:wrap}
+.col{flex:1;min-width:160px}
+.box{background:#f0f7f7;border:1px solid #b5d4d3;border-radius:6px;padding:13px 16px;font-size:.91rem;line-height:1.75;margin-bottom:9px}
+.box:last-child{margin-bottom:0}
+.hi{color:#2D5F5D;font-weight:700}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <svg class="mtn" viewBox="0 0 900 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="0,80 100,22 180,46 290,6 400,38 500,12 620,34 720,8 840,28 900,16 900,80" fill="white"/>
+<div class="mhdr">
+  <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,72 L0,58 L80,38 L160,52 L260,18 L360,44 L460,8 L560,36 L640,16 L720,40 L820,6 L920,38 L1020,20 L1120,48 L1220,28 L1320,50 L1440,32 L1440,72 Z" fill="#f7f9fa"/>
   </svg>
-  <h1>Good morning, Mahea.</h1>
-  <div class="date">Wednesday, April 29, 2026 &nbsp;·&nbsp; lorraine-star morning briefing</div>
-</div>
-
-<!-- 01 STATS -->
-<div class="section">
-<div class="st">01 — Stats</div>
-<div class="stat-row">
-  <div class="stat-box">
-    <div class="stat-label">Instagram Followers</div>
-    <div class="stat-val">~95K</div>
-    <div class="stat-goal">Goal: 100K by June 2026 &nbsp;·&nbsp; last known figure</div>
-    <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-label">Newsletter Subscribers</div>
-    <div class="stat-val">~22K</div>
-    <div class="stat-goal">Goal: 30K &nbsp;·&nbsp; last known figure</div>
-    <div class="bar"><div class="bar-fill" style="width:73%"></div></div>
+  <div class="hc">
+    <h1>Good morning, Mahea.</h1>
+    <div class="sub">Thursday, April 30, 2026 &nbsp;·&nbsp; Lorraine K. Lee Team Briefing</div>
   </div>
 </div>
+
+<div class="wrap">
+
+<div class="s">
+  <h2>Stats — Growth Goals</h2>
+  <div class="row2">
+    <div class="col">
+      <div class="sl">Instagram Followers</div>
+      <div class="sv">— / 100K</div>
+      <div class="bw"><div class="bf" style="width:0%"></div></div>
+      <div class="sl">Goal: 100K by June 2026 · Sync from IG dashboard daily</div>
+    </div>
+    <div class="col">
+      <div class="sl">Newsletter Subscribers (Kit)</div>
+      <div class="sv">— / 30K</div>
+      <div class="bw"><div class="bf" style="width:0%"></div></div>
+      <div class="sl">Goal: 30K subscribers · Pull from Kit dashboard</div>
+    </div>
+  </div>
 </div>
 
-<!-- 02 FOCUS ZONE -->
-<div class="section">
-<div class="st">02 — Focus Zone — Top 2 Today</div>
-
-<div class="focus">
-  <h3>1. Add PEARL ERG event feedback to Lorraine's slides — this morning</h3>
-  <p>Lorraine forwarded Katie Liao's feedback spreadsheet at 1:46am and said "to add tomorrow to slides." Katie is sending additional form data too. This is an explicit ask with a real deadline — Lorraine may reference this deck in follow-up with BSCI. Do this first.</p>
+<div class="s">
+  <h2>Focus Zone — Top 2 Today</h2>
+  <div class="box">
+    <span class="hi">1. Fix the LinkedIn Guide for Friends &amp; Family broken form</span> — Multiple people are reporting errors. This is an active lead-capture asset and every broken submission is a lost contact for Lorraine's database. Overdue since Apr 29.
+  </div>
+  <div class="box">
+    <span class="hi">2. Add Boston Scientific event feedback to debrief slides</span> — Lorraine forwarded Katie Liao's feedback spreadsheet last night with a direct note: <em>"To add tomorrow to slides."</em> That tomorrow is today. Close this loop before EOD.
+  </div>
 </div>
 
-<div class="focus">
-  <h3>2. Monitor 1Password contract signature + prep Box deposit reminder for 5/1</h3>
-  <p>You sent the 1Password invoice and agreement this morning. Set a same-day follow-up if no signature by 3pm. Box confirmed their 5/1 deposit — set a Friday morning reminder to confirm receipt or escalate.</p>
-</div>
-</div>
-
-<!-- 03 LORRAINE IS WAITING ON YOU -->
-<div class="section">
-<div class="st">03 — Lorraine Is Waiting on You</div>
-
-<div class="card">
-  <h3>Fwd: Event Feedback as 4/28 — PEARL ERG Slides</h3>
-  <div class="meta">Lorraine → mahea &nbsp;·&nbsp; Apr 29, 1:46 AM &nbsp;·&nbsp; direct to you</div>
-  <p>Lorraine forwarded Katie Liao's feedback spreadsheet with explicit instruction: "To add tomorrow to slides." This is not a suggestion — she expects slides updated today.</p>
-</div>
-
-<div class="card">
-  <h3>Fwd: FIXED: AI Probably Ripped Off My Book. Here's Why I'm Not Mad</h3>
-  <div class="meta">Lorraine → mahea + meagan &nbsp;·&nbsp; Apr 29, 3:07 AM</div>
-  <p>Lorraine shared thoughts on authentic content vs AI volume — specifically called out that she "likes what Mahea is doing" on LI. No reply needed urgently, but worth a brief acknowledgment.</p>
-</div>
-
-<div class="card">
-  <h3>Fwd: VA Performance Feedback for April 2026</h3>
-  <div class="meta">Lorraine → mahea + meagan &nbsp;·&nbsp; Apr 27</div>
-  <p>Lorraine asked "How have Zen and Kim been?" Meagan reported on Kim. Mahea's perspective on Zen's performance and deadline accountability has not been shared.</p>
-</div>
-
-<div class="card">
-  <h3>Fwd: REMINDER — IMS PROGRAM ON MAY 19 &amp; DETAILS</h3>
-  <div class="meta">Lorraine → mahea + meagan &nbsp;·&nbsp; Apr 24</div>
-  <p>Lorraine flagged that IMS is 2.5 hrs (shorter than Erie format) and requires content to be trimmed. She asked the team to confirm they're on track. No reply sent.</p>
-</div>
+<div class="s">
+  <h2>Lorraine Is Waiting On You &nbsp;<span style="font-size:.75rem;color:#6b8888;font-weight:400">(last 5 days, no reply from you)</span></h2>
+  <table>
+    <tr><th>Subject</th><th>Date</th><th>What Lorraine Needs</th></tr>
+    <tr>
+      <td>Fwd: Welcome to PlexiCam's New Affiliate Program!</td>
+      <td style="white-space:nowrap">Apr 30</td>
+      <td><em>"No rush but can you make sure I have the right code and am set up?"</em> — PlexiCam migrated to a new affiliate platform; verify Lorraine's code is active.</td>
+    </tr>
+    <tr>
+      <td>Fwd: Urgent — CookieYes 100% Pageview Limit</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td><em>"Darn - do you know if your blocker helped at all? This is still a lot :/"</em> — lorraineklee.com hit its 5K pageview cap. Lorraine needs your read on next steps.</td>
+    </tr>
+    <tr>
+      <td>Fwd: FIXED: [#31] AI Probably Ripped Off My Book</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td>Lorraine shared content strategy commentary — <em>"that's why I like what Mahea is doing with the…"</em> She's crediting you. Reply with a quick acknowledgment.</td>
+    </tr>
+    <tr>
+      <td>Fwd: Event Feedback as 4/28 (Boston Scientific)</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td><em>"To add tomorrow to slides"</em> — Katie Liao's feedback spreadsheet. Add to debrief deck and close the loop with Lorraine.</td>
+    </tr>
+    <tr>
+      <td>Fwd: VA Performance Feedback for April 2026</td>
+      <td style="white-space:nowrap">Apr 27</td>
+      <td><em>"How have Zen and Kim been?"</em> — Lorraine is asking for your direct assessment of Zen's responsiveness. Meagan replied on Kim; Zen is still waiting on your input.</td>
+    </tr>
+  </table>
 </div>
 
-<!-- 04 OPEN COMMITMENTS -->
-<div class="section">
-<div class="st">04 — Your Open Commitments</div>
-
-<div class="card">
-  <h3>Box speaking deposit — confirm receipt on 5/1</h3>
-  <div class="meta">Speaking Agreement sent Apr 22 &nbsp;·&nbsp; <span class="tag t-fl">⚠ No Asana Task</span></div>
-  <p>Lydia Smith confirmed Box will sign and pay the deposit on 5/1 when budget opens. Set a Friday morning reminder — if no payment, follow up immediately.</p>
+<div class="s">
+  <h2>Your Open Commitments &nbsp;<span style="font-size:.75rem;color:#6b8888;font-weight:400">(last 14 days · Asana cross-check)</span></h2>
+  <table>
+    <tr><th>Commitment</th><th>Date</th><th>Asana?</th></tr>
+    <tr>
+      <td>Box (Lydia Smith) confirmed signing speaking agreement + deposit on May 1 — follow up today to confirm receipt</td>
+      <td style="white-space:nowrap">Apr 27</td>
+      <td><span class="t f">⚠ No task</span></td>
+    </tr>
+    <tr>
+      <td>1Password / AMPI invoice — Desiree needs phone number; you replied this morning. Monitor for response before EOD.</td>
+      <td style="white-space:nowrap">Apr 30</td>
+      <td><span class="t g">Active</span></td>
+    </tr>
+    <tr>
+      <td>CNBC Invoice #258 ($700) — Followed up Apr 1; AP team said they'd confirm. No update since.</td>
+      <td style="white-space:nowrap">Apr 1</td>
+      <td><span class="t f">⚠ No task</span></td>
+    </tr>
+    <tr>
+      <td>Elevate Her Summit Invoice #250 ($6,237.43) — Sponsor payment still pending (Marilynn / billing@herworkplace.com)</td>
+      <td style="white-space:nowrap">Mar 11</td>
+      <td><span class="t f">⚠ No task</span></td>
+    </tr>
+  </table>
 </div>
 
-<div class="card">
-  <h3>1Password AMPI ERG contract — follow up if unsigned by EOD</h3>
-  <div class="meta">Sent today Apr 29 &nbsp;·&nbsp; <span class="tag t-ok">New — monitor today</span></div>
-  <p>Invoice and agreement sent to Stephanie Cheng this morning. If no signature confirmation by 3pm, send a warm check-in. Contract close is the top business priority this week.</p>
+<div class="s">
+  <h2>Check Superhuman Threads &nbsp;<span style="font-size:.75rem;color:#6b8888;font-weight:400">(last 48h flagged for team)</span></h2>
+  <table>
+    <tr><th>Thread</th><th>Flagged</th><th>Note</th></tr>
+    <tr>
+      <td>Fwd: read this before your next meeting</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td>Jess Ekstrom replied <em>"this is FANTASTIC! let us know when you want to return the favor!"</em> — Great result from your newsletter outreach. Lorraine flagged it. Log the collab offer and follow up.</td>
+    </tr>
+    <tr>
+      <td>Event Feedback as 4/28 (Boston Scientific)</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td>Katie Liao's feedback flagged directly to you — add to debrief slides today (same as Focus Zone #2).</td>
+    </tr>
+    <tr>
+      <td>Invoice | AMPI ERG Keynote with Lorraine K. Lee (May 21, 2026)</td>
+      <td style="white-space:nowrap">Apr 29</td>
+      <td>1Password finance needs a phone number on the invoice. You replied this morning. Lorraine has visibility — keep her posted when resolved.</td>
+    </tr>
+  </table>
 </div>
 
-<div class="card">
-  <h3>Invoice #250 — Elevate Her Summit ($6,237.43) — UNPAID</h3>
-  <div class="meta">Last follow-up: Apr 10 &nbsp;·&nbsp; <span class="tag t-cr">⚠ 19 Days — No Task Found</span></div>
-  <p>Marilynn said they're waiting on sponsor payment. It has been nearly 3 weeks since your last follow-up. This is overdue revenue — reach out today with a polite but firm check-in.</p>
+<div class="s">
+  <h2>Overdue Tasks — Triage Now</h2>
+  <table>
+    <tr><th>Task</th><th>Project</th><th>Days Overdue</th></tr>
+    <tr>
+      <td>Share Data</td>
+      <td>—</td>
+      <td><span class="t crit">⚠ 23 days</span></td>
+    </tr>
+    <tr>
+      <td>LI: Weekly LinkedIn Monitoring</td>
+      <td>Content Calendar</td>
+      <td><span class="t r">12 days</span></td>
+    </tr>
+    <tr>
+      <td>RECEIPTS (LI Videos)</td>
+      <td>LI Videos</td>
+      <td><span class="t r">7 days</span></td>
+    </tr>
+    <tr>
+      <td>LinkedIn Newsletter Roundup — April 2026 (for Meghan review)</td>
+      <td>Content &amp; Audience</td>
+      <td><span class="t y">1 day</span></td>
+    </tr>
+    <tr>
+      <td>Create invoice for Justine Lee — $2,000 one-on-one coaching</td>
+      <td>Operations &amp; Admin</td>
+      <td><span class="t y">1 day</span></td>
+    </tr>
+  </table>
 </div>
 
-<div class="card">
-  <h3>Collab IG post with Simone Stolzoff — 5/12 launch</h3>
-  <div class="meta">Lorraine requested Apr 4 &nbsp;·&nbsp; <span class="tag t-fl">⚠ No Recent Task Found</span></div>
-  <p>Lorraine asked you to coordinate a collab Instagram post for Simone's book on May 12. That's 13 days away — confirm this is on your content calendar and Niki has a draft in progress.</p>
-</div>
-</div>
-
-<!-- 05 SUPERHUMAN THREADS -->
-<div class="section">
-<div class="st">05 — Check Superhuman Threads &nbsp;·&nbsp; Last 48h</div>
-
-<div class="card">
-  <h3>❤️ Thank you for an engaging presentation — PEARL ERG (Boston Scientific)</h3>
-  <div class="meta">sharing@superhuman.com &nbsp;·&nbsp; Apr 28–29 &nbsp;·&nbsp; 5 shares</div>
-  <p>Most-flagged thread of the past 48h. Lorraine's request for PEARL ERG feedback data is central — you received the spreadsheet directly this morning. Slides are your deliverable today.</p>
+<div class="s">
+  <h2>This Week &nbsp;<span style="font-size:.75rem;color:#6b8888;font-weight:400">(Apr 30 – May 6, chronological)</span></h2>
+  <table>
+    <tr><th>Task</th><th>Project</th><th>Due</th></tr>
+    <tr><td>✅ IG — About Lorraine</td><td>Content Calendar</td><td>Apr 30 <span class="t td">Today</span></td></tr>
+    <tr><td>IG: Zen Edit Raw Footage — Week of Apr 27</td><td>Content Calendar</td><td>Apr 30 <span class="t td">Today</span></td></tr>
+    <tr><td>LI Premium Slides</td><td>—</td><td>Apr 30 <span class="t td">Today</span></td></tr>
+    <tr><td>Newsletter quote for upcoming edition</td><td>—</td><td>Apr 30 <span class="t td">Today</span></td></tr>
+    <tr><td>Schedule Promo post #2</td><td>—</td><td>Apr 30 <span class="t td">Today</span></td></tr>
+    <tr><td>Prep: Ops Week</td><td>Operations &amp; Admin · Medium</td><td>May 1</td></tr>
+    <tr><td>IG: Mahea QA Review &amp; Caption Edit — Week of Apr 27</td><td>Content Calendar</td><td>May 1</td></tr>
+  </table>
 </div>
 
-<div class="card">
-  <h3>Fwd: Event Feedback as 4/28</h3>
-  <div class="meta">sharing@superhuman.com &nbsp;·&nbsp; Apr 29 &nbsp;·&nbsp; forwarded directly to you</div>
-  <p>Katie Liao's feedback spreadsheet forwarded by Lorraine. Raw data for the PEARL ERG slide deck she needs today.</p>
+<div class="s">
+  <h2>Backlog — Keep on Radar</h2>
+  <table>
+    <tr><th>Task</th><th>Project / Priority</th><th>Due</th></tr>
+    <tr><td>Add Lorraine's Podcasts to Spotify &amp; YT</td><td>Operations &amp; Admin · Low</td><td>May 1</td></tr>
+    <tr><td>⚠️ IG — Resource (Reel 19)</td><td>Content Calendar</td><td>May 2</td></tr>
+    <tr><td>Write to Rob Hartnett re: thumbnail on YT vid</td><td>Content &amp; Audience · Medium</td><td>May 1</td></tr>
+  </table>
 </div>
 
-<div class="card">
-  <h3>Speaking Agreement + Invoice — Lorraine K. Lee x Box</h3>
-  <div class="meta">sharing@superhuman.com &nbsp;·&nbsp; Apr 23 &nbsp;·&nbsp; 2 shares — monitoring</div>
-  <p>Box thread was flagged twice. Deposit expected 5/1 — monitor and confirm payment received. Lydia's contact for deposit confirmation: lydiasmith@box.com.</p>
-</div>
-</div>
-
-<!-- 06 OVERDUE TASKS -->
-<div class="section">
-<div class="st">06 — Overdue Tasks — Triage</div>
-<table>
-<thead><tr><th>Task</th><th>Project</th><th>Days Overdue</th></tr></thead>
-<tbody>
-<tr>
-  <td><span class="tag t-cr">🔴 &gt;3d</span> Share Data</td>
-  <td>—</td>
-  <td class="days-ov">22 days (Apr 7)</td>
-</tr>
-<tr>
-  <td><span class="tag t-cr">🔴 &gt;3d</span> LinkedIn Guide for Friends &amp; Family form is broken</td>
-  <td>Inbox From Lorraine</td>
-  <td class="days-ov">13 days (Apr 16)</td>
-</tr>
-<tr>
-  <td><span class="tag t-cr">🔴 &gt;3d</span> Figure out wtf is happening w Google permissions</td>
-  <td>Operations &amp; Admin / High Priority</td>
-  <td class="days-ov">13 days (Apr 16)</td>
-</tr>
-<tr>
-  <td><span class="tag t-cr">🔴 &gt;3d</span> MasterClass Launch</td>
-  <td>Content &amp; Audience</td>
-  <td class="days-ov">12 days (Apr 17)</td>
-</tr>
-<tr>
-  <td><span class="tag t-cr">🔴 &gt;3d</span> Newsletter quote for upcoming edition</td>
-  <td>—</td>
-  <td class="days-ov">12 days (Apr 17)</td>
-</tr>
-</tbody>
-</table>
-<p class="note">+ 15 additional overdue tasks in Asana — a triage session this week is overdue itself.</p>
+<div class="s">
+  <h2>Today's Growth Prompt &nbsp;<span style="font-size:.75rem;color:#6b8888;font-weight:400">Theme: Proactive Communication</span></h2>
+  <div class="box" style="margin-bottom:0">
+    <span class="hi">Don't wait to be asked — share before you're asked.</span> When Lorraine says "to add tomorrow to slides," your move is to do it and send a quick "done!" back. That one habit — act, then close the loop — builds the trust that earns you more ownership over time. You showed real initiative with the Jess Ekstrom newsletter outreach today. That's the energy. Keep it going.
+  </div>
 </div>
 
-<!-- 07 THIS WEEK -->
-<div class="section">
-<div class="st">07 — This Week</div>
-<div class="card">
-  <p style="color:#555;font-size:.85rem">All tasks returned in your top Asana results were due Apr 28 or earlier and are now overdue. Pull your full Asana view to see any tasks due Apr 29–May 5 not captured in this briefing.</p>
-  <p style="margin-top:10px;font-size:.87rem;color:#2D5F5D;font-weight:600">Key this week:</p>
-  <ul style="margin-top:6px;padding-left:18px;font-size:.86rem;color:#4a5a55;line-height:1.8">
-    <li>PEARL ERG slides — today</li>
-    <li>1Password contract signed — today</li>
-    <li>Box deposit confirmed — Friday 5/1</li>
-    <li>Elevate Her Summit invoice follow-up — today</li>
-    <li>IMS May 19 prep — confirm content trimmed for 2.5hr format</li>
-  </ul>
 </div>
-</div>
-
-<!-- 08 BACKLOG -->
-<div class="section">
-<div class="st">08 — Backlog — Keep on Radar</div>
-
-<div class="card">
-  <h3>Create slides for Live Sessions 2 &amp; 3</h3>
-  <div class="meta">Courses &amp; Enterprise / Low Priority &nbsp;·&nbsp; was due Apr 17</div>
-  <p>Course live session slide decks — keep this visible so it doesn't drift further. Good to batch on a slower afternoon.</p>
-</div>
-
-<div class="card">
-  <h3>Add Lorraine's Podcasts to Spotify &amp; YouTube</h3>
-  <div class="meta">Operations &amp; Admin / Low Priority &nbsp;·&nbsp; was due Apr 17</div>
-  <p>Evergreen platform task to expand Lorraine's audio presence. Pair with other platform content batching.</p>
-</div>
-
-<div class="card">
-  <h3>Write to Rob Hartnett — thumbnail for YouTube video</h3>
-  <div class="meta">Content &amp; Audience / Medium Priority &nbsp;·&nbsp; was due Apr 17</div>
-  <p>Quick outreach to improve click-through on an existing YT video. Low lift, good content ROI — batch with other content tasks.</p>
-</div>
-</div>
-
-<!-- 09 OWNERSHIP PROMPT -->
-<div class="section">
-<div class="st">09 — Ownership Prompt</div>
-<div class="prompt">
-  <p>You don't have to wait to be told what needs attention.</p>
-  <small>When Lorraine is in back-to-back events or traveling, your job is to look one step ahead — anticipate what she'll need when she surfaces. The slides before she asks. The invoice follow-up before it becomes awkward. The contract confirmation before she wonders. That's not just doing your job; that's what makes you irreplaceable. Today, look at everything above and ask: "What will Lorraine need tomorrow morning that no one has mentioned yet?" Then go do that first.</small>
-</div>
-</div>
-
 </body>
 </html>
