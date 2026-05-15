@@ -3,209 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mahea · Morning Briefing · May 1 2026</title>
+<title>Mahea · Command Center</title>
 <style>
+:root{color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#f7f9fa;color:#1a2a28;font-family:'Inter',system-ui,-apple-system,sans-serif;padding:24px 30px;min-height:100vh}
-header{background:linear-gradient(140deg,#2D5F5D 0%,#1a3a38 100%);padding:24px 28px 0;border-radius:10px;margin-bottom:22px;position:relative;overflow:hidden}
+body{background:#f7f9fa;color:#1a2a28;font-family:'Inter',system-ui,-apple-system,sans-serif;padding:22px 26px;min-height:100vh}
+header{background:linear-gradient(140deg,#2D5F5D 0%,#1a3a38 100%);padding:22px 26px 0;border-radius:10px;margin-bottom:20px;position:relative;overflow:hidden}
 .mtn{display:block;width:100%;margin-top:10px}
 .htext{position:relative;z-index:1}
-h1{font-size:1.85rem;font-weight:700;color:#fff}
-.sub{color:#9dd4d2;font-size:.88rem;margin-top:3px;margin-bottom:14px}
-.card{background:#fff;border-left:4px solid #2D5F5D;padding:16px 20px;margin-bottom:12px;border-radius:0 7px 7px 0;box-shadow:0 1px 4px rgba(45,95,93,.07)}
-h2{font-size:.73rem;font-weight:700;color:#2D5F5D;letter-spacing:.12em;text-transform:uppercase;margin-bottom:11px}
-.row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #edf2f1;font-size:.9rem}
+h1{font-size:1.8rem;font-weight:700;color:#fff}
+.sub{color:#9dd4d2;font-size:.86rem;margin-top:3px;margin-bottom:14px}
+.card{background:#fff;border-left:4px solid #2D5F5D;padding:15px 19px;margin-bottom:12px;border-radius:0 7px 7px 0;box-shadow:0 1px 4px rgba(45,95,93,.07)}
+h2{font-size:.72rem;font-weight:700;color:#2D5F5D;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #edf2f1;font-size:.9rem;gap:12px}
 .row:last-child{border-bottom:none}
 .dim{color:#8ab0ae;font-size:.82rem;font-style:italic}
 .teal{color:#2D5F5D;font-weight:600}
-.bar{height:7px;background:#e4eeee;border-radius:4px;margin:8px 0 3px;overflow:hidden}
-.fill{height:100%;background:linear-gradient(90deg,#2D5F5D,#48a09c);border-radius:4px}
-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:7px}
-th{color:#8ab0ae;text-align:left;padding:4px 7px;border-bottom:1px solid #edf2f1;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:6px}
+th{color:#8ab0ae;text-align:left;padding:4px 7px;border-bottom:1px solid #edf2f1;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 td{padding:6px 7px;border-bottom:1px solid #f4f8f8;vertical-align:top;line-height:1.45}
-.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:.72rem;font-weight:600}
+tr:last-child td{border-bottom:none}
+a{color:#2D5F5D}
+.tag{display:inline-block;padding:1px 7px;border-radius:3px;font-size:.71rem;font-weight:600;white-space:nowrap}
 .red{background:#fdecea;color:#b02020}
 .yellow{background:#fdf6e0;color:#9a6f0a}
 .green{background:#e6f5ed;color:#1a7a40}
-.italic{font-style:italic;color:#9ab8b5;font-size:.85rem}
-.prompt{background:#eef5f5;border-left:3px solid #2D5F5D;padding:13px 15px;border-radius:0 6px 6px 0;line-height:1.75;margin-top:5px;font-size:.9rem}
-.prompt strong{color:#2D5F5D;display:block;margin-bottom:7px;font-size:.86rem;font-weight:700;letter-spacing:.03em}
-.note{color:#9ab8b5;font-size:.75rem;margin-top:7px}
-.hero{font-size:.93rem;color:#2D5F5D;font-weight:600;display:block;margin-bottom:5px}
-.hero-num{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;background:#2D5F5D;color:#fff;border-radius:50%;font-size:.68rem;font-weight:700;margin-right:6px;vertical-align:middle;flex-shrink:0}
-.od{color:#b02020;font-weight:600}
-.flag{color:#b02020;font-size:.72rem;font-weight:700}
-.money{color:#1a7a40;font-weight:600}
+.gray{background:#eef2f2;color:#5d7a78}
+.note{color:#9ab8b5;font-size:.74rem;margin-top:8px}
+.prompt{background:#eef5f5;border-left:3px solid #2D5F5D;padding:13px 15px;border-radius:0 6px 6px 0;line-height:1.7;margin-top:4px;font-size:.89rem}
+.prompt strong{color:#2D5F5D;display:block;margin-bottom:6px;font-size:.85rem;font-weight:700;letter-spacing:.02em}
+.draft{background:#f4f8f8;border:1px solid #e0ebea;border-radius:7px;padding:14px 16px;font-size:.88rem;line-height:1.65;white-space:pre-wrap}
+.hero{font-size:.92rem;color:#1a2a28;font-weight:600;display:block;margin-bottom:3px}
+.hero-num{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;background:#2D5F5D;color:#fff;border-radius:50%;font-size:.67rem;font-weight:700;margin-right:7px;vertical-align:middle}
+.hero-block{padding:9px 0;border-bottom:1px solid #edf2f1}
+.hero-block:last-child{border-bottom:none}
+.hero-why{font-size:.84rem;color:#3a5a56;line-height:1.55;padding-left:26px;margin-top:2px}
+.hero-steps{padding-left:26px;margin-top:5px}
+.hero-steps li{font-size:.81rem;color:#5d7a78;line-height:1.6;list-style:none;padding-left:14px;position:relative}
+.hero-steps li:before{content:"\\2610";position:absolute;left:0;color:#9ab8b5}
+.cap-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cap-pill{font-size:.95rem;font-weight:700;padding:5px 13px;border-radius:6px}
+.cap-counts{font-size:.84rem;color:#5d7a78}
+.li-item{padding:7px 0;border-bottom:1px solid #f4f8f8;font-size:.87rem;line-height:1.5}
+.li-item:last-child{border-bottom:none}
+.loading{color:#9ab8b5;font-size:.85rem;font-style:italic;padding:4px 0}
+.err{color:#b07a20;font-size:.8rem;background:#fdf6e0;padding:7px 10px;border-radius:5px;margin-top:6px}
+.flag{color:#b02020;font-weight:700;font-size:.72rem}
+.foot{text-align:center;color:#9ab8b5;font-size:.73rem;margin:14px 0 4px}
+.chip{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.74rem}
 </style>
 </head>
 <body>
-
 <header>
   <div class="htext">
-    <h1>Good Morning, Mahea</h1>
-    <div class="sub">Thursday, May 1, 2026 &nbsp;&middot;&nbsp; Morning Briefing &nbsp;&middot;&nbsp; Meagan is OOO &mdash; you&rsquo;re the point today</div>
+    <h1 id="greeting">Command Center</h1>
+    <div class="sub" id="subline">Loading your day&hellip;</div>
   </div>
-  <svg class="mtn" viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-    <polygon points="0,80 100,28 180,54 295,6 400,50 500,16 610,48 685,20 775,44 900,12 900,80" fill="white" opacity=".11"/>
-    <polygon points="0,80 65,52 140,70 235,34 330,68 430,40 530,65 625,32 720,56 820,25 900,46 900,80" fill="white" opacity=".06"/>
+  <svg class="mtn" viewBox="0 0 900 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <polygon points="0,70 100,24 180,48 295,5 400,44 500,14 610,42 685,18 775,38 900,10 900,70" fill="white" opacity=".11"/>
+    <polygon points="0,70 65,46 140,62 235,30 330,60 430,35 530,57 625,28 720,49 820,22 900,40 900,70" fill="white" opacity=".06"/>
   </svg>
 </header>
 
-<!-- §1 STATS -->
 <div class="card">
-  <h2>&sect;1 &mdash; Growth Stats</h2>
-  <div class="row"><span>Instagram Followers (connect Meta API)</span><span class="dim">not connected &mdash; last known figure needed</span></div>
-  <div class="row"><span>Instagram Goal &mdash; June 2026</span><span class="teal">100,000</span></div>
-  <div class="bar"><div class="fill" style="width:0%"></div></div>
-  <div class="row" style="margin-top:5px"><span>Newsletter Subscribers (connect Beehiiv / Kit)</span><span class="dim">not connected</span></div>
-  <div class="row"><span>Newsletter Goal</span><span class="teal">30,000</span></div>
-  <div class="bar"><div class="fill" style="width:0%"></div></div>
-  <div class="note">Connect Meta API and Beehiiv/Kit to populate live counts with growth rate and days-to-goal projection.</div>
+  <h2>&sect;1 &mdash; My Capacity</h2>
+  <div id="capacity"><div class="loading">Reading your workload&hellip;</div></div>
 </div>
 
-<!-- §2 FOCUS ZONE -->
 <div class="card">
-  <h2>&sect;2 &mdash; Focus Zone &middot; Top 2 Today</h2>
-  <div style="padding:8px 0 10px;border-bottom:1px solid #edf2f1">
-    <span class="hero"><span class="hero-num">1</span>Create and send invoice for Justine Lee &mdash; $2,000 coaching (2 days overdue, HIGH PRIORITY)</span>
-    <p style="font-size:.86rem;color:#3a5a56;line-height:1.6;padding-left:25px">This is real money sitting in a draft that hasn&rsquo;t been billed. Every day it waits is a day it could get lost in transition. Do this first, before anything else.</p>
-  </div>
-  <div style="padding:10px 0 0">
-    <span class="hero"><span class="hero-num">2</span>Fix the &ldquo;LinkedIn Guide for Friends &amp; Family&rdquo; form &mdash; multiple people reporting it&rsquo;s broken (2 days overdue)</span>
-    <p style="font-size:.86rem;color:#3a5a56;line-height:1.6;padding-left:25px">Every broken form is a lost lead. Multiple people have hit this &mdash; it&rsquo;s actively costing Lorraine growth. This is your queue from Lorraine&rsquo;s inbox (For Mahea section).</p>
-  </div>
-  <div class="note">Source: Asana &middot; Ops &amp; Admin (High Priority) and Inbox From Lorraine (For Mahea) &middot; both due Apr 29</div>
+  <h2>&sect;2 &mdash; Lorraine's Upcoming Events &amp; Meetings</h2>
+  <div id="events"><div class="loading">Loading calendar&hellip;</div></div>
 </div>
 
-<!-- §3 LORRAINE IS WAITING -->
 <div class="card">
-  <h2>&sect;3 &mdash; Lorraine Is Waiting on You</h2>
-  <table>
-    <tr><th>Date</th><th>Subject</th><th>What&rsquo;s Needed</th></tr>
-    <tr>
-      <td>Apr 29</td>
-      <td>Fwd: Question about LDP presentation at AbbVie (Juliana Alvarez-Argote)</td>
-      <td>Lorraine forwarded with note &ldquo;Good for debrief slides&rdquo; &mdash; no action from Mahea visible. Add to AbbVie debrief deck.</td>
-    </tr>
-    <tr>
-      <td>Apr 30</td>
-      <td>Fwd: Welcome to PlexiCam&rsquo;s New Affiliate Program!</td>
-      <td>&ldquo;No rush but can you make sure I have the right code and am set up?&rdquo; &mdash; no reply or confirmation visible yet</td>
-    </tr>
-    <tr>
-      <td>Apr 27</td>
-      <td>Speaking Agreement + Invoice &mdash; Lorraine K. Lee x Box (May 28)</td>
-      <td>Lydia Smith at Box said she&rsquo;d sign and deposit <strong style="color:#b02020">today (May 1)</strong> &mdash; follow up NOW and confirm receipt <span class="flag">URGENT &mdash; TODAY</span></td>
-    </tr>
-  </table>
+  <h2>&sect;3 &mdash; Top 3 Today &middot; suggested, edit freely</h2>
+  <div id="top3"><div class="loading">Thinking through priorities&hellip;</div></div>
 </div>
 
-<!-- §4 OPEN COMMITMENTS -->
 <div class="card">
-  <h2>&sect;4 &mdash; Your Open Commitments</h2>
-  <table>
-    <tr><th>Commitment</th><th>Date</th><th>Asana Task?</th></tr>
-    <tr>
-      <td>Box signing + deposit expected <strong>today May 1</strong> (Lydia Smith confirmed Apr 27)</td>
-      <td>Apr 22</td>
-      <td><span class="tag red">No task &mdash; gap</span></td>
-    </tr>
-    <tr>
-      <td>1Password finance needs a phone number to process payment (Desiree McConnell asked Apr 29)</td>
-      <td>Apr 30</td>
-      <td><span class="tag red">No task &mdash; gap</span></td>
-    </tr>
-    <tr>
-      <td>Sent final $5K invoice to IPMA/Morgan (Apr 30) &mdash; tracking payment received?</td>
-      <td>Apr 30</td>
-      <td><span class="tag yellow">No task found</span></td>
-    </tr>
-    <tr>
-      <td>&ldquo;[Action Needed] Signature for partnership&rdquo; sent to Stephanie@1Password (Apr 29) &mdash; signed?</td>
-      <td>Apr 29</td>
-      <td><span class="tag yellow">Follow up needed</span></td>
-    </tr>
-    <tr>
-      <td>Jess Ekstrom responded &ldquo;this is FANTASTIC!&rdquo; to newsletter mention &mdash; offered to reciprocate (Apr 29)</td>
-      <td>Apr 29</td>
-      <td><span class="tag red">No task &mdash; gap</span></td>
-    </tr>
-  </table>
+  <h2>&sect;4 &mdash; Today's Time-Blocked Plan</h2>
+  <div id="timeplan"><div class="loading">Building your schedule&hellip;</div></div>
 </div>
 
-<!-- §5 SUPERHUMAN THREADS -->
 <div class="card">
-  <h2>&sect;5 &mdash; Superhuman Threads (Last 48h)</h2>
-  <table>
-    <tr><th>Thread</th><th>Shared</th><th>What to Do</th></tr>
-    <tr>
-      <td>Invoice | AMPI ERG Keynote (1Password) &mdash; Desiree McConnell</td>
-      <td>Apr 29</td>
-      <td>Desiree needs a phone number for 1Password finance to process payment &mdash; send it today</td>
-    </tr>
-    <tr>
-      <td>Fwd: read this before your next meeting (Jess Ekstrom newsletter)</td>
-      <td>Apr 29</td>
-      <td>Jess loved the newsletter mention &amp; offered to reciprocate &mdash; Lorraine flagged; reply to close the loop with Jess</td>
-    </tr>
-    <tr>
-      <td>Reschedule: Practice session with Lorraine K. Lee (Charles IMS / Karla)</td>
-      <td>Apr 30</td>
-      <td>Resolved &mdash; Charles confirmed May 5 at 11am PT; calendar invite sent &#10003;</td>
-    </tr>
-  </table>
+  <h2>&sect;5 &mdash; Urgent &middot; Money &amp; Client-Facing</h2>
+  <div id="money"><div class="loading">Checking invoices &amp; contracts&hellip;</div></div>
+  <div id="duetoday" style="margin-top:12px"></div>
 </div>
 
-<!-- §6 OVERDUE TASKS -->
 <div class="card">
-  <h2>&sect;6 &mdash; Overdue Tasks &middot; Triage Now</h2>
-  <table>
-    <tr><th>Task</th><th>Project</th><th>Due Date</th><th>Days Over</th></tr>
-    <tr><td>Share Data</td><td>&mdash;</td><td>Apr 7</td><td><span class="flag">&#9888; 24 days</span></td></tr>
-    <tr><td>LI: Weekly LinkedIn Monitoring</td><td>Content Calendar &middot; LinkedIn</td><td>Apr 18</td><td><span class="flag">&#9888; 13 days</span></td></tr>
-    <tr><td>RECEIPTS (Zen Editing Round 1)</td><td>LI Videos</td><td>Apr 23</td><td><span class="flag">&#9888; 8 days</span></td></tr>
-    <tr><td>LI Post: Edit LI Vids</td><td>Content Calendar</td><td>Apr 29</td><td><td class="od">2 days</span></td></tr>
-    <tr><td>Create invoice for Justine Lee &mdash; $2,000 coaching <span class="tag red">HIGH</span></td><td>Operations &amp; Admin</td><td>Apr 29</td><td class="od">2 days</td></tr>
-  </table>
-  <div class="note">Also overdue: LinkedIn Guide form broken (Apr 29) and IG: Zen Edit Raw Footage (Apr 30) and Newsletter quote (Apr 30) and Schedule Promo post #2 (Apr 30)</div>
+  <h2>&sect;6 &mdash; Important &middot; Client-Facing This Week</h2>
+  <div id="thisweek"><div class="loading">Loading this week&hellip;</div></div>
+  <div id="slackasks" style="margin-top:12px"></div>
 </div>
 
-<!-- §7 THIS WEEK -->
 <div class="card">
-  <h2>&sect;7 &mdash; This Week &middot; Due in 7 Days</h2>
-  <table>
-    <tr><th>Task</th><th>Project</th><th>Due</th></tr>
-    <tr><td>Prep: Ops Week</td><td>Operations &amp; Admin &middot; Medium</td><td style="color:#b02020">May 1 TODAY</td></tr>
-    <tr><td>Kit broadcast tagging &mdash; clean up newsletter data [15 min]</td><td>Inbox From Lorraine</td><td style="color:#b02020">May 1 TODAY</td></tr>
-    <tr><td>IG: Mahea QA Review &amp; Caption Edit &mdash; Week of Apr 27</td><td>Content Calendar &middot; IG</td><td style="color:#b02020">May 1 TODAY</td></tr>
-    <tr><td>Figure out Google permissions &amp; prevent requests</td><td>Operations &amp; Admin &middot; High</td><td style="color:#b02020">May 1 TODAY</td></tr>
-    <tr><td>Write to Rob Hartnett about adding thumbnail to YT vid</td><td>Content &amp; Audience</td><td style="color:#b02020">May 1 TODAY</td></tr>
-    <tr><td>&#9888;&#65039; IG &mdash; Resource (Reel 19)</td><td>Content Calendar</td><td>May 2</td></tr>
-    <tr><td>IG: Schedule Approved Reels &mdash; Week of Apr 27</td><td>Content Calendar</td><td>May 2</td></tr>
-  </table>
-  <div class="note">Also this week: MasterClass Launch (May 4) &middot; Newsletter PS #4 (May 4) &middot; Post event recap + replay link (May 7)</div>
+  <h2>&sect;7 &mdash; Overdue &middot; Triage When You Can</h2>
+  <div id="overdue"><div class="loading">Counting overdue work&hellip;</div></div>
 </div>
 
-<!-- §8 BACKLOG -->
 <div class="card">
-  <h2>&sect;8 &mdash; Backlog &middot; Keep on Radar</h2>
-  <table>
-    <tr><th>Task</th><th>Project / Section</th><th>Notes</th></tr>
-    <tr><td>Add Lorraine&rsquo;s Podcasts to Spotify &amp; YT</td><td>Operations &amp; Admin &middot; Low Priority</td><td>Due May 1 but low priority section; don&rsquo;t let it disappear</td></tr>
-    <tr><td>MasterClass Launch</td><td>Content &amp; Audience</td><td>Due May 4 &mdash; check if this needs content prep now</td></tr>
-    <tr><td>Newsletter PS #4</td><td>&mdash;</td><td>Due May 4 &mdash; draft needed before send</td></tr>
-  </table>
+  <h2>&sect;8 &mdash; Do Later &middot; Keep on Radar</h2>
+  <div id="dolater"><div class="loading">Loading backlog&hellip;</div></div>
 </div>
 
-<!-- §9 OWNERSHIP PROMPT -->
 <div class="card">
-  <h2>&sect;9 &mdash; Ownership Prompt</h2>
-  <div class="prompt">
-    <strong>Today&rsquo;s Focus: Closing the Loop</strong>
-    You&rsquo;re holding down the team solo today while Meagan is OOO &mdash; and the best thing you can do is keep Lorraine informed without her having to ask. When you collect Box&rsquo;s deposit confirmation, when you fix the form, when you send that invoice &mdash; take 60 seconds to let Lorraine know each one is done. Closing the loop consistently is one of the highest-trust habits a team member can build. It turns invisible effort into visible ownership. You&rsquo;ve absolutely got this today. 💙
-  </div>
-  <div class="note">Rotates daily &middot; 5 growth-area prompts &middot; Prompt 2 of 5 &middot; May 1 &middot; warm &amp; encouraging</div>
+  <h2>&sect;9 &mdash; Draft Message to Lorraine &middot; copy/paste, nothing sends</h2>
+  <div id="draft"><div class="loading">Drafting&hellip;</div></div>
 </div>
 
+<div class="card">
+  <h2>&sect;10 &mdash; A Note for Today</h2>
+  <div id="ownership"><div class="loading">&hellip;</div></div>
+</div>
+
+<div class="foot" id="foot">&nbsp;</div>
+
+<script>
+"use strict";
+
+/* ---------- connector tool names ---------- */
+const T = {
+  asana:    "mcp__f858b1f9-3914-47de-92e5-eaa9177581a2__get_my_tasks",
+  calendar: "mcp__aac3b2fc-eb59-42d9-b4f9-4120b3085179__list_events",
+  email:    "mcp__f80543b5-5a21-424b-a185-8f4dfc8669d3__query_email_and_calendar",
+  slack:    "mcp__2367549b-c715-4fda-ade0-d03f91a430c5__slack_search_public_and_private"
+};
+const ASANA_LIST = "https://app.asana.com/0/1210774256721089/list";
+
+/* ---------- helpers ---------- */
+function unwrap(res){
+  if(res==null) return null;
+  if(typeof res==="string"){ try{return JSON.parse(res);}catch(e){return res;} }
+  if(res.content && Array.isArray(res.content)){
+    const t = res.content.map(c=>(c&&c.text)||"").join("");
+    try{return JSON.parse(t);}catch(e){return t;}
+  }
+  if(res.result!==undefined) return unwrap(res.result);
+  return res;
+}
+async function call(name,args){
+  if(!(window.cowork && window.cowork.callMcpTool)) throw new Error("connector bridge unavailable");
+  return unwrap(await window.cowork.callMcpTool(name,args));
+}
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+function el(id){ return document.getElementById(id); }
+function startOfDay(d){ const x=new Date(d); x.setHours(0,0,0,0); return x; }
+const TODAY = startOfDay(new Date());
+function parseDue(s){ if(!s) return null; const p=String(s).split("-"); if(p.length<3) return null; return startOfDay(new Date(+p[0],+p[1]-1,+p[2])); }
+function daysFromToday(d){ return Math.round((startOfDay(d)-TODAY)/86400000); }
+function fmtDate(d){ return d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"}); }
+function fmtDateShort(d){ return d.toLocaleDateString("en-US",{month:"short",day:"numeric"}); }
+function fmtTime(d){ return d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"}); }
+
+/* countdown chip, mirrors the Slack canvas rules */
+function chip(due){
+  const n=daysFromToday(due);
+  if(n<0)  return {cls:"red",   txt:"⏳ overdue "+(-n)+"d"};
+  if(n===0)return {cls:"red",   txt:"🔴 due today"};
+  if(n===1)return {cls:"yellow",txt:"🟡 due tomorrow"};
+  if(n<=3) return {cls:"yellow",txt:"🟡 due in "+n+"d"};
+  if(n<=7) return {cls:"green", txt:"🟢 due in "+n+"d"};
+  return {cls:"green", txt:"🟢 due in "+n+"d · "+fmtDateShort(due)};
+}
+
+/* ---------- shared state ---------- */
+const S = { tasks:[], buckets:null, events:[], todayMeetings:[], emailAnswer:"", slackText:"" };
+
+/* ===================================================================
+   ASANA  ->  capacity, due-today, this-week, overdue, do-later
+   =================================================================== */
+function bucketTasks(tasks){
+  const overdue=[], dueToday=[], thisWeek=[], beyond=[], noDue=[];
+  tasks.forEach(t=>{
+    const d=parseDue(t.due_on);
+    const proj=(t.projects&&t.projects[0]&&t.projects[0].name)||"";
+    const item={name:t.name,url:t.permalink_url,proj:proj,due:d};
+    if(!d){ noDue.push(item); return; }
+    const n=daysFromToday(d);
+    if(n<0) overdue.push(item);
+    else if(n===0) dueToday.push(item);
+    else if(n<=7) thisWeek.push(item);
+    else beyond.push(item);
+  });
+  const bySoon=(a,b)=>a.due-b.due;
+  overdue.sort(bySoon); dueToday.sort(bySoon); thisWeek.sort(bySoon); beyond.sort(bySoon);
+  return {overdue,dueToday,thisWeek,beyond,noDue};
+}
+
+async function loadAsana(){
+  let data;
+  try{
+    const r = await call(T.asana,{completed_since:"now",limit:100,opt_fields:"gid,name,due_on,projects.name,permalink_url"});
+    data = (r&&r.data)||[];
+  }catch(e){
+    el("duetoday").innerHTML=""; el("thisweek").innerHTML='<div class="err">Couldn’t load Asana right now. Hit Reload in a moment.</div>';
+    el("overdue").innerHTML='<div class="err">Couldn’t load Asana.</div>';
+    el("dolater").innerHTML='<div class="err">Couldn’t load Asana.</div>';
+    return null;
+  }
+  S.tasks = data;
+  const b = bucketTasks(data);
+  S.buckets = b;
+
+  /* due today */
+  el("duetoday").innerHTML =
+    '<div style="font-weight:600;font-size:.83rem;color:#2D5F5D;margin-bottom:4px">📌 Content due today (Asana)</div>' +
+    (b.dueToday.length
+      ? b.dueToday.map(t=>'<div class="li-item">'+(t.url?'<a href="'+esc(t.url)+'" target="_blank">'+esc(t.name)+'</a>':esc(t.name))+
+          ' &middot; <span class="tag red chip">🔴 due today</span></div>').join("")
+      : '<div class="li-item dim">Nothing due today.</div>');
+
+  /* this week */
+  el("thisweek").innerHTML =
+    '<div style="font-weight:600;font-size:.83rem;color:#2D5F5D;margin-bottom:4px">📋 Asana &mdash; due in the next 7 days</div>' +
+    (b.thisWeek.length
+      ? b.thisWeek.map(t=>{const c=chip(t.due);return '<div class="li-item">'+(t.url?'<a href="'+esc(t.url)+'" target="_blank">'+esc(t.name)+'</a>':esc(t.name))+
+          ' &middot; <span class="tag '+c.cls+' chip">'+esc(c.txt)+'</span></div>';}).join("")
+      : '<div class="li-item dim">Nothing due in the next 7 days.</div>');
+
+  /* overdue */
+  el("overdue").innerHTML =
+    '<div class="row"><span><strong>'+b.overdue.length+'</strong> overdue task'+(b.overdue.length===1?"":"s")+
+    ' &mdash; don’t read them one by one, just block time to triage: do, delegate, reschedule, or delete.</span>'+
+    '<a href="'+ASANA_LIST+'" target="_blank">Review in Asana →</a></div>'+
+    (b.overdue.length? '<div class="note">Oldest: '+esc(b.overdue[0].name)+' ('+fmtDateShort(b.overdue[0].due)+')</div>':"");
+
+  /* do later */
+  const next = b.beyond[0];
+  el("dolater").innerHTML =
+    '<div class="li-item">Transfer Lorraine’s YouTube to her professional account <span class="dim">(ongoing cleanup)</span></div>'+
+    '<div class="li-item">Get Lorraine’s podcasts onto Spotify &amp; YouTube <span class="dim">(ongoing cleanup)</span></div>'+
+    '<div class="li-item">~'+b.noDue.length+' backlog tasks with no due date &middot; <a href="'+ASANA_LIST+'" target="_blank">Review in Asana →</a></div>'+
+    (next? '<div class="li-item">'+b.beyond.length+' task'+(b.beyond.length===1?"":"s")+' due beyond this week &middot; next up: '+
+      esc(next.name)+' <span class="tag green chip">'+esc(chip(next.due).txt)+'</span></div>':"");
+
+  return b;
+}
+
+/* ===================================================================
+   CALENDAR  ->  events table + today's meetings
+   =================================================================== */
+async function loadCalendar(){
+  let events=[];
+  try{
+    const start=new Date(); start.setHours(0,0,0,0);
+    const end=new Date(start); end.setDate(end.getDate()+36);
+    const r = await call(T.calendar,{startTime:start.toISOString().slice(0,19),endTime:end.toISOString().slice(0,19),orderBy:"startTime",pageSize:100});
+    events=(r&&r.events)||[];
+  }catch(e){
+    el("events").innerHTML='<div class="err">Couldn’t load the calendar right now. Hit Reload in a moment.</div>';
+    return;
+  }
+  const rows = events.map(ev=>{
+    const sd = ev.start && (ev.start.dateTime||ev.start.date);
+    const ed = ev.end && (ev.end.dateTime||ev.end.date);
+    const start = sd?new Date(sd):null;
+    const endD  = ed?new Date(ed):null;
+    const sum=(ev.summary||"(untitled)");
+    const att=(ev.attendees||[]);
+    const external = att.some(a=>a.email && !/lorraineklee\.com$/.test(a.email) && !a.self) &&
+                     /keynote|ipma|seismic|external|webinar|fireside|panel|guest|summit|conference/i.test(sum);
+    const debrief = /debrief/i.test(sum);
+    return {start,endD,sum,external:external||debrief,debrief};
+  }).filter(r=>r.start);
+  rows.sort((a,b)=>a.start-b.start);
+
+  S.events = rows;
+  S.todayMeetings = rows.filter(r=>daysFromToday(r.start)===0);
+
+  let html='<table><tr><th>Date</th><th>Time</th><th>Event</th><th>Type</th></tr>';
+  rows.forEach(r=>{
+    const time = fmtTime(r.start)+(r.endD?"–"+fmtTime(r.endD):"");
+    const isToday = daysFromToday(r.start)===0;
+    const label = (r.external?"🎤 ":"")+esc(r.sum);
+    html+='<tr>'+
+      '<td>'+(isToday?'<strong>'+fmtDate(r.start)+'</strong>':fmtDate(r.start))+(isToday?' <span class="tag red">TODAY</span>':'')+'</td>'+
+      '<td>'+esc(time)+'</td>'+
+      '<td>'+(r.external?'<strong>'+label+'</strong>':label)+'</td>'+
+      '<td>'+(r.debrief?'<span class="tag yellow">debrief &middot; needs slides</span>':r.external?'<span class="tag yellow">external</span>':'<span class="tag gray">internal</span>')+'</td>'+
+      '</tr>';
+  });
+  html+='</table>';
+  if(!rows.some(r=>r.debrief)) html+='<div class="note">No debriefs on the calendar in the next 5 weeks &mdash; they’ll show here once scheduled.</div>';
+  el("events").innerHTML=html;
+}
+
+/* ===================================================================
+   CAPACITY  (depends on Asana + money count)
+   =================================================================== */
+function renderCapacity(moneyCount){
+  const b=S.buckets;
+  if(!b){ el("capacity").innerHTML='<div class="err">Capacity needs Asana data &mdash; hit Reload.</div>'; return; }
+  const urgent = b.dueToday.length + (moneyCount||0);
+  let read,cls;
+  if(urgent===0){read="OPEN";cls="green";}
+  else if(urgent<=2){read="MANAGEABLE";cls="green";}
+  else if(urgent<=4){read="MODERATE";cls="yellow";}
+  else if(urgent<=7){read="HEAVY";cls="yellow";}
+  else{read="AT CAPACITY";cls="red";}
+  el("capacity").innerHTML=
+    '<div class="cap-banner">'+
+      '<span class="cap-pill '+cls+'">'+read+'</span>'+
+      '<span class="cap-counts">'+b.dueToday.length+' due today &nbsp;&middot;&nbsp; '+b.overdue.length+' overdue &nbsp;&middot;&nbsp; '+
+      b.thisWeek.length+' due this week'+(moneyCount?(' &nbsp;&middot;&nbsp; '+moneyCount+' money item'+(moneyCount===1?"":"s")):"")+'</span>'+
+    '</div>'+
+    '<div class="note">Capacity = items due today + open money/contract items. This is a read, not a verdict &mdash; a heavy day just means protect your focus blocks.</div>';
+}
+
+/* ===================================================================
+   SYNTHESIS  (email + slack + askClaude)
+   =================================================================== */
+function fallbackTimeBlocks(){
+  const m=S.todayMeetings.slice().sort((a,b)=>a.start-b.start);
+  const blocks=[
+    {time:"8:30–9:00 AM",focus:"💬 Inbox + Slack triage — one pass, then close them"},
+    {time:"9:00–10:30 AM",focus:"🔥 Money block — follow up on overdue invoices & contracts"},
+    {time:"10:30 AM–12:00 PM",focus:"🎯 Event prep + client-facing content due today"},
+    {time:"12:00–12:45 PM",focus:"🍴 Lunch — actually step away"},
+    {time:"12:45–2:30 PM",focus:"📌 Content — LinkedIn / Instagram scripts & videos"},
+    {time:"2:30–4:00 PM",focus:"⏳ Chip at the overdue backlog — triage, don’t spiral"},
+    {time:"4:00–4:45 PM",focus:"📋 This-week tasks — get ahead of tomorrow"},
+    {time:"4:45–5:00 PM",focus:"💬 EOD wrap — update Lorraine, recheck inbox once"}
+  ];
+  let note;
+  if(m.length){
+    note="Today's meetings: "+m.map(x=>esc(x.sum)+" ("+fmtTime(x.start)+")").join(", ")+". Work your focus blocks around them.";
+  }else{
+    note="No meetings on your calendar today — a clear day for focused work.";
+  }
+  return {blocks,note};
+}
+function fallbackTop3(){
+  const b=S.buckets, out=[];
+  (b?b.dueToday:[]).slice(0,3).forEach(t=>out.push({title:t.name,why:"Due today.",steps:[]}));
+  if(out.length<3 && b) b.overdue.slice(0,3-out.length).forEach(t=>out.push({title:t.name,why:"Overdue — worth closing out.",steps:[]}));
+  if(!out.length) out.push({title:"Clear your inbox and Asana triage",why:"A clean start makes the rest of the day calmer.",steps:[]});
+  return out;
+}
+
+function renderTop3(items){
+  el("top3").innerHTML = items.map((it,i)=>
+    '<div class="hero-block">'+
+      '<span class="hero"><span class="hero-num">'+(i+1)+'</span>'+esc(it.title)+'</span>'+
+      (it.why?'<div class="hero-why">'+esc(it.why)+'</div>':'')+
+      (it.steps&&it.steps.length?'<ul class="hero-steps">'+it.steps.map(s=>'<li>'+esc(s)+'</li>').join("")+'</ul>':'')+
+    '</div>').join("");
+}
+function renderTimeplan(tp){
+  let html='<div class="note" style="margin:0 0 6px">'+esc(tp.note)+'</div><table><tr><th>Time</th><th>Focus</th></tr>';
+  tp.blocks.forEach(bk=>{ html+='<tr><td style="white-space:nowrap">'+esc(bk.time)+'</td><td>'+esc(bk.focus)+'</td></tr>'; });
+  html+='</table>';
+  el("timeplan").innerHTML=html;
+}
+function renderMoney(items,failed){
+  let html='<div style="font-weight:600;font-size:.83rem;color:#2D5F5D;margin-bottom:4px">💰 Payments, invoices &amp; contracts</div>';
+  if(failed){
+    html+='<div class="err">Couldn’t read your email just now. <a href="https://mail.superhuman.com/" target="_blank">Open Superhuman →</a> and hit Reload here in a bit.</div>';
+  }else if(!items.length){
+    html+='<div class="li-item dim">Nothing money-related flagged in the last 3 days. 🎉</div>';
+  }else{
+    html+=items.map(m=>{
+      let cl="yellow";
+      if(/overdue|past due|today/i.test(m.chip||"")) cl="red";
+      else if(/invoice [A-Za-z]|waiting|pending/i.test(m.chip||"")) cl="green";
+      return '<div class="li-item"><strong>'+esc(m.name)+'</strong> &mdash; '+esc(m.ask||"")+
+        (m.chip?' &middot; <span class="tag '+cl+' chip">'+esc(m.chip)+'</span>':'')+
+        ' &middot; <a href="https://mail.superhuman.com/" target="_blank">Email →</a></div>';
+    }).join("");
+  }
+  el("money").innerHTML=html;
+}
+function renderSlackAsks(items,failed){
+  let html='<div style="font-weight:600;font-size:.83rem;color:#2D5F5D;margin-bottom:4px">💬 Slack asks (unanswered)</div>';
+  if(failed){
+    html+='<div class="err">Couldn’t check Slack just now &mdash; hit Reload in a bit.</div>';
+  }else if(!items.length){
+    html+='<div class="li-item dim">Nothing new waiting on you.</div>';
+  }else{
+    html+=items.map(a=>'<div class="li-item"><strong>'+esc(a.person||"Someone")+'</strong> &mdash; '+esc(a.ask||"")+'</div>').join("");
+  }
+  el("slackasks").innerHTML=html;
+}
+function renderDraft(text){
+  el("draft").innerHTML='<div class="draft">'+esc(text)+'</div>'+
+    '<div class="note">Copy/paste into Slack or email when you’re ready. Nothing sends on its own.</div>';
+}
+function renderOwnership(text){
+  el("ownership").innerHTML='<div class="prompt"><strong>Today’s focus</strong>'+esc(text)+'</div>';
+}
+
+async function loadSynthesis(){
+  /* fetch email + slack in parallel; tolerate failures */
+  let emailAnswer="",slackText="",emailFailed=false,slackFailed=false;
+  const threeAgo=new Date(); threeAgo.setDate(threeAgo.getDate()-3);
+  const ds=threeAgo.toISOString().slice(0,10);
+
+  const [eRes,sRes] = await Promise.allSettled([
+    call(T.email,{question:"List my unread emails from the last 3 days about payments, invoices, SOWs, work orders, purchase orders or contracts, and separately anything about fixes, broken links, errors or forwards from Lorraine needing my attention. Exclude automated Asana notifications, newsletters, calendar agendas and marketing. For each give sender, subject and a one-line summary."}),
+    call(T.slack,{query:"to:me after:"+ds+" -from:<@U06J6MVUK0E>",limit:15,sort:"timestamp",include_context:false})
+  ]);
+  if(eRes.status==="fulfilled" && eRes.value){ emailAnswer = (eRes.value.answer||eRes.value||"")+""; } else { emailFailed=true; }
+  if(sRes.status==="fulfilled" && sRes.value){ slackText = (sRes.value.results||sRes.value||"")+""; } else { slackFailed=true; }
+  S.emailAnswer=emailAnswer; S.slackText=slackText;
+
+  /* ask Claude to synthesise the judgement-heavy parts */
+  let synth=null;
+  if(window.cowork && window.cowork.askClaude){
+    try{
+      const prompt =
+        "You are preparing a personal daily command-center page for Mahea, chief of staff to Lorraine (a keynote speaker / LinkedIn educator). "+
+        "Using ONLY the data provided, return STRICT JSON (no markdown, no prose) with this exact shape: "+
+        '{"moneyItems":[{"name":"","ask":"","chip":""}],"slackAsks":[{"person":"","ask":""}],'+
+        '"top3":[{"title":"","why":"","steps":[""]}],'+
+        '"timeBlocks":[{"time":"","focus":""}],"timeNote":"","draftMessage":"","ownershipPrompt":""}. '+
+        "Rules: moneyItems = every payment/invoice/SOW/PO/contract item from the email digest; chip is a short status like 'payment overdue', 'reply pending', 'waiting on <party>' or 'invoice <date>'. "+
+        "slackAsks = only genuine unanswered asks directed at Mahea from teammates (ignore the Asana bot and her own messages); if unsure leave empty. "+
+        "top3 = the 3 most pressing things (money where someone is waiting, client deadlines, imminent event prep), each with 1-3 short concrete steps. "+
+        "timeBlocks = an hour-by-hour plan for today that works AROUND the listed meetings, front-loads money items, includes a real lunch, and leaves a block for overdue triage; timeNote names today's meetings or says there are none. "+
+        "draftMessage = a short message from Mahea to Lorraine, starting 'Hi Lorraine,', plain and human, NO em dashes, NO headers, listing today's few priorities simply and offering to resequence. "+
+        "ownershipPrompt = 2-3 warm encouraging sentences for someone who tends to miss emails and feel overwhelmed by context-switching; calm and steadying, not hype.";
+      const data = [{
+        today: TODAY.toDateString(),
+        asana_due_today: (S.buckets?S.buckets.dueToday:[]).map(t=>t.name),
+        asana_overdue_sample: (S.buckets?S.buckets.overdue:[]).slice(0,10).map(t=>t.name+" (due "+fmtDateShort(t.due)+")"),
+        asana_overdue_count: S.buckets?S.buckets.overdue.length:0,
+        asana_due_this_week: (S.buckets?S.buckets.thisWeek:[]).map(t=>t.name+" ("+chip(t.due).txt+")"),
+        today_meetings: S.todayMeetings.map(m=>m.sum+" "+fmtTime(m.start)+(m.endD?"-"+fmtTime(m.endD):"")),
+        upcoming_events: S.events.slice(0,10).map(e=>fmtDate(e.start)+" "+e.sum),
+        email_digest: emailAnswer.slice(0,6000),
+        slack_messages: slackText.slice(0,6000)
+      }];
+      let raw = await window.cowork.askClaude(prompt,data);
+      if(typeof raw!=="string") raw = JSON.stringify(raw);
+      raw = raw.replace(/^```(json)?/i,"").replace(/```$/,"").trim();
+      const a=raw.indexOf("{"), z=raw.lastIndexOf("}");
+      if(a>=0&&z>a) synth = JSON.parse(raw.slice(a,z+1));
+    }catch(e){ synth=null; }
+  }
+
+  /* render with graceful fallbacks */
+  const money = (synth&&Array.isArray(synth.moneyItems))?synth.moneyItems:[];
+  renderMoney(money, emailFailed && !money.length);
+  renderSlackAsks((synth&&Array.isArray(synth.slackAsks))?synth.slackAsks:[], slackFailed && !(synth&&synth.slackAsks));
+  renderTop3((synth&&Array.isArray(synth.top3)&&synth.top3.length)?synth.top3:fallbackTop3());
+  if(synth&&Array.isArray(synth.timeBlocks)&&synth.timeBlocks.length){
+    renderTimeplan({blocks:synth.timeBlocks,note:synth.timeNote||fallbackTimeBlocks().note});
+  }else{
+    renderTimeplan(fallbackTimeBlocks());
+  }
+  renderDraft((synth&&synth.draftMessage)?synth.draftMessage:
+    "Hi Lorraine,\n\nHere's what I'm focused on today: clearing the overdue invoices so nothing slips into late-fee territory, getting any open contracts moving, and staying on top of this week's content. Once those are done I'll be working through the overdue Asana list. Capacity is tight this week, so if you'd rather I resequence anything, just say the word.");
+  renderOwnership((synth&&synth.ownershipPrompt)?synth.ownershipPrompt:
+    "You don't have to hold all of this in your head — that's what this page is for. Work one block at a time, and trust that anything urgent will show up right here. Missing things happens when everything feels equally loud; today, let the page be loud so you can be calm.");
+
+  /* capacity now that we know the money count */
+  renderCapacity(money.length);
+}
+
+/* ===================================================================
+   BOOT
+   =================================================================== */
+(async function(){
+  const now=new Date();
+  const hr=now.getHours();
+  const part = hr<12?"Good morning":hr<17?"Good afternoon":"Good evening";
+  el("greeting").textContent = part+", Mahea";
+  el("subline").innerHTML = esc(now.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"}))+
+    " &nbsp;&middot;&nbsp; Command Center &nbsp;&middot;&nbsp; live from Asana, Calendar, Superhuman &amp; Slack";
+
+  if(!(window.cowork && window.cowork.callMcpTool)){
+    document.querySelectorAll(".loading").forEach(n=>{
+      n.outerHTML='<div class="err">This page needs to run inside Cowork to reach your connectors. Open it from the Cowork sidebar.</div>';
+    });
+    return;
+  }
+
+  /* deterministic sections first, then the synthesis layer */
+  await Promise.allSettled([ loadAsana(), loadCalendar() ]);
+  renderCapacity(0); /* provisional, refined after email loads */
+  await loadSynthesis();
+
+  el("foot").textContent = "Last refreshed "+now.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})+
+    "  ·  use the Reload button in the view header to refresh";
+})();
+</script>
 </body>
 </html>
